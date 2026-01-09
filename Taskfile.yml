@@ -1,0 +1,21 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build the project
+    cmds:
+      - dotnet build
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - dotnet clean
+      - cmd: rm -rf bin obj
+        platforms: [linux, darwin]
+      - cmd: rmdir /s /q bin obj
+        platforms: [windows]
+
+  run:
+    desc: Run the application
+    cmds:
+      - dotnet run --project OSCVRCWiz/OSCVRCWiz.csproj

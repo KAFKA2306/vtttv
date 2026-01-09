@@ -1,0 +1,330 @@
+[
+    {
+        "category": "",
+        "display_name": "Aiden Botha",
+        "is_private": false,
+        "name": "aiden-botha-conversational",
+        "voicemodel_uuid": "9033ec36-5066-48a9-86a7-c9b0fc368496",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Aiden Botha (Stealth)",
+        "is_private": false,
+        "name": "aiden-botha-covert",
+        "voicemodel_uuid": "b01cf18d-0f10-46dd-adc6-562b599fdae4",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Angus",
+        "is_private": false,
+        "name": "angus-upbeat",
+        "voicemodel_uuid": "7d29a280-8a3e-4c4b-9df4-cbe77e8f4a63",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Angus (Pleading)",
+        "is_private": false,
+        "name": "angus-pleading",
+        "voicemodel_uuid": "95d174cc-07a1-431f-ab72-f65d38159b62",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Awkward Male Teen",
+        "is_private": false,
+        "name": "loser-boy-upbeat",
+        "voicemodel_uuid": "f242dad3-6762-4267-985d-00c088b80e92",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Bertie",
+        "is_private": false,
+        "name": "bertie-chipper",
+        "voicemodel_uuid": "080e856b-6fcd-4010-bd3a-3bc0712037a3",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Bertie",
+        "is_private": false,
+        "name": "bertie-angry",
+        "voicemodel_uuid": "b3b396e9-b501-4178-8934-e2765b6a43b1",
+        "language": "english"
+    },
+    {
+        "category": "Rappers",
+        "display_name": "Big G",
+        "is_private": false,
+        "name": "big-g",
+        "voicemodel_uuid": "1ed327ed-b69e-4219-bb5c-2b996bcc192b",
+        "language": "english"
+    },
+    {
+        "category": "Rappers",
+        "display_name": "B La B",
+        "is_private": false,
+        "name": "b-la-b",
+        "voicemodel_uuid": "61866d1e-b82f-4018-bd79-5a5e37f4a2e1",
+        "language": "english"
+    },
+    {
+        "category": "Rappers",
+        "display_name": "B La B (with pace control)",
+        "is_private": false,
+        "name": "b-la-b-controllable",
+        "voicemodel_uuid": "7f35edab-0b2c-4baf-aca3-fbcd24a31916",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Choice Bru",
+        "is_private": false,
+        "name": "kiwi",
+        "voicemodel_uuid": "7a715c37-3edd-4696-9828-ee48ba76b52b",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Damon Edwards",
+        "is_private": false,
+        "name": "damon-deepvoice",
+        "voicemodel_uuid": "df71a60f-1294-4cf1-bd5d-a7e6d7350178",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Davo",
+        "is_private": false,
+        "name": "davo",
+        "voicemodel_uuid": "6dfa8240-c2c7-42d1-9880-e0ac92d150c7",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Fat Tony",
+        "is_private": false,
+        "name": "fat-tony",
+        "voicemodel_uuid": "b36fd10a-d7ce-4ccf-891f-371621112521",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Fat Tony (Fed Up)",
+        "is_private": false,
+        "name": "fat-tony-fed-up",
+        "voicemodel_uuid": "3b7973b2-741f-40df-96dc-3cd70c868291",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "General Herring",
+        "is_private": false,
+        "name": "general-herring-briefing",
+        "voicemodel_uuid": "818bc1dd-1d34-4205-81a8-5e32dfec3e2b",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "general-herring-briefing",
+        "is_private": false,
+        "name": "general-herring-briefing-radtts",
+        "voicemodel_uuid": "02126b4c-bb32-4cad-ba5a-512135ff04af",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "General Herring (Losing patience)",
+        "is_private": false,
+        "name": "general-herring-losing-patience",
+        "voicemodel_uuid": "67fbff66-5cc8-4950-932e-4ec0547ee975",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Jake Turner",
+        "is_private": false,
+        "name": "frosty-john",
+        "voicemodel_uuid": "13c0b24a-abff-4c30-9729-7250844ef314",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Jake Turner",
+        "is_private": false,
+        "name": "frosty-john-cynical",
+        "voicemodel_uuid": "aca0bdfe-fbdc-45a7-92bb-47bcc822a661",
+        "language": "english"
+    },
+    {
+        "category": "Rappers",
+        "display_name": "JSXI",
+        "is_private": false,
+        "name": "jsxi",
+        "voicemodel_uuid": "2f9f6dd7-0f53-4cc0-a652-a53de654560e",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Leroy",
+        "is_private": false,
+        "name": "leroy",
+        "voicemodel_uuid": "6eb9555a-e664-41a9-a4f1-065c5a3c93be",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Movie Trailer Guy",
+        "is_private": false,
+        "name": "movie-trailer-guy",
+        "voicemodel_uuid": "c584b439-cceb-43cc-851f-932f826eb4a9",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Newsreader",
+        "is_private": false,
+        "name": "newsreader",
+        "voicemodel_uuid": "1d848696-0a68-4090-a7ad-5232def06ba1",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Peppy Faire",
+        "is_private": false,
+        "name": "peppy-faire",
+        "voicemodel_uuid": "c8a916b4-4574-4042-82a1-3cead35331c9",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Preacher",
+        "is_private": false,
+        "name": "preacher",
+        "voicemodel_uuid": "114a804a-98b8-4976-84f4-8ea161d0f925",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Quackmaster",
+        "is_private": false,
+        "name": "quackmaster",
+        "voicemodel_uuid": "a07c7418-c584-45da-8e69-7e485a1d846b",
+        "language": "english"
+    },
+    {
+        "category": "Rappers",
+        "display_name": "Relikk",
+        "is_private": false,
+        "name": "relikk",
+        "voicemodel_uuid": "d42b8a0a-bf24-45a5-b213-fdc7b54f458f",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Rose (Dreamy)",
+        "is_private": false,
+        "name": "rose-dreamy",
+        "voicemodel_uuid": "563c30aa-70c4-4dbc-8c3c-fe7fb2700ee3",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "rose-dreamy",
+        "is_private": false,
+        "name": "rose-dreamy-radtts",
+        "voicemodel_uuid": "091d6cba-438f-435d-9453-40111feafc99",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Rose (Urgent)",
+        "is_private": false,
+        "name": "rose-urgent",
+        "voicemodel_uuid": "c4b48524-c8be-4ad5-ac1a-b4c3c74ae5b5",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Rupert",
+        "is_private": false,
+        "name": "rupert-conversational",
+        "voicemodel_uuid": "c9d65286-329b-4ef3-a508-40817b442990",
+        "language": "english"
+    },
+    {
+        "category": "Uberduck AI Creators",
+        "display_name": "SJK",
+        "is_private": false,
+        "name": "sjk",
+        "voicemodel_uuid": "109cf329-a698-40ea-9f84-d4c66fdb9f68",
+        "language": "english"
+    },
+    {
+        "category": "Rappers",
+        "display_name": "T.A.G.",
+        "is_private": false,
+        "name": "tag",
+        "voicemodel_uuid": "240db79d-bcce-46fc-8129-321792ecfc35",
+        "language": "english"
+    },
+    {
+        "category": "Uberduck AI Creators",
+        "display_name": "WRL",
+        "is_private": false,
+        "name": "wrl",
+        "voicemodel_uuid": "30b67b62-51a8-43db-a1b4-edafd5b4cfea",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Yeehaw Macri",
+        "is_private": false,
+        "name": "yeehaw-macri",
+        "voicemodel_uuid": "e4d6a28a-1cc1-4687-a344-7e48aa949f2a",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "Zeus",
+        "is_private": false,
+        "name": "zeus-v2",
+        "voicemodel_uuid": "5e510987-5353-4598-9d48-2bc0e23967e6",
+        "language": "english"
+    },
+    {
+        "category": "Studio",
+        "display_name": "Zeus",
+        "is_private": false,
+        "name": "zeus",
+        "voicemodel_uuid": "92022a27-75fb-4e15-90ca-95095a82f5ee",
+        "language": "english"
+    },
+    {
+        "category": "Uberduck AI Creators",
+        "display_name": "ZWF",
+        "is_private": false,
+        "name": "zwf",
+        "voicemodel_uuid": "99667c90-c918-4692-821f-8990b8ff2354",
+        "language": "english"
+    },
+    {
+        "category": "",
+        "display_name": "zwf",
+        "is_private": false,
+        "name": "zwf-radtts",
+        "voicemodel_uuid": "4ec5c264-0a49-47c8-a3eb-c0d3518a65a1",
+        "language": "english"
+    },
+    {
+        "category": "Uberduck AI Creators",
+        "display_name": "ZWF (rapping)",
+        "is_private": false,
+        "name": "zwf-rapping",
+        "voicemodel_uuid": "5a41dfbb-d46e-473c-a5ad-7aac89e10c76",
+        "language": "english"
+    }
+]
