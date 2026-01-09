@@ -1,21 +1,46 @@
 version: '3'
 
-tasks:
-  build:
-    desc: Build the project
-    cmds:
-      - dotnet build
+vars:
+  PROJECT: OSCVRCWiz/OSCVRCWiz.csproj
+  PYTHON_MINIMAL: voice_changer.py
 
-  clean:
-    desc: Clean build artifacts
+tasks:
+  default:
     cmds:
-      - dotnet clean
-      - cmd: rm -rf bin obj
-        platforms: [linux, darwin]
-      - cmd: rmdir /s /q bin obj
-        platforms: [windows]
+      - task: build
+
+  build:
+    desc: Build the C# project (Release)
+    cmds:
+      - dotnet build -c Release
 
   run:
-    desc: Run the application
+    desc: Run the C# application
     cmds:
-      - dotnet run --project OSCVRCWiz/OSCVRCWiz.csproj
+      - dotnet run --project {{.PROJECT}} -c Release
+
+  python:
+    desc: Run the minimal Python voice changer
+    cmds:
+      - python {{.PYTHON_MINIMAL}}
+
+  setup-python:
+    desc: Install Python dependencies
+    cmds:
+      - pip install faster-whisper sounddevice numpy requests scipy
+
+  clean:
+    desc: Clean build artifacts and temporary files
+    cmds:
+      - dotnet clean
+      - cmd: rm -rf bin obj build_output.txt voice_changer.py.tmp
+        platforms: [linux, darwin]
+      - cmd: powershell -Command "Remove-Item -Recurse -Force bin, obj, build_output.txt -ErrorAction SilentlyContinue"
+        platforms: [windows]
+
+  git:
+    desc: Swift git add, commit, and push
+    cmds:
+      - git add .
+      - git commit -m "chore:optimized_via_taskfile"
+      - git push origin main
