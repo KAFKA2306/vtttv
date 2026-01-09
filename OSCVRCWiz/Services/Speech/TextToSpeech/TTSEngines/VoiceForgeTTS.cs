@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using System.Net;
 using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Services.Text;
@@ -18,35 +18,20 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
     {
         private static readonly HttpClient client = new HttpClient();
 
-        // charLimit: 540?
-
         public static async Task VoiceForgeTextAsSpeech(TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct = default)
         {
-            // bro, where do u even get one of these keys
-            // borrowed from chrisjp/tts who borrowed from Wrapper-Offline/Wrapper-Offline
+
             string key = "8b3f76a8539";
 
             string email = "-";
 
-           // Stopwatch stopwatch = new Stopwatch();
-
             MemoryStream memoryStream = new MemoryStream();
 
-
-           // stopwatch.Start();
             Task<Stream> streamTask = CallVoiceForgeAPIAsync(key, TTSMessageQueued.text, TTSMessageQueued.Voice, email);
            Stream stream = streamTask.Result;
 
-
-            //  OutputText.outputLog("stream: " + stream);
-
-           // stopwatch.Stop();
-           // OutputText.outputLog($"Processing/Response time:{stopwatch.ElapsedMilliseconds}", Color.Yellow);
             AudioDevices.PlayAudioStream(stream, TTSMessageQueued, ct, true, AudioFormat.Wav);
             memoryStream.Dispose();
-
-
-
 
         }
 
@@ -68,16 +53,13 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 return null;
             }
 
-
         }
 
         public static void SetVoices(ComboBox voices, ComboBox styles, ComboBox accents)
         {
             accents.Items.Clear();
-            accents.Items.Add("default");   
+            accents.Items.Add("default");
             accents.SelectedIndex= 0;
-
-
 
             SynthesisGetAvailableVoicesAsync(voices);
 
@@ -89,13 +71,10 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             voices.Enabled = true;
         }
 
-
-
         public static async Task SynthesisGetAvailableVoicesAsync(ComboBox voices)
         {
 
             VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Clear();
-
 
             voices.Items.Add("Conrad");
             voices.Items.Add("Designer");
@@ -118,7 +97,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             voices.Items.Add("Tamika");
             voices.Items.Add("TopHat");
             voices.Items.Add("Vixen");
-            // voices.Items.Add("Vlad");
+
             voices.Items.Add("Warren");
             voices.Items.Add("Wiseguy");
             voices.Items.Add("Zach");
@@ -126,18 +105,8 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
             voices.SelectedIndex = 0;
 
-
         }
 
-
-
-
-
-
-
-
     }
-
-
 
 }

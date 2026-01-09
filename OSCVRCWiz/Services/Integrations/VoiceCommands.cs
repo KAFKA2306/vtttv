@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using CoreOSC;
@@ -14,7 +14,6 @@ namespace OSCVRCWiz.Services.Integrations
         static List<string> VCType = new List<string>();
         static List<string> VCValue = new List<string>();
         public static string voiceCommandsStored = "";
-
 
         public static void MainDoVoiceCommand(string text)
         {
@@ -32,7 +31,6 @@ namespace OSCVRCWiz.Services.Integrations
                     index++;
                 }
 
-                //this is for changing styles on voice command
                 if (VoiceWizardWindow.MainFormGlobal.comboBoxTTSMode.SelectedItem.ToString() == "Azure" & VoiceWizardWindow.MainFormGlobal.rjToggleButtonStyle.Checked == true)
                 {
                     foreach (var x in VoiceWizardWindow.MainFormGlobal.comboBoxStyleSelect.Items)
@@ -66,7 +64,6 @@ namespace OSCVRCWiz.Services.Integrations
             VCType.RemoveAt(index);
         }
 
-
         public static void voiceCommands()
         {
             string words = voiceCommandsStored;
@@ -84,7 +81,6 @@ namespace OSCVRCWiz.Services.Integrations
                     string[] split2 = words2.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
                     foreach (string s2 in split2)
                     {
-
 
                         if (count == 1)
                         {
@@ -120,8 +116,6 @@ namespace OSCVRCWiz.Services.Integrations
             if (VoiceWizardWindow.MainFormGlobal.checkedListBox1.GetItemChecked(index) == true)
             {
 
-
-                // int index = VCPhrase.FindIndex(a => a.Contains(phrase));
                 string address = VCAddress[index];
                 string type = VCType[index];
                 var VCMessage = new OscMessage(address, true);
@@ -139,7 +133,6 @@ namespace OSCVRCWiz.Services.Integrations
                         }
                         break;
 
-
                     case "Float":
                         float value1 = float.Parse(VCValue[index]);
                         VCMessage = new OscMessage(address, value1);
@@ -153,18 +146,14 @@ namespace OSCVRCWiz.Services.Integrations
                         break;
                 }
 
-
-
                 OSC.OSCSender.Send(VCMessage);
                 OutputText.outputLog("[OSC message sent with voice command '" + VCPhrase[index] + "' " + "Value: " + VCValue[index] + "]");
             }
 
-
-
         }
         public static void refreshCommandList()
         {
-            // VoiceWizardWindow.MainFormGlobal.richTextBox13.Clear();
+
             VoiceWizardWindow.MainFormGlobal.checkedListBox1.Items.Clear();
             voiceCommandsStored = "";
             for (var index = 0; index < VCAddress.Count; index++)

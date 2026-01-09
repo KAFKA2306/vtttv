@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using static OSCVRCWiz.Services.Speech.TextToSpeech.TTSMessageQueue;
 using System.Net.Http.Headers;
@@ -23,7 +23,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
     public class UberDuckTTS
     {
 
-        // private static readonly HttpClient client = new HttpClient();
         private static readonly string BaseUrl = "https://api.uberduck.ai/";
         private static readonly HttpClient client = new HttpClient
         {
@@ -36,12 +35,10 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
         private static readonly HttpClient client2 = new HttpClient();
 
-
         public static Dictionary<string, string> UberVoiceNameAndID = new Dictionary<string, string>();
         public static Dictionary<string, string> UberNameAndCategory = new Dictionary<string, string>();
         public static bool UberfirstVoiceLoad = true;
         public static HashSet<string> seenCategories = new HashSet<string>();
-
 
         public static async Task SynthesisGetAvailableVoicesAsync(string currentCategory, bool changedMethods)
         {
@@ -49,30 +46,17 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             if (UberfirstVoiceLoad == true)
             {
 
-
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string relativePath = "Assets/voices/uberduckVoices.json";
                 string jsonFilePath = Path.Combine(basePath, relativePath);
 
-
-                // read the JSON data from the file
                 string jsonData = File.ReadAllText(jsonFilePath);
 
-                // deserialize the JSON data into an array of Voice objects
                 UberVoice[] voices = System.Text.Json.JsonSerializer.Deserialize<UberVoice[]>(jsonData);
-
-                // replace with the desired locale
-                // string locale = "en-GB";
 
                 foreach (var voice in voices)
                 {
 
-
-
-
-                    // AllVoices4Language.Add(voice.ShortName, styleList.ToArray());
-                    //  VoiceWizardWindow.MainFormGlobal.comboBox2.Items.Add(voice.display_name);
-                    //  voiceList.Add(voice.display_name);
                     try
                     {
                         string categoryFix = voice.category;
@@ -96,18 +80,13 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                         categoryName = "Uncategorized";
                     }
 
-                    // If this is a new category, do something
                     if (!seenCategories.Contains(categoryName))
                     {
                         seenCategories.Add(categoryName);
 
-                        // Do something for each new category found
-                        // Console.WriteLine("New category found: " + categoryName);
                         VoiceWizardWindow.MainFormGlobal.comboBoxAccentSelect.Items.Add(categoryName);
                     }
 
-                    // Do something for each voice
-                    //   Console.WriteLine("Voice " + voice.Key + " belongs to category " + categoryName);
                 }
                 VoiceWizardWindow.MainFormGlobal.comboBoxAccentSelect.SelectedIndex = 0;
                 VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Clear();
@@ -115,7 +94,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 {
                     if (voice.Value == VoiceWizardWindow.MainFormGlobal.comboBoxAccentSelect.SelectedItem.ToString())
                     {
-                        //Console.WriteLine("Voice " + voice.Key + " belongs to category " + currentCategory);
+
                         VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add(voice.Key);
                     }
                 }
@@ -124,21 +103,17 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
             }
 
-
-
             else
             {
-              
+
                 if (changedMethods)
                 {
-
 
                     foreach (var cat in seenCategories)
                     {
                         VoiceWizardWindow.MainFormGlobal.comboBoxAccentSelect.Items.Add(cat);
                     }
 
-                   
                 }
 
                 if (changedMethods)
@@ -157,12 +132,11 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 {
                     if (voice.Value == currentCategory)
                     {
-                        //Console.WriteLine("Voice " + voice.Key + " belongs to category " + currentCategory);
+
                         VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add(voice.Key);
                     }
 
                 }
-
 
             }
             try
@@ -170,15 +144,13 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 if (VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect != null)
                 {
 
-
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.SelectedIndex = 0;
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 OutputText.outputLog("[Uberduck Voice Load Error: "+ex.Message+"]", Color.Red);
             }
-
 
         }
 
@@ -186,9 +158,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
         {
             try
            {
-              //  Stopwatch stopwatch = new Stopwatch();
-
-               // stopwatch.Start();
 
                 var authKey = VoiceWizardWindow.MainFormGlobal.textBoxUberKey.Text.ToString();
                 var authSecret = VoiceWizardWindow.MainFormGlobal.textBoxUberSecret.Text.ToString();
@@ -199,12 +168,9 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     return;
                 }
 
-
-                // string apiKey = "your_api_key_here";
                 string voicemodel_uuid = message.Voice;
                 string text = message.text;
                 string audio_uuid = "";
-
 
                 var content = new StringContent(JsonConvert.SerializeObject(new { speech = text, voicemodel_uuid }));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -224,24 +190,19 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 {
                     string json = response.Content.ReadAsStringAsync().Result.ToString();
                     audio_uuid = JObject.Parse(json).SelectToken("uuid").ToString();
-                    // Console.WriteLine(audio_uuid);
+
                 }
 
-
-                
                 string audioUrl = null;
 
                 for (int i = 0; i < 10; i++)
                 {
 
-                    await Task.Delay(1000); // check status every second.
+                    await Task.Delay(1000);
                     var response2 = await client.GetAsync($"https://api.uberduck.ai/speak-status?uuid={audio_uuid}");
                     Console.WriteLine(response2.Content.ReadAsStringAsync().Result.ToString());
 
                     audioUrl = JObject.Parse(await response2.Content.ReadAsStringAsync())["path"].ToString();
-
-
-                    // audioUrl = JObject.Parse(statusContent)["path"]?.ToString();
 
                     if (audioUrl != null && audioUrl != "")
                     {
@@ -252,18 +213,12 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     }
                 }
 
-
-                // read the audio file into a byte array
                 byte[] audioBytes = await client2.GetByteArrayAsync(audioUrl);
 
-                // convert the byte array to a base64-encoded string
                 string base64String = Convert.ToBase64String(audioBytes);
 
-              //  stopwatch.Stop();
-               // OutputText.outputLog($"Processing/Response time:{stopwatch.ElapsedMilliseconds}", Color.Yellow);
                 UberPlayAudio(base64String, message, ct);
             }
-
 
             catch (Exception ex)
             {
@@ -279,43 +234,31 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 PlayNextInQueue();
             }
 
-             //  return base64String;
-             // return "";
         }
         public static async void UberPlayAudio(string audioString, TTSMessage TTSMessageQueued, CancellationToken ct)
         {
 
-
-
             var audiobytes = Convert.FromBase64String(audioString);
             MemoryStream memoryStream = new MemoryStream(audiobytes);
 
-            //  AudioDevices.playWaveStream(memoryStream, TTSMessageQueued, ct);
             AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, true, AudioFormat.Wav);
             memoryStream.Dispose();
-
-
-
 
         }
 
         public static void SetVoices(ComboBox voices, ComboBox styles, ComboBox accents)
         {
             accents.Items.Clear();
-           // accents.Items.Add("default");
-          //  accents.SelectedIndex = 0;
-
 
             voices.Items.Clear();
             UberDuckTTS.SynthesisGetAvailableVoicesAsync(accents.Text.ToString(), true);
 
             styles.Items.Clear();
             styles.Items.Add("default");
-            styles.SelectedIndex = 0;   
+            styles.SelectedIndex = 0;
             styles.Enabled = false;
             voices.Enabled = true;
 
-           // accents.SelectedIndex = 0;
         }
 
       }

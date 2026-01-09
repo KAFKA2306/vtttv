@@ -1,38 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
-
-/*var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();*/
-
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using MoonbaseAlpha;
 using System.Runtime.InteropServices;
-
-
 
 public class Program
 {
@@ -52,15 +23,6 @@ public class Program
         ShowWindow(handle, SW_SHOWMINIMIZED);
         CreateHostBuilder(args).Build().Run();
 
-       
-        
-
-
-        // Hide
-        //ShowWindow(handle, SW_HIDE);
-
-        // Show
-        //  ShowWindow(handle, SW_SHOW);
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -70,5 +32,5 @@ public class Program
                 webBuilder.UseUrls("http://localhost:54027");
                 webBuilder.UseStartup< MoonbaseAlpha.Startup>();
             });
-  
+
 }

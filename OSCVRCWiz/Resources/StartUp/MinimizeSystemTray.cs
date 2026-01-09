@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,14 +21,13 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
                 }
 
-                // bool cursorNotInBar = Screen.GetWorkingArea(this).Contains(Cursor.Position);
                 VoiceWizardWindow.MainFormGlobal.WindowState = FormWindowState.Minimized;
                 if (VoiceWizardWindow.MainFormGlobal.WindowState == FormWindowState.Minimized)
                 {
                     VoiceWizardWindow.MainFormGlobal.ShowInTaskbar = false;
                     VoiceWizardWindow.MainFormGlobal.notifyIcon1.Visible = true;
                     VoiceWizardWindow.MainFormGlobal.Hide();
-                    // int id = 0;
+
                     Hotkeys.CUSTOMRegisterHotKey(0, Hotkeys.modifierKeySTTTS, Hotkeys.normalKeySTTTS);
                     Hotkeys.CUSTOMRegisterHotKey(1, Hotkeys.modifierKeyStopTTS, Hotkeys.normalKeyStopTTS);
                     Hotkeys.CUSTOMRegisterHotKey(2, Hotkeys.modifierKeyQuickType, Hotkeys.normalKeyQuickType);
@@ -36,8 +35,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
 
             }
         }
-
-
 
     }
 

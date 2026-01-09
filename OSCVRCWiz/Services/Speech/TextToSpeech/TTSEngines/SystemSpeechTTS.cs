@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Resources.Audio;
+using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Services.Text;
 
 namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
@@ -7,7 +7,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
     {
 
         public static List<string> systemSpeechVoiceList = new List<string>();
-        //public static string currentLiteVoice = "";
 
         public static void InitializeSystemSpeech()
         {
@@ -19,28 +18,22 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             catch (Exception ex) { MessageBox.Show("System Speech Startup Error: " + ex.Message); }
         }
 
-
         public static void getVoices()
         {
             System.Speech.Synthesis.SpeechSynthesizer synthesizerVoices = new System.Speech.Synthesis.SpeechSynthesizer();
 
-            // synthesizerLite.c += new EventHandler<SpeakCompletedEventArgs>(reader_SpeakCompleted);
             foreach (var voice in synthesizerVoices.GetInstalledVoices())
             {
                 var info = voice.VoiceInfo;
-                // System.Diagnostics.Debug.WriteLine($"Id: {info.Id} | Name: {info.Name} | Age: {info.Age} | Gender: {info.Gender} | Culture: {info.Culture}");
+
                 systemSpeechVoiceList.Add(info.Name + "|" + info.Culture);
-                // comboBoxLite.Items.Add(info.Name + "|" + info.Culture);
+
             }
 
         }
 
         public static async void systemTTSAction(TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct = default)
         {
-            //  var semitone = Math.Pow(2, 1.0/24);
-            //   var upOneTone = semitone;
-            // var downOneTone = 1.0 / upOneTone;
-
 
             try
             {
@@ -53,19 +46,16 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 {
                     if (counter == 1)
                     {
-                        //synthesizerLite.SelectVoice(word);
+
                         voice = word;
-                        // System.Diagnostics.Debug.WriteLine(counter + ": " + word + "///////////////////////////////////////////");
 
                     }
                     if (counter == 2)
                     {
-                        //CultureSelected = word;
-                        //  System.Diagnostics.Debug.WriteLine(counter + ": " + word + "///////////////////////////////////////////");
+
                     }
                     counter++;
                 }
-
 
                 System.Speech.Synthesis.SpeechSynthesizer synthesizerLite = new System.Speech.Synthesis.SpeechSynthesizer();
                 synthesizerLite.SelectVoice(voice);
@@ -74,7 +64,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 synthesizerLite.SetOutputToWaveStream(memoryStream);
                 synthesizerLite.Speak(TTSMessageQueued.text);
 
-                //  AudioDevices.playWaveStream(memoryStream, TTSMessageQueued, ct);
                 AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, true, AudioFormat.Wav);
                 memoryStream.Dispose();
 
@@ -86,13 +75,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 OutputText.outputLog("System Speech TTS Error: " + ex.Message + "]", Color.Red);
                 Task.Run(() => TTSMessageQueue.PlayNextInQueue());
 
-
             }
-
-
-
-
-
 
         }
 
@@ -101,7 +84,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             accents.Items.Clear();
             accents.Items.Add("default");
             accents.SelectedIndex = 0;
-
 
             voices.Items.Clear();
             foreach (string voice in SystemSpeechTTS.systemSpeechVoiceList)
@@ -115,7 +97,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             styles.Enabled = false;
             voices.Enabled = true;
         }
-
 
         }
 }

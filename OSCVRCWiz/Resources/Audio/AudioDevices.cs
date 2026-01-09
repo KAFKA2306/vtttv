@@ -1,4 +1,4 @@
-﻿
+
 using MeaMod.DNS.BaseEncoding;
 using NAudio.CoreAudioApi;
 using NAudio.Wave;
@@ -17,10 +17,6 @@ using System.Text;
 using System.Windows.Media.Media3D;
 using Whisper;
 using Windows.Media.Devices;
-//using NAudio.CoreAudioApi;
-
-
-
 
 namespace OSCVRCWiz.Resources.Audio
 {
@@ -30,10 +26,10 @@ namespace OSCVRCWiz.Resources.Audio
         public static List<string> comboIn = new List<string>();
         public static List<string> comboOut = new List<string>();
         public static List<string> micIDs = new List<string>();
-      //  public static List<MMDevice> micMMs = new List<MMDevice>();
+
         public static List<string> speakerIDs = new List<string>();
         public static string currentInputDevice = "";
-       // public static MMDevice currentInputDeviceMM = null;
+
         public static string currentOutputDevice = "";
         public static string currentInputDeviceName = "Default";
         public static string currentOutputDeviceName = "Default";
@@ -41,9 +37,6 @@ namespace OSCVRCWiz.Resources.Audio
 
         public static string currentOutputDevice2nd = "";
         public static string currentOutputDeviceName2nd = "Default";
-
-        
-
 
         public static void InitializeAudioDevices()
         {
@@ -61,7 +54,6 @@ namespace OSCVRCWiz.Resources.Audio
             comboIn.Clear();
             micIDs.Clear();
 
-
             comboIn.Add("Default");
             micIDs.Add("Default");
 
@@ -74,7 +66,6 @@ namespace OSCVRCWiz.Resources.Audio
                 micIDs.Add(endpoint.ID);
 
             }
-
 
             foreach (var i in comboIn)
             {
@@ -97,10 +88,9 @@ namespace OSCVRCWiz.Resources.Audio
         public static void NAudioSetupOutputDevices()
         {
             VoiceWizardWindow.MainFormGlobal.comboBoxOutput.Items.Clear();
-            VoiceWizardWindow.MainFormGlobal.comboBoxOutput2.Items.Clear();//forgor this :p
+            VoiceWizardWindow.MainFormGlobal.comboBoxOutput2.Items.Clear();
             comboOut.Clear();
             speakerIDs.Clear();
-
 
             comboOut.Add("Default");
             speakerIDs.Add("Default");
@@ -118,7 +108,6 @@ namespace OSCVRCWiz.Resources.Audio
                 VoiceWizardWindow.MainFormGlobal.comboBoxOutput.Items.Add(i);
                 VoiceWizardWindow.MainFormGlobal.comboBoxOutput2.Items.Add(i);
             }
-
 
             try
             {
@@ -146,8 +135,6 @@ namespace OSCVRCWiz.Resources.Audio
                 VoiceWizardWindow.MainFormGlobal.comboBoxOutput2.SelectedItem = "Default";
             }
 
-
-
         }
         public static int getCurrentInputDevice()
         {
@@ -163,7 +150,6 @@ namespace OSCVRCWiz.Resources.Audio
                     devicesList.Add(new Tuple<string, int>(deviceInfo.ProductName, waveDevice));
                 }
 
-
                 foreach (var device in devicesList)
                 {
                     if (currentInputDeviceName.Contains(device.Item1, StringComparison.OrdinalIgnoreCase))
@@ -172,24 +158,16 @@ namespace OSCVRCWiz.Resources.Audio
                     }
                 }
 
-
             }
             catch (Exception ex)
             {
 
-                // Handle the exception
                 OutputText.outputLog("[Input Device Error: " + ex.Message + "]", Color.Red);
             }
 
             return 0;
 
         }
-
-
-
-
-
-
 
         public static int getCurrentOutputDevice()
         {
@@ -205,13 +183,11 @@ namespace OSCVRCWiz.Resources.Audio
                     devicesList.Add(new Tuple<string, int>(deviceInfo.ProductName, waveDevice));
                 }
 
-                //   List<int> matchingDevices = new List<int>();
-
                 foreach (var device in devicesList)
                 {
                     if (currentOutputDeviceName.Contains(device.Item1, StringComparison.OrdinalIgnoreCase))
                     {
-                        // matchingDevices.Add(device.Item2);
+
                         return device.Item2;
                     }
                 }
@@ -220,7 +196,7 @@ namespace OSCVRCWiz.Resources.Audio
             catch (Exception ex)
             {
                 OutputText.outputLog("[Output Device 1 Error: " + ex.Message + "]", Color.Red);
-  
+
             }
 
             return 0;
@@ -238,8 +214,6 @@ namespace OSCVRCWiz.Resources.Audio
                     WaveOutCapabilities deviceInfo = WaveOut.GetCapabilities(waveDevice);
                     devicesList.Add(new Tuple<string, int>(deviceInfo.ProductName, waveDevice));
                 }
-
-                //  List<int> matchingDevices = new List<int>();
 
                 foreach (var device in devicesList)
                 {
@@ -261,13 +235,11 @@ namespace OSCVRCWiz.Resources.Audio
 
         public static float ConvertPitchToFloat(int pitchValue)
         {
-            // Step 1: Normalize the pitch value to the range 0 to 200
-            float normalizedValue = (pitchValue + 100) * 1.0f; // Convert to float to ensure floating-point division
 
-            // Step 2: Divide by 100 to get it in the range 0.0f to 2.0f
+            float normalizedValue = (pitchValue + 100) * 1.0f;
+
             float floatValue = normalizedValue / 100.0f;
 
-            // Ensure the value is within the desired range (0.0f to 2.0f)
             floatValue = Math.Clamp(floatValue, 0.0f, 2.0f);
 
             if(floatValue == 0f)
@@ -280,13 +252,11 @@ namespace OSCVRCWiz.Resources.Audio
             return floatValue;
         }
 
-
-
         public static void PlayAudioStream(Stream audioStream, TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct, bool applyAudioEditing, AudioFormat audioFormat)
         {
             try
             {
-                //delay before audio
+
                 int delayBeforeAudio = Int32.Parse(VoiceWizardWindow.MainFormGlobal.textBoxDelayBeforeAudio.Text.ToString());
                 Thread.Sleep(delayBeforeAudio);
 
@@ -295,7 +265,6 @@ namespace OSCVRCWiz.Resources.Audio
                     OutputText.outputLog("[Playing Delayed Audio]");
                 }
 
-
                 MemoryStream memoryStream = new MemoryStream();
                 audioStream.Flush();
                 audioStream.Seek(0, SeekOrigin.Begin);
@@ -303,9 +272,8 @@ namespace OSCVRCWiz.Resources.Audio
 
                 MemoryStream duplicateStream = new MemoryStream();
                 audioStream.Flush();
-                audioStream.Seek(0, SeekOrigin.Begin);// go to begining before copying
+                audioStream.Seek(0, SeekOrigin.Begin);
                 audioStream.CopyTo(duplicateStream);
-
 
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonSaveToWav.Checked)
                 {
@@ -357,38 +325,28 @@ namespace OSCVRCWiz.Resources.Audio
                 pitchFloat = ConvertPitchToFloat(pitch);
                 rateFloat = ConvertPitchToFloat(rate);
 
-
-
-                // Apply audio editing only if specified
                 try
                 {
                     if (applyAudioEditing)
                     {
 
-                        // Create the WaveChannel32 with the audioReader
                         var wave32 = new WaveChannel32(audioReader, volumeFloat, 0f);
 
                         VarispeedSampleProvider speedControl = new VarispeedSampleProvider(new WaveToSampleProvider(wave32), 100, new SoundTouchProfile(true, false));
                         speedControl.PlaybackRate = rateFloat;
 
-
                         VarispeedSampleProvider speedControl2 = new VarispeedSampleProvider(speedControl, 100, new SoundTouchProfile(false, false));
                         speedControl2.PlaybackRate = pitchFloat;
 
-
                         audioProvider = speedControl2;
-
-
-
 
                     }
                     else
                     {
-                        // No audio editing, use WaveToSampleProvider directly
+
                         var wave32 = new WaveChannel32(audioReader, volumeFloat, 0f);
                         audioProvider = wave32.ToSampleProvider();
 
-                        //     wave32.Dispose();
                     }
                 }
                 catch (Exception ex)
@@ -409,7 +367,6 @@ namespace OSCVRCWiz.Resources.Audio
                 WaveOut outputDevice2 = null;
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUse2ndOutput.Checked)
                 {
-            
 
                   duplicateStream.Flush();
                  duplicateStream.Seek(0, SeekOrigin.Begin);
@@ -438,28 +395,21 @@ namespace OSCVRCWiz.Resources.Audio
 
                         if (applyAudioEditing)
                         {
-                        // Create the WaveChannel32 with the audioReader
-                      
 
                             var wave32 = new WaveChannel32(audioReader2, volumeFloat, 0f);
-
-
 
                             VarispeedSampleProvider speedControl = new VarispeedSampleProvider(new WaveToSampleProvider(wave32), 100, new SoundTouchProfile(true, false));
                             speedControl.PlaybackRate = rateFloat;
 
-
                             VarispeedSampleProvider speedControl2 = new VarispeedSampleProvider(speedControl, 100, new SoundTouchProfile(false, false));
                             speedControl2.PlaybackRate = pitchFloat;
 
-
                             audioProvider2 = speedControl2;
-                       
 
                             }
                             else
                             {
-                                // No audio editing, use WaveToSampleProvider directly
+
                                 var wave32 = new WaveChannel32(audioReader2, volumeFloat, 0f);
                                 audioProvider2 = wave32.ToSampleProvider();
                             }
@@ -482,17 +432,15 @@ namespace OSCVRCWiz.Resources.Audio
 
                 ct.Register(async () => TTSMessageQueue.PlayNextInQueue());
 
-               
                 int delay = applyAudioEditing ? ((int)Math.Ceiling((audioReader.TotalTime.TotalMilliseconds / rateFloat)/pitchFloat)) : (int)Math.Ceiling(audioReader.TotalTime.TotalMilliseconds);
                 Thread.Sleep(delay);
                 Thread.Sleep(100);
 
                 outputDevice.Stop();
                 outputDevice.Dispose();
-                //  audioProvider.Dispose();
+
                 audioReader.Dispose();
                 memoryStream.Dispose();
-             //   duplicateStream.Dispose();
 
                 if (outputDevice2 != null)
                 {
@@ -530,24 +478,18 @@ namespace OSCVRCWiz.Resources.Audio
                 waveOutButton.Init(waveStream);
                 waveOutButton.Play();
 
-                // Optionally, you can handle the PlaybackStopped event to release resources when the audio finishes playing.
                 waveOutButton.PlaybackStopped += (sender, args) =>
                 {
                     waveStream.Dispose();
                     waveOutButton.Dispose();
                 };
-            } 
+            }
             catch (Exception ex)
             {
                 OutputText.outputLog("[Button Sound Error: " + ex.Message + "]", Color.Red);
                 OutputText.outputLog("[This is caused by the sound folder/files being missing or access being denied. Check to make sure the sound folder exists with sound files inside. Try changing the app folders location. Try running as administator. If do not care for button sounds simply disable them]", Color.DarkOrange);
             }
 
-            /* string sound = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets\\sounds", soundName);
-             var soundPlayer = new SoundPlayer(sound);
-
-             // Use async/await to play the sound asynchronously.
-             await Task.Run(() => soundPlayer.Play());*/
         }
         public static MMDevice GetDeviceById(string deviceId)
         {
@@ -569,10 +511,8 @@ namespace OSCVRCWiz.Resources.Audio
                 return defaultDevice;
             }
 
-            // Device with the specified ID not found
             return null;
         }
-
 
     }
 }

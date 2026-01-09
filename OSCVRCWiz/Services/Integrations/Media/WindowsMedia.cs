@@ -1,11 +1,11 @@
-﻿using OSCVRCWiz.Settings;
+using OSCVRCWiz.Settings;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Media.Control;
 using WindowsMediaController;
-using static WindowsMediaController.MediaManager; //allows for getting session
+using static WindowsMediaController.MediaManager;
 using CoreOSC;
 using OSCVRCWiz.Resources;
 using System.Diagnostics;
@@ -27,15 +27,12 @@ namespace OSCVRCWiz.Services.Integrations.Media
         public static string mediaStatus = "Paused";
         public static string mediaSourceNew = "";
         public static bool pauseMedia = false;
-        //  private readonly static object _lock = new();
+
         static List<string> approvedMediaSourceList = new List<string>();
         private static MediaSession getSession = null;
 
         private static DateTime? playbackStartTime = null;
         private static TimeSpan lastKnownProgress = TimeSpan.Zero;
-
-        //  static TimeSpan newProgress = TimeSpan.FromMinutes(0);
-        // static TimeSpan newDuration = TimeSpan.FromMinutes(0);
 
         public static async Task getWindowsMedia()
         {
@@ -49,9 +46,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     mediaManager.OnAnySessionClosed += MediaManager_OnAnySessionClosed;
                     mediaManager.OnAnyPlaybackStateChanged += MediaManager_OnAnyPlaybackStateChanged;
                     mediaManager.OnAnyMediaPropertyChanged += MediaManager_OnAnyMediaPropertyChanged;
-                 //   mediaManager.OnAnyTimelinePropertyChanged += MediaManager_OnAnyTimelinePropertyChanged;
-                 //   mediaManager.OnFocusedSessionChanged += MediaManager_OnFocusedSessionChanged;
-
 
                     mediaManager.Start();
 
@@ -62,50 +56,8 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 OutputText.outputLog("Windows Media Startup Exception: " + ex.Message, Color.Red);
             }
 
-            //  mediaManager.Dispose(); // should dispose manually if nessicary, for instance if I want to stop media completely
-
         }
-        //if time "" then there is no session
-        // if time 00:00/00:00 could not get time
-        //if time -/- then there was an error
-        /*  private static void MediaManager_OnAnyTimelinePropertyChanged(MediaManager.MediaSession sender, GlobalSystemMediaTransportControlsSessionTimelineProperties args)
-          {
-             // OutputText.outputLog($"{sender.Id} timeline is now {args.Position}/{args.EndTime}");
-              if (sender.Id == mediaSource)
-              {
-                  newProgress = args.Position;
-                  newDuration = args.EndTime;
-              }
-          }
-          private static void MediaManager_OnFocusedSessionChanged(MediaManager.MediaSession mediaSession)
-          {
-             // OutputText.outputLog("== Session Focus Changed: " + mediaSession?.ControlSession?.SourceAppUserModelId);
-          }*/
 
-        /*public static TimeSpan getMediaProgress()
-        {
-            TimeSpan time = TimeSpan.FromMinutes(0);
-            try
-            {
-
-                if (getSession != null)
-                {
-                    if (getSession.ControlSession != null)
-                    {
-
-
-                       time = getSession.ControlSession.GetTimelineProperties().Position;
-
-                   }
-                }
-                return time;
-            }
-            catch (Exception ex)
-            {
-                OutputText.outputLog("Progress Exception: " + ex.Message, Color.Red);
-            }
-            return time;
-        }*/
         public static TimeSpan getMediaProgress()
         {
             try
@@ -116,10 +68,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     if (currentPosition > TimeSpan.Zero)
                     {
                         lastKnownProgress = currentPosition;
-                       // if (mediaStatus == "Playing")
-                          //  playbackStartTime = DateTime.Now - currentPosition;
 
-                       // return currentPosition;
                     }
                 }
             }
@@ -148,7 +97,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
              try
              {
 
-
                  if (getSession != null)
                  {
                      if (getSession.ControlSession != null)
@@ -165,20 +113,17 @@ namespace OSCVRCWiz.Services.Integrations.Media
                  OutputText.outputLog("Duration Exception: " + ex.Message, Color.Red);
              }
              return time;
-         } 
+         }
 
         public static void MediaManager_OnAnySessionOpened(MediaSession session)
         {
 
-
             try
             {
-
 
                 if (session != null)
                 {
                     getSession = session;
-                    
 
                     string info = "[Windows Media New Source: " + session.Id + "]";
 
@@ -213,22 +158,17 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 MessageBox.Show("MediaManager_OnAnySessionOpened Exception " + ex.Message);
             }
 
-
-
-
         }
         private static void MediaManager_OnAnySessionClosed(MediaSession session)
         {
             try
             {
                 string info = "[Windows Media Removed Source: " + session.Id + "]";
-                //  var ot = new OutputText();
+
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonWindowsMedia.Checked == true)
                 {
                     Task.Run(() => OutputText.outputLog(info));
                 }
-
-               
 
             }
             catch (Exception ex)
@@ -244,9 +184,8 @@ namespace OSCVRCWiz.Services.Integrations.Media
             {
                 if (approvedMediaSourceList.Contains(sender.Id.ToString()) == true)
                 {
-                    
-                    
-                    string info = $"[{sender.Id} is now {args.PlaybackStatus}]"; //use this info to disable media output perioidically like the spotify feature. (like spotifyPause and heartratePause)
+
+                    string info = $"[{sender.Id} is now {args.PlaybackStatus}]";
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonWindowsMedia.Checked == true)
                     {
                         Task.Run(() => OutputText.outputLog(info));
@@ -258,23 +197,21 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     {
                         if(mediaStatus =="Playing")
                         {
-                            //Playing
 
                             VoiceWizardWindow.MainFormGlobal.labelMediaPaused.ForeColor = Color.Green;
-                            //OutputText.outputLog("Debug Song playing");
+
                             playbackStartTime = DateTime.Now - lastKnownProgress;
                         }
                         else
                         {
-                            //Paused
+
                             VoiceWizardWindow.MainFormGlobal.labelMediaPaused.ForeColor = Color.White;
-                            //OutputText.outputLog("Debug Song Paused");
+
                             lastKnownProgress = getMediaProgress();
                             playbackStartTime = null;
                         }
                         VoiceWizardWindow.MainFormGlobal.labelMediaPaused.Text = "Media " + mediaStatus;
                     });
-                    
 
                 }
 
@@ -285,15 +222,12 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 MessageBox.Show("MediaManager_OnAnyPlaybackStateChanged Exception " + ex.Message);
             }
 
-
         }
         private static void MediaManager_OnAnyMediaPropertyChanged(MediaSession sender, GlobalSystemMediaTransportControlsSessionMediaProperties args)
         {
 
             try
             {
-
-               
 
                 approvedMediaSourceList.Clear();
                 foreach (object Item in VoiceWizardWindow.MainFormGlobal.checkedListBoxApproved.CheckedItems)
@@ -304,8 +238,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
                 if (approvedMediaSourceList.Contains(sender.Id.ToString()) == true)
                 {
-                   // sender.ControlSession.TryPlayAsync();
-         
 
                     if (args.Title == mediaTitle)
                     {
@@ -314,7 +246,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     }
 
                     string info = $"[{sender.Id} is now playing {args.Title} {(string.IsNullOrEmpty(args.Artist) ? "" : $"by {args.Artist}")}]";
-                    //   var ot = new OutputText();
+
                     if (args.Title != previousTitle && VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifySpam.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonWindowsMedia.Checked == true)
                     {
                         Task.Run(() => OutputText.outputLog(info));
@@ -345,7 +277,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
                         Task.Run(() => SpotifyAddon.windowsMediaGetSongInfo());
                     }
 
-                  //  OutputText.outputLog("New song, refreshing estimates");
                     lastKnownProgress = TimeSpan.Zero;
                     playbackStartTime = DateTime.Now;
                 }
@@ -361,8 +292,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
         public static void GetSoundPadMedia()
         {
-        
-        
+
                 Process soundPadProcess = Process.GetProcessesByName("Soundpad").FirstOrDefault();
 
             if (soundPadProcess != null)
@@ -379,8 +309,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                         mediaStatus = "Paused";
                     }
 
-
-                    else 
+                    else
                     {
 
                         string soundName = soundPadProcess.MainWindowTitle.Replace("Soundpad - ", "");
@@ -389,18 +318,17 @@ namespace OSCVRCWiz.Services.Integrations.Media
                         mediaArtist = "";
                         mediaStatus = "Playing";
                     }
-                  //  Task.Run(() => SpotifyAddon.windowsMediaGetSongInfo());
-                    // Do something with the soundName
+
                 }
                 else
                 {
                     mediaTitle = "";
                     mediaSource = "Soundpad";
                     mediaArtist = "";
-                  //  Task.Run(() => SpotifyAddon.windowsMediaGetSongInfo());
+
                 }
             }
-           
+
         }
         public static void addSoundPad()
         {
@@ -424,11 +352,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 }
             }
         }
-      
 
     }
-
-
-
 
 }

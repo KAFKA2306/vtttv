@@ -3,16 +3,10 @@ namespace OSCVRCWiz
     internal static class Program
     {
 
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        /// 
         [STAThread]
 
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
 
             try
             {
@@ -53,13 +47,12 @@ namespace OSCVRCWiz
             {
                var errorMsg =  ex.Message + "\n"+ ex.TargetSite+ "\n\nStack Trace:\n" + ex.StackTrace;
 
-                try 
-                { 
+                try
+                {
                     errorMsg += "\n\n" + ex.InnerException.Message + "\n" + ex.InnerException.TargetSite + "\n\nStack Trace:\n" + ex.InnerException.StackTrace;
-                
+
                 }
                 catch { }
-               
 
                try
                 {
@@ -76,12 +69,7 @@ namespace OSCVRCWiz
                 }
                 MessageBox.Show("A application error occurred. Please join the discord and put a copy of the latest CrashReport.txt (located in the CrashDump folder) in #tts-voice-wizard-bugs with a explaination of what you were doing when it crashed");
 
-                
-
-            } 
-
-          
-               
+            }
 
         }
     }

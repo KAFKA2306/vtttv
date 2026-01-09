@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,13 +22,12 @@ namespace OSCVRCWiz.Services.Text
         static DateTime lastDateTime = DateTime.Now;
         public static string lastKatString = "";
         public static string numKATSyncParameters = "4";
-        public static int debugDelayValue = Convert.ToInt32(Settings1.Default.delayDebugValueSetting);// Recommended delay of 250ms //this is the first call i see now
+        public static int debugDelayValue = Convert.ToInt32(Settings1.Default.delayDebugValueSetting);
         public static int eraseDelay = Convert.ToInt32(Settings1.Default.hideDelayValue);
         public static bool EraserRunning = false;
         public static string lastRememberedSong;
         public static int lastStringPoint = 1;
         public static int lastCounter;
-       // static CancellationTokenSource cts = new();
 
         public enum DisplayTextType
         {
@@ -45,7 +44,6 @@ namespace OSCVRCWiz.Services.Text
 
         }
 
-
         public static void loadTextDelays()
         {
             debugDelayValue = Convert.ToInt32(Settings1.Default.delayDebugValueSetting);
@@ -54,9 +52,7 @@ namespace OSCVRCWiz.Services.Text
         }
         public static async void outputLog(string textstring, Color? color = null)
         {
-          //  _ = Task.Run(() => //This effectily reduces the processing time for any function using output to log since it now runs as a seperate task that the fucntion won't wait for.
-          //  {
-                //  MainForm.AppendTextBox("You Said: " + textstring + "\r");
+
                 if (color == null)
                 {
                     VoiceWizardWindow.MainFormGlobal.logLine("[" + DateTime.Now.ToString("h:mm:ss tt") + "]" + ": " + textstring);
@@ -65,13 +61,11 @@ namespace OSCVRCWiz.Services.Text
                 {
                     VoiceWizardWindow.MainFormGlobal.logLine("[" + DateTime.Now.ToString("h:mm:ss tt") + "]" + ": " + textstring, color);
                 }
-         //   });
-
 
         }
         private static string SplitToLines(string value, int maximumLineLength)
         {
-            int lineSize = maximumLineLength;//need to add this to UI
+            int lineSize = maximumLineLength;
             try
             {
                 string perfectString = "";
@@ -110,7 +104,6 @@ namespace OSCVRCWiz.Services.Text
                 return "error";
             }
 
-
         }
         public static async void outputTextFile(string textstring, string filepath)
         {
@@ -126,7 +119,7 @@ namespace OSCVRCWiz.Services.Text
                 {
                     await File.WriteAllTextAsync(fullPath, textstring);
 
-                    if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonHideDelay2.Checked) //hide
+                    if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonHideDelay2.Checked)
                     {
                         hideTimer.Change(eraseDelay, 0);
 
@@ -146,7 +139,6 @@ namespace OSCVRCWiz.Services.Text
                 bool keyboardOff = true;
                 bool notificationSound = false;
 
-
                 if (type == DisplayTextType.TextToSpeech)
                 {
                     keyboardOff = !VoiceWizardWindow.MainFormGlobal.rjToggleButtonShowKeyboard.Checked;
@@ -155,39 +147,22 @@ namespace OSCVRCWiz.Services.Text
 
                 if (keyboardOff == false)
                 {
-                    if (string.IsNullOrWhiteSpace(textstring)) 
-                    { 
-                        keyboardOff = true; 
-                    }//prevent blank messages from opening keyboard if it's enabled
+                    if (string.IsNullOrWhiteSpace(textstring))
+                    {
+                        keyboardOff = true;
+                    }
                 }
 
-                
-
-
-                // byte[] bytes = Encoding.Default.GetBytes(textstring);
-                // textstring = Encoding.UTF8.GetString(bytes);
-
-
-                //  System.Diagnostics.Debug.WriteLine("Encoded UTF-8: " + textstring);
-
-
-                var typingbubbleOff = new OscMessage("/chatbox/typing", false);//this is turned on as soon as you press the STTTS button and turned off here
+                var typingbubbleOff = new OscMessage("/chatbox/typing", false);
                 var messageSpeechBubble = new OscMessage("/chatbox/input", textstring, keyboardOff, notificationSound);
-                //   var messageSpeechBubble = new SharpOSC.OscMessage("/chatbox/input", textstring);
-                //testing if error message appears /what value is defaulted to if not specified
 
-
-
-
-
-
-                if (type == DisplayTextType.TextToSpeech)// so in otherowrds if type is tts it disables typing indicator
+                if (type == DisplayTextType.TextToSpeech)
                 {
                     OSC.OSCSender.Send(typingbubbleOff);
                 }
                 OSC.OSCSender.Send(messageSpeechBubble);
 
-                if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == false)//why is this here?
+                if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == false)
                 {
                     hideTimer.Change(eraseDelay, 0);
                 }
@@ -195,19 +170,19 @@ namespace OSCVRCWiz.Services.Text
                 if (type == DisplayTextType.WindowsMedia|| type == DisplayTextType.Spotify)
                 {
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == false || VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifyKatDisable.Checked == true)
-                        //the fix, this needs to activate when ever KAT DOESNT OUTPUT, which also happens if disable spotify output for kat is enabled
+
                     {
                         SpotifyAddon.lastSong = SpotifyAddon.title;
                         WindowsMedia.previousTitle = WindowsMedia.mediaTitle;
                     }
 
                 }
-                if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonHideDelay2.Checked) //inactive hide
+                if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonHideDelay2.Checked)
                 {
                     if (type == DisplayTextType.HeartRate || type == DisplayTextType.Counters || type == DisplayTextType.Time)
                     {
                         SpotifyAddon.pauseSpotify = true;
-                        //this is for when using counters or bpm i guess too, it makes them pause spotify(media output)
+
                     }
 
                     hideTimer.Change(eraseDelay, 0);
@@ -215,8 +190,7 @@ namespace OSCVRCWiz.Services.Text
                 }
                 else
                 {
-                    //this else is meant as a crude fix to output breaking when hide text delay is turned off
-                    //hide tet delay is recommened with media output
+
                     OSCListener.pauseBPM = false;
                     SpotifyAddon.pauseSpotify = false;
                 }
@@ -234,12 +208,10 @@ namespace OSCVRCWiz.Services.Text
         {
             try
             {
-              //  cts.Cancel();
-              //  cts = new();
+
                 float letter = 0.0F;
                 int charCounter = 0;
                 int stringPoint = 1;
-
 
                 float letterFloat0 = 0;
                 float letterFloat1 = 0;
@@ -250,14 +222,14 @@ namespace OSCVRCWiz.Services.Text
                 float letterFloat6 = 0;
                 float letterFloat7 = 0;
 
-                float letterFloat8 = 0; //16 mode
-                float letterFloat9 = 0;//16 mode
-                float letterFloat10 = 0;//16 mode
-                float letterFloat11 = 0;//16 mode
-                float letterFloat12 = 0;//16 mode
-                float letterFloat13 = 0;//16 mode
-                float letterFloat14 = 0;//16 mode
-                float letterFloat15 = 0;//16 mode
+                float letterFloat8 = 0;
+                float letterFloat9 = 0;
+                float letterFloat10 = 0;
+                float letterFloat11 = 0;
+                float letterFloat12 = 0;
+                float letterFloat13 = 0;
+                float letterFloat14 = 0;
+                float letterFloat15 = 0;
 
                 var OSCMakeKatVisible = new OscMessage("/avatar/parameters/KAT_Visible", true);
                 var OSCClearKatEraseAll = new OscMessage("/avatar/parameters/KAT_Pointer", 255);
@@ -281,35 +253,23 @@ namespace OSCVRCWiz.Services.Text
                 var Char14 = new OscMessage("/avatar/parameters/KAT_CharSync14", letterFloat14);
                 var Char15 = new OscMessage("/avatar/parameters/KAT_CharSync15", letterFloat15);
 
-
-
-                if(VoiceWizardWindow.MainFormGlobal.rjTogglePartialResults.Checked == true) 
+                if(VoiceWizardWindow.MainFormGlobal.rjTogglePartialResults.Checked == true)
                 {
                     type = DisplayTextType.TextToText;
                 }
 
-              //  if (type == DisplayTextType.TextToSpeech || type == DisplayTextType.UpdateText || type == DisplayTextType.WindowsMedia || type == DisplayTextType.Spotify)//remember last message
-              //  {
                     lastKatString = textstringbefore;
-               // }
 
-               
-
-                if (type != DisplayTextType.UpdateText)// if adding then tttadd should already be visible
+                if (type != DisplayTextType.UpdateText)
                 {
                     OSC.OSCSender.Send(OSCMakeKatVisible);
                 }
 
-                //if emojis
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButton3.Checked == true)
                 {
                     textstringbefore = EmojiAddon.DoEmojiReplacement(textstringbefore);
 
                 }
-
-
-
-
 
                 System.Diagnostics.Debug.WriteLine("*KAT String Splitting*");
                 int lineSplitLength = 32;
@@ -319,30 +279,15 @@ namespace OSCVRCWiz.Services.Text
 
                 });
 
-                //pre-process input string
-                string textstring = SplitToLines(textstringbefore, lineSplitLength);//prevent line cut off
+                string textstring = SplitToLines(textstringbefore, lineSplitLength);
                 textstring = ParameterSyncSpacing(textstring);
-
-               
-
-
-
-
-
-
-               /* if ((DateTime.Now - lastDateTime).Seconds <= 1)//collision prevention
-                {
-                    Task.Delay(1555).Wait();
-                }
-                lastDateTime = DateTime.Now;*/
-
 
                 switch (type)
                 {
                     case DisplayTextType.HeartRate:
                         if (previousRequestType == DisplayTextType.HeartRate)
                         {
-                            //Task.Delay(50).Wait();
+
                         }
                         else
                         {
@@ -353,7 +298,7 @@ namespace OSCVRCWiz.Services.Text
                     case DisplayTextType.Counters:
                         if (previousRequestType == DisplayTextType.Counters)
                         {
-                           // Task.Delay(50).Wait();
+
                            if(lastCounter != counterNum)
                             {
                                 OSC.OSCSender.Send(OSCClearKatEraseAll);
@@ -361,11 +306,11 @@ namespace OSCVRCWiz.Services.Text
                         }
                         else
                         {
-                            if ((DateTime.Now - lastDateTime).Seconds <= 1)//collision prevention
+                            if ((DateTime.Now - lastDateTime).Seconds <= 1)
                             {
                                 OutputText.outputLog("[Debug: KAT Collision Prevented]");
                                 Task.Delay(debugDelayValue * lastStringPoint).Wait();
-                            }  
+                            }
                             OSC.OSCSender.Send(OSCClearKatEraseAll);
                         }
                         break;
@@ -375,7 +320,7 @@ namespace OSCVRCWiz.Services.Text
                         {
                             if (WindowsMedia.mediaTitle != lastRememberedSong)
                             {
-                             //   Task.Delay(500).Wait();
+
                                 OSC.OSCSender.Send(OSCClearKatEraseAll);
                             }
 
@@ -388,29 +333,29 @@ namespace OSCVRCWiz.Services.Text
                         {
                             if (SpotifyAddon.title != lastRememberedSong)
                             {
-                             //   Task.Delay(500).Wait();
+
                                 OSC.OSCSender.Send(OSCClearKatEraseAll);
                             }
 
                         }
                         lastRememberedSong = SpotifyAddon.title;
                         break;
-                    case DisplayTextType.TextToSpeech://dont clear all
-                        if ((DateTime.Now - lastDateTime).Seconds <= 1)//collision prevention
+                    case DisplayTextType.TextToSpeech:
+                        if ((DateTime.Now - lastDateTime).Seconds <= 1)
                         {
                             OutputText.outputLog("[Debug: KAT Collision Prevented]");
                             Task.Delay(debugDelayValue * (lastStringPoint+1)).Wait();
-                            
+
                         }
-                        
+
                         OSC.OSCSender.Send(OSCClearKatEraseAll);
 
                         break;
-                    case DisplayTextType.TextToText://dont clear all
+                    case DisplayTextType.TextToText:
                         break;
-                    case DisplayTextType.UpdateText://dont clear all
+                    case DisplayTextType.UpdateText:
                                                     break;
-                    case DisplayTextType.RepeatText: //dont clear all
+                    case DisplayTextType.RepeatText:
                         break;
                     default:
                         OSC.OSCSender.Send(OSCClearKatEraseAll);
@@ -420,19 +365,15 @@ namespace OSCVRCWiz.Services.Text
                 }
                 lastDateTime = DateTime.Now;
                 previousRequestType = type;
-   
 
                 foreach (char c in textstring)
                 {
-                  //  if (!cts.Token.IsCancellationRequested)
-                  //  {
-                        letter = GetLetterID(c);
 
+                        letter = GetLetterID(c);
 
                     switch (charCounter)
                     {
-                    
-                   
+
                         case 0:
                             letterFloat0 = letter;
                             break;
@@ -448,14 +389,12 @@ namespace OSCVRCWiz.Services.Text
                                 Task.Delay(debugDelayValue).Wait();
                                 letterFloat3 = letter;
 
-
                                 OSCCurrentkatPointer = new OscMessage("/avatar/parameters/KAT_Pointer", stringPoint);
                                 Char0 = new OscMessage("/avatar/parameters/KAT_CharSync0", letterFloat0);
                                 Char1 = new OscMessage("/avatar/parameters/KAT_CharSync1", letterFloat1);
                                 Char2 = new OscMessage("/avatar/parameters/KAT_CharSync2", letterFloat2);
                                 Char3 = new OscMessage("/avatar/parameters/KAT_CharSync3", letterFloat3);
                                 OSCMakeKatVisible = new OscMessage("/avatar/parameters/KAT_Visible", true);
-
 
                                 OSC.OSCSender.Send(OSCCurrentkatPointer);
                                 OSC.OSCSender.Send(Char0);
@@ -464,14 +403,12 @@ namespace OSCVRCWiz.Services.Text
                                 OSC.OSCSender.Send(Char3);
                                 OSC.OSCSender.Send(OSCMakeKatVisible);
 
-
                                 stringPoint += 1;
                                 charCounter = -1;
                                 letterFloat0 = 0;
                                 letterFloat1 = 0;
                                 letterFloat2 = 0;
                                 letterFloat3 = 0;
-
 
                             }
                             if (numKATSyncParameters == "8" || numKATSyncParameters == "16")
@@ -495,8 +432,6 @@ namespace OSCVRCWiz.Services.Text
                                 Task.Delay(debugDelayValue).Wait();
                                 letterFloat7 = letter;
 
-
-
                                 OSCCurrentkatPointer = new OscMessage("/avatar/parameters/KAT_Pointer", stringPoint);
                                 Char0 = new OscMessage("/avatar/parameters/KAT_CharSync0", letterFloat0);
                                 Char1 = new OscMessage("/avatar/parameters/KAT_CharSync1", letterFloat1);
@@ -508,8 +443,6 @@ namespace OSCVRCWiz.Services.Text
                                 Char6 = new OscMessage("/avatar/parameters/KAT_CharSync6", letterFloat6);
                                 Char7 = new OscMessage("/avatar/parameters/KAT_CharSync7", letterFloat7);
                                 OSCMakeKatVisible = new OscMessage("/avatar/parameters/KAT_Visible", true);
-
-
 
                                 OSC.OSCSender.Send(OSCCurrentkatPointer);
                                 OSC.OSCSender.Send(Char0);
@@ -523,7 +456,6 @@ namespace OSCVRCWiz.Services.Text
                                 OSC.OSCSender.Send(Char7);
 
                                 OSC.OSCSender.Send(OSCMakeKatVisible);
-
 
                                 stringPoint += 1;
                                 charCounter = -1;
@@ -592,10 +524,6 @@ namespace OSCVRCWiz.Services.Text
                             Char15 = new OscMessage("/avatar/parameters/KAT_CharSync15", letterFloat15);
                             OSCMakeKatVisible = new OscMessage("/avatar/parameters/KAT_Visible", true);
 
-
-
-
-
                             OSC.OSCSender.Send(OSCCurrentkatPointer);
 
                             OSC.OSCSender.Send(Char0);
@@ -619,7 +547,6 @@ namespace OSCVRCWiz.Services.Text
 
                             OSC.OSCSender.Send(OSCMakeKatVisible);
 
-
                             stringPoint += 1;
                             charCounter = -1;
                             letterFloat0 = 0;
@@ -631,7 +558,6 @@ namespace OSCVRCWiz.Services.Text
                             letterFloat5 = 0;
                             letterFloat6 = 0;
                             letterFloat7 = 0;
-
 
                             letterFloat8 = 0;
                             letterFloat9 = 0;
@@ -646,39 +572,33 @@ namespace OSCVRCWiz.Services.Text
                         default: break;
                         }
 
-
                         charCounter += 1;
-                        //  currentlyPrinting = true;
-
 
                         if (stringPoint >= 33)
                         {
                             break;
 
                         }
-                 //   }
 
                 }
                 lastStringPoint = stringPoint;
 
-                if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonHideDelay2.Checked && type != DisplayTextType.RepeatText) //inactive hide
+                if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonHideDelay2.Checked && type != DisplayTextType.RepeatText)
                 {
-                    //make timer function start here or be reset here
+
                     System.Diagnostics.Debug.WriteLine("Outputing text to vrchat finished. Begun scheduled hide text timer");
                     if (type == DisplayTextType.HeartRate || type == DisplayTextType.Counters || type == DisplayTextType.Time)
                     {
                         SpotifyAddon.pauseSpotify = true;
-                        //this is for when using counters or bpm i guess too, it makes them pause spotify(media output)
-                    }
 
+                    }
 
                     hideTimer.Change(eraseDelay, 0);
                     EraserRunning = true;
                 }
                 else
                 {
-                    //this else is meant as a crude fix to output breaking when hide text delay is turned off
-                    //hide tet delay is recommened with media output
+
                     OSCListener.pauseBPM = false;
                     SpotifyAddon.pauseSpotify = false;
                 }
@@ -688,16 +608,14 @@ namespace OSCVRCWiz.Services.Text
                     {
                         return;
                     }
-                    if(type == DisplayTextType.Counters || type== DisplayTextType.HeartRate || type == DisplayTextType.TextToText) 
+                    if(type == DisplayTextType.Counters || type== DisplayTextType.HeartRate || type == DisplayTextType.TextToText)
                     {
                         return;
                     }
 
-
                     Task.Delay(2000).Wait();
                     outputVRChat(lastKatString, DisplayTextType.RepeatText);
                     System.Diagnostics.Debug.WriteLine("--Repeating Kat Text");
-
 
                 }
             }
@@ -707,11 +625,7 @@ namespace OSCVRCWiz.Services.Text
                 outputLog("[Error usually caused by VPN.]", Color.DarkOrange);
             }
 
-
-
-
         }
-
 
         public static System.Threading.Timer hideTimer;
         public static System.Threading.Timer typeTimer;
@@ -734,7 +648,7 @@ namespace OSCVRCWiz.Services.Text
         {
 
             Thread t = new Thread(doHideTimerTick);
-            t.IsBackground = true; // Set the thread as a background thread
+            t.IsBackground = true;
             t.Start();
         }
         private static void typetimertick(object sender)
@@ -753,8 +667,7 @@ namespace OSCVRCWiz.Services.Text
             t.Start();
         }
 
-
-        private static void doHideTimerTick() //When to Hide Text
+        private static void doHideTimerTick()
         {
 
             OSCListener.pauseBPM = false;
@@ -788,14 +701,9 @@ namespace OSCVRCWiz.Services.Text
 
             System.Diagnostics.Debug.WriteLine("****-------*****--------Tick");
 
-
-
         }
 
-
-
-
-        private static void doTypeTimerTick()//Send Typing Parameter to VRChat
+        private static void doTypeTimerTick()
         {
             try
             {
@@ -803,7 +711,7 @@ namespace OSCVRCWiz.Services.Text
                 {
                     if (typingBox == false && VoiceWizardWindow.MainFormGlobal.mainTabControl.SelectedTab == VoiceWizardWindow.MainFormGlobal.tabPage3)
                     {
-                        var typingbubble = new CoreOSC.OscMessage("/chatbox/typing", false);//this is what spams osc
+                        var typingbubble = new CoreOSC.OscMessage("/chatbox/typing", false);
                         OSC.OSCSender.Send(typingbubble);
                     }
                     if (typingBox == true && VoiceWizardWindow.MainFormGlobal.mainTabControl.SelectedTab == VoiceWizardWindow.MainFormGlobal.tabPage3)
@@ -812,22 +720,18 @@ namespace OSCVRCWiz.Services.Text
 
                         theString = VoiceWizardWindow.MainFormGlobal.richTextBox9.Text.ToString();
 
-
-
-
                         if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonNoTTSChat.Checked == false)
                         {
                             OSCListener.pauseBPM = true;
                             SpotifyAddon.pauseSpotify = true;
-                            Task.Run(() => OutputText.outputVRChatSpeechBubbles(theString, DisplayTextType.TextToText)); //original
-
+                            Task.Run(() => OutputText.outputVRChatSpeechBubbles(theString, DisplayTextType.TextToText));
 
                         }
                         if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonNoTTSKAT.Checked == false)
                         {
                             OSCListener.pauseBPM = true;
                             SpotifyAddon.pauseSpotify = true;
-                            Task.Run(() => OutputText.outputVRChat(theString, DisplayTextType.TextToText)); //original     
+                            Task.Run(() => OutputText.outputVRChat(theString, DisplayTextType.TextToText));
                         }
                     }
                     typingBox = false;
@@ -838,7 +742,6 @@ namespace OSCVRCWiz.Services.Text
             catch
             {
 
-                //stop errors on close
             }
 
         }
@@ -852,10 +755,9 @@ namespace OSCVRCWiz.Services.Text
                     if (AzureRecognition.AzureTyping == "")
                     {
                         OutputText.outputVRChat(OutputText.lastKatString, DisplayTextType.UpdateText);
-                       // outputLog("doing AutoRefresh KAT");
+
                     }
                 }
-
 
                 katRefreshTimer.Change(2000, 0);
             }
@@ -867,7 +769,7 @@ namespace OSCVRCWiz.Services.Text
             {
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOBSText.Checked == true)
                 {
-                    // System.IO.File.WriteAllTextAsync(@"TextOut\OBSText.txt", String.Empty);
+
                     OutputText.outputTextFile(String.Empty, @"Output\TextOutput\OBSText.txt");
                     OutputText.outputTextFile(String.Empty, @"Output\TextOutput\OBSTextTranslated.txt");
                     OutputText.outputTextFile(String.Empty, @"Output\TextOutput\TranscriptionOnly.txt");
@@ -954,14 +856,14 @@ namespace OSCVRCWiz.Services.Text
                     {
                         textstring += "        ";
                     }; break;
-                case 8: textstring += "        "; break; //16 mode
-                case 9: textstring += "       "; break; //16 mode
-                case 10: textstring += "      "; break; //16 mode
-                case 11: textstring += "     "; break; //16 mode
-                case 12: textstring += "    "; break; //16 mode
-                case 13: textstring += "   "; break; //16 mode
-                case 14: textstring += "  "; break; //16 mode
-                case 15: textstring += " "; break; //16 mode
+                case 8: textstring += "        "; break;
+                case 9: textstring += "       "; break;
+                case 10: textstring += "      "; break;
+                case 11: textstring += "     "; break;
+                case 12: textstring += "    "; break;
+                case 13: textstring += "   "; break;
+                case 14: textstring += "  "; break;
+                case 15: textstring += " "; break;
                 default:; break;
             }
             return textstring;
@@ -1078,87 +980,53 @@ namespace OSCVRCWiz.Services.Text
                 case '~': letter = 94; break;
                 case '€': letter = 95; break;
 
-                /// case '非': letter = 96; break;//trying to map
-                // case '常': letter = 97; break;//trying to map
-                // case '': letter = 98; break;
-                //case '': letter = 99; break;
+                case 'ぬ': letter = 127; break;
 
-                //case '': letter = 100; break;
-                //case '': letter = 101; break;
-                //case '': letter = 102; break;
-                //case '': letter = 103; break;
-                //case '': letter = 104; break;
-                //case '': letter = 105; break;
-                //case '': letter = 106; break;
-                //case '': letter = 107; break;
-                //case '': letter = 108; break;
-                // case '': letter = 109; break;
+                case 'ふ': letter = 129; break;
 
-                // case '': letter = 110; break;
-                // case '': letter = 111; break;
-                //case '': letter = 112; break;
-                // case '': letter = 113; break;
-                // case '': letter = 114; break;
-                // case '': letter = 115; break;
-                // case '': letter = 116; break;
-                //case '': letter = 117; break;
-                //case '': letter = 118; break;
-                // case '': letter = 119; break;
+                case 'あ': letter = 130; break;
+                case 'う': letter = 131; break;
+                case 'え': letter = 132; break;
+                case 'お': letter = 133; break;
+                case 'や': letter = 134; break;
+                case 'ゆ': letter = 135; break;
+                case 'よ': letter = 136; break;
+                case 'わ': letter = 137; break;
+                case 'を': letter = 138; break;
+                case 'ほ': letter = 139; break;
 
-                // case '': letter = 120; break;
-                // case '': letter = 121; break;
-                //case '': letter = 122; break;
-                //case '': letter = 123; break;
-                // case '': letter = 124; break;
-                // case '': letter = 125; break;
-                // case '': letter = 126; break;
-                case 'ぬ': letter = 127; break; //used as heart emoji
-                                               //case '': letter = 128; break;
-                case 'ふ': letter = 129; break; //used as spotify emoji
+                case 'へ': letter = 140; break;
+                case 'た': letter = 141; break;
+                case 'て': letter = 142; break;
+                case 'い': letter = 143; break;
+                case 'す': letter = 144; break;
+                case 'か': letter = 145; break;
+                case 'ん': letter = 146; break;
+                case 'な': letter = 147; break;
+                case 'に': letter = 148; break;
+                case 'ら': letter = 149; break;
 
-                case 'あ': letter = 130; break;//emoji 1
-                case 'う': letter = 131; break;//emoji 1
-                case 'え': letter = 132; break;//emoji 2
-                case 'お': letter = 133; break;//emoji 2
-                case 'や': letter = 134; break;//emoji 3
-                case 'ゆ': letter = 135; break;//emoji 3
-                case 'よ': letter = 136; break;//emoji 4
-                case 'わ': letter = 137; break;//emoji 4
-                case 'を': letter = 138; break;//emoji 5
-                case 'ほ': letter = 139; break;//emoji 5
+                case 'せ': letter = 150; break;
+                case 'ち': letter = 151; break;
+                case 'と': letter = 152; break;
+                case 'し': letter = 153; break;
+                case 'は': letter = 154; break;
+                case 'き': letter = 155; break;
+                case 'く': letter = 156; break;
+                case 'ま': letter = 157; break;
+                case 'の': letter = 158; break;
+                case 'り': letter = 159; break;
 
-                case 'へ': letter = 140; break;//emoji 6
-                case 'た': letter = 141; break;//emoji 6
-                case 'て': letter = 142; break;//emoji 7
-                case 'い': letter = 143; break;//emoji 7
-                case 'す': letter = 144; break;//emoji 8
-                case 'か': letter = 145; break;//emoji 8
-                case 'ん': letter = 146; break;//emoji 9
-                case 'な': letter = 147; break;//emoji 9
-                case 'に': letter = 148; break;//emoji 10
-                case 'ら': letter = 149; break;//emoji 10
-
-                case 'せ': letter = 150; break;//11
-                case 'ち': letter = 151; break;//11
-                case 'と': letter = 152; break;//12
-                case 'し': letter = 153; break;//12
-                case 'は': letter = 154; break;//13
-                case 'き': letter = 155; break;//13
-                case 'く': letter = 156; break;//14
-                case 'ま': letter = 157; break;//14
-                case 'の': letter = 158; break;//15
-                case 'り': letter = 159; break;//15
-
-                case 'れ': letter = 160; break;//16
-                case 'け': letter = 161; break;//16
-                case 'む': letter = 162; break;//17
-                case 'つ': letter = 163; break;//17
-                case 'さ': letter = 164; break;//18
-                case 'そ': letter = 165; break;//18
-                case 'ひ': letter = 166; break;//19
-                case 'こ': letter = 167; break;//19
-                case 'み': letter = 168; break;//20
-                case 'も': letter = 169; break;//20
+                case 'れ': letter = 160; break;
+                case 'け': letter = 161; break;
+                case 'む': letter = 162; break;
+                case 'つ': letter = 163; break;
+                case 'さ': letter = 164; break;
+                case 'そ': letter = 165; break;
+                case 'ひ': letter = 166; break;
+                case 'こ': letter = 167; break;
+                case 'み': letter = 168; break;
+                case 'も': letter = 169; break;
 
                 case 'ね': letter = 170; break;
                 case 'る': letter = 171; break;
@@ -1169,7 +1037,7 @@ namespace OSCVRCWiz.Services.Text
                 case 'ぷ': letter = 176; break;
                 case 'ぼ': letter = 177; break;
                 case 'ぽ': letter = 178; break;
-                case 'べ': letter = 179; break;//25
+                case 'べ': letter = 179; break;
 
                 case 'ぺ': letter = 180; break;
                 case 'だ': letter = 181; break;
@@ -1180,7 +1048,7 @@ namespace OSCVRCWiz.Services.Text
                 case 'ぢ': letter = 186; break;
                 case 'ど': letter = 187; break;
                 case 'じ': letter = 188; break;
-                case 'ば': letter = 189; break;//30
+                case 'ば': letter = 189; break;
 
                 case 'ぱ': letter = 190; break;
                 case 'ぎ': letter = 191; break;
@@ -1191,7 +1059,7 @@ namespace OSCVRCWiz.Services.Text
                 case 'ぞ': letter = 196; break;
                 case 'び': letter = 197; break;
                 case 'ぴ': letter = 198; break;
-                case 'ご': letter = 199; break;//35
+                case 'ご': letter = 199; break;
 
                 case 'ぁ': letter = 200; break;
                 case 'ぃ': letter = 201; break;
@@ -1202,7 +1070,7 @@ namespace OSCVRCWiz.Services.Text
                 case 'ゅ': letter = 206; break;
                 case 'ょ': letter = 207; break;
                 case 'ヌ': letter = 208; break;
-                case 'フ': letter = 209; break;//40
+                case 'フ': letter = 209; break;
 
                 case 'ア': letter = 210; break;
                 case 'ウ': letter = 211; break;
@@ -1213,7 +1081,7 @@ namespace OSCVRCWiz.Services.Text
                 case 'ヨ': letter = 216; break;
                 case 'ワ': letter = 217; break;
                 case 'ヲ': letter = 218; break;
-                case 'ホ': letter = 219; break;//45
+                case 'ホ': letter = 219; break;
 
                 case 'ヘ': letter = 220; break;
                 case 'タ': letter = 221; break;
@@ -1224,7 +1092,7 @@ namespace OSCVRCWiz.Services.Text
                 case 'ン': letter = 226; break;
                 case 'ナ': letter = 227; break;
                 case 'ニ': letter = 228; break;
-                case 'ラ': letter = 229; break;//50
+                case 'ラ': letter = 229; break;
 
                 case 'セ': letter = 230; break;
                 case 'チ': letter = 231; break;
@@ -1235,7 +1103,7 @@ namespace OSCVRCWiz.Services.Text
                 case 'ク': letter = 236; break;
                 case 'マ': letter = 237; break;
                 case 'ノ': letter = 238; break;
-                case 'リ': letter = 239; break;//55
+                case 'リ': letter = 239; break;
 
                 case 'レ': letter = 240; break;
                 case 'ケ': letter = 241; break;
@@ -1246,15 +1114,14 @@ namespace OSCVRCWiz.Services.Text
                 case 'ヒ': letter = 246; break;
                 case 'コ': letter = 247; break;
                 case 'ミ': letter = 248; break;
-                case 'モ': letter = 249; break;//60
+                case 'モ': letter = 249; break;
 
                 case 'ネ': letter = 250; break;
                 case 'ル': letter = 251; break;
                 case 'メ': letter = 252; break;
                 case 'ロ': letter = 253; break;
                 case '〝': letter = 254; break;
-                case '°': letter = 255; break;//63
-
+                case '°': letter = 255; break;
 
                 case '¿': letter = 31; break;
 
@@ -1284,7 +1151,6 @@ namespace OSCVRCWiz.Services.Text
                 case 'ê': letter = 69; break;
                 case 'ë': letter = 69; break;
 
-
                 case 'Ì': letter = 41; break;
                 case 'Í': letter = 41; break;
                 case 'Î': letter = 41; break;
@@ -1298,7 +1164,6 @@ namespace OSCVRCWiz.Services.Text
                 case 'Ñ': letter = 46; break;
                 case 'ñ': letter = 78; break;
 
-
                 case 'Ò': letter = 47; break;
                 case 'Ó': letter = 47; break;
                 case 'Ô': letter = 47; break;
@@ -1311,16 +1176,9 @@ namespace OSCVRCWiz.Services.Text
                 case 'õ': letter = 79; break;
                 case 'ö': letter = 79; break;
 
-
                 default: letter = 31; break;
 
-
-
-
-
-
             }
-
 
             if (letter > 127.5)
             {
@@ -1331,11 +1189,6 @@ namespace OSCVRCWiz.Services.Text
 
             return letter;
         }
-
-
-
-
-
 
     }
 }

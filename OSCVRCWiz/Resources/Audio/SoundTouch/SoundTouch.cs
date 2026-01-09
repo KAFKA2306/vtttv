@@ -1,9 +1,6 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Text;
-
-
-//from naudio/varispeed-sample repo
 
 namespace OSCVRCWiz.Resources.Audio.SoundTouch
 {

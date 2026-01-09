@@ -1,4 +1,4 @@
-﻿using Amazon;
+using Amazon;
 using Amazon.Polly;
 using Amazon.Polly.Model;
 using OSCVRCWiz.Resources.Audio;
@@ -16,30 +16,18 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             try
             {
 
-                //Stopwatch stopwatch = new Stopwatch();
                 var AWSaccessKeyId = Settings1.Default.yourAWSKey;
                 var AWSsecretKey = Settings1.Default.yourAWSSecret;
                 var AWSRegion = RegionEndpoint.GetBySystemName(Settings1.Default.yourAWSRegion);
 
-
-
                 var client = new AmazonPollyClient(AWSaccessKeyId, AWSsecretKey, AWSRegion);
 
-
-              //  stopwatch.Start();
-                
                 var response = await PollySynthesizeSpeech(client, TTSMessageQueued);
-
 
                 MemoryStream memoryStream = new MemoryStream();
                 WriteSpeechToStream(response.AudioStream, memoryStream);
 
-
-
-               // stopwatch.Stop();
-                //OutputText.outputLog($"Processing/Response time:{stopwatch.ElapsedMilliseconds}", Color.Yellow);
                 AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, false, AudioFormat.Mp3);
-              
 
                 memoryStream.Dispose();
 
@@ -47,8 +35,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 client = null;
                 response.Dispose();
                 response = null;
-
-
 
             }
             catch (Exception ex)
@@ -58,19 +44,9 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             }
         }
 
-        /// <summary>
-        /// Calls the Amazon Polly SynthesizeSpeechAsync method to convert text
-        /// to speech.
-        /// </summary>
-        /// <param name="client">The Amazon Polly client object used to connect
-        /// to the Amazon Polly service.</param>
-        /// <param name="text">The text to convert to speech.</param>
-        /// <returns>A SynthesizeSpeechResponse object that includes an AudioStream
-        /// object with the converted text.</returns>
         private static async Task<SynthesizeSpeechResponse> PollySynthesizeSpeech(IAmazonPolly client, TTSMessageQueue.TTSMessage TTSMessageQueued)
         {
             var tts = new SynthesizeSpeechRequest();
-
 
             tts.OutputFormat = OutputFormat.Mp3;
             tts.VoiceId = VoiceId.Joanna;
@@ -79,19 +55,11 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
             tts.TextType = TextType.Ssml;
 
-
-            // tts.TextType = TextType.Text;
-
-
-
-
             int rate = TTSMessageQueued.Speed;
             int pitch = TTSMessageQueued.Pitch;
             int volume = TTSMessageQueued.Volume;
             string voice = TTSMessageQueued.Voice;
             string style = TTSMessageQueued.Style;
-
-
 
             var ratePercent = rate;
             var pitchPercent = pitch;
@@ -103,10 +71,9 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 rateString += "+";
             }
 
-
-            rateString += ratePercent + "%\">"; //1
-            string pitchString = "<prosody pitch=\"" + pitchPercent + "%\">"; //1
-            string volumeString = "<prosody volume=\"" + volumePercent + "dB\">"; //1
+            rateString += ratePercent + "%\">";
+            string pitchString = "<prosody pitch=\"" + pitchPercent + "%\">";
+            string volumeString = "<prosody volume=\"" + volumePercent + "dB\">";
 
             Debug.WriteLine("rate: " + ratePercent);
             Debug.WriteLine("pitch: " + pitchPercent);
@@ -114,14 +81,9 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             Debug.WriteLine("volume: " + volumePercent);
             Debug.WriteLine("volume: " + volumeString);
 
-
             string ssml0 = "<speak>";
-            // string ssml0 = "<speak";
-            // ssml0 += " xmlns=\"http://www.w3.org/2001/10/synthesis\"";
-            // ssml0 += " xml:lang=\"en-US\">";
 
-
-            if (rate != 0)//5 = default /middle of track bar
+            if (rate != 0)
             {
                 ssml0 += rateString;
 
@@ -156,9 +118,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 }
             }
 
-
             ssml0 += TTSMessageQueued.text;
-
 
             if (style != "normal")
             {
@@ -180,31 +140,15 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     default: break;
                 }
 
-
             }
 
-            // ssml0 += Encoding.UTF8.GetString(Encoding.Default.GetBytes(TTSMessageQueued.text));
             if (rate != 0) { ssml0 += "</prosody>"; }
             if (pitch != 0) { ssml0 += "</prosody>"; }
             if (volume != 10) { ssml0 += "</prosody>"; }
-          
-
-
-           
 
             ssml0 += "</speak>";
 
-
-
-
             tts.Text = ssml0;
-            //  tts.Text = TTSMessageQueued.text;
-            //  tts.Text = "Привет! Меня зовут Татьяна. Я прочитаю любой текст который вы введете здесь.";
-
-            //  Debug.WriteLine(ssml0);
-
-
-
 
             switch (voice)
             {
@@ -475,11 +419,9 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 case "Tatyana [ru-RU]":
                     tts.VoiceId = VoiceId.Tatyana;
 
-
                     break;
                 case "Maxim [ru-RU]":
                     tts.VoiceId = VoiceId.Maxim;
-
 
                     break;
                 case "Conchita [es-ES]": tts.VoiceId = VoiceId.Conchita; break;
@@ -508,35 +450,8 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
             return synthesizeSpeechResponse;
 
-            /*
-             *  comboBox2.Items.Add("Nicole");
-                    comboBox2.Items.Add("Olivia ($Neural)");
-                    comboBox2.Items.Add("Russell");
-
-                    comboBox2.Items.Add("Amy");
-                    comboBox2.Items.Add("Emma");
-                    comboBox2.Items.Add("Brian");
-                    comboBox2.Items.Add("Arthur ($Neural)");
-
-                    comboBox2.Items.Add("Aditi");
-                    comboBox2.Items.Add("Reveena");
-                    comboBox2.Items.Add("Kajal ($Neural)");
-
-                    comboBox2.Items.Add("Aria ($Neural)");
-
-                    comboBox2.Items.Add("Ayanda ($Neural)");
-
-                    comboBox2.Items.Add("Geraint");*/
         }
 
-        /// <summary>
-        /// Writes the AudioStream returned from the call to
-        /// SynthesizeSpeechAsync to a file in MP3 format.
-        /// </summary>
-        /// <param name="audioStream">The AudioStream returned from the
-        /// call to the SynthesizeSpeechAsync method.</param>
-        /// <param name="outputFileName">The full path to the file in which to
-        /// save the audio stream.</param>
         public static void WriteSpeechToStream(Stream audioStream, MemoryStream output)
         {
 
@@ -548,8 +463,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 output.Write(buffer, 0, readBytes);
             }
 
-            // Flushes the buffer to avoid losing the last second or so of
-            // the synthesized text.
             output.Flush();
 
         }
@@ -560,14 +473,12 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             switch (fromLanguageFullname)
             {
                 case "Arabic [ar]":
-                    VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Zeina [ar]");//new 
+                    VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Zeina [ar]");
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Hala [ar-AE] ($Neural)");
 
                     break;
                 case "Catalan [ca]":
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Arlet [ca-ES] ($Neural)");
-
-
 
                     break;
                 case "Chinese [zh]":
@@ -629,13 +540,12 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Arthur [en-GB] ($Neural)");
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Geraint [en-GB-WLS]");
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Aditi [en-IN]");
-                    VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Raveena [en-IN]");//new
+                    VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Raveena [en-IN]");
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Kajal [en-IN] ($Neural)");
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Aria [en-NZ] ($Neural)");
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Ayanda [en-ZA] ($Neural)");
 
                     break;
-
 
                 case "Finnish [fi]":
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Suvi [fi-FI]");
@@ -751,9 +661,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add("Gwyneth [cy-GB]");
                     break;
 
-
-
-
                 default: break;
             }
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonProAmazon.Checked == true)
@@ -776,12 +683,9 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
         {
             try
             {
-               //Stopwatch stopwatch = new Stopwatch();
-               // stopwatch.Start();              
+
                 var audiobytes = Convert.FromBase64String(audioString);
                 MemoryStream memoryStream = new MemoryStream(audiobytes);
-               // stopwatch.Stop();
-              //  OutputText.outputLog($"audio convert from string time:{stopwatch.ElapsedMilliseconds}", Color.Yellow);
 
                 AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, false, AudioFormat.Mp3);
                 memoryStream.Dispose();
@@ -808,7 +712,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                         "French [fr]",
                         "German [de]",
                         "Hindi [hi]",
-                        "Icelandic [is]",//
+                        "Icelandic [is]",
                         "Italian [it]",
                         "Japanese [ja]",
                         "Korean [ko]",
@@ -833,7 +737,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             voices.SelectedIndex = 0;
             styles.SelectedIndex = 0;
 
-           
             styles.Enabled = true;
             voices.Enabled = true;
 

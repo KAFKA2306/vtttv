@@ -1,16 +1,10 @@
-﻿namespace OSCVRCWiz
+namespace OSCVRCWiz
 {
     partial class VoiceWizardWindow
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +16,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
@@ -913,9 +903,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             logPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
+
             richTextBox1.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             richTextBox1.BackColor = Color.White;
             richTextBox1.BorderStyle = BorderStyle.None;
@@ -930,9 +918,7 @@
             richTextBox1.Text = "";
             richTextBox1.LinkClicked += (this.richTextBox1_LinkClicked);
             richTextBox1.TextChanged += (this.richTextBox1_TextChanged);
-            // 
-            // comboBoxStyleSelect
-            // 
+
             comboBoxStyleSelect.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             comboBoxStyleSelect.BackColor = Color.White;
             comboBoxStyleSelect.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -946,9 +932,7 @@
             comboBoxStyleSelect.Name = "comboBoxStyleSelect";
             comboBoxStyleSelect.Size = new Size(115, 29);
             comboBoxStyleSelect.TabIndex = 11;
-            // 
-            // label1
-            // 
+
             label1.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -958,9 +942,7 @@
             label1.Size = new Size(83, 15);
             label1.TabIndex = 12;
             label1.Text = "Speaking Style";
-            // 
-            // label2
-            // 
+
             label2.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -970,9 +952,7 @@
             label2.Size = new Size(35, 15);
             label2.TabIndex = 14;
             label2.Text = "Voice";
-            // 
-            // comboBoxVoiceSelect
-            // 
+
             comboBoxVoiceSelect.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             comboBoxVoiceSelect.BackColor = Color.White;
             comboBoxVoiceSelect.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -988,9 +968,7 @@
             comboBoxVoiceSelect.TabIndex = 13;
             comboBoxVoiceSelect.Tag = "Sara";
             comboBoxVoiceSelect.SelectedIndexChanged += (this.comboBox2_SelectedIndexChanged);
-            // 
-            // hideVRCTextButton
-            // 
+
             hideVRCTextButton.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             hideVRCTextButton.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             hideVRCTextButton.FlatStyle = FlatStyle.Flat;
@@ -1004,9 +982,7 @@
             hideVRCTextButton.Text = "Hide KAT";
             hideVRCTextButton.UseVisualStyleBackColor = false;
             hideVRCTextButton.Click += (this.hideVRCTextButton_Click);
-            // 
-            // label4
-            // 
+
             label4.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1016,9 +992,7 @@
             label4.Size = new Size(47, 15);
             label4.TabIndex = 19;
             label4.Text = "Volume";
-            // 
-            // label5
-            // 
+
             label5.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1028,9 +1002,7 @@
             label5.Size = new Size(34, 15);
             label5.TabIndex = 21;
             label5.Text = "Pitch";
-            // 
-            // label6
-            // 
+
             label6.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1040,9 +1012,7 @@
             label6.Size = new Size(39, 15);
             label6.TabIndex = 23;
             label6.Text = "Speed";
-            // 
-            // textBoxDelay
-            // 
+
             textBoxDelay.Location = new Point(153, 96);
             textBoxDelay.Margin = new Padding(3, 2, 3, 2);
             textBoxDelay.Name = "textBoxDelay";
@@ -1050,9 +1020,7 @@
             textBoxDelay.TabIndex = 24;
             textBoxDelay.Text = "250";
             textBoxDelay.TextChanged += (this.textBoxDelay_TextChanged);
-            // 
-            // label7
-            // 
+
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label7.ForeColor = Color.Snow;
@@ -1061,9 +1029,7 @@
             label7.Size = new Size(101, 15);
             label7.TabIndex = 25;
             label7.Text = "Delay Debug (ms)";
-            // 
-            // buttonDelayHere
-            // 
+
             buttonDelayHere.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonDelayHere.FlatStyle = FlatStyle.Flat;
             buttonDelayHere.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1076,9 +1042,7 @@
             buttonDelayHere.Text = "Apply";
             buttonDelayHere.UseVisualStyleBackColor = false;
             buttonDelayHere.Click += (this.buttonDelayHere_Click);
-            // 
-            // mainTabControl
-            // 
+
             mainTabControl.Controls.Add(tabPage4);
             mainTabControl.Controls.Add(tabPage1);
             mainTabControl.Controls.Add(tabPage3);
@@ -1107,9 +1071,7 @@
             mainTabControl.SelectedIndex = 0;
             mainTabControl.Size = new Size(777, 615);
             mainTabControl.TabIndex = 27;
-            // 
-            // tabPage4
-            // 
+
             tabPage4.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabPage4.Controls.Add(panel4);
             tabPage4.Controls.Add(panel3);
@@ -1121,9 +1083,7 @@
             tabPage4.Size = new Size(769, 587);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Dashboard";
-            // 
-            // panel4
-            // 
+
             panel4.Controls.Add(iconButton33);
             panel4.Controls.Add(iconButton34);
             panel4.Controls.Add(iconButton17);
@@ -1132,9 +1092,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(763, 70);
             panel4.TabIndex = 109;
-            // 
-            // iconButton33
-            // 
+
             iconButton33.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton33.FlatAppearance.BorderSize = 3;
             iconButton33.FlatStyle = FlatStyle.Flat;
@@ -1155,9 +1113,7 @@
             iconButton33.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton33.UseVisualStyleBackColor = false;
             iconButton33.Click += (this.iconButton33_Click_1);
-            // 
-            // iconButton34
-            // 
+
             iconButton34.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton34.FlatAppearance.BorderSize = 3;
             iconButton34.FlatStyle = FlatStyle.Flat;
@@ -1178,9 +1134,7 @@
             iconButton34.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton34.UseVisualStyleBackColor = false;
             iconButton34.Click += (this.iconButton34_Click_1);
-            // 
-            // iconButton17
-            // 
+
             iconButton17.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton17.FlatAppearance.BorderSize = 3;
             iconButton17.FlatStyle = FlatStyle.Flat;
@@ -1201,9 +1155,7 @@
             iconButton17.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton17.UseVisualStyleBackColor = false;
             iconButton17.Click += (this.iconButton17_Click_1);
-            // 
-            // panel3
-            // 
+
             panel3.Controls.Add(buttonPreviousBanner);
             panel3.Controls.Add(buttonNextBanner);
             panel3.Controls.Add(pictureBox2);
@@ -1217,9 +1169,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(763, 96);
             panel3.TabIndex = 108;
-            // 
-            // buttonPreviousBanner
-            // 
+
             buttonPreviousBanner.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonPreviousBanner.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonPreviousBanner.FlatAppearance.BorderSize = 0;
@@ -1234,9 +1184,7 @@
             buttonPreviousBanner.Text = "◀️";
             buttonPreviousBanner.UseVisualStyleBackColor = false;
             buttonPreviousBanner.Click += (this.buttonPreviousBanner_Click);
-            // 
-            // buttonNextBanner
-            // 
+
             buttonNextBanner.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonNextBanner.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonNextBanner.FlatAppearance.BorderSize = 0;
@@ -1251,9 +1199,7 @@
             buttonNextBanner.Text = "▶️";
             buttonNextBanner.UseVisualStyleBackColor = false;
             buttonNextBanner.Click += (this.buttonNextBanner_Click);
-            // 
-            // pictureBox2
-            // 
+
             pictureBox2.Image = OSCVRCWiz.Properties.Resources.VRChatTTSBWBanner1;
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
@@ -1262,9 +1208,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 105;
             pictureBox2.TabStop = false;
-            // 
-            // richTextBox4
-            // 
+
             richTextBox4.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             richTextBox4.BorderStyle = BorderStyle.None;
             richTextBox4.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1277,9 +1221,7 @@
             richTextBox4.Size = new Size(405, 41);
             richTextBox4.TabIndex = 2;
             richTextBox4.Text = "TTS Voice Wizard";
-            // 
-            // iconButton13
-            // 
+
             iconButton13.FlatAppearance.BorderSize = 0;
             iconButton13.FlatStyle = FlatStyle.Flat;
             iconButton13.ForeColor = Color.Snow;
@@ -1296,9 +1238,7 @@
             iconButton13.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton13.UseVisualStyleBackColor = true;
             iconButton13.Click += (this.iconButton13_Click);
-            // 
-            // iconButton14
-            // 
+
             iconButton14.FlatAppearance.BorderSize = 0;
             iconButton14.FlatStyle = FlatStyle.Flat;
             iconButton14.ForeColor = Color.Snow;
@@ -1315,9 +1255,7 @@
             iconButton14.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton14.UseVisualStyleBackColor = true;
             iconButton14.Click += (this.iconButton14_Click);
-            // 
-            // iconButton26
-            // 
+
             iconButton26.FlatAppearance.BorderSize = 0;
             iconButton26.FlatStyle = FlatStyle.Flat;
             iconButton26.ForeColor = Color.Snow;
@@ -1334,9 +1272,7 @@
             iconButton26.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton26.UseVisualStyleBackColor = true;
             iconButton26.Click += (this.iconButton26_Click);
-            // 
-            // button10
-            // 
+
             button10.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button10.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button10.FlatAppearance.BorderSize = 0;
@@ -1351,9 +1287,7 @@
             button10.Text = "X";
             button10.UseVisualStyleBackColor = false;
             button10.Click += (this.button10_Click);
-            // 
-            // panel5
-            // 
+
             panel5.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             panel5.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             panel5.Controls.Add(pictureBox5);
@@ -1362,9 +1296,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(763, 417);
             panel5.TabIndex = 163;
-            // 
-            // pictureBox5
-            // 
+
             pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Dock = DockStyle.Fill;
             pictureBox5.Location = new Point(0, 0);
@@ -1374,9 +1306,7 @@
             pictureBox5.TabIndex = 162;
             pictureBox5.TabStop = false;
             pictureBox5.Click += (this.pictureBox5_Click);
-            // 
-            // pictureBox4
-            // 
+
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(143, 178);
             pictureBox4.Name = "pictureBox4";
@@ -1385,9 +1315,7 @@
             pictureBox4.TabIndex = 161;
             pictureBox4.TabStop = false;
             pictureBox4.Click += (this.pictureBox4_Click);
-            // 
-            // tabPage1
-            // 
+
             tabPage1.AutoScroll = true;
             tabPage1.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabPage1.Controls.Add(groupBox7);
@@ -1399,9 +1327,7 @@
             tabPage1.Size = new Size(769, 587);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Main Menu";
-            // 
-            // groupBox7
-            // 
+
             groupBox7.Controls.Add(SpeechToTextBigButton);
             groupBox7.Controls.Add(StopButton);
             groupBox7.Controls.Add(TTSButton);
@@ -1424,9 +1350,7 @@
             groupBox7.TabIndex = 107;
             groupBox7.TabStop = false;
             groupBox7.Text = "Text to Speech";
-            // 
-            // SpeechToTextBigButton
-            // 
+
             SpeechToTextBigButton.Anchor = (AnchorStyles)((AnchorStyles.Bottom) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             SpeechToTextBigButton.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             SpeechToTextBigButton.FlatStyle = FlatStyle.Flat;
@@ -1447,9 +1371,7 @@
             SpeechToTextBigButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             SpeechToTextBigButton.UseVisualStyleBackColor = false;
             SpeechToTextBigButton.Click += (this.speechTTSButton_Click);
-            // 
-            // StopButton
-            // 
+
             StopButton.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             StopButton.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             StopButton.FlatStyle = FlatStyle.Flat;
@@ -1468,9 +1390,7 @@
             StopButton.TextImageRelation = TextImageRelation.ImageAboveText;
             StopButton.UseVisualStyleBackColor = false;
             StopButton.Click += (this.button38_Click);
-            // 
-            // TTSButton
-            // 
+
             TTSButton.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             TTSButton.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             TTSButton.FlatStyle = FlatStyle.Flat;
@@ -1489,9 +1409,7 @@
             TTSButton.TextImageRelation = TextImageRelation.ImageAboveText;
             TTSButton.UseVisualStyleBackColor = false;
             TTSButton.Click += (this.TTSButton_Click);
-            // 
-            // label81
-            // 
+
             label81.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label81.AutoSize = true;
             label81.Location = new Point(372, 230);
@@ -1501,9 +1419,7 @@
             label81.Text = "Queue \r\nSize:";
             label81.TextAlign = ContentAlignment.TopCenter;
             label81.Visible = false;
-            // 
-            // labelQueueSize
-            // 
+
             labelQueueSize.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             labelQueueSize.AutoSize = true;
             labelQueueSize.Location = new Point(387, 265);
@@ -1512,9 +1428,7 @@
             labelQueueSize.TabIndex = 108;
             labelQueueSize.Text = "0";
             labelQueueSize.Visible = false;
-            // 
-            // buttonQueueClear
-            // 
+
             buttonQueueClear.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonQueueClear.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonQueueClear.FlatStyle = FlatStyle.Flat;
@@ -1529,9 +1443,7 @@
             buttonQueueClear.UseVisualStyleBackColor = false;
             buttonQueueClear.Visible = false;
             buttonQueueClear.Click += (this.buttonQueueClear_Click);
-            // 
-            // labelCharCount
-            // 
+
             labelCharCount.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             labelCharCount.AutoSize = true;
             labelCharCount.BackColor = Color.White;
@@ -1541,9 +1453,7 @@
             labelCharCount.Size = new Size(22, 17);
             labelCharCount.TabIndex = 106;
             labelCharCount.Text = "16";
-            // 
-            // iconButton37
-            // 
+
             iconButton37.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             iconButton37.BackColor = Color.White;
             iconButton37.FlatAppearance.BorderSize = 0;
@@ -1562,9 +1472,7 @@
             iconButton37.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton37.UseVisualStyleBackColor = false;
             iconButton37.Click += (this.iconButton37_Click);
-            // 
-            // iconButton36
-            // 
+
             iconButton36.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             iconButton36.BackColor = Color.White;
             iconButton36.FlatAppearance.BorderSize = 0;
@@ -1582,9 +1490,7 @@
             iconButton36.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton36.UseVisualStyleBackColor = false;
             iconButton36.Click += (this.iconButton36_Click);
-            // 
-            // ttsTrash
-            // 
+
             ttsTrash.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             ttsTrash.BackColor = Color.White;
             ttsTrash.FlatAppearance.BorderSize = 0;
@@ -1601,9 +1507,7 @@
             ttsTrash.TabIndex = 31;
             ttsTrash.UseVisualStyleBackColor = false;
             ttsTrash.Click += (this.ttsTrash_Click);
-            // 
-            // richTextBox3
-            // 
+
             richTextBox3.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             richTextBox3.BackColor = Color.White;
             richTextBox3.BorderStyle = BorderStyle.FixedSingle;
@@ -1616,9 +1520,7 @@
             richTextBox3.TabIndex = 30;
             richTextBox3.Text = "Read this aloud.";
             richTextBox3.TextChanged += (this.richTextBox3_TextChanged);
-            // 
-            // panelCustomize
-            // 
+
             panelCustomize.Controls.Add(groupBox8);
             panelCustomize.Controls.Add(button50);
             panelCustomize.Dock = DockStyle.Right;
@@ -1626,9 +1528,7 @@
             panelCustomize.Name = "panelCustomize";
             panelCustomize.Size = new Size(331, 583);
             panelCustomize.TabIndex = 109;
-            // 
-            // groupBox8
-            // 
+
             groupBox8.Controls.Add(panel2);
             groupBox8.Dock = DockStyle.Fill;
             groupBox8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1641,9 +1541,7 @@
             groupBox8.TabIndex = 108;
             groupBox8.TabStop = false;
             groupBox8.Text = "Voice Customization Options";
-            // 
-            // panel2
-            // 
+
             panel2.AutoScroll = true;
             panel2.Controls.Add(buttonExportVoicePresets);
             panel2.Controls.Add(buttonImportVoicePresets);
@@ -1679,9 +1577,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(309, 560);
             panel2.TabIndex = 111;
-            // 
-            // buttonExportVoicePresets
-            // 
+
             buttonExportVoicePresets.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonExportVoicePresets.FlatStyle = FlatStyle.Flat;
             buttonExportVoicePresets.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -1699,9 +1595,7 @@
             buttonExportVoicePresets.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonExportVoicePresets.UseVisualStyleBackColor = false;
             buttonExportVoicePresets.Click += (this.buttonExportVoicePresets_Click);
-            // 
-            // buttonImportVoicePresets
-            // 
+
             buttonImportVoicePresets.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonImportVoicePresets.FlatStyle = FlatStyle.Flat;
             buttonImportVoicePresets.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -1719,9 +1613,7 @@
             buttonImportVoicePresets.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonImportVoicePresets.UseVisualStyleBackColor = false;
             buttonImportVoicePresets.Click += (this.buttonImportVoicePresets_Click);
-            // 
-            // buttonDeletePreset
-            // 
+
             buttonDeletePreset.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonDeletePreset.FlatStyle = FlatStyle.Flat;
             buttonDeletePreset.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -1734,9 +1626,7 @@
             buttonDeletePreset.Text = "Delete";
             buttonDeletePreset.UseVisualStyleBackColor = false;
             buttonDeletePreset.Click += (this.button25_Click_1);
-            // 
-            // labelVolumeNum
-            // 
+
             labelVolumeNum.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             labelVolumeNum.AutoSize = true;
             labelVolumeNum.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1746,9 +1636,7 @@
             labelVolumeNum.Size = new Size(35, 15);
             labelVolumeNum.TabIndex = 110;
             labelVolumeNum.Text = "100%";
-            // 
-            // buttonEditPreset
-            // 
+
             buttonEditPreset.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonEditPreset.FlatStyle = FlatStyle.Flat;
             buttonEditPreset.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -1761,9 +1649,7 @@
             buttonEditPreset.Text = "Edit";
             buttonEditPreset.UseVisualStyleBackColor = false;
             buttonEditPreset.Click += (this.button19_Click);
-            // 
-            // label52
-            // 
+
             label52.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label52.AutoSize = true;
             label52.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1773,9 +1659,7 @@
             label52.Size = new Size(117, 15);
             label52.TabIndex = 99;
             label52.Text = "Text to Speech Mode";
-            // 
-            // textBoxRename
-            // 
+
             textBoxRename.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxRename.Location = new Point(18, 472);
             textBoxRename.Margin = new Padding(3, 2, 3, 2);
@@ -1784,9 +1668,7 @@
             textBoxRename.TabIndex = 102;
             textBoxRename.Text = "Preset 1";
             textBoxRename.Visible = false;
-            // 
-            // buttonSavePreset
-            // 
+
             buttonSavePreset.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonSavePreset.FlatStyle = FlatStyle.Flat;
             buttonSavePreset.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -1799,9 +1681,7 @@
             buttonSavePreset.Text = "Save";
             buttonSavePreset.UseVisualStyleBackColor = false;
             buttonSavePreset.Click += (this.button15_Click);
-            // 
-            // labelSpeedNum
-            // 
+
             labelSpeedNum.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             labelSpeedNum.AutoSize = true;
             labelSpeedNum.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1811,9 +1691,7 @@
             labelSpeedNum.Size = new Size(33, 15);
             labelSpeedNum.TabIndex = 109;
             labelSpeedNum.Text = "x1.00";
-            // 
-            // comboBoxPreset
-            // 
+
             comboBoxPreset.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             comboBoxPreset.BackColor = Color.White;
             comboBoxPreset.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1828,9 +1706,7 @@
             comboBoxPreset.Size = new Size(217, 29);
             comboBoxPreset.TabIndex = 100;
             comboBoxPreset.SelectedIndexChanged += (this.comboBoxPreset_SelectedIndexChanged);
-            // 
-            // label50
-            // 
+
             label50.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label50.AutoSize = true;
             label50.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1840,9 +1716,7 @@
             label50.Size = new Size(44, 15);
             label50.TabIndex = 101;
             label50.Text = "Presets";
-            // 
-            // labelPitchNum
-            // 
+
             labelPitchNum.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             labelPitchNum.AutoSize = true;
             labelPitchNum.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1852,9 +1726,7 @@
             labelPitchNum.Size = new Size(33, 15);
             labelPitchNum.TabIndex = 108;
             labelPitchNum.Text = "x1.00";
-            // 
-            // label3
-            // 
+
             label3.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1864,9 +1736,7 @@
             label3.Size = new Size(120, 15);
             label3.TabIndex = 26;
             label3.Text = "Translation Language";
-            // 
-            // comboBoxTranslationLanguage
-            // 
+
             comboBoxTranslationLanguage.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             comboBoxTranslationLanguage.BackColor = Color.White;
             comboBoxTranslationLanguage.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1881,9 +1751,7 @@
             comboBoxTranslationLanguage.Size = new Size(266, 29);
             comboBoxTranslationLanguage.TabIndex = 25;
             comboBoxTranslationLanguage.SelectedIndexChanged += (this.comboBox3_SelectedIndexChanged);
-            // 
-            // label14
-            // 
+
             label14.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1893,9 +1761,7 @@
             label14.Size = new Size(101, 15);
             label14.TabIndex = 28;
             label14.Text = "Spoken Language";
-            // 
-            // comboBoxSpokenLanguage
-            // 
+
             comboBoxSpokenLanguage.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             comboBoxSpokenLanguage.BackColor = Color.White;
             comboBoxSpokenLanguage.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1909,9 +1775,7 @@
             comboBoxSpokenLanguage.Size = new Size(266, 29);
             comboBoxSpokenLanguage.TabIndex = 27;
             comboBoxSpokenLanguage.SelectedIndexChanged += (this.comboBox4_SelectedIndexChanged);
-            // 
-            // comboBoxTTSMode
-            // 
+
             comboBoxTTSMode.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             comboBoxTTSMode.BackColor = Color.White;
             comboBoxTTSMode.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1926,9 +1790,7 @@
             comboBoxTTSMode.Size = new Size(266, 29);
             comboBoxTTSMode.TabIndex = 98;
             comboBoxTTSMode.SelectedIndexChanged += (this.comboBoxTTSMode_SelectedIndexChanged);
-            // 
-            // label109
-            // 
+
             label109.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             label109.AutoSize = true;
             label109.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1938,9 +1800,7 @@
             label109.Size = new Size(132, 15);
             label109.TabIndex = 36;
             label109.Text = "Voice Accent/Language";
-            // 
-            // comboBoxAccentSelect
-            // 
+
             comboBoxAccentSelect.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left);
             comboBoxAccentSelect.BackColor = Color.White;
             comboBoxAccentSelect.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1955,9 +1815,7 @@
             comboBoxAccentSelect.Size = new Size(132, 29);
             comboBoxAccentSelect.TabIndex = 35;
             comboBoxAccentSelect.SelectedIndexChanged += (this.comboBox5_SelectedIndexChanged);
-            // 
-            // trackBarVolume
-            // 
+
             trackBarVolume.LargeChange = 1;
             trackBarVolume.Location = new Point(18, 288);
             trackBarVolume.Maximum = 20;
@@ -1966,9 +1824,7 @@
             trackBarVolume.TabIndex = 107;
             trackBarVolume.Value = 10;
             trackBarVolume.Scroll += (this.trackBarVolume_Scroll);
-            // 
-            // trackBarPitch
-            // 
+
             trackBarPitch.LargeChange = 10;
             trackBarPitch.Location = new Point(18, 184);
             trackBarPitch.Maximum = 100;
@@ -1979,9 +1835,7 @@
             trackBarPitch.TabIndex = 33;
             trackBarPitch.TickFrequency = 10;
             trackBarPitch.Scroll += (this.trackBarPitch_Scroll);
-            // 
-            // trackBarSpeed
-            // 
+
             trackBarSpeed.LargeChange = 10;
             trackBarSpeed.Location = new Point(18, 237);
             trackBarSpeed.Maximum = 100;
@@ -1992,9 +1846,7 @@
             trackBarSpeed.TabIndex = 106;
             trackBarSpeed.TickFrequency = 10;
             trackBarSpeed.Scroll += (this.trackBarSpeed_Scroll);
-            // 
-            // button50
-            // 
+
             button50.Dock = DockStyle.Left;
             button50.FlatAppearance.BorderSize = 0;
             button50.FlatStyle = FlatStyle.Flat;
@@ -2007,9 +1859,7 @@
             button50.TextAlign = ContentAlignment.TopCenter;
             button50.UseVisualStyleBackColor = true;
             button50.Click += (this.button50_Click);
-            // 
-            // tabPage3
-            // 
+
             tabPage3.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabPage3.Controls.Add(groupBox10);
             tabPage3.Location = new Point(4, 24);
@@ -2018,9 +1868,7 @@
             tabPage3.Size = new Size(769, 587);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "TextToText";
-            // 
-            // groupBox10
-            // 
+
             groupBox10.Controls.Add(label110);
             groupBox10.Controls.Add(iconButton22);
             groupBox10.Controls.Add(richTextBox9);
@@ -2034,9 +1882,7 @@
             groupBox10.TabIndex = 100;
             groupBox10.TabStop = false;
             groupBox10.Text = "Text to Text";
-            // 
-            // label110
-            // 
+
             label110.AutoSize = true;
             label110.ForeColor = Color.Snow;
             label110.Location = new Point(18, 29);
@@ -2044,9 +1890,7 @@
             label110.Size = new Size(303, 15);
             label110.TabIndex = 99;
             label110.Text = "Type directly into the VRChat Chatbox or KAT from here!\r\n";
-            // 
-            // iconButton22
-            // 
+
             iconButton22.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             iconButton22.BackColor = Color.White;
             iconButton22.FlatAppearance.BorderSize = 0;
@@ -2063,9 +1907,7 @@
             iconButton22.TabIndex = 33;
             iconButton22.UseVisualStyleBackColor = false;
             iconButton22.Click += (this.iconButton22_Click);
-            // 
-            // richTextBox9
-            // 
+
             richTextBox9.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             richTextBox9.BorderStyle = BorderStyle.FixedSingle;
             richTextBox9.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
@@ -2076,9 +1918,7 @@
             richTextBox9.TabIndex = 32;
             richTextBox9.Text = "";
             richTextBox9.TextChanged += (this.richTextBox9_TextChanged);
-            // 
-            // tabAddons
-            // 
+
             tabAddons.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabAddons.Controls.Add(translucentPanel1);
             tabAddons.Controls.Add(label72);
@@ -2089,9 +1929,7 @@
             tabAddons.Size = new Size(769, 587);
             tabAddons.TabIndex = 4;
             tabAddons.Text = "Addons";
-            // 
-            // translucentPanel1
-            // 
+
             translucentPanel1.AutoScroll = true;
             translucentPanel1.BackColor = Color.Transparent;
             translucentPanel1.Controls.Add(iconButton11);
@@ -2107,9 +1945,7 @@
             translucentPanel1.Name = "translucentPanel1";
             translucentPanel1.Size = new Size(763, 563);
             translucentPanel1.TabIndex = 0;
-            // 
-            // iconButton11
-            // 
+
             iconButton11.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton11.Dock = DockStyle.Top;
             iconButton11.FlatAppearance.BorderSize = 0;
@@ -2128,9 +1964,7 @@
             iconButton11.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton11.UseVisualStyleBackColor = false;
             iconButton11.Click += (this.iconButton11_Click);
-            // 
-            // iconButton25
-            // 
+
             iconButton25.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton25.Dock = DockStyle.Top;
             iconButton25.FlatAppearance.BorderSize = 0;
@@ -2149,9 +1983,7 @@
             iconButton25.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton25.UseVisualStyleBackColor = false;
             iconButton25.Click += (this.iconButton25_Click);
-            // 
-            // iconButton42
-            // 
+
             iconButton42.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton42.Dock = DockStyle.Top;
             iconButton42.FlatAppearance.BorderSize = 0;
@@ -2170,9 +2002,7 @@
             iconButton42.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton42.UseVisualStyleBackColor = false;
             iconButton42.Click += (this.iconButton42_Click);
-            // 
-            // iconButton27
-            // 
+
             iconButton27.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton27.Dock = DockStyle.Top;
             iconButton27.FlatAppearance.BorderSize = 0;
@@ -2191,9 +2021,7 @@
             iconButton27.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton27.UseVisualStyleBackColor = false;
             iconButton27.Click += (this.iconButton27_Click_1);
-            // 
-            // iconButton24
-            // 
+
             iconButton24.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton24.Dock = DockStyle.Top;
             iconButton24.FlatAppearance.BorderSize = 0;
@@ -2212,9 +2040,7 @@
             iconButton24.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton24.UseVisualStyleBackColor = false;
             iconButton24.Click += (this.iconButton24_Click);
-            // 
-            // iconButton10
-            // 
+
             iconButton10.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton10.Dock = DockStyle.Top;
             iconButton10.FlatAppearance.BorderSize = 0;
@@ -2233,9 +2059,7 @@
             iconButton10.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton10.UseVisualStyleBackColor = false;
             iconButton10.Click += (this.iconButton10_Click);
-            // 
-            // iconButton9
-            // 
+
             iconButton9.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton9.Dock = DockStyle.Top;
             iconButton9.FlatAppearance.BorderSize = 0;
@@ -2254,9 +2078,7 @@
             iconButton9.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton9.UseVisualStyleBackColor = false;
             iconButton9.Click += (this.iconButton9_Click);
-            // 
-            // label72
-            // 
+
             label72.AutoSize = true;
             label72.Dock = DockStyle.Top;
             label72.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
@@ -2266,9 +2088,7 @@
             label72.Size = new Size(60, 20);
             label72.TabIndex = 34;
             label72.Text = "Addons";
-            // 
-            // tabEmoji
-            // 
+
             tabEmoji.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabEmoji.Controls.Add(groupBox34);
             tabEmoji.Controls.Add(groupBox35);
@@ -2282,9 +2102,7 @@
             tabEmoji.Size = new Size(769, 587);
             tabEmoji.TabIndex = 5;
             tabEmoji.Text = "Emoji";
-            // 
-            // groupBox34
-            // 
+
             groupBox34.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox34.Controls.Add(buttonExportEmoji);
             groupBox34.Controls.Add(buttonImportEmoji);
@@ -2299,9 +2117,7 @@
             groupBox34.TabIndex = 156;
             groupBox34.TabStop = false;
             groupBox34.Text = "Stored Commands";
-            // 
-            // buttonExportEmoji
-            // 
+
             buttonExportEmoji.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonExportEmoji.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonExportEmoji.FlatStyle = FlatStyle.Flat;
@@ -2320,9 +2136,7 @@
             buttonExportEmoji.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonExportEmoji.UseVisualStyleBackColor = false;
             buttonExportEmoji.Click += (this.buttonExportEmoji_Click);
-            // 
-            // buttonImportEmoji
-            // 
+
             buttonImportEmoji.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonImportEmoji.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonImportEmoji.FlatStyle = FlatStyle.Flat;
@@ -2341,9 +2155,7 @@
             buttonImportEmoji.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonImportEmoji.UseVisualStyleBackColor = false;
             buttonImportEmoji.Click += (this.buttonImportEmoji_Click);
-            // 
-            // button25
-            // 
+
             button25.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             button25.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button25.FlatStyle = FlatStyle.Flat;
@@ -2356,9 +2168,7 @@
             button25.Text = "Debug Reset Config";
             button25.UseVisualStyleBackColor = false;
             button25.Click += (this.button25_Click_2);
-            // 
-            // checkedListBox2
-            // 
+
             checkedListBox2.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             checkedListBox2.Font = new Font("Segoe UI", 7.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkedListBox2.FormattingEnabled = true;
@@ -2368,9 +2178,7 @@
             checkedListBox2.Size = new Size(731, 304);
             checkedListBox2.TabIndex = 142;
             checkedListBox2.SelectedIndexChanged += (this.checkedListBox2_SelectedIndexChanged);
-            // 
-            // groupBox35
-            // 
+
             groupBox35.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox35.Controls.Add(label76);
             groupBox35.Controls.Add(textBox6);
@@ -2388,9 +2196,7 @@
             groupBox35.TabIndex = 155;
             groupBox35.TabStop = false;
             groupBox35.Text = "Add New Voice Command";
-            // 
-            // label76
-            // 
+
             label76.AutoSize = true;
             label76.ForeColor = Color.Snow;
             label76.Location = new Point(92, 46);
@@ -2398,17 +2204,13 @@
             label76.Size = new Size(42, 15);
             label76.TabIndex = 147;
             label76.Text = "Phrase";
-            // 
-            // textBox6
-            // 
+
             textBox6.Location = new Point(92, 64);
             textBox6.Margin = new Padding(3, 2, 3, 2);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(579, 23);
             textBox6.TabIndex = 144;
-            // 
-            // label80
-            // 
+
             label80.AutoSize = true;
             label80.ForeColor = Color.Snow;
             label80.Location = new Point(22, 44);
@@ -2416,9 +2218,7 @@
             label80.Size = new Size(47, 15);
             label80.TabIndex = 134;
             label80.Text = "Emoji #";
-            // 
-            // button26
-            // 
+
             button26.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button26.FlatStyle = FlatStyle.Flat;
             button26.ForeColor = Color.Snow;
@@ -2430,18 +2230,14 @@
             button26.Text = "Edit";
             button26.UseVisualStyleBackColor = false;
             button26.Click += (this.button26_Click);
-            // 
-            // textBox7
-            // 
+
             textBox7.Location = new Point(22, 64);
             textBox7.Margin = new Padding(3, 2, 3, 2);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(53, 23);
             textBox7.TabIndex = 100;
             textBox7.Text = "1";
-            // 
-            // rjToggleButton3
-            // 
+
             rjToggleButton3.AutoSize = true;
             rjToggleButton3.Location = new Point(15, 20);
             rjToggleButton3.Margin = new Padding(3, 2, 3, 2);
@@ -2454,9 +2250,7 @@
             rjToggleButton3.Size = new Size(39, 16);
             rjToggleButton3.TabIndex = 47;
             rjToggleButton3.UseVisualStyleBackColor = true;
-            // 
-            // label43
-            // 
+
             label43.AutoSize = true;
             label43.ForeColor = Color.Snow;
             label43.Location = new Point(60, 20);
@@ -2464,9 +2258,7 @@
             label43.Size = new Size(80, 15);
             label43.TabIndex = 46;
             label43.Text = "Enable Emojis";
-            // 
-            // iconButton32
-            // 
+
             iconButton32.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton32.FlatAppearance.BorderSize = 0;
             iconButton32.FlatStyle = FlatStyle.Flat;
@@ -2484,9 +2276,7 @@
             iconButton32.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton32.UseVisualStyleBackColor = true;
             iconButton32.Click += (this.iconButton32_Click);
-            // 
-            // label44
-            // 
+
             label44.AutoSize = true;
             label44.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label44.ForeColor = Color.Snow;
@@ -2495,9 +2285,7 @@
             label44.Size = new Size(47, 20);
             label44.TabIndex = 48;
             label44.Text = "Emoji";
-            // 
-            // label45
-            // 
+
             label45.AutoSize = true;
             label45.ForeColor = Color.Snow;
             label45.Location = new Point(81, 26);
@@ -2505,9 +2293,7 @@
             label45.Size = new Size(210, 15);
             label45.TabIndex = 49;
             label45.Text = "Convert unused characters into emojis";
-            // 
-            // tabSpotify
-            // 
+
             tabSpotify.AutoScroll = true;
             tabSpotify.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabSpotify.Controls.Add(iconButton1);
@@ -2522,9 +2308,7 @@
             tabSpotify.Size = new Size(769, 587);
             tabSpotify.TabIndex = 6;
             tabSpotify.Text = "Spotify";
-            // 
-            // iconButton1
-            // 
+
             iconButton1.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton1.FlatAppearance.BorderSize = 3;
             iconButton1.FlatStyle = FlatStyle.Flat;
@@ -2545,9 +2329,7 @@
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = false;
             iconButton1.Click += (this.iconButton1_Click_1);
-            // 
-            // groupBox5
-            // 
+
             groupBox5.Controls.Add(button43);
             groupBox5.Controls.Add(button9);
             groupBox5.Controls.Add(button21);
@@ -2588,9 +2370,7 @@
             groupBox5.TabIndex = 140;
             groupBox5.TabStop = false;
             groupBox5.Text = "General Media Settings";
-            // 
-            // button43
-            // 
+
             button43.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button43.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button43.FlatStyle = FlatStyle.Flat;
@@ -2604,9 +2384,7 @@
             toolTip1.SetToolTip(button43, "Used to output your heartrate. Check out the heartrate integration for further instructions.");
             button43.UseVisualStyleBackColor = false;
             button43.Click += (this.button43_Click_2);
-            // 
-            // button9
-            // 
+
             button9.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button9.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button9.FlatStyle = FlatStyle.Flat;
@@ -2620,9 +2398,7 @@
             toolTip1.SetToolTip(button9, resources.GetString("button9.ToolTip"));
             button9.UseVisualStyleBackColor = false;
             button9.Click += (this.button9_Click);
-            // 
-            // button21
-            // 
+
             button21.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button21.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button21.FlatStyle = FlatStyle.Flat;
@@ -2636,9 +2412,7 @@
             toolTip1.SetToolTip(button21, "Variable used to create a newline in the chatbox.");
             button21.UseVisualStyleBackColor = false;
             button21.Click += (this.button21_Click);
-            // 
-            // button22
-            // 
+
             button22.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button22.FlatStyle = FlatStyle.Flat;
             button22.ForeColor = Color.Snow;
@@ -2650,9 +2424,7 @@
             button22.Text = "Manually Display Media Text";
             button22.UseVisualStyleBackColor = false;
             button22.Click += (this.button22_Click_1);
-            // 
-            // buttonExportMedia
-            // 
+
             buttonExportMedia.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonExportMedia.FlatStyle = FlatStyle.Flat;
             buttonExportMedia.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -2670,9 +2442,7 @@
             buttonExportMedia.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonExportMedia.UseVisualStyleBackColor = false;
             buttonExportMedia.Click += (this.buttonExportMedia_Click);
-            // 
-            // buttonImportMedia
-            // 
+
             buttonImportMedia.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonImportMedia.FlatStyle = FlatStyle.Flat;
             buttonImportMedia.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -2690,9 +2460,7 @@
             buttonImportMedia.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonImportMedia.UseVisualStyleBackColor = false;
             buttonImportMedia.Click += (this.buttonImportMedia_Click);
-            // 
-            // textBoxMediaPresetEdit
-            // 
+
             textBoxMediaPresetEdit.Location = new Point(23, 227);
             textBoxMediaPresetEdit.Margin = new Padding(3, 2, 3, 2);
             textBoxMediaPresetEdit.Name = "textBoxMediaPresetEdit";
@@ -2700,9 +2468,7 @@
             textBoxMediaPresetEdit.TabIndex = 151;
             textBoxMediaPresetEdit.Text = "Preset 1";
             textBoxMediaPresetEdit.Visible = false;
-            // 
-            // buttonMediaPresetDeleteNew
-            // 
+
             buttonMediaPresetDeleteNew.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonMediaPresetDeleteNew.Enabled = false;
             buttonMediaPresetDeleteNew.FlatStyle = FlatStyle.Flat;
@@ -2716,9 +2482,7 @@
             buttonMediaPresetDeleteNew.Text = "Delete";
             buttonMediaPresetDeleteNew.UseVisualStyleBackColor = false;
             buttonMediaPresetDeleteNew.Click += (this.buttonMediaPresetDeleteNew_Click);
-            // 
-            // buttonMediaPresetEditNew
-            // 
+
             buttonMediaPresetEditNew.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonMediaPresetEditNew.Enabled = false;
             buttonMediaPresetEditNew.FlatStyle = FlatStyle.Flat;
@@ -2732,9 +2496,7 @@
             buttonMediaPresetEditNew.Text = "Edit";
             buttonMediaPresetEditNew.UseVisualStyleBackColor = false;
             buttonMediaPresetEditNew.Click += (this.buttonMediaPresetEditNew_Click);
-            // 
-            // buttonMediaPresetSaveNew
-            // 
+
             buttonMediaPresetSaveNew.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonMediaPresetSaveNew.FlatStyle = FlatStyle.Flat;
             buttonMediaPresetSaveNew.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -2747,9 +2509,7 @@
             buttonMediaPresetSaveNew.Text = "Save";
             buttonMediaPresetSaveNew.UseVisualStyleBackColor = false;
             buttonMediaPresetSaveNew.Click += (this.buttonMediaPresetSaveNew_Click);
-            // 
-            // label184
-            // 
+
             label184.AutoSize = true;
             label184.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label184.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -2759,9 +2519,7 @@
             label184.Size = new Size(44, 15);
             label184.TabIndex = 146;
             label184.Text = "Presets";
-            // 
-            // comboBoxMediaPreset
-            // 
+
             comboBoxMediaPreset.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMediaPreset.FlatStyle = FlatStyle.Flat;
             comboBoxMediaPreset.FormattingEnabled = true;
@@ -2772,9 +2530,7 @@
             comboBoxMediaPreset.Size = new Size(126, 23);
             comboBoxMediaPreset.TabIndex = 144;
             comboBoxMediaPreset.SelectedIndexChanged += (this.comboBoxMediaPreset_SelectedIndexChanged);
-            // 
-            // label149
-            // 
+
             label149.AutoSize = true;
             label149.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label149.ForeColor = Color.Snow;
@@ -2783,9 +2539,7 @@
             label149.Size = new Size(196, 15);
             label149.TabIndex = 142;
             label149.Text = "Not available for continuous output";
-            // 
-            // button44
-            // 
+
             button44.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button44.FlatStyle = FlatStyle.Flat;
             button44.ForeColor = Color.Snow;
@@ -2797,9 +2551,7 @@
             button44.Text = "Manually Display Current Time";
             button44.UseVisualStyleBackColor = false;
             button44.Click += (this.button44_Click);
-            // 
-            // volumeStats
-            // 
+
             volumeStats.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             volumeStats.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             volumeStats.FlatStyle = FlatStyle.Flat;
@@ -2813,9 +2565,7 @@
             toolTip1.SetToolTip(volumeStats, "The current volume percent of your music (Spotify only).");
             volumeStats.UseVisualStyleBackColor = false;
             volumeStats.Click += (this.button14_Click);
-            // 
-            // groupBox4
-            // 
+
             groupBox4.Controls.Add(label199);
             groupBox4.Controls.Add(rjToggleShowConnectURISpotify);
             groupBox4.Controls.Add(label155);
@@ -2839,9 +2589,7 @@
             groupBox4.TabIndex = 139;
             groupBox4.TabStop = false;
             groupBox4.Text = "Advanced Text Settings";
-            // 
-            // label199
-            // 
+
             label199.AutoSize = true;
             label199.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label199.ForeColor = Color.Snow;
@@ -2850,9 +2598,7 @@
             label199.Size = new Size(251, 15);
             label199.TabIndex = 126;
             label199.Text = "Show Spotify Connect URI in Log (don't share)";
-            // 
-            // rjToggleShowConnectURISpotify
-            // 
+
             rjToggleShowConnectURISpotify.AutoSize = true;
             rjToggleShowConnectURISpotify.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)192);
             rjToggleShowConnectURISpotify.Location = new Point(16, 150);
@@ -2866,9 +2612,7 @@
             rjToggleShowConnectURISpotify.Size = new Size(39, 16);
             rjToggleShowConnectURISpotify.TabIndex = 127;
             rjToggleShowConnectURISpotify.UseVisualStyleBackColor = false;
-            // 
-            // label155
-            // 
+
             label155.AutoSize = true;
             label155.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label155.ForeColor = Color.Snow;
@@ -2877,9 +2621,7 @@
             label155.Size = new Size(211, 15);
             label155.TabIndex = 124;
             label155.Text = "Force Update Windows Media (Debug)";
-            // 
-            // rjToggleButtonForceMedia
-            // 
+
             rjToggleButtonForceMedia.AutoSize = true;
             rjToggleButtonForceMedia.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)192);
             rjToggleButtonForceMedia.Location = new Point(16, 128);
@@ -2893,9 +2635,7 @@
             rjToggleButtonForceMedia.Size = new Size(39, 16);
             rjToggleButtonForceMedia.TabIndex = 125;
             rjToggleButtonForceMedia.UseVisualStyleBackColor = false;
-            // 
-            // label108
-            // 
+
             label108.AutoSize = true;
             label108.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label108.ForeColor = Color.Snow;
@@ -2904,9 +2644,7 @@
             label108.Size = new Size(171, 15);
             label108.TabIndex = 122;
             label108.Text = "Enable Output for OBS Text File";
-            // 
-            // rjToggleButtonMedia4OBS
-            // 
+
             rjToggleButtonMedia4OBS.AutoSize = true;
             rjToggleButtonMedia4OBS.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)192);
             rjToggleButtonMedia4OBS.Location = new Point(16, 108);
@@ -2920,9 +2658,7 @@
             rjToggleButtonMedia4OBS.Size = new Size(39, 16);
             rjToggleButtonMedia4OBS.TabIndex = 123;
             rjToggleButtonMedia4OBS.UseVisualStyleBackColor = false;
-            // 
-            // label136
-            // 
+
             label136.AutoSize = true;
             label136.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label136.ForeColor = Color.Snow;
@@ -2931,9 +2667,7 @@
             label136.Size = new Size(174, 15);
             label136.TabIndex = 120;
             label136.Text = "Disable TTS Output for Chatbox";
-            // 
-            // rjToggleButtonNoTTSChat
-            // 
+
             rjToggleButtonNoTTSChat.AutoSize = true;
             rjToggleButtonNoTTSChat.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)192);
             rjToggleButtonNoTTSChat.Location = new Point(16, 43);
@@ -2947,9 +2681,7 @@
             rjToggleButtonNoTTSChat.Size = new Size(39, 16);
             rjToggleButtonNoTTSChat.TabIndex = 121;
             rjToggleButtonNoTTSChat.UseVisualStyleBackColor = false;
-            // 
-            // label134
-            // 
+
             label134.AutoSize = true;
             label134.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label134.ForeColor = Color.Snow;
@@ -2958,9 +2690,7 @@
             label134.Size = new Size(191, 15);
             label134.TabIndex = 117;
             label134.Text = "Disable Spotify Output for Chatbox";
-            // 
-            // rjToggleButtonSpotifyChatboxDisable
-            // 
+
             rjToggleButtonSpotifyChatboxDisable.AutoSize = true;
             rjToggleButtonSpotifyChatboxDisable.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)192);
             rjToggleButtonSpotifyChatboxDisable.Location = new Point(16, 86);
@@ -2974,9 +2704,7 @@
             rjToggleButtonSpotifyChatboxDisable.Size = new Size(39, 16);
             rjToggleButtonSpotifyChatboxDisable.TabIndex = 118;
             rjToggleButtonSpotifyChatboxDisable.UseVisualStyleBackColor = false;
-            // 
-            // label133
-            // 
+
             label133.AutoSize = true;
             label133.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label133.ForeColor = Color.Snow;
@@ -2985,9 +2713,7 @@
             label133.Size = new Size(168, 15);
             label133.TabIndex = 115;
             label133.Text = "Disable Spotify Output for KAT";
-            // 
-            // rjToggleButtonSpotifyKatDisable
-            // 
+
             rjToggleButtonSpotifyKatDisable.AutoSize = true;
             rjToggleButtonSpotifyKatDisable.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)192);
             rjToggleButtonSpotifyKatDisable.Location = new Point(16, 65);
@@ -3001,9 +2727,7 @@
             rjToggleButtonSpotifyKatDisable.Size = new Size(39, 16);
             rjToggleButtonSpotifyKatDisable.TabIndex = 116;
             rjToggleButtonSpotifyKatDisable.UseVisualStyleBackColor = false;
-            // 
-            // label132
-            // 
+
             label132.AutoSize = true;
             label132.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label132.ForeColor = Color.Snow;
@@ -3012,9 +2736,7 @@
             label132.Size = new Size(151, 15);
             label132.TabIndex = 113;
             label132.Text = "Disable TTS Output for KAT";
-            // 
-            // rjToggleButtonNoTTSKAT
-            // 
+
             rjToggleButtonNoTTSKAT.AutoSize = true;
             rjToggleButtonNoTTSKAT.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)192);
             rjToggleButtonNoTTSKAT.Location = new Point(16, 20);
@@ -3028,9 +2750,7 @@
             rjToggleButtonNoTTSKAT.Size = new Size(39, 16);
             rjToggleButtonNoTTSKAT.TabIndex = 114;
             rjToggleButtonNoTTSKAT.UseVisualStyleBackColor = false;
-            // 
-            // heartRateStats
-            // 
+
             heartRateStats.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             heartRateStats.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             heartRateStats.FlatStyle = FlatStyle.Flat;
@@ -3044,9 +2764,7 @@
             toolTip1.SetToolTip(heartRateStats, "Used to output your heartrate. Check out the heartrate integration for further instructions.");
             heartRateStats.UseVisualStyleBackColor = false;
             heartRateStats.Click += (this.button22_Click);
-            // 
-            // batteryStats
-            // 
+
             batteryStats.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             batteryStats.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             batteryStats.FlatStyle = FlatStyle.Flat;
@@ -3060,9 +2778,7 @@
             toolTip1.SetToolTip(batteryStats, "Variables for the average battery life of your SteamVR Controllers and Trackers. Must be used in conjuction with XSOverlay, check TTSVoiceWizard.com for further instructions.");
             batteryStats.UseVisualStyleBackColor = false;
             batteryStats.Click += (this.button23_Click_1);
-            // 
-            // durationStats
-            // 
+
             durationStats.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             durationStats.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             durationStats.FlatStyle = FlatStyle.Flat;
@@ -3076,9 +2792,7 @@
             toolTip1.SetToolTip(durationStats, "Variables for progress and duration of the current playing song.");
             durationStats.UseVisualStyleBackColor = false;
             durationStats.Click += (this.button21_Click_1);
-            // 
-            // songStats
-            // 
+
             songStats.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             songStats.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             songStats.FlatStyle = FlatStyle.Flat;
@@ -3092,9 +2806,7 @@
             toolTip1.SetToolTip(songStats, "Variable for basic song info, including the playing status, song name, and artist.");
             songStats.UseVisualStyleBackColor = false;
             songStats.Click += (this.button20_Click_1);
-            // 
-            // label60
-            // 
+
             label60.AutoSize = true;
             label60.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label60.ForeColor = Color.Snow;
@@ -3103,9 +2815,7 @@
             label60.Size = new Size(146, 15);
             label60.TabIndex = 130;
             label60.Text = "Stop Output While Paused";
-            // 
-            // rjToggleButtonPlayPaused
-            // 
+
             rjToggleButtonPlayPaused.AutoSize = true;
             rjToggleButtonPlayPaused.Location = new Point(21, 162);
             rjToggleButtonPlayPaused.Margin = new Padding(3, 2, 3, 2);
@@ -3118,9 +2828,7 @@
             rjToggleButtonPlayPaused.Size = new Size(39, 16);
             rjToggleButtonPlayPaused.TabIndex = 131;
             rjToggleButtonPlayPaused.UseVisualStyleBackColor = true;
-            // 
-            // label103
-            // 
+
             label103.AutoSize = true;
             label103.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label103.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3130,9 +2838,7 @@
             label103.Size = new Size(164, 15);
             label103.TabIndex = 63;
             label103.Text = "Customize Media Output Text";
-            // 
-            // textBoxCustomSpot
-            // 
+
             textBoxCustomSpot.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxCustomSpot.Location = new Point(19, 47);
             textBoxCustomSpot.Margin = new Padding(3, 2, 3, 2);
@@ -3140,9 +2846,7 @@
             textBoxCustomSpot.Size = new Size(712, 23);
             textBoxCustomSpot.TabIndex = 62;
             textBoxCustomSpot.Text = "{spotifySymbol} Listening to '{title}' by '{artist}' {progressMinutes}/{durationMinutes} on Spotify";
-            // 
-            // label57
-            // 
+
             label57.AutoSize = true;
             label57.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label57.ForeColor = Color.Snow;
@@ -3151,9 +2855,7 @@
             label57.Size = new Size(101, 15);
             label57.TabIndex = 53;
             label57.Text = "Output Spam Log";
-            // 
-            // rjToggleButtonSpotifySpam
-            // 
+
             rjToggleButtonSpotifySpam.AutoSize = true;
             rjToggleButtonSpotifySpam.Checked = true;
             rjToggleButtonSpotifySpam.CheckState = CheckState.Checked;
@@ -3168,9 +2870,7 @@
             rjToggleButtonSpotifySpam.Size = new Size(39, 16);
             rjToggleButtonSpotifySpam.TabIndex = 54;
             rjToggleButtonSpotifySpam.UseVisualStyleBackColor = true;
-            // 
-            // label56
-            // 
+
             label56.AutoSize = true;
             label56.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label56.ForeColor = Color.Snow;
@@ -3179,9 +2879,7 @@
             label56.Size = new Size(229, 15);
             label56.TabIndex = 51;
             label56.Text = "Output Continuously (On Update Interval)";
-            // 
-            // rjToggleButtonPeriodic
-            // 
+
             rjToggleButtonPeriodic.AutoSize = true;
             rjToggleButtonPeriodic.Location = new Point(21, 141);
             rjToggleButtonPeriodic.Margin = new Padding(3, 2, 3, 2);
@@ -3194,9 +2892,7 @@
             rjToggleButtonPeriodic.Size = new Size(39, 16);
             rjToggleButtonPeriodic.TabIndex = 52;
             rjToggleButtonPeriodic.UseVisualStyleBackColor = true;
-            // 
-            // label55
-            // 
+
             label55.AutoSize = true;
             label55.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label55.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3206,9 +2902,7 @@
             label55.Size = new Size(114, 15);
             label55.TabIndex = 49;
             label55.Text = "Update Interval (ms)";
-            // 
-            // button4
-            // 
+
             button4.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -3221,18 +2915,14 @@
             button4.Text = "Apply";
             button4.UseVisualStyleBackColor = false;
             button4.Click += (this.button4_Click_1);
-            // 
-            // textBoxSpotifyTime
-            // 
+
             textBoxSpotifyTime.Location = new Point(23, 106);
             textBoxSpotifyTime.Margin = new Padding(3, 2, 3, 2);
             textBoxSpotifyTime.Name = "textBoxSpotifyTime";
             textBoxSpotifyTime.Size = new Size(158, 23);
             textBoxSpotifyTime.TabIndex = 48;
             textBoxSpotifyTime.Text = "10000";
-            // 
-            // groupBox3
-            // 
+
             groupBox3.Controls.Add(ShowSpotifyPassword);
             groupBox3.Controls.Add(label68);
             groupBox3.Controls.Add(rjToggleSpotLegacy);
@@ -3250,9 +2940,7 @@
             groupBox3.TabIndex = 138;
             groupBox3.TabStop = false;
             groupBox3.Text = "Spotify API";
-            // 
-            // ShowSpotifyPassword
-            // 
+
             ShowSpotifyPassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             ShowSpotifyPassword.BackColor = Color.White;
             ShowSpotifyPassword.FlatAppearance.BorderSize = 0;
@@ -3269,9 +2957,7 @@
             ShowSpotifyPassword.TabIndex = 123;
             ShowSpotifyPassword.UseVisualStyleBackColor = false;
             ShowSpotifyPassword.Click += (this.ShowSpotifyPassword_Click);
-            // 
-            // label68
-            // 
+
             label68.AutoSize = true;
             label68.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label68.ForeColor = Color.Snow;
@@ -3280,9 +2966,7 @@
             label68.Size = new Size(285, 15);
             label68.TabIndex = 58;
             label68.Text = "Legacy Client ID (Spotify Legacy role in Discord only)";
-            // 
-            // rjToggleSpotLegacy
-            // 
+
             rjToggleSpotLegacy.AutoSize = true;
             rjToggleSpotLegacy.BackColor = Color.Yellow;
             rjToggleSpotLegacy.Location = new Point(16, 49);
@@ -3297,9 +2981,7 @@
             rjToggleSpotLegacy.TabIndex = 59;
             rjToggleSpotLegacy.UseVisualStyleBackColor = false;
             rjToggleSpotLegacy.CheckedChanged += (this.rjToggleSpotLegacy_CheckedChanged);
-            // 
-            // label67
-            // 
+
             label67.AutoSize = true;
             label67.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label67.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3309,9 +2991,7 @@
             label67.Size = new Size(52, 15);
             label67.TabIndex = 56;
             label67.Text = "Client ID";
-            // 
-            // textBoxSpotKey
-            // 
+
             textBoxSpotKey.Location = new Point(19, 104);
             textBoxSpotKey.Margin = new Padding(3, 2, 3, 2);
             textBoxSpotKey.Name = "textBoxSpotKey";
@@ -3319,9 +2999,7 @@
             textBoxSpotKey.Size = new Size(263, 23);
             textBoxSpotKey.TabIndex = 55;
             textBoxSpotKey.TextChanged += (this.textBoxSpotKey_TextChanged);
-            // 
-            // label34
-            // 
+
             label34.AutoSize = true;
             label34.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label34.ForeColor = Color.Snow;
@@ -3330,9 +3008,7 @@
             label34.Size = new Size(137, 15);
             label34.TabIndex = 44;
             label34.Text = "Enable Spotify API Mode";
-            // 
-            // rjToggleButtonCurrentSong
-            // 
+
             rjToggleButtonCurrentSong.AutoSize = true;
             rjToggleButtonCurrentSong.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             rjToggleButtonCurrentSong.Location = new Point(16, 23);
@@ -3347,9 +3023,7 @@
             rjToggleButtonCurrentSong.TabIndex = 45;
             rjToggleButtonCurrentSong.UseVisualStyleBackColor = false;
             rjToggleButtonCurrentSong.CheckedChanged += (this.rjToggleButtonCurrentSong_CheckedChanged);
-            // 
-            // buttonSpotify
-            // 
+
             buttonSpotify.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonSpotify.FlatStyle = FlatStyle.Flat;
             buttonSpotify.ForeColor = Color.Snow;
@@ -3361,9 +3035,7 @@
             buttonSpotify.Text = "Connect Spotify";
             buttonSpotify.UseVisualStyleBackColor = false;
             buttonSpotify.Click += (this.buttonSpotify_Click);
-            // 
-            // groupBox2
-            // 
+
             groupBox2.Controls.Add(labelMediaPaused);
             groupBox2.Controls.Add(checkedListBoxApproved);
             groupBox2.Controls.Add(label18);
@@ -3378,9 +3050,7 @@
             groupBox2.TabIndex = 137;
             groupBox2.TabStop = false;
             groupBox2.Text = "Windows Media";
-            // 
-            // labelMediaPaused
-            // 
+
             labelMediaPaused.AutoSize = true;
             labelMediaPaused.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             labelMediaPaused.ForeColor = Color.Snow;
@@ -3389,9 +3059,7 @@
             labelMediaPaused.Size = new Size(81, 15);
             labelMediaPaused.TabIndex = 146;
             labelMediaPaused.Text = "Media Paused";
-            // 
-            // checkedListBoxApproved
-            // 
+
             checkedListBoxApproved.FormattingEnabled = true;
             checkedListBoxApproved.Location = new Point(16, 60);
             checkedListBoxApproved.Margin = new Padding(3, 2, 3, 2);
@@ -3399,9 +3067,7 @@
             checkedListBoxApproved.Size = new Size(295, 94);
             checkedListBoxApproved.TabIndex = 133;
             checkedListBoxApproved.Tag = "this is the tag";
-            // 
-            // label18
-            // 
+
             label18.AutoSize = true;
             label18.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label18.ForeColor = Color.Snow;
@@ -3410,9 +3076,7 @@
             label18.Size = new Size(155, 15);
             label18.TabIndex = 126;
             label18.Text = "Approved Media Source List";
-            // 
-            // label137
-            // 
+
             label137.AutoSize = true;
             label137.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label137.ForeColor = Color.Snow;
@@ -3421,9 +3085,7 @@
             label137.Size = new Size(164, 15);
             label137.TabIndex = 122;
             label137.Text = "Enable Windows Media Mode";
-            // 
-            // rjToggleButtonWindowsMedia
-            // 
+
             rjToggleButtonWindowsMedia.AutoSize = true;
             rjToggleButtonWindowsMedia.Location = new Point(16, 20);
             rjToggleButtonWindowsMedia.Margin = new Padding(3, 2, 3, 2);
@@ -3437,9 +3099,7 @@
             rjToggleButtonWindowsMedia.TabIndex = 123;
             rjToggleButtonWindowsMedia.UseVisualStyleBackColor = true;
             rjToggleButtonWindowsMedia.CheckedChanged += (this.rjToggleButton10_CheckedChanged);
-            // 
-            // label49
-            // 
+
             label49.AutoSize = true;
             label49.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label49.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3449,9 +3109,7 @@
             label49.Size = new Size(128, 20);
             label49.TabIndex = 129;
             label49.Text = "Media Integration";
-            // 
-            // iconButton31
-            // 
+
             iconButton31.FlatAppearance.BorderSize = 0;
             iconButton31.FlatStyle = FlatStyle.Flat;
             iconButton31.ForeColor = Color.Snow;
@@ -3469,9 +3127,7 @@
             iconButton31.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton31.UseVisualStyleBackColor = true;
             iconButton31.Click += (this.iconButton31_Click);
-            // 
-            // tabHeartBeat
-            // 
+
             tabHeartBeat.AutoScroll = true;
             tabHeartBeat.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabHeartBeat.Controls.Add(groupBox41);
@@ -3492,9 +3148,7 @@
             tabHeartBeat.Size = new Size(769, 587);
             tabHeartBeat.TabIndex = 7;
             tabHeartBeat.Text = "Heartbeat";
-            // 
-            // groupBox41
-            // 
+
             groupBox41.Controls.Add(label198);
             groupBox41.Controls.Add(button3);
             groupBox41.Controls.Add(WebsocketServerPortText);
@@ -3512,9 +3166,7 @@
             groupBox41.TabIndex = 115;
             groupBox41.TabStop = false;
             groupBox41.Text = "Websocket Server";
-            // 
-            // label198
-            // 
+
             label198.AutoSize = true;
             label198.ForeColor = Color.Snow;
             label198.Location = new Point(19, 121);
@@ -3522,9 +3174,7 @@
             label198.Size = new Size(72, 15);
             label198.TabIndex = 164;
             label198.Text = "Receive Port";
-            // 
-            // button3
-            // 
+
             button3.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -3537,18 +3187,14 @@
             button3.Text = "Apply";
             button3.UseVisualStyleBackColor = false;
             button3.Click += (this.button3_Click_1);
-            // 
-            // WebsocketServerPortText
-            // 
+
             WebsocketServerPortText.Location = new Point(19, 138);
             WebsocketServerPortText.Margin = new Padding(3, 2, 3, 2);
             WebsocketServerPortText.Name = "WebsocketServerPortText";
             WebsocketServerPortText.Size = new Size(75, 23);
             WebsocketServerPortText.TabIndex = 162;
             WebsocketServerPortText.Text = "9008";
-            // 
-            // label195
-            // 
+
             label195.AutoSize = true;
             label195.Cursor = Cursors.Hand;
             label195.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3559,9 +3205,7 @@
             label195.TabIndex = 161;
             label195.Text = "TTS Voice Wizard Web App";
             label195.Click += (this.label195_Click);
-            // 
-            // iconButton5
-            // 
+
             iconButton5.FlatAppearance.BorderSize = 0;
             iconButton5.FlatStyle = FlatStyle.Flat;
             iconButton5.ForeColor = Color.Snow;
@@ -3578,9 +3222,7 @@
             iconButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton5.UseVisualStyleBackColor = true;
             iconButton5.Click += (this.iconButton5_Click_1);
-            // 
-            // label197
-            // 
+
             label197.AutoSize = true;
             label197.ForeColor = Color.Snow;
             label197.Location = new Point(64, 78);
@@ -3588,9 +3230,7 @@
             label197.Size = new Size(190, 15);
             label197.TabIndex = 133;
             label197.Text = "Activate Websocket Server on Start";
-            // 
-            // rjToggleActivateWebsocketOnStart
-            // 
+
             rjToggleActivateWebsocketOnStart.AutoSize = true;
             rjToggleActivateWebsocketOnStart.Location = new Point(19, 77);
             rjToggleActivateWebsocketOnStart.Margin = new Padding(3, 2, 3, 2);
@@ -3603,9 +3243,7 @@
             rjToggleActivateWebsocketOnStart.Size = new Size(39, 16);
             rjToggleActivateWebsocketOnStart.TabIndex = 132;
             rjToggleActivateWebsocketOnStart.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
+
             button20.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button20.FlatStyle = FlatStyle.Flat;
             button20.ForeColor = Color.Snow;
@@ -3617,9 +3255,7 @@
             button20.Text = "Activate Websocket Server";
             button20.UseVisualStyleBackColor = false;
             button20.Click += (this.button20_Click);
-            // 
-            // groupBox43
-            // 
+
             groupBox43.Controls.Add(rjToggleOutputHeartrateDirect);
             groupBox43.Controls.Add(label38);
             groupBox43.Controls.Add(label37);
@@ -3631,9 +3267,7 @@
             groupBox43.TabIndex = 114;
             groupBox43.TabStop = false;
             groupBox43.Text = "General Settings";
-            // 
-            // rjToggleOutputHeartrateDirect
-            // 
+
             rjToggleOutputHeartrateDirect.AutoSize = true;
             rjToggleOutputHeartrateDirect.Checked = true;
             rjToggleOutputHeartrateDirect.CheckState = CheckState.Checked;
@@ -3649,9 +3283,7 @@
             rjToggleOutputHeartrateDirect.TabIndex = 51;
             rjToggleOutputHeartrateDirect.UseVisualStyleBackColor = true;
             rjToggleOutputHeartrateDirect.CheckedChanged += (this.rjToggleButton1_CheckedChanged);
-            // 
-            // label38
-            // 
+
             label38.AutoSize = true;
             label38.ForeColor = Color.Snow;
             label38.Location = new Point(62, 59);
@@ -3659,9 +3291,7 @@
             label38.Size = new Size(82, 15);
             label38.TabIndex = 55;
             label38.Text = "Output to Log";
-            // 
-            // label37
-            // 
+
             label37.AutoSize = true;
             label37.ForeColor = Color.Snow;
             label37.Location = new Point(62, 31);
@@ -3669,9 +3299,7 @@
             label37.Size = new Size(140, 15);
             label37.TabIndex = 52;
             label37.Text = "Output Heartrate Directly";
-            // 
-            // rjToggleOSCListenerSpamLog
-            // 
+
             rjToggleOSCListenerSpamLog.AutoSize = true;
             rjToggleOSCListenerSpamLog.Checked = true;
             rjToggleOSCListenerSpamLog.CheckState = CheckState.Checked;
@@ -3687,9 +3315,7 @@
             rjToggleOSCListenerSpamLog.TabIndex = 54;
             rjToggleOSCListenerSpamLog.UseVisualStyleBackColor = true;
             rjToggleOSCListenerSpamLog.CheckedChanged += (this.rjToggleButton2_CheckedChanged);
-            // 
-            // groupBox42
-            // 
+
             groupBox42.Controls.Add(label192);
             groupBox42.Controls.Add(iconButton4);
             groupBox42.Controls.Add(label191);
@@ -3711,9 +3337,7 @@
             groupBox42.TabIndex = 112;
             groupBox42.TabStop = false;
             groupBox42.Text = "Pulsoid Settings";
-            // 
-            // label192
-            // 
+
             label192.AutoSize = true;
             label192.Cursor = Cursors.Hand;
             label192.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3724,9 +3348,7 @@
             label192.TabIndex = 161;
             label192.Text = "Get Pulsoid Authorization Token";
             label192.Click += (this.label192_Click);
-            // 
-            // iconButton4
-            // 
+
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatStyle = FlatStyle.Flat;
             iconButton4.ForeColor = Color.Snow;
@@ -3743,9 +3365,7 @@
             iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton4.UseVisualStyleBackColor = true;
             iconButton4.Click += (this.iconButton4_Click_1);
-            // 
-            // label191
-            // 
+
             label191.AutoSize = true;
             label191.ForeColor = Color.Snow;
             label191.Location = new Point(68, 120);
@@ -3753,9 +3373,7 @@
             label191.Size = new Size(197, 15);
             label191.TabIndex = 133;
             label191.Text = "Activate Pulsoid Websocket on Start";
-            // 
-            // rjToggleActivatePulsoidStart
-            // 
+
             rjToggleActivatePulsoidStart.AutoSize = true;
             rjToggleActivatePulsoidStart.Location = new Point(23, 119);
             rjToggleActivatePulsoidStart.Margin = new Padding(3, 2, 3, 2);
@@ -3768,9 +3386,7 @@
             rjToggleActivatePulsoidStart.Size = new Size(39, 16);
             rjToggleActivatePulsoidStart.TabIndex = 132;
             rjToggleActivatePulsoidStart.UseVisualStyleBackColor = true;
-            // 
-            // buttonPulsoidInterval
-            // 
+
             buttonPulsoidInterval.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonPulsoidInterval.FlatStyle = FlatStyle.Flat;
             buttonPulsoidInterval.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -3783,9 +3399,7 @@
             buttonPulsoidInterval.Text = "Apply";
             buttonPulsoidInterval.UseVisualStyleBackColor = false;
             buttonPulsoidInterval.Click += (this.buttonPulsoidInterval_Click);
-            // 
-            // labelHeartIntervalTooFast
-            // 
+
             labelHeartIntervalTooFast.AutoSize = true;
             labelHeartIntervalTooFast.ForeColor = Color.Red;
             labelHeartIntervalTooFast.Location = new Point(23, 193);
@@ -3794,9 +3408,7 @@
             labelHeartIntervalTooFast.TabIndex = 130;
             labelHeartIntervalTooFast.Text = "too fast to output directly to chatbox";
             labelHeartIntervalTooFast.Visible = false;
-            // 
-            // label196
-            // 
+
             label196.AutoSize = true;
             label196.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label196.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3806,9 +3418,7 @@
             label196.Size = new Size(114, 15);
             label196.TabIndex = 128;
             label196.Text = "Update Interval (ms)";
-            // 
-            // iconButtonPulsoidHideKey
-            // 
+
             iconButtonPulsoidHideKey.BackColor = Color.White;
             iconButtonPulsoidHideKey.FlatAppearance.BorderSize = 0;
             iconButtonPulsoidHideKey.FlatStyle = FlatStyle.Flat;
@@ -3824,9 +3434,7 @@
             iconButtonPulsoidHideKey.TabIndex = 127;
             iconButtonPulsoidHideKey.UseVisualStyleBackColor = false;
             iconButtonPulsoidHideKey.Click += (this.iconButtonPulsoidHideKey_Click);
-            // 
-            // label194
-            // 
+
             label194.AutoSize = true;
             label194.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             label194.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -3836,18 +3444,14 @@
             label194.Size = new Size(114, 15);
             label194.TabIndex = 126;
             label194.Text = "Authorization Token";
-            // 
-            // pulsoidAuthToken
-            // 
+
             pulsoidAuthToken.Location = new Point(23, 55);
             pulsoidAuthToken.Margin = new Padding(3, 2, 3, 2);
             pulsoidAuthToken.Name = "pulsoidAuthToken";
             pulsoidAuthToken.PasswordChar = '*';
             pulsoidAuthToken.Size = new Size(347, 23);
             pulsoidAuthToken.TabIndex = 125;
-            // 
-            // buttonPulsoidConnect
-            // 
+
             buttonPulsoidConnect.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonPulsoidConnect.FlatStyle = FlatStyle.Flat;
             buttonPulsoidConnect.ForeColor = Color.Snow;
@@ -3859,18 +3463,14 @@
             buttonPulsoidConnect.Text = "Connect Pulsoid";
             buttonPulsoidConnect.UseVisualStyleBackColor = false;
             buttonPulsoidConnect.Click += (this.buttonPulsoidConnect_Click);
-            // 
-            // textBoxPulsoidInterval
-            // 
+
             textBoxPulsoidInterval.Location = new Point(23, 168);
             textBoxPulsoidInterval.Margin = new Padding(3, 2, 3, 2);
             textBoxPulsoidInterval.Name = "textBoxPulsoidInterval";
             textBoxPulsoidInterval.Size = new Size(114, 23);
             textBoxPulsoidInterval.TabIndex = 103;
             textBoxPulsoidInterval.Text = "1500";
-            // 
-            // groupBoxHead
-            // 
+
             groupBoxHead.Controls.Add(labelHead);
             groupBoxHead.ForeColor = Color.Red;
             groupBoxHead.Location = new Point(419, 414);
@@ -3879,18 +3479,14 @@
             groupBoxHead.TabIndex = 113;
             groupBoxHead.TabStop = false;
             groupBoxHead.Text = "Headset";
-            // 
-            // labelHead
-            // 
+
             labelHead.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             labelHead.Location = new Point(6, 17);
             labelHead.Name = "labelHead";
             labelHead.Size = new Size(112, 48);
             labelHead.TabIndex = 1;
             labelHead.Text = "🔋 0%";
-            // 
-            // groupBoxRight
-            // 
+
             groupBoxRight.Controls.Add(labelRight);
             groupBoxRight.ForeColor = Color.Red;
             groupBoxRight.Location = new Point(583, 414);
@@ -3899,18 +3495,14 @@
             groupBoxRight.TabIndex = 112;
             groupBoxRight.TabStop = false;
             groupBoxRight.Text = "Right Controller";
-            // 
-            // labelRight
-            // 
+
             labelRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             labelRight.Location = new Point(6, 17);
             labelRight.Name = "labelRight";
             labelRight.Size = new Size(140, 48);
             labelRight.TabIndex = 1;
             labelRight.Text = "🔋 0%";
-            // 
-            // groupBoxOSCtoTTS
-            // 
+
             groupBoxOSCtoTTS.Controls.Add(labelOSCtoTTS);
             groupBoxOSCtoTTS.ForeColor = Color.Red;
             groupBoxOSCtoTTS.Location = new Point(419, 490);
@@ -3919,18 +3511,14 @@
             groupBoxOSCtoTTS.TabIndex = 111;
             groupBoxOSCtoTTS.TabStop = false;
             groupBoxOSCtoTTS.Text = "OSC to TTS";
-            // 
-            // labelOSCtoTTS
-            // 
+
             labelOSCtoTTS.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelOSCtoTTS.Location = new Point(17, 32);
             labelOSCtoTTS.Name = "labelOSCtoTTS";
             labelOSCtoTTS.Size = new Size(257, 21);
             labelOSCtoTTS.TabIndex = 0;
             labelOSCtoTTS.Text = "/TTSVoiceWizard/TextToSpeech";
-            // 
-            // groupBoxControllers
-            // 
+
             groupBoxControllers.Controls.Add(ControllerLabel);
             groupBoxControllers.ForeColor = Color.Red;
             groupBoxControllers.Location = new Point(583, 339);
@@ -3939,18 +3527,14 @@
             groupBoxControllers.TabIndex = 110;
             groupBoxControllers.TabStop = false;
             groupBoxControllers.Text = "Left Controller";
-            // 
-            // ControllerLabel
-            // 
+
             ControllerLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             ControllerLabel.Location = new Point(6, 17);
             ControllerLabel.Name = "ControllerLabel";
             ControllerLabel.Size = new Size(146, 48);
             ControllerLabel.TabIndex = 1;
             ControllerLabel.Text = "🔋 0%";
-            // 
-            // groupBoxHeartrate
-            // 
+
             groupBoxHeartrate.Controls.Add(HeartrateLabel);
             groupBoxHeartrate.ForeColor = Color.Red;
             groupBoxHeartrate.Location = new Point(419, 190);
@@ -3959,18 +3543,14 @@
             groupBoxHeartrate.TabIndex = 109;
             groupBoxHeartrate.TabStop = false;
             groupBoxHeartrate.Text = "Heartrate";
-            // 
-            // HeartrateLabel
-            // 
+
             HeartrateLabel.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
             HeartrateLabel.Location = new Point(17, 25);
             HeartrateLabel.Name = "HeartrateLabel";
             HeartrateLabel.Size = new Size(293, 90);
             HeartrateLabel.TabIndex = 0;
             HeartrateLabel.Text = "❤️ 0";
-            // 
-            // groupBoxTrackers
-            // 
+
             groupBoxTrackers.Controls.Add(TrackerLabel);
             groupBoxTrackers.ForeColor = Color.Red;
             groupBoxTrackers.Location = new Point(419, 338);
@@ -3979,18 +3559,14 @@
             groupBoxTrackers.TabIndex = 108;
             groupBoxTrackers.TabStop = false;
             groupBoxTrackers.Text = "Trackers";
-            // 
-            // TrackerLabel
-            // 
+
             TrackerLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             TrackerLabel.Location = new Point(6, 17);
             TrackerLabel.Name = "TrackerLabel";
             TrackerLabel.Size = new Size(140, 42);
             TrackerLabel.TabIndex = 1;
             TrackerLabel.Text = "🔋 0%";
-            // 
-            // groupBox21
-            // 
+
             groupBox21.Controls.Add(label140);
             groupBox21.Controls.Add(rjToggleButtonForwardData);
             groupBox21.Controls.Add(label130);
@@ -4012,9 +3588,7 @@
             groupBox21.TabIndex = 105;
             groupBox21.TabStop = false;
             groupBox21.Text = "OSC Listener Settings";
-            // 
-            // label140
-            // 
+
             label140.AutoSize = true;
             label140.ForeColor = Color.Snow;
             label140.Location = new Point(65, 112);
@@ -4022,9 +3596,7 @@
             label140.Size = new Size(171, 15);
             label140.TabIndex = 102;
             label140.Text = "Forward Data to OSC Send Port";
-            // 
-            // rjToggleButtonForwardData
-            // 
+
             rjToggleButtonForwardData.AutoSize = true;
             rjToggleButtonForwardData.Location = new Point(20, 110);
             rjToggleButtonForwardData.Margin = new Padding(3, 2, 3, 2);
@@ -4038,9 +3610,7 @@
             rjToggleButtonForwardData.TabIndex = 101;
             rjToggleButtonForwardData.UseVisualStyleBackColor = true;
             rjToggleButtonForwardData.CheckedChanged += (this.rjToggleButtonForwardData_CheckedChanged);
-            // 
-            // label130
-            // 
+
             label130.AutoSize = true;
             label130.ForeColor = Color.Snow;
             label130.Location = new Point(65, 84);
@@ -4048,9 +3618,7 @@
             label130.Size = new Size(164, 15);
             label130.TabIndex = 100;
             label130.Text = "Activate OSC Listener on Start";
-            // 
-            // rjToggleActivateOSCListenerStart
-            // 
+
             rjToggleActivateOSCListenerStart.AutoSize = true;
             rjToggleActivateOSCListenerStart.Location = new Point(20, 83);
             rjToggleActivateOSCListenerStart.Margin = new Padding(3, 2, 3, 2);
@@ -4064,9 +3632,7 @@
             rjToggleActivateOSCListenerStart.TabIndex = 99;
             rjToggleActivateOSCListenerStart.UseVisualStyleBackColor = true;
             rjToggleActivateOSCListenerStart.CheckedChanged += (this.rjToggleButton8_CheckedChanged);
-            // 
-            // iconButton39
-            // 
+
             iconButton39.FlatAppearance.BorderSize = 0;
             iconButton39.FlatStyle = FlatStyle.Flat;
             iconButton39.ForeColor = Color.Snow;
@@ -4083,9 +3649,7 @@
             iconButton39.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton39.UseVisualStyleBackColor = true;
             iconButton39.Click += (this.iconButton39_Click);
-            // 
-            // label46
-            // 
+
             label46.AutoSize = true;
             label46.ForeColor = Color.Snow;
             label46.Location = new Point(23, 196);
@@ -4093,9 +3657,7 @@
             label46.Size = new Size(72, 15);
             label46.TabIndex = 64;
             label46.Text = "Receive Port";
-            // 
-            // button8
-            // 
+
             button8.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -4108,9 +3670,7 @@
             button8.Text = "Apply";
             button8.UseVisualStyleBackColor = false;
             button8.Click += (this.button8_Click);
-            // 
-            // button7
-            // 
+
             button7.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button7.FlatStyle = FlatStyle.Flat;
             button7.ForeColor = Color.White;
@@ -4122,18 +3682,14 @@
             button7.Text = "Activate OSC Listener";
             button7.UseVisualStyleBackColor = false;
             button7.Click += (this.button7_Click);
-            // 
-            // HRInterval
-            // 
+
             HRInterval.Location = new Point(23, 161);
             HRInterval.Margin = new Padding(3, 2, 3, 2);
             HRInterval.Name = "HRInterval";
             HRInterval.Size = new Size(75, 23);
             HRInterval.TabIndex = 56;
             HRInterval.Text = "3";
-            // 
-            // HRIntervalChange
-            // 
+
             HRIntervalChange.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             HRIntervalChange.FlatStyle = FlatStyle.Flat;
             HRIntervalChange.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -4146,18 +3702,14 @@
             HRIntervalChange.Text = "Apply";
             HRIntervalChange.UseVisualStyleBackColor = false;
             HRIntervalChange.Click += (this.HRIntervalChange_Click);
-            // 
-            // textBoxHRPort
-            // 
+
             textBoxHRPort.Location = new Point(23, 213);
             textBoxHRPort.Margin = new Padding(3, 2, 3, 2);
             textBoxHRPort.Name = "textBoxHRPort";
             textBoxHRPort.Size = new Size(75, 23);
             textBoxHRPort.TabIndex = 48;
             textBoxHRPort.Text = "4026";
-            // 
-            // label39
-            // 
+
             label39.AutoSize = true;
             label39.ForeColor = Color.Snow;
             label39.Location = new Point(23, 144);
@@ -4165,9 +3717,7 @@
             label39.Size = new Size(81, 15);
             label39.TabIndex = 57;
             label39.Text = "HR Interval (s)";
-            // 
-            // label42
-            // 
+
             label42.AutoSize = true;
             label42.ForeColor = Color.Snow;
             label42.Location = new Point(197, 31);
@@ -4175,9 +3725,7 @@
             label42.Size = new Size(455, 30);
             label42.TabIndex = 61;
             label42.Text = "Connect HR device directly via Pulsoid / receive HR data from HRtoVRChat_OSC and \r\ntracker battery Life data from XSOverlay";
-            // 
-            // label35
-            // 
+
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label35.ForeColor = Color.Snow;
@@ -4186,9 +3734,7 @@
             label35.Size = new Size(173, 20);
             label35.TabIndex = 46;
             label35.Text = "Heartrate + OSC Listener";
-            // 
-            // APIs
-            // 
+
             APIs.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             APIs.Controls.Add(translucentPanel2);
             APIs.Controls.Add(label73);
@@ -4199,9 +3745,7 @@
             APIs.Size = new Size(769, 587);
             APIs.TabIndex = 8;
             APIs.Text = "APIs";
-            // 
-            // translucentPanel2
-            // 
+
             translucentPanel2.AutoScroll = true;
             translucentPanel2.BackColor = Color.Transparent;
             translucentPanel2.Controls.Add(iconButton6);
@@ -4218,9 +3762,7 @@
             translucentPanel2.Name = "translucentPanel2";
             translucentPanel2.Size = new Size(763, 563);
             translucentPanel2.TabIndex = 1;
-            // 
-            // iconButton6
-            // 
+
             iconButton6.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton6.Dock = DockStyle.Top;
             iconButton6.FlatAppearance.BorderSize = 0;
@@ -4239,9 +3781,7 @@
             iconButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton6.UseVisualStyleBackColor = false;
             iconButton6.Click += (this.iconButton6_Click_1);
-            // 
-            // iconButton30
-            // 
+
             iconButton30.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton30.Dock = DockStyle.Top;
             iconButton30.FlatAppearance.BorderSize = 0;
@@ -4260,9 +3800,7 @@
             iconButton30.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton30.UseVisualStyleBackColor = false;
             iconButton30.Click += (this.iconButton30_Click_1);
-            // 
-            // iconButton52
-            // 
+
             iconButton52.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton52.Dock = DockStyle.Top;
             iconButton52.FlatAppearance.BorderSize = 0;
@@ -4281,9 +3819,7 @@
             iconButton52.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton52.UseVisualStyleBackColor = false;
             iconButton52.Click += (this.iconButton52_Click);
-            // 
-            // iconButton28
-            // 
+
             iconButton28.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton28.Dock = DockStyle.Top;
             iconButton28.FlatAppearance.BorderSize = 0;
@@ -4302,9 +3838,7 @@
             iconButton28.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton28.UseVisualStyleBackColor = false;
             iconButton28.Click += (this.iconButton28_Click_2);
-            // 
-            // iconButton21
-            // 
+
             iconButton21.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton21.Dock = DockStyle.Top;
             iconButton21.FlatAppearance.BorderSize = 0;
@@ -4323,9 +3857,7 @@
             iconButton21.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton21.UseVisualStyleBackColor = false;
             iconButton21.Click += (this.iconButton21_Click);
-            // 
-            // iconButton19
-            // 
+
             iconButton19.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton19.Dock = DockStyle.Top;
             iconButton19.FlatAppearance.BorderSize = 0;
@@ -4344,9 +3876,7 @@
             iconButton19.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton19.UseVisualStyleBackColor = false;
             iconButton19.Click += (this.iconButton19_Click);
-            // 
-            // iconButton20
-            // 
+
             iconButton20.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton20.Dock = DockStyle.Top;
             iconButton20.FlatAppearance.BorderSize = 0;
@@ -4365,9 +3895,7 @@
             iconButton20.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton20.UseVisualStyleBackColor = false;
             iconButton20.Click += (this.iconButton20_Click);
-            // 
-            // iconButton50
-            // 
+
             iconButton50.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton50.Dock = DockStyle.Top;
             iconButton50.FlatAppearance.BorderSize = 0;
@@ -4387,9 +3915,7 @@
             iconButton50.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton50.UseVisualStyleBackColor = false;
             iconButton50.Click += (this.iconButton50_Click);
-            // 
-            // label73
-            // 
+
             label73.AutoSize = true;
             label73.Dock = DockStyle.Top;
             label73.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
@@ -4399,9 +3925,7 @@
             label73.Size = new Size(62, 20);
             label73.TabIndex = 35;
             label73.Text = "Settings";
-            // 
-            // General
-            // 
+
             General.AutoScroll = true;
             General.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             General.Controls.Add(groupBox17);
@@ -4416,9 +3940,7 @@
             General.Size = new Size(769, 587);
             General.TabIndex = 9;
             General.Text = "General";
-            // 
-            // groupBox17
-            // 
+
             groupBox17.Controls.Add(label233);
             groupBox17.Controls.Add(rjToggleButtonTypingIndicator);
             groupBox17.Controls.Add(label106);
@@ -4438,9 +3960,7 @@
             groupBox17.TabIndex = 119;
             groupBox17.TabStop = false;
             groupBox17.Text = "Chatbox";
-            // 
-            // label233
-            // 
+
             label233.AutoSize = true;
             label233.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label233.ForeColor = Color.Snow;
@@ -4449,9 +3969,7 @@
             label233.Size = new Size(93, 15);
             label233.TabIndex = 111;
             label233.Text = "Typing Indicator";
-            // 
-            // rjToggleButtonTypingIndicator
-            // 
+
             rjToggleButtonTypingIndicator.AutoSize = true;
             rjToggleButtonTypingIndicator.Checked = true;
             rjToggleButtonTypingIndicator.CheckState = CheckState.Checked;
@@ -4466,9 +3984,7 @@
             rjToggleButtonTypingIndicator.Size = new Size(39, 16);
             rjToggleButtonTypingIndicator.TabIndex = 112;
             rjToggleButtonTypingIndicator.UseVisualStyleBackColor = true;
-            // 
-            // label106
-            // 
+
             label106.AutoSize = true;
             label106.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label106.ForeColor = Color.Snow;
@@ -4477,9 +3993,7 @@
             label106.Size = new Size(110, 15);
             label106.TabIndex = 109;
             label106.Text = "Use Hide Text Delay";
-            // 
-            // rjToggleButtonChatBoxUseDelay
-            // 
+
             rjToggleButtonChatBoxUseDelay.AutoSize = true;
             rjToggleButtonChatBoxUseDelay.Location = new Point(7, 82);
             rjToggleButtonChatBoxUseDelay.Margin = new Padding(3, 2, 3, 2);
@@ -4493,9 +4007,7 @@
             rjToggleButtonChatBoxUseDelay.TabIndex = 110;
             rjToggleButtonChatBoxUseDelay.UseVisualStyleBackColor = true;
             rjToggleButtonChatBoxUseDelay.CheckedChanged += (this.rjToggleButtonChatBoxUseDelay_CheckedChanged);
-            // 
-            // label78
-            // 
+
             label78.AutoSize = true;
             label78.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label78.ForeColor = Color.Snow;
@@ -4504,9 +4016,7 @@
             label78.Size = new Size(178, 15);
             label78.TabIndex = 105;
             label78.Text = "VRChat Sound on Message Send";
-            // 
-            // rjToggleSoundNotification
-            // 
+
             rjToggleSoundNotification.AutoSize = true;
             rjToggleSoundNotification.Checked = true;
             rjToggleSoundNotification.CheckState = CheckState.Checked;
@@ -4522,9 +4032,7 @@
             rjToggleSoundNotification.TabIndex = 106;
             rjToggleSoundNotification.UseVisualStyleBackColor = true;
             rjToggleSoundNotification.CheckedChanged += (this.rjToggleSoundNotification_CheckedChanged);
-            // 
-            // label69
-            // 
+
             label69.AutoSize = true;
             label69.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label69.ForeColor = Color.Snow;
@@ -4533,9 +4041,7 @@
             label69.Size = new Size(221, 15);
             label69.TabIndex = 92;
             label69.Text = "Show Keyboard Before Sending Message\r\n";
-            // 
-            // label32
-            // 
+
             label32.AutoSize = true;
             label32.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label32.ForeColor = Color.Snow;
@@ -4544,9 +4050,7 @@
             label32.Size = new Size(211, 15);
             label32.TabIndex = 90;
             label32.Text = "Send Text to VRChat with VRC Chatbox";
-            // 
-            // rjToggleButtonChatBox
-            // 
+
             rjToggleButtonChatBox.AutoSize = true;
             rjToggleButtonChatBox.Checked = true;
             rjToggleButtonChatBox.CheckState = CheckState.Checked;
@@ -4562,9 +4066,7 @@
             rjToggleButtonChatBox.TabIndex = 91;
             rjToggleButtonChatBox.UseVisualStyleBackColor = true;
             rjToggleButtonChatBox.CheckedChanged += (this.rjToggleButtonChatBox_CheckedChanged);
-            // 
-            // rjToggleButtonShowKeyboard
-            // 
+
             rjToggleButtonShowKeyboard.AutoSize = true;
             rjToggleButtonShowKeyboard.Location = new Point(7, 40);
             rjToggleButtonShowKeyboard.Margin = new Padding(3, 2, 3, 2);
@@ -4578,9 +4080,7 @@
             rjToggleButtonShowKeyboard.TabIndex = 93;
             rjToggleButtonShowKeyboard.UseVisualStyleBackColor = true;
             rjToggleButtonShowKeyboard.CheckedChanged += (this.rjToggleButtonShowKeyboard_CheckedChanged);
-            // 
-            // groupBox18
-            // 
+
             groupBox18.Controls.Add(label190);
             groupBox18.Controls.Add(rjToggleButtonUniqueWavNames);
             groupBox18.Controls.Add(iconButton3);
@@ -4599,9 +4099,7 @@
             groupBox18.TabIndex = 120;
             groupBox18.TabStop = false;
             groupBox18.Text = "Output";
-            // 
-            // label190
-            // 
+
             label190.AutoSize = true;
             label190.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label190.ForeColor = Color.Snow;
@@ -4610,9 +4108,7 @@
             label190.Size = new Size(252, 15);
             label190.TabIndex = 160;
             label190.Text = "Wave File Unique Names (Don't Override Files)";
-            // 
-            // rjToggleButtonUniqueWavNames
-            // 
+
             rjToggleButtonUniqueWavNames.AutoSize = true;
             rjToggleButtonUniqueWavNames.Location = new Point(12, 89);
             rjToggleButtonUniqueWavNames.Margin = new Padding(3, 2, 3, 2);
@@ -4625,9 +4121,7 @@
             rjToggleButtonUniqueWavNames.Size = new Size(39, 16);
             rjToggleButtonUniqueWavNames.TabIndex = 161;
             rjToggleButtonUniqueWavNames.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
+
             iconButton3.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton3.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButton3.FlatStyle = FlatStyle.Flat;
@@ -4647,9 +4141,7 @@
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton3.UseVisualStyleBackColor = false;
             iconButton3.Click += (this.button3_Click);
-            // 
-            // iconButtonAudioFiles
-            // 
+
             iconButtonAudioFiles.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButtonAudioFiles.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             iconButtonAudioFiles.FlatStyle = FlatStyle.Flat;
@@ -4669,9 +4161,7 @@
             iconButtonAudioFiles.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButtonAudioFiles.UseVisualStyleBackColor = false;
             iconButtonAudioFiles.Click += (this.iconButtonAudioFiles_Click);
-            // 
-            // label175
-            // 
+
             label175.AutoSize = true;
             label175.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label175.ForeColor = Color.Snow;
@@ -4680,9 +4170,7 @@
             label175.Size = new Size(175, 15);
             label175.TabIndex = 156;
             label175.Text = "Save TTS Messages to Wave File";
-            // 
-            // OBSLink
-            // 
+
             OBSLink.FlatAppearance.BorderSize = 0;
             OBSLink.FlatStyle = FlatStyle.Flat;
             OBSLink.ForeColor = Color.Snow;
@@ -4700,9 +4188,7 @@
             OBSLink.TextImageRelation = TextImageRelation.ImageBeforeText;
             OBSLink.UseVisualStyleBackColor = true;
             OBSLink.Click += (this.OBSLink_Click);
-            // 
-            // rjToggleButtonSaveToWav
-            // 
+
             rjToggleButtonSaveToWav.AutoSize = true;
             rjToggleButtonSaveToWav.Location = new Point(12, 61);
             rjToggleButtonSaveToWav.Margin = new Padding(3, 2, 3, 2);
@@ -4716,9 +4202,7 @@
             rjToggleButtonSaveToWav.TabIndex = 157;
             rjToggleButtonSaveToWav.UseVisualStyleBackColor = true;
             rjToggleButtonSaveToWav.CheckedChanged += (this.rjToggleButtonSaveToWav_CheckedChanged);
-            // 
-            // label102
-            // 
+
             label102.AutoSize = true;
             label102.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label102.ForeColor = Color.Snow;
@@ -4727,9 +4211,7 @@
             label102.Size = new Size(158, 15);
             label102.TabIndex = 104;
             label102.Text = "OBS Text (streaming overlay)";
-            // 
-            // rjToggleButtonOBSText
-            // 
+
             rjToggleButtonOBSText.AutoSize = true;
             rjToggleButtonOBSText.Location = new Point(12, 28);
             rjToggleButtonOBSText.Margin = new Padding(3, 2, 3, 2);
@@ -4743,9 +4225,7 @@
             rjToggleButtonOBSText.TabIndex = 105;
             rjToggleButtonOBSText.UseVisualStyleBackColor = true;
             rjToggleButtonOBSText.CheckedChanged += (this.rjToggleButtonOBSText_CheckedChanged);
-            // 
-            // groupBox19
-            // 
+
             groupBox19.Controls.Add(button46);
             groupBox19.Controls.Add(button17);
             groupBox19.Controls.Add(button16);
@@ -4768,9 +4248,7 @@
             groupBox19.TabIndex = 121;
             groupBox19.TabStop = false;
             groupBox19.Text = "General Text";
-            // 
-            // button46
-            // 
+
             button46.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             button46.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button46.FlatStyle = FlatStyle.Flat;
@@ -4784,9 +4262,7 @@
             button46.Text = "Open OSC Config Folder";
             button46.UseVisualStyleBackColor = false;
             button46.Click += (this.button46_Click);
-            // 
-            // button17
-            // 
+
             button17.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button17.FlatStyle = FlatStyle.Flat;
             button17.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -4799,9 +4275,7 @@
             button17.Text = "Apply";
             button17.UseVisualStyleBackColor = false;
             button17.Click += (this.button17_Click);
-            // 
-            // button16
-            // 
+
             button16.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button16.FlatStyle = FlatStyle.Flat;
             button16.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -4814,9 +4288,7 @@
             button16.Text = "Apply";
             button16.UseVisualStyleBackColor = false;
             button16.Click += (this.button16_Click);
-            // 
-            // label129
-            // 
+
             label129.AutoSize = true;
             label129.ForeColor = Color.Snow;
             label129.Location = new Point(128, 123);
@@ -4824,9 +4296,7 @@
             label129.Size = new Size(160, 15);
             label129.TabIndex = 116;
             label129.Text = "\"9000\" for sending to VRChat";
-            // 
-            // label128
-            // 
+
             label128.AutoSize = true;
             label128.ForeColor = Color.Snow;
             label128.Location = new Point(130, 78);
@@ -4834,9 +4304,7 @@
             label128.Size = new Size(134, 15);
             label128.TabIndex = 115;
             label128.Text = "\"127.0.0.1\" for local host";
-            // 
-            // label127
-            // 
+
             label127.AutoSize = true;
             label127.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label127.ForeColor = Color.Snow;
@@ -4845,9 +4313,7 @@
             label127.Size = new Size(104, 15);
             label127.TabIndex = 114;
             label127.Text = "OSC Send Address";
-            // 
-            // label126
-            // 
+
             label126.AutoSize = true;
             label126.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label126.ForeColor = Color.Snow;
@@ -4856,27 +4322,21 @@
             label126.Size = new Size(84, 15);
             label126.TabIndex = 113;
             label126.Text = "OSC Send Port";
-            // 
-            // textBoxOSCPort
-            // 
+
             textBoxOSCPort.Location = new Point(10, 138);
             textBoxOSCPort.Margin = new Padding(3, 2, 3, 2);
             textBoxOSCPort.Name = "textBoxOSCPort";
             textBoxOSCPort.Size = new Size(110, 23);
             textBoxOSCPort.TabIndex = 112;
             textBoxOSCPort.Text = "9000";
-            // 
-            // textBoxOSCAddress
-            // 
+
             textBoxOSCAddress.Location = new Point(10, 93);
             textBoxOSCAddress.Margin = new Padding(3, 2, 3, 2);
             textBoxOSCAddress.Name = "textBoxOSCAddress";
             textBoxOSCAddress.Size = new Size(110, 23);
             textBoxOSCAddress.TabIndex = 111;
             textBoxOSCAddress.Text = "127.0.0.1";
-            // 
-            // label26
-            // 
+
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label26.ForeColor = Color.Snow;
@@ -4885,9 +4345,7 @@
             label26.Size = new Size(115, 15);
             label26.TabIndex = 60;
             label26.Text = "Hide Text Delay (ms)";
-            // 
-            // rjToggleButtonHideDelay2
-            // 
+
             rjToggleButtonHideDelay2.AutoSize = true;
             rjToggleButtonHideDelay2.Location = new Point(9, 22);
             rjToggleButtonHideDelay2.Margin = new Padding(3, 2, 3, 2);
@@ -4901,9 +4359,7 @@
             rjToggleButtonHideDelay2.TabIndex = 78;
             rjToggleButtonHideDelay2.UseVisualStyleBackColor = true;
             rjToggleButtonHideDelay2.CheckedChanged += (this.rjToggleButtonHideDelay2_CheckedChanged);
-            // 
-            // button1
-            // 
+
             button1.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -4916,18 +4372,14 @@
             button1.Text = "Apply";
             button1.UseVisualStyleBackColor = false;
             button1.Click += (this.buttonErase_Click);
-            // 
-            // textBoxErase
-            // 
+
             textBoxErase.Location = new Point(12, 42);
             textBoxErase.Margin = new Padding(3, 2, 3, 2);
             textBoxErase.Name = "textBoxErase";
             textBoxErase.Size = new Size(110, 23);
             textBoxErase.TabIndex = 42;
             textBoxErase.Text = "5000";
-            // 
-            // groupBox20
-            // 
+
             groupBox20.Controls.Add(label189);
             groupBox20.Controls.Add(KATLineLengthTextBox);
             groupBox20.Controls.Add(label63);
@@ -4951,9 +4403,7 @@
             groupBox20.TabIndex = 122;
             groupBox20.TabStop = false;
             groupBox20.Text = "KillFrenzy Avatar Text (KAT)";
-            // 
-            // label189
-            // 
+
             label189.AutoSize = true;
             label189.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label189.ForeColor = Color.Snow;
@@ -4962,18 +4412,14 @@
             label189.Size = new Size(217, 15);
             label189.TabIndex = 112;
             label189.Text = "KAT Line Length (prevents word cut off)";
-            // 
-            // KATLineLengthTextBox
-            // 
+
             KATLineLengthTextBox.Location = new Point(13, 148);
             KATLineLengthTextBox.Margin = new Padding(3, 2, 3, 2);
             KATLineLengthTextBox.Name = "KATLineLengthTextBox";
             KATLineLengthTextBox.Size = new Size(65, 23);
             KATLineLengthTextBox.TabIndex = 111;
             KATLineLengthTextBox.Text = "32";
-            // 
-            // label63
-            // 
+
             label63.AutoSize = true;
             label63.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label63.ForeColor = Color.Snow;
@@ -4982,9 +4428,7 @@
             label63.Size = new Size(95, 15);
             label63.TabIndex = 109;
             label63.Text = "Auto Replay KAT";
-            // 
-            // rjToggleButtonAutoRefreshKAT
-            // 
+
             rjToggleButtonAutoRefreshKAT.AutoSize = true;
             rjToggleButtonAutoRefreshKAT.Location = new Point(10, 46);
             rjToggleButtonAutoRefreshKAT.Margin = new Padding(3, 2, 3, 2);
@@ -4998,9 +4442,7 @@
             rjToggleButtonAutoRefreshKAT.TabIndex = 110;
             rjToggleButtonAutoRefreshKAT.UseVisualStyleBackColor = true;
             rjToggleButtonAutoRefreshKAT.CheckedChanged += (this.rjToggleButtonAutoRefreshKAT_CheckedChanged);
-            // 
-            // button2
-            // 
+
             button2.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button2.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button2.FlatStyle = FlatStyle.Flat;
@@ -5014,9 +4456,7 @@
             button2.Text = "Replay KAT";
             button2.UseVisualStyleBackColor = false;
             button2.Click += (this.button2_Click_1);
-            // 
-            // button12
-            // 
+
             button12.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button12.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button12.FlatStyle = FlatStyle.Flat;
@@ -5030,9 +4470,7 @@
             button12.Text = "Clear KAT";
             button12.UseVisualStyleBackColor = false;
             button12.Click += (this.button12_Click);
-            // 
-            // label15
-            // 
+
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label15.ForeColor = Color.Snow;
@@ -5041,9 +4479,7 @@
             label15.Size = new Size(118, 15);
             label15.TabIndex = 66;
             label15.Text = "KAT Sync Parameters";
-            // 
-            // label23
-            // 
+
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label23.ForeColor = Color.Snow;
@@ -5052,9 +4488,7 @@
             label23.Size = new Size(163, 15);
             label23.TabIndex = 52;
             label23.Text = "Send Text to VRChat with KAT";
-            // 
-            // rjToggleButtonOSC
-            // 
+
             rjToggleButtonOSC.AutoSize = true;
             rjToggleButtonOSC.Location = new Point(9, 20);
             rjToggleButtonOSC.Margin = new Padding(3, 2, 3, 2);
@@ -5068,9 +4502,7 @@
             rjToggleButtonOSC.TabIndex = 73;
             rjToggleButtonOSC.UseVisualStyleBackColor = true;
             rjToggleButtonOSC.CheckedChanged += (this.rjToggleButtonOSC_CheckedChanged);
-            // 
-            // comboBoxPara
-            // 
+
             comboBoxPara.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPara.FlatStyle = FlatStyle.Flat;
             comboBoxPara.FormattingEnabled = true;
@@ -5081,9 +4513,7 @@
             comboBoxPara.Size = new Size(125, 23);
             comboBoxPara.TabIndex = 31;
             comboBoxPara.SelectedIndexChanged += (this.comboBoxPara_SelectedIndexChanged);
-            // 
-            // groupBox13
-            // 
+
             groupBox13.Controls.Add(label214);
             groupBox13.Controls.Add(VirtualCableHelp);
             groupBox13.Controls.Add(RefreshAudioDevicesButton);
@@ -5110,9 +4540,7 @@
             groupBox13.TabIndex = 134;
             groupBox13.TabStop = false;
             groupBox13.Text = "Audio";
-            // 
-            // label214
-            // 
+
             label214.AutoSize = true;
             label214.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label214.ForeColor = Color.Snow;
@@ -5121,9 +4549,7 @@
             label214.Size = new Size(210, 15);
             label214.TabIndex = 186;
             label214.Text = "VAD Noise Mode (Whisper/Deepgram)";
-            // 
-            // VirtualCableHelp
-            // 
+
             VirtualCableHelp.FlatAppearance.BorderSize = 0;
             VirtualCableHelp.FlatStyle = FlatStyle.Flat;
             VirtualCableHelp.ForeColor = Color.Snow;
@@ -5141,9 +4567,7 @@
             VirtualCableHelp.TextImageRelation = TextImageRelation.ImageBeforeText;
             VirtualCableHelp.UseVisualStyleBackColor = true;
             VirtualCableHelp.Click += (this.iconButton16_Click_1);
-            // 
-            // RefreshAudioDevicesButton
-            // 
+
             RefreshAudioDevicesButton.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             RefreshAudioDevicesButton.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             RefreshAudioDevicesButton.FlatStyle = FlatStyle.Flat;
@@ -5157,9 +4581,7 @@
             RefreshAudioDevicesButton.Text = "Refresh Audio Devices";
             RefreshAudioDevicesButton.UseVisualStyleBackColor = false;
             RefreshAudioDevicesButton.Click += (this.button43_Click);
-            // 
-            // label135
-            // 
+
             label135.AutoSize = true;
             label135.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label135.ForeColor = Color.Snow;
@@ -5168,9 +4590,7 @@
             label135.Size = new Size(26, 15);
             label135.TabIndex = 136;
             label135.Text = "Use";
-            // 
-            // rjToggleButtonUse2ndOutput
-            // 
+
             rjToggleButtonUse2ndOutput.AutoSize = true;
             rjToggleButtonUse2ndOutput.Location = new Point(255, 233);
             rjToggleButtonUse2ndOutput.Margin = new Padding(3, 2, 3, 2);
@@ -5184,9 +4604,7 @@
             rjToggleButtonUse2ndOutput.TabIndex = 137;
             rjToggleButtonUse2ndOutput.UseVisualStyleBackColor = true;
             rjToggleButtonUse2ndOutput.CheckedChanged += (this.rjToggleButtonUse2ndOutput_CheckedChanged);
-            // 
-            // label125
-            // 
+
             label125.AutoSize = true;
             label125.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label125.ForeColor = Color.Snow;
@@ -5195,9 +4613,7 @@
             label125.Size = new Size(222, 15);
             label125.TabIndex = 135;
             label125.Text = "2nd Output Device (virtual cable \"input\")";
-            // 
-            // comboBoxOutput2
-            // 
+
             comboBoxOutput2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOutput2.FlatStyle = FlatStyle.Flat;
             comboBoxOutput2.FormattingEnabled = true;
@@ -5207,9 +4623,7 @@
             comboBoxOutput2.Size = new Size(236, 23);
             comboBoxOutput2.TabIndex = 134;
             comboBoxOutput2.SelectedIndexChanged += (this.comboBoxOutput2_SelectedIndexChanged);
-            // 
-            // SpeechToTextHelp
-            // 
+
             SpeechToTextHelp.FlatAppearance.BorderSize = 0;
             SpeechToTextHelp.FlatStyle = FlatStyle.Flat;
             SpeechToTextHelp.ForeColor = Color.Snow;
@@ -5227,9 +4641,7 @@
             SpeechToTextHelp.TextImageRelation = TextImageRelation.ImageBeforeText;
             SpeechToTextHelp.UseVisualStyleBackColor = true;
             SpeechToTextHelp.Click += (this.iconButton41_Click);
-            // 
-            // label17
-            // 
+
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label17.ForeColor = Color.Snow;
@@ -5238,9 +4650,7 @@
             label17.Size = new Size(83, 15);
             label17.TabIndex = 132;
             label17.Text = "Speech to Text";
-            // 
-            // comboBoxSTT
-            // 
+
             comboBoxSTT.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSTT.FlatStyle = FlatStyle.Flat;
             comboBoxSTT.FormattingEnabled = true;
@@ -5251,9 +4661,7 @@
             comboBoxSTT.Size = new Size(237, 23);
             comboBoxSTT.TabIndex = 131;
             comboBoxSTT.SelectedIndexChanged += (this.comboBoxSTT_SelectedIndexChanged);
-            // 
-            // label145
-            // 
+
             label145.AutoSize = true;
             label145.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label145.ForeColor = Color.Snow;
@@ -5262,9 +4670,7 @@
             label145.Size = new Size(176, 15);
             label145.TabIndex = 130;
             label145.Text = "Input Device (your microphone)";
-            // 
-            // label29
-            // 
+
             label29.AutoSize = true;
             label29.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label29.ForeColor = Color.Snow;
@@ -5273,9 +4679,7 @@
             label29.Size = new Size(184, 15);
             label29.TabIndex = 129;
             label29.Text = "1st Output Device (your speakers)";
-            // 
-            // comboBoxOutput
-            // 
+
             comboBoxOutput.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOutput.FlatStyle = FlatStyle.Flat;
             comboBoxOutput.FormattingEnabled = true;
@@ -5285,9 +4689,7 @@
             comboBoxOutput.Size = new Size(277, 23);
             comboBoxOutput.TabIndex = 128;
             comboBoxOutput.SelectedIndexChanged += (this.comboBoxOutput_SelectedIndexChanged_1);
-            // 
-            // comboBoxInput
-            // 
+
             comboBoxInput.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxInput.FlatStyle = FlatStyle.Flat;
             comboBoxInput.FormattingEnabled = true;
@@ -5297,9 +4699,7 @@
             comboBoxInput.Size = new Size(277, 23);
             comboBoxInput.TabIndex = 127;
             comboBoxInput.SelectedIndexChanged += (this.comboBoxInput_SelectedIndexChanged_1);
-            // 
-            // label105
-            // 
+
             label105.AutoSize = true;
             label105.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label105.ForeColor = Color.Snow;
@@ -5308,9 +4708,7 @@
             label105.Size = new Size(85, 15);
             label105.TabIndex = 124;
             label105.Text = "Button Sounds";
-            // 
-            // rjToggleButtonSounds
-            // 
+
             rjToggleButtonSounds.AutoSize = true;
             rjToggleButtonSounds.Checked = true;
             rjToggleButtonSounds.CheckState = CheckState.Checked;
@@ -5326,9 +4724,7 @@
             rjToggleButtonSounds.TabIndex = 125;
             rjToggleButtonSounds.UseVisualStyleBackColor = true;
             rjToggleButtonSounds.CheckedChanged += (this.rjToggleButtonSounds_CheckedChanged);
-            // 
-            // comboBoxVADMode
-            // 
+
             comboBoxVADMode.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             comboBoxVADMode.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxVADMode.FlatStyle = FlatStyle.Flat;
@@ -5339,9 +4735,7 @@
             comboBoxVADMode.Name = "comboBoxVADMode";
             comboBoxVADMode.Size = new Size(177, 23);
             comboBoxVADMode.TabIndex = 185;
-            // 
-            // groupBox1
-            // 
+
             groupBox1.Controls.Add(label220);
             groupBox1.Controls.Add(label219);
             groupBox1.Controls.Add(label218);
@@ -5426,9 +4820,7 @@
             groupBox1.TabIndex = 100;
             groupBox1.TabStop = false;
             groupBox1.Text = "General";
-            // 
-            // label220
-            // 
+
             label220.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label220.AutoSize = true;
             label220.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -5438,9 +4830,7 @@
             label220.Size = new Size(70, 15);
             label220.TabIndex = 179;
             label220.Text = "Scroll Down";
-            // 
-            // label219
-            // 
+
             label219.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label219.AutoSize = true;
             label219.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -5450,9 +4840,7 @@
             label219.Size = new Size(54, 15);
             label219.TabIndex = 178;
             label219.Text = "Scroll Up";
-            // 
-            // label218
-            // 
+
             label218.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label218.AutoSize = true;
             label218.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -5462,9 +4850,7 @@
             label218.Size = new Size(15, 15);
             label218.TabIndex = 177;
             label218.Text = "+";
-            // 
-            // textBoxVoiceScrollDown2
-            // 
+
             textBoxVoiceScrollDown2.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxVoiceScrollDown2.Enabled = false;
             textBoxVoiceScrollDown2.Location = new Point(534, 252);
@@ -5474,9 +4860,7 @@
             textBoxVoiceScrollDown2.Size = new Size(53, 23);
             textBoxVoiceScrollDown2.TabIndex = 176;
             textBoxVoiceScrollDown2.KeyDown += (this.textBoxVoiceScrollDown2_KeyDown);
-            // 
-            // buttonDownEdit
-            // 
+
             buttonDownEdit.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonDownEdit.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonDownEdit.FlatStyle = FlatStyle.Flat;
@@ -5489,9 +4873,7 @@
             buttonDownEdit.Text = "Edit";
             buttonDownEdit.UseVisualStyleBackColor = false;
             buttonDownEdit.Click += (this.buttonDownEdit_Click);
-            // 
-            // buttonDownSave
-            // 
+
             buttonDownSave.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonDownSave.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonDownSave.Enabled = false;
@@ -5505,9 +4887,7 @@
             buttonDownSave.Text = "Save";
             buttonDownSave.UseVisualStyleBackColor = false;
             buttonDownSave.Click += (this.buttonDownSave_Click);
-            // 
-            // textBoxVoiceScrollDown1
-            // 
+
             textBoxVoiceScrollDown1.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxVoiceScrollDown1.Enabled = false;
             textBoxVoiceScrollDown1.Location = new Point(452, 253);
@@ -5517,9 +4897,7 @@
             textBoxVoiceScrollDown1.Size = new Size(53, 23);
             textBoxVoiceScrollDown1.TabIndex = 173;
             textBoxVoiceScrollDown1.KeyDown += (this.textBoxVoiceScrollDown1_KeyDown);
-            // 
-            // label216
-            // 
+
             label216.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label216.AutoSize = true;
             label216.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -5529,9 +4907,7 @@
             label216.Size = new Size(15, 15);
             label216.TabIndex = 172;
             label216.Text = "+";
-            // 
-            // textBoxVoiceScrollUp2
-            // 
+
             textBoxVoiceScrollUp2.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxVoiceScrollUp2.Enabled = false;
             textBoxVoiceScrollUp2.Location = new Point(534, 205);
@@ -5541,9 +4917,7 @@
             textBoxVoiceScrollUp2.Size = new Size(53, 23);
             textBoxVoiceScrollUp2.TabIndex = 171;
             textBoxVoiceScrollUp2.KeyDown += (this.textBoxVoiceScrollUp2_KeyDown);
-            // 
-            // buttonUpEdit
-            // 
+
             buttonUpEdit.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonUpEdit.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonUpEdit.FlatStyle = FlatStyle.Flat;
@@ -5556,9 +4930,7 @@
             buttonUpEdit.Text = "Edit";
             buttonUpEdit.UseVisualStyleBackColor = false;
             buttonUpEdit.Click += (this.buttonUpEdit_Click);
-            // 
-            // buttonUpSave
-            // 
+
             buttonUpSave.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonUpSave.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonUpSave.Enabled = false;
@@ -5572,9 +4944,7 @@
             buttonUpSave.Text = "Save";
             buttonUpSave.UseVisualStyleBackColor = false;
             buttonUpSave.Click += (this.buttonUpSave_Click);
-            // 
-            // rjToggleSwitchVoicePresetsBind
-            // 
+
             rjToggleSwitchVoicePresetsBind.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             rjToggleSwitchVoicePresetsBind.AutoSize = true;
             rjToggleSwitchVoicePresetsBind.Checked = true;
@@ -5591,9 +4961,7 @@
             rjToggleSwitchVoicePresetsBind.TabIndex = 168;
             rjToggleSwitchVoicePresetsBind.UseVisualStyleBackColor = true;
             rjToggleSwitchVoicePresetsBind.CheckedChanged += (this.rjToggleSwitchVoicePresetsBind_CheckedChanged);
-            // 
-            // textBoxVoiceScrollUp1
-            // 
+
             textBoxVoiceScrollUp1.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxVoiceScrollUp1.Enabled = false;
             textBoxVoiceScrollUp1.Location = new Point(452, 206);
@@ -5603,9 +4971,7 @@
             textBoxVoiceScrollUp1.Size = new Size(53, 23);
             textBoxVoiceScrollUp1.TabIndex = 167;
             textBoxVoiceScrollUp1.KeyDown += (this.textBoxVoiceScrollUp1_KeyDown);
-            // 
-            // label217
-            // 
+
             label217.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label217.AutoSize = true;
             label217.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -5615,9 +4981,7 @@
             label217.Size = new Size(161, 15);
             label217.TabIndex = 166;
             label217.Text = "Switch Voice Presets Shortcut";
-            // 
-            // label201
-            // 
+
             label201.AutoSize = true;
             label201.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label201.ForeColor = Color.Snow;
@@ -5627,18 +4991,14 @@
             label201.TabIndex = 165;
             label201.Text = "Delay Before Audio (ms)";
             toolTip1.SetToolTip(label201, "A delay between sending text and playing TTS audio.");
-            // 
-            // textBoxDelayBeforeAudio
-            // 
+
             textBoxDelayBeforeAudio.Location = new Point(10, 566);
             textBoxDelayBeforeAudio.Margin = new Padding(3, 2, 3, 2);
             textBoxDelayBeforeAudio.Name = "textBoxDelayBeforeAudio";
             textBoxDelayBeforeAudio.Size = new Size(110, 23);
             textBoxDelayBeforeAudio.TabIndex = 164;
             textBoxDelayBeforeAudio.Text = "0";
-            // 
-            // iconButton2
-            // 
+
             iconButton2.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton2.FlatAppearance.BorderSize = 0;
             iconButton2.FlatStyle = FlatStyle.Flat;
@@ -5657,9 +5017,7 @@
             iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton2.UseVisualStyleBackColor = true;
             iconButton2.Click += (this.iconButton2_Click_1);
-            // 
-            // button14
-            // 
+
             button14.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             button14.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button14.FlatStyle = FlatStyle.Flat;
@@ -5674,9 +5032,7 @@
             toolTip1.SetToolTip(button14, "Folder for setting exports.");
             button14.UseVisualStyleBackColor = false;
             button14.Click += (this.button14_Click_2);
-            // 
-            // rjToggleButtonAutoSend
-            // 
+
             rjToggleButtonAutoSend.AutoSize = true;
             rjToggleButtonAutoSend.Location = new Point(5, 164);
             rjToggleButtonAutoSend.Margin = new Padding(3, 2, 3, 2);
@@ -5690,9 +5046,7 @@
             rjToggleButtonAutoSend.TabIndex = 161;
             toolTip1.SetToolTip(rjToggleButtonAutoSend, "Automatically sends a TTS Message when the Text to Speech text field is changed. Primary for use in quickly copy and pasting text.");
             rjToggleButtonAutoSend.UseVisualStyleBackColor = true;
-            // 
-            // label187
-            // 
+
             label187.AutoSize = true;
             label187.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label187.ForeColor = Color.Snow;
@@ -5702,9 +5056,7 @@
             label187.TabIndex = 160;
             label187.Text = "Auto Send TTS (for copy/paste)";
             toolTip1.SetToolTip(label187, "Automatically sends a TTS Message when the Text to Speech text field is changed. Primary for use in quickly copy and pasting text.");
-            // 
-            // label186
-            // 
+
             label186.AutoSize = true;
             label186.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label186.ForeColor = Color.Snow;
@@ -5714,9 +5066,7 @@
             label186.TabIndex = 159;
             label186.Text = "Queue System: SSS Character Limit";
             toolTip1.SetToolTip(label186, "The max character limit for Smart String Splitting. Note that 144 the the VR Chatbox character limit, so this can be used to make sure every message it shorter than that.");
-            // 
-            // textBoxSSSCharLimit
-            // 
+
             textBoxSSSCharLimit.Location = new Point(10, 509);
             textBoxSSSCharLimit.Margin = new Padding(3, 2, 3, 2);
             textBoxSSSCharLimit.Name = "textBoxSSSCharLimit";
@@ -5724,9 +5074,7 @@
             textBoxSSSCharLimit.TabIndex = 158;
             textBoxSSSCharLimit.Text = "295";
             toolTip1.SetToolTip(textBoxSSSCharLimit, "The max character limit for Smart String Splitting. Note that 144 the the VR Chatbox character limit, so this can be used to make sure every message it shorter than that.");
-            // 
-            // label185
-            // 
+
             label185.AutoSize = true;
             label185.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label185.ForeColor = Color.Snow;
@@ -5736,9 +5084,7 @@
             label185.TabIndex = 156;
             label185.Text = "Queue System: Smart String Splitting";
             toolTip1.SetToolTip(label185, "Automatically break a message longer than the specified character limit into multiple messages.");
-            // 
-            // rjToggleButtonSmartStringSplit
-            // 
+
             rjToggleButtonSmartStringSplit.AutoSize = true;
             rjToggleButtonSmartStringSplit.Location = new Point(5, 466);
             rjToggleButtonSmartStringSplit.Margin = new Padding(3, 2, 3, 2);
@@ -5752,9 +5098,7 @@
             rjToggleButtonSmartStringSplit.TabIndex = 157;
             toolTip1.SetToolTip(rjToggleButtonSmartStringSplit, "Automatically break a message longer than the specified character limit into multiple messages.");
             rjToggleButtonSmartStringSplit.UseVisualStyleBackColor = true;
-            // 
-            // rjToggleButtonRefocus
-            // 
+
             rjToggleButtonRefocus.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             rjToggleButtonRefocus.AutoSize = true;
             rjToggleButtonRefocus.Checked = true;
@@ -5771,9 +5115,7 @@
             rjToggleButtonRefocus.TabIndex = 155;
             rjToggleButtonRefocus.UseVisualStyleBackColor = true;
             rjToggleButtonRefocus.CheckedChanged += (this.rjToggleButtonRefocus_CheckedChanged);
-            // 
-            // label158
-            // 
+
             label158.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label158.AutoSize = true;
             label158.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -5783,9 +5125,7 @@
             label158.Size = new Size(189, 15);
             label158.TabIndex = 154;
             label158.Text = "Quick Type: Refocus game on Play";
-            // 
-            // button38
-            // 
+
             button38.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             button38.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button38.FlatStyle = FlatStyle.Flat;
@@ -5800,9 +5140,7 @@
             toolTip1.SetToolTip(button38, "Save your app settings manually. Note that TTS Voice Wizard will save settings on a successful close.");
             button38.UseVisualStyleBackColor = false;
             button38.Click += (this.button38_Click_1);
-            // 
-            // label156
-            // 
+
             label156.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label156.AutoSize = true;
             label156.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -5812,9 +5150,7 @@
             label156.Size = new Size(15, 15);
             label156.TabIndex = 152;
             label156.Text = "+";
-            // 
-            // textBoxQuickType2
-            // 
+
             textBoxQuickType2.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxQuickType2.Enabled = false;
             textBoxQuickType2.Location = new Point(534, 334);
@@ -5824,9 +5160,7 @@
             textBoxQuickType2.Size = new Size(53, 23);
             textBoxQuickType2.TabIndex = 151;
             textBoxQuickType2.KeyDown += (this.textBoxQuickType2_KeyDown);
-            // 
-            // buttonQuickTypeEdit
-            // 
+
             buttonQuickTypeEdit.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonQuickTypeEdit.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonQuickTypeEdit.FlatStyle = FlatStyle.Flat;
@@ -5839,9 +5173,7 @@
             buttonQuickTypeEdit.Text = "Edit";
             buttonQuickTypeEdit.UseVisualStyleBackColor = false;
             buttonQuickTypeEdit.Click += (this.buttonQuickTypeEdit_Click);
-            // 
-            // buttonQuickTypeSave
-            // 
+
             buttonQuickTypeSave.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             buttonQuickTypeSave.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonQuickTypeSave.Enabled = false;
@@ -5855,9 +5187,7 @@
             buttonQuickTypeSave.Text = "Save";
             buttonQuickTypeSave.UseVisualStyleBackColor = false;
             buttonQuickTypeSave.Click += (this.buttonQuickTypeSave_Click);
-            // 
-            // rjToggleButtonQuickTypeEnabled
-            // 
+
             rjToggleButtonQuickTypeEnabled.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             rjToggleButtonQuickTypeEnabled.AutoSize = true;
             rjToggleButtonQuickTypeEnabled.Checked = true;
@@ -5874,9 +5204,7 @@
             rjToggleButtonQuickTypeEnabled.TabIndex = 148;
             rjToggleButtonQuickTypeEnabled.UseVisualStyleBackColor = true;
             rjToggleButtonQuickTypeEnabled.CheckedChanged += (this.rjToggleButtonQuickTypeEnabled_CheckedChanged);
-            // 
-            // textBoxQuickType1
-            // 
+
             textBoxQuickType1.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxQuickType1.Enabled = false;
             textBoxQuickType1.Location = new Point(452, 335);
@@ -5886,9 +5214,7 @@
             textBoxQuickType1.Size = new Size(53, 23);
             textBoxQuickType1.TabIndex = 147;
             textBoxQuickType1.KeyDown += (this.textBoxQuickType1_KeyDown);
-            // 
-            // label157
-            // 
+
             label157.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label157.AutoSize = true;
             label157.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -5898,9 +5224,7 @@
             label157.Size = new Size(114, 15);
             label157.TabIndex = 146;
             label157.Text = "Quick Type Shortcut";
-            // 
-            // label154
-            // 
+
             label154.AutoSize = true;
             label154.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label154.ForeColor = Color.Snow;
@@ -5910,9 +5234,7 @@
             label154.TabIndex = 144;
             label154.Text = "Queue System: Use With Typed Text";
             toolTip1.SetToolTip(label154, "Use the Queue System for typed messages.");
-            // 
-            // rjToggleButtonQueueTypedText
-            // 
+
             rjToggleButtonQueueTypedText.AutoSize = true;
             rjToggleButtonQueueTypedText.Location = new Point(5, 436);
             rjToggleButtonQueueTypedText.Margin = new Padding(3, 2, 3, 2);
@@ -5927,9 +5249,7 @@
             toolTip1.SetToolTip(rjToggleButtonQueueTypedText, "Use the Queue System for typed messages.");
             rjToggleButtonQueueTypedText.UseVisualStyleBackColor = true;
             rjToggleButtonQueueTypedText.CheckedChanged += (this.rjToggleButtonQueueTypedText_CheckedChanged);
-            // 
-            // label150
-            // 
+
             label150.AutoSize = true;
             label150.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label150.ForeColor = Color.Snow;
@@ -5939,9 +5259,7 @@
             label150.TabIndex = 143;
             label150.Text = "Queue System: Delay After No TTS (ms)";
             toolTip1.SetToolTip(label150, "Set the amount of time to wait for moving to the next message for \"No TTS\" Messages.");
-            // 
-            // label151
-            // 
+
             label151.AutoSize = true;
             label151.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label151.ForeColor = Color.Snow;
@@ -5951,9 +5269,7 @@
             label151.TabIndex = 142;
             label151.Text = "Queue System: Delay Before Next in Queue (ms)";
             toolTip1.SetToolTip(label151, "Add a delay before playing new TTS Messages");
-            // 
-            // textBoxQueueDelayBeforeNext
-            // 
+
             textBoxQueueDelayBeforeNext.Location = new Point(12, 350);
             textBoxQueueDelayBeforeNext.Margin = new Padding(3, 2, 3, 2);
             textBoxQueueDelayBeforeNext.Name = "textBoxQueueDelayBeforeNext";
@@ -5962,9 +5278,7 @@
             textBoxQueueDelayBeforeNext.Text = "0";
             toolTip1.SetToolTip(textBoxQueueDelayBeforeNext, "Add a delay before playing new TTS Messages");
             textBoxQueueDelayBeforeNext.TextChanged += (this.textBoxQueueDelayBeforeNext_TextChanged);
-            // 
-            // textBoxDelayAfterNoTTS
-            // 
+
             textBoxDelayAfterNoTTS.Location = new Point(12, 395);
             textBoxDelayAfterNoTTS.Margin = new Padding(3, 2, 3, 2);
             textBoxDelayAfterNoTTS.Name = "textBoxDelayAfterNoTTS";
@@ -5973,9 +5287,7 @@
             textBoxDelayAfterNoTTS.Text = "5000";
             toolTip1.SetToolTip(textBoxDelayAfterNoTTS, "Set the amount of time to wait for moving to the next message for \"No TTS\" Messages.");
             textBoxDelayAfterNoTTS.TextChanged += (this.textBoxDelayAfterNoTTS_TextChanged);
-            // 
-            // label79
-            // 
+
             label79.AutoSize = true;
             label79.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label79.ForeColor = Color.Snow;
@@ -5985,9 +5297,7 @@
             label79.TabIndex = 138;
             label79.Text = "Message Queue System";
             toolTip1.SetToolTip(label79, "The Message Queue System allows multiple TTS Messages to be queued and played after each other.");
-            // 
-            // rjToggleButtonQueueSystem
-            // 
+
             rjToggleButtonQueueSystem.AutoSize = true;
             rjToggleButtonQueueSystem.Location = new Point(5, 315);
             rjToggleButtonQueueSystem.Margin = new Padding(3, 2, 3, 2);
@@ -6002,9 +5312,7 @@
             toolTip1.SetToolTip(rjToggleButtonQueueSystem, "The Message Queue System allows multiple TTS Messages to be queued and played after each other.");
             rjToggleButtonQueueSystem.UseVisualStyleBackColor = true;
             rjToggleButtonQueueSystem.CheckedChanged += (this.rjToggleButtonQueueSystem_CheckedChanged);
-            // 
-            // button47
-            // 
+
             button47.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             button47.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button47.FlatStyle = FlatStyle.Flat;
@@ -6019,9 +5327,7 @@
             toolTip1.SetToolTip(button47, "Folder where app settings are stored.");
             button47.UseVisualStyleBackColor = false;
             button47.Click += (this.button47_Click);
-            // 
-            // label28
-            // 
+
             label28.AutoSize = true;
             label28.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label28.ForeColor = Color.Snow;
@@ -6031,9 +5337,7 @@
             label28.TabIndex = 132;
             label28.Text = "Stop Currently Playing TTS on New TTS";
             toolTip1.SetToolTip(label28, "Upon playing a new TTS Message the currently playing message will be stopped.");
-            // 
-            // rjToggleButtonStopCurrentTTS
-            // 
+
             rjToggleButtonStopCurrentTTS.AutoSize = true;
             rjToggleButtonStopCurrentTTS.Location = new Point(5, 286);
             rjToggleButtonStopCurrentTTS.Margin = new Padding(3, 2, 3, 2);
@@ -6048,9 +5352,7 @@
             toolTip1.SetToolTip(rjToggleButtonStopCurrentTTS, "Upon playing a new TTS Message the currently playing message will be stopped.");
             rjToggleButtonStopCurrentTTS.UseVisualStyleBackColor = true;
             rjToggleButtonStopCurrentTTS.CheckedChanged += (this.rjToggleButtonStopCurrentTTS_CheckedChanged);
-            // 
-            // label123
-            // 
+
             label123.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label123.AutoSize = true;
             label123.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -6060,9 +5362,7 @@
             label123.Size = new Size(15, 15);
             label123.TabIndex = 131;
             label123.Text = "+";
-            // 
-            // textBoxStopTTS2
-            // 
+
             textBoxStopTTS2.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxStopTTS2.Enabled = false;
             textBoxStopTTS2.Location = new Point(534, 129);
@@ -6072,9 +5372,7 @@
             textBoxStopTTS2.Size = new Size(53, 23);
             textBoxStopTTS2.TabIndex = 130;
             textBoxStopTTS2.KeyDown += (this.textBoxStopTTS2_KeyDown);
-            // 
-            // button39
-            // 
+
             button39.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button39.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button39.FlatStyle = FlatStyle.Flat;
@@ -6087,9 +5385,7 @@
             button39.Text = "Edit";
             button39.UseVisualStyleBackColor = false;
             button39.Click += (this.button39_Click);
-            // 
-            // button40
-            // 
+
             button40.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button40.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button40.Enabled = false;
@@ -6103,9 +5399,7 @@
             button40.Text = "Save";
             button40.UseVisualStyleBackColor = false;
             button40.Click += (this.button40_Click);
-            // 
-            // rjToggleButton12
-            // 
+
             rjToggleButton12.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             rjToggleButton12.AutoSize = true;
             rjToggleButton12.Checked = true;
@@ -6122,9 +5416,7 @@
             rjToggleButton12.TabIndex = 127;
             rjToggleButton12.UseVisualStyleBackColor = true;
             rjToggleButton12.CheckedChanged += (this.rjToggleButton12_CheckedChanged);
-            // 
-            // textBoxStopTTS1
-            // 
+
             textBoxStopTTS1.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBoxStopTTS1.Enabled = false;
             textBoxStopTTS1.Location = new Point(452, 130);
@@ -6134,9 +5426,7 @@
             textBoxStopTTS1.Size = new Size(53, 23);
             textBoxStopTTS1.TabIndex = 126;
             textBoxStopTTS1.KeyDown += (this.textBoxStopTTS1_KeyDown);
-            // 
-            // label124
-            // 
+
             label124.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label124.AutoSize = true;
             label124.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6146,9 +5436,7 @@
             label124.Size = new Size(102, 15);
             label124.TabIndex = 125;
             label124.Text = "Stop TTS Shortcut";
-            // 
-            // label122
-            // 
+
             label122.AutoSize = true;
             label122.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label122.ForeColor = Color.Snow;
@@ -6158,9 +5446,7 @@
             label122.TabIndex = 123;
             label122.Text = "Disable Windows Media (Debug)";
             toolTip1.SetToolTip(label122, resources.GetString("label122.ToolTip"));
-            // 
-            // rjToggleButtonDisableWindowsMedia
-            // 
+
             rjToggleButtonDisableWindowsMedia.AutoSize = true;
             rjToggleButtonDisableWindowsMedia.Location = new Point(5, 254);
             rjToggleButtonDisableWindowsMedia.Margin = new Padding(3, 2, 3, 2);
@@ -6175,9 +5461,7 @@
             toolTip1.SetToolTip(rjToggleButtonDisableWindowsMedia, resources.GetString("rjToggleButtonDisableWindowsMedia.ToolTip"));
             rjToggleButtonDisableWindowsMedia.UseVisualStyleBackColor = true;
             rjToggleButtonDisableWindowsMedia.CheckedChanged += (this.rjToggleButtonDisableWindowsMedia_CheckedChanged);
-            // 
-            // label12
-            // 
+
             label12.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -6187,9 +5471,7 @@
             label12.Size = new Size(15, 15);
             label12.TabIndex = 122;
             label12.Text = "+";
-            // 
-            // textBox1
-            // 
+
             textBox1.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBox1.Enabled = false;
             textBox1.Location = new Point(534, 71);
@@ -6200,9 +5482,7 @@
             textBox1.TabIndex = 121;
             textBox1.TextChanged += (this.textBox1_TextChanged);
             textBox1.KeyDown += (this.textBox1_KeyDown);
-            // 
-            // button28
-            // 
+
             button28.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button28.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button28.FlatStyle = FlatStyle.Flat;
@@ -6215,9 +5495,7 @@
             button28.Text = "Edit";
             button28.UseVisualStyleBackColor = false;
             button28.Click += (this.button28_Click);
-            // 
-            // button27
-            // 
+
             button27.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button27.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button27.Enabled = false;
@@ -6231,9 +5509,7 @@
             button27.Text = "Save";
             button27.UseVisualStyleBackColor = false;
             button27.Click += (this.button27_Click);
-            // 
-            // rjToggleButton9
-            // 
+
             rjToggleButton9.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             rjToggleButton9.AutoSize = true;
             rjToggleButton9.Checked = true;
@@ -6250,9 +5526,7 @@
             rjToggleButton9.TabIndex = 102;
             rjToggleButton9.UseVisualStyleBackColor = true;
             rjToggleButton9.CheckedChanged += (this.rjToggleButton9_CheckedChanged);
-            // 
-            // label27
-            // 
+
             label27.AutoSize = true;
             label27.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label27.ForeColor = Color.Snow;
@@ -6262,9 +5536,7 @@
             label27.TabIndex = 100;
             label27.Text = "Dark Mode";
             toolTip1.SetToolTip(label27, "Toggle between light and dark color schemes.");
-            // 
-            // rjToggleDarkMode
-            // 
+
             rjToggleDarkMode.AutoSize = true;
             rjToggleDarkMode.Location = new Point(5, 20);
             rjToggleDarkMode.Margin = new Padding(3, 2, 3, 2);
@@ -6279,9 +5551,7 @@
             toolTip1.SetToolTip(rjToggleDarkMode, "Toggle between light and dark color schemes.");
             rjToggleDarkMode.UseVisualStyleBackColor = true;
             rjToggleDarkMode.CheckedChanged += (this.rjToggleButton7_CheckedChanged_1);
-            // 
-            // label104
-            // 
+
             label104.AutoSize = true;
             label104.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label104.ForeColor = Color.Snow;
@@ -6291,9 +5561,7 @@
             label104.TabIndex = 98;
             label104.Text = "Allow Minimizing to System Tray";
             toolTip1.SetToolTip(label104, "The minimize button now sends TTS Voice Wizard to the system tray. TTS Voice Wizard will minimize to system tray on launch. Double click the icon in system try to bring the app back to the foreground.");
-            // 
-            // rjToggleButtonSystemTray
-            // 
+
             rjToggleButtonSystemTray.AutoSize = true;
             rjToggleButtonSystemTray.Location = new Point(5, 223);
             rjToggleButtonSystemTray.Margin = new Padding(3, 2, 3, 2);
@@ -6308,9 +5576,7 @@
             toolTip1.SetToolTip(rjToggleButtonSystemTray, "The minimize button now sends TTS Voice Wizard to the system tray. TTS Voice Wizard will minimize to system tray on launch. Double click the icon in system try to bring the app back to the foreground.");
             rjToggleButtonSystemTray.UseVisualStyleBackColor = true;
             rjToggleButtonSystemTray.CheckedChanged += (this.rjToggleButtonSystemTray_CheckedChanged);
-            // 
-            // label77
-            // 
+
             label77.AutoSize = true;
             label77.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label77.ForeColor = Color.Snow;
@@ -6320,9 +5586,7 @@
             label77.TabIndex = 96;
             label77.Text = "Minimalist Navbar";
             toolTip1.SetToolTip(label77, "Make the navigation bar more simple and compact.");
-            // 
-            // rjToggleButton6
-            // 
+
             rjToggleButton6.AutoSize = true;
             rjToggleButton6.Location = new Point(5, 194);
             rjToggleButton6.Margin = new Padding(3, 2, 3, 2);
@@ -6337,9 +5601,7 @@
             toolTip1.SetToolTip(rjToggleButton6, "Make the navigation bar more simple and compact.");
             rjToggleButton6.UseVisualStyleBackColor = true;
             rjToggleButton6.CheckedChanged += (this.rjToggleButton6_CheckedChanged);
-            // 
-            // rjToggleButtonClear
-            // 
+
             rjToggleButtonClear.AutoSize = true;
             rjToggleButtonClear.Location = new Point(5, 137);
             rjToggleButtonClear.Margin = new Padding(3, 2, 3, 2);
@@ -6354,9 +5616,7 @@
             toolTip1.SetToolTip(rjToggleButtonClear, "Clears the Text to Speech text field after clicking the Play button.");
             rjToggleButtonClear.UseVisualStyleBackColor = true;
             rjToggleButtonClear.CheckedChanged += (this.rjToggleButtonClear_CheckedChanged);
-            // 
-            // label25
-            // 
+
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label25.ForeColor = Color.Snow;
@@ -6366,9 +5626,7 @@
             label25.TabIndex = 56;
             label25.Text = "Always on Top";
             toolTip1.SetToolTip(label25, "TTS Voice Wizard will appear on top of other applications.");
-            // 
-            // label21
-            // 
+
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label21.ForeColor = Color.Snow;
@@ -6378,9 +5636,7 @@
             label21.TabIndex = 50;
             label21.Text = "Output Transcript in Log";
             toolTip1.SetToolTip(label21, "Whether most text outputs appear in the app log.");
-            // 
-            // label66
-            // 
+
             label66.AutoSize = true;
             label66.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label66.ForeColor = Color.Snow;
@@ -6390,9 +5646,7 @@
             label66.TabIndex = 88;
             label66.Text = "Close Home Screen Banner on Start";
             toolTip1.SetToolTip(label66, "Disable scrolling picture box on the home tab.");
-            // 
-            // rjToggleButtonLog
-            // 
+
             rjToggleButtonLog.AutoSize = true;
             rjToggleButtonLog.Checked = true;
             rjToggleButtonLog.CheckState = CheckState.Checked;
@@ -6409,9 +5663,7 @@
             toolTip1.SetToolTip(rjToggleButtonLog, "Whether most text outputs appear in the app log.");
             rjToggleButtonLog.UseVisualStyleBackColor = true;
             rjToggleButtonLog.CheckedChanged += (this.rjToggleButtonLog_CheckedChanged);
-            // 
-            // rjToggleBannerOff
-            // 
+
             rjToggleBannerOff.AutoSize = true;
             rjToggleBannerOff.Location = new Point(5, 79);
             rjToggleBannerOff.Margin = new Padding(3, 2, 3, 2);
@@ -6425,9 +5677,7 @@
             rjToggleBannerOff.TabIndex = 89;
             toolTip1.SetToolTip(rjToggleBannerOff, "Disable scrolling picture box on the home tab.");
             rjToggleBannerOff.UseVisualStyleBackColor = true;
-            // 
-            // rjToggleButtonOnTop2
-            // 
+
             rjToggleButtonOnTop2.AutoSize = true;
             rjToggleButtonOnTop2.Location = new Point(5, 49);
             rjToggleButtonOnTop2.Margin = new Padding(3, 2, 3, 2);
@@ -6442,9 +5692,7 @@
             toolTip1.SetToolTip(rjToggleButtonOnTop2, "TTS Voice Wizard will appear on top of other applications.");
             rjToggleButtonOnTop2.UseVisualStyleBackColor = true;
             rjToggleButtonOnTop2.CheckedChanged += (this.checkBox9_CheckedChanged);
-            // 
-            // textBox4
-            // 
+
             textBox4.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             textBox4.Enabled = false;
             textBox4.Location = new Point(452, 72);
@@ -6455,9 +5703,7 @@
             textBox4.TabIndex = 33;
             textBox4.TextChanged += (this.textBox4_TextChanged);
             textBox4.KeyDown += (this.textBox4_KeyDown);
-            // 
-            // label22
-            // 
+
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label22.ForeColor = Color.Snow;
@@ -6467,9 +5713,7 @@
             label22.TabIndex = 54;
             label22.Text = "Auto Clear TTS Text Box Field";
             toolTip1.SetToolTip(label22, "Clears the Text to Speech text field after clicking the Play button.");
-            // 
-            // label11
-            // 
+
             label11.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6479,9 +5723,7 @@
             label11.Size = new Size(88, 15);
             label11.TabIndex = 27;
             label11.Text = "STTTS Shortcut";
-            // 
-            // AzureSet
-            // 
+
             AzureSet.AutoScroll = true;
             AzureSet.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             AzureSet.Controls.Add(groupBox12);
@@ -6493,9 +5735,7 @@
             AzureSet.Size = new Size(769, 587);
             AzureSet.TabIndex = 11;
             AzureSet.Text = "AzureSet";
-            // 
-            // groupBox12
-            // 
+
             groupBox12.Controls.Add(rjToggleExplicitPunctuation);
             groupBox12.Controls.Add(label236);
             groupBox12.Controls.Add(rjToggleDisableAzureTranslation);
@@ -6529,9 +5769,7 @@
             groupBox12.TabIndex = 109;
             groupBox12.TabStop = false;
             groupBox12.Text = "Azure Settings";
-            // 
-            // rjToggleExplicitPunctuation
-            // 
+
             rjToggleExplicitPunctuation.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleExplicitPunctuation.AutoSize = true;
             rjToggleExplicitPunctuation.Location = new Point(10, 422);
@@ -6545,9 +5783,7 @@
             rjToggleExplicitPunctuation.Size = new Size(39, 16);
             rjToggleExplicitPunctuation.TabIndex = 171;
             rjToggleExplicitPunctuation.UseVisualStyleBackColor = true;
-            // 
-            // label236
-            // 
+
             label236.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label236.AutoSize = true;
             label236.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6557,9 +5793,7 @@
             label236.Size = new Size(171, 15);
             label236.TabIndex = 170;
             label236.Text = "Dictation / Explicit Punctuation";
-            // 
-            // rjToggleDisableAzureTranslation
-            // 
+
             rjToggleDisableAzureTranslation.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleDisableAzureTranslation.AutoSize = true;
             rjToggleDisableAzureTranslation.Location = new Point(10, 361);
@@ -6573,9 +5807,7 @@
             rjToggleDisableAzureTranslation.Size = new Size(39, 16);
             rjToggleDisableAzureTranslation.TabIndex = 169;
             rjToggleDisableAzureTranslation.UseVisualStyleBackColor = true;
-            // 
-            // label235
-            // 
+
             label235.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label235.AutoSize = true;
             label235.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6585,9 +5817,7 @@
             label235.Size = new Size(185, 15);
             label235.TabIndex = 168;
             label235.Text = "Disable Speech to Text Translation";
-            // 
-            // label204
-            // 
+
             label204.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label204.AutoSize = true;
             label204.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6597,9 +5827,7 @@
             label204.Size = new Size(149, 15);
             label204.TabIndex = 167;
             label204.Text = "Partial Results Interval (ms)";
-            // 
-            // textBoxPartialResultsInterval
-            // 
+
             textBoxPartialResultsInterval.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             textBoxPartialResultsInterval.Location = new Point(13, 491);
             textBoxPartialResultsInterval.Margin = new Padding(3, 2, 3, 2);
@@ -6607,9 +5835,7 @@
             textBoxPartialResultsInterval.Size = new Size(110, 23);
             textBoxPartialResultsInterval.TabIndex = 166;
             textBoxPartialResultsInterval.Text = "2000";
-            // 
-            // rjTogglePartialResults
-            // 
+
             rjTogglePartialResults.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjTogglePartialResults.AutoSize = true;
             rjTogglePartialResults.Location = new Point(9, 451);
@@ -6623,9 +5849,7 @@
             rjTogglePartialResults.Size = new Size(39, 16);
             rjTogglePartialResults.TabIndex = 124;
             rjTogglePartialResults.UseVisualStyleBackColor = true;
-            // 
-            // label203
-            // 
+
             label203.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label203.AutoSize = true;
             label203.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6635,9 +5859,7 @@
             label203.Size = new Size(113, 15);
             label203.TabIndex = 123;
             label203.Text = "Allow Partial Results";
-            // 
-            // rjToggleTranslateSameLanguage
-            // 
+
             rjToggleTranslateSameLanguage.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleTranslateSameLanguage.AutoSize = true;
             rjToggleTranslateSameLanguage.Location = new Point(10, 333);
@@ -6651,9 +5873,7 @@
             rjToggleTranslateSameLanguage.Size = new Size(39, 16);
             rjToggleTranslateSameLanguage.TabIndex = 122;
             rjToggleTranslateSameLanguage.UseVisualStyleBackColor = true;
-            // 
-            // label193
-            // 
+
             label193.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label193.AutoSize = true;
             label193.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6663,9 +5883,7 @@
             label193.Size = new Size(199, 15);
             label193.TabIndex = 121;
             label193.Text = "Allow Translation to Same Language";
-            // 
-            // buttonExportDict
-            // 
+
             buttonExportDict.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonExportDict.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonExportDict.FlatStyle = FlatStyle.Flat;
@@ -6684,9 +5902,7 @@
             buttonExportDict.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonExportDict.UseVisualStyleBackColor = false;
             buttonExportDict.Click += (this.buttonExportDict_Click);
-            // 
-            // buttonImportDict
-            // 
+
             buttonImportDict.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonImportDict.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonImportDict.FlatStyle = FlatStyle.Flat;
@@ -6705,9 +5921,7 @@
             buttonImportDict.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonImportDict.UseVisualStyleBackColor = false;
             buttonImportDict.Click += (this.buttonImportDict_Click);
-            // 
-            // rjToggleButtonStyle
-            // 
+
             rjToggleButtonStyle.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleButtonStyle.AutoSize = true;
             rjToggleButtonStyle.Location = new Point(10, 392);
@@ -6721,9 +5935,7 @@
             rjToggleButtonStyle.Size = new Size(39, 16);
             rjToggleButtonStyle.TabIndex = 109;
             rjToggleButtonStyle.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
+
             label30.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label30.AutoSize = true;
             label30.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6733,9 +5945,7 @@
             label30.Size = new Size(260, 30);
             label30.TabIndex = 108;
             label30.Text = "Change Speaking Style Upon Saying Style Name\r\n\r\n";
-            // 
-            // label113
-            // 
+
             label113.AutoSize = true;
             label113.ForeColor = Color.Snow;
             label113.Location = new Point(8, 43);
@@ -6743,9 +5953,7 @@
             label113.Size = new Size(327, 15);
             label113.TabIndex = 89;
             label113.Text = "Add things like unique names or gamertags to the dictionary";
-            // 
-            // label13
-            // 
+
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label13.ForeColor = Color.Snow;
@@ -6754,9 +5962,7 @@
             label13.Size = new Size(61, 15);
             label13.TabIndex = 64;
             label13.Text = "Dictionary";
-            // 
-            // label47
-            // 
+
             label47.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label47.AutoSize = true;
             label47.ForeColor = Color.Snow;
@@ -6765,9 +5971,7 @@
             label47.Size = new Size(403, 15);
             label47.TabIndex = 84;
             label47.Text = "Warning: You are more likely to go over free limits with this feature enabled";
-            // 
-            // rjToggleButtonPhraseList2
-            // 
+
             rjToggleButtonPhraseList2.AutoSize = true;
             rjToggleButtonPhraseList2.Location = new Point(8, 24);
             rjToggleButtonPhraseList2.Margin = new Padding(3, 2, 3, 2);
@@ -6780,9 +5984,7 @@
             rjToggleButtonPhraseList2.Size = new Size(39, 16);
             rjToggleButtonPhraseList2.TabIndex = 79;
             rjToggleButtonPhraseList2.UseVisualStyleBackColor = true;
-            // 
-            // label48
-            // 
+
             label48.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label48.AutoSize = true;
             label48.ForeColor = Color.Snow;
@@ -6791,9 +5993,7 @@
             label48.Size = new Size(511, 15);
             label48.TabIndex = 85;
             label48.Text = "Warning: Disable Continuous Recognition before switching language settings or error will occur";
-            // 
-            // richTextBoxAzureDict
-            // 
+
             richTextBoxAzureDict.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             richTextBoxAzureDict.Location = new Point(8, 60);
             richTextBoxAzureDict.Margin = new Padding(3, 2, 3, 2);
@@ -6801,9 +6001,7 @@
             richTextBoxAzureDict.Size = new Size(568, 193);
             richTextBoxAzureDict.TabIndex = 63;
             richTextBoxAzureDict.Text = "";
-            // 
-            // rjToggleButtonProfan
-            // 
+
             rjToggleButtonProfan.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleButtonProfan.AutoSize = true;
             rjToggleButtonProfan.Checked = true;
@@ -6820,9 +6018,7 @@
             rjToggleButtonProfan.TabIndex = 71;
             rjToggleButtonProfan.UseVisualStyleBackColor = true;
             rjToggleButtonProfan.CheckedChanged += (this.checkBox5_CheckedChanged);
-            // 
-            // label20
-            // 
+
             label20.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6832,9 +6028,7 @@
             label20.Size = new Size(182, 15);
             label20.TabIndex = 48;
             label20.Text = "Voice Recognition Profanity Filter";
-            // 
-            // rjToggleButton4
-            // 
+
             rjToggleButton4.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleButton4.AutoSize = true;
             rjToggleButton4.Location = new Point(9, 527);
@@ -6849,9 +6043,7 @@
             rjToggleButton4.TabIndex = 83;
             rjToggleButton4.UseVisualStyleBackColor = true;
             rjToggleButton4.CheckedChanged += (this.rjToggleButton4_CheckedChanged);
-            // 
-            // label36
-            // 
+
             label36.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label36.AutoSize = true;
             label36.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -6861,9 +6053,7 @@
             label36.Size = new Size(177, 15);
             label36.TabIndex = 82;
             label36.Text = "Continuous Recognition (Azure)";
-            // 
-            // groupBox11
-            // 
+
             groupBox11.Controls.Add(ShowAzurePassword);
             groupBox11.Controls.Add(button13);
             groupBox11.Controls.Add(iconButton29);
@@ -6884,9 +6074,7 @@
             groupBox11.TabIndex = 108;
             groupBox11.TabStop = false;
             groupBox11.Text = "Azure Setup";
-            // 
-            // ShowAzurePassword
-            // 
+
             ShowAzurePassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             ShowAzurePassword.BackColor = Color.White;
             ShowAzurePassword.FlatAppearance.BorderSize = 0;
@@ -6903,9 +6091,7 @@
             ShowAzurePassword.TabIndex = 122;
             ShowAzurePassword.UseVisualStyleBackColor = false;
             ShowAzurePassword.Click += (this.ShowAzurePassword_Click);
-            // 
-            // button13
-            // 
+
             button13.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button13.FlatStyle = FlatStyle.Flat;
             button13.ForeColor = Color.Snow;
@@ -6917,9 +6103,7 @@
             button13.Text = "Reload Voices";
             button13.UseVisualStyleBackColor = false;
             button13.Click += (this.button13_Click);
-            // 
-            // iconButton29
-            // 
+
             iconButton29.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton29.FlatAppearance.BorderSize = 0;
             iconButton29.FlatStyle = FlatStyle.Flat;
@@ -6938,9 +6122,7 @@
             iconButton29.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton29.UseVisualStyleBackColor = true;
             iconButton29.Click += (this.iconButton29_Click);
-            // 
-            // label19
-            // 
+
             label19.AutoSize = true;
             label19.ForeColor = Color.Snow;
             label19.Location = new Point(57, 121);
@@ -6948,9 +6130,7 @@
             label19.Size = new Size(150, 15);
             label19.TabIndex = 37;
             label19.Text = "Remember Key and Region";
-            // 
-            // rjToggleButtonKeyRegion2
-            // 
+
             rjToggleButtonKeyRegion2.AutoSize = true;
             rjToggleButtonKeyRegion2.Location = new Point(9, 121);
             rjToggleButtonKeyRegion2.Margin = new Padding(3, 2, 3, 2);
@@ -6964,9 +6144,7 @@
             rjToggleButtonKeyRegion2.TabIndex = 38;
             rjToggleButtonKeyRegion2.UseVisualStyleBackColor = true;
             rjToggleButtonKeyRegion2.CheckedChanged += (this.checkBox3_CheckedChanged);
-            // 
-            // label9
-            // 
+
             label9.AutoSize = true;
             label9.ForeColor = Color.Snow;
             label9.Location = new Point(9, 69);
@@ -6974,9 +6152,7 @@
             label9.Size = new Size(44, 15);
             label9.TabIndex = 31;
             label9.Text = "Region";
-            // 
-            // button6
-            // 
+
             button6.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -6989,18 +6165,14 @@
             button6.Text = "Apply";
             button6.UseVisualStyleBackColor = false;
             button6.Click += (this.button6_Click);
-            // 
-            // textBox3
-            // 
+
             textBox3.Location = new Point(12, 86);
             textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(312, 23);
             textBox3.TabIndex = 30;
             textBox3.Text = "eastus";
-            // 
-            // label8
-            // 
+
             label8.AutoSize = true;
             label8.ForeColor = Color.Snow;
             label8.Location = new Point(9, 17);
@@ -7008,9 +6180,7 @@
             label8.Size = new Size(26, 15);
             label8.TabIndex = 28;
             label8.Text = "Key";
-            // 
-            // button5
-            // 
+
             button5.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -7023,18 +6193,14 @@
             button5.Text = "Apply";
             button5.UseVisualStyleBackColor = false;
             button5.Click += (this.button5_Click);
-            // 
-            // textBoxAzureKey
-            // 
+
             textBoxAzureKey.Location = new Point(12, 34);
             textBoxAzureKey.Margin = new Padding(3, 2, 3, 2);
             textBoxAzureKey.Name = "textBoxAzureKey";
             textBoxAzureKey.PasswordChar = '*';
             textBoxAzureKey.Size = new Size(312, 23);
             textBoxAzureKey.TabIndex = 27;
-            // 
-            // label10
-            // 
+
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label10.ForeColor = Color.Snow;
@@ -7043,9 +6209,7 @@
             label10.Size = new Size(232, 20);
             label10.TabIndex = 33;
             label10.Text = "Microsoft Azure Cognitive Service";
-            // 
-            // tabPage2
-            // 
+
             tabPage2.AutoScroll = true;
             tabPage2.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabPage2.Controls.Add(groupBox22);
@@ -7060,9 +6224,7 @@
             tabPage2.Size = new Size(769, 587);
             tabPage2.TabIndex = 13;
             tabPage2.Text = "VoiceCommandsTab";
-            // 
-            // groupBox22
-            // 
+
             groupBox22.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox22.Controls.Add(buttonExportVC);
             groupBox22.Controls.Add(buttonImportVC);
@@ -7079,9 +6241,7 @@
             groupBox22.TabIndex = 154;
             groupBox22.TabStop = false;
             groupBox22.Text = "Stored Commands";
-            // 
-            // buttonExportVC
-            // 
+
             buttonExportVC.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonExportVC.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonExportVC.FlatStyle = FlatStyle.Flat;
@@ -7100,9 +6260,7 @@
             buttonExportVC.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonExportVC.UseVisualStyleBackColor = false;
             buttonExportVC.Click += (this.buttonExportVC_Click);
-            // 
-            // buttonImportVC
-            // 
+
             buttonImportVC.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonImportVC.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonImportVC.FlatStyle = FlatStyle.Flat;
@@ -7121,9 +6279,7 @@
             buttonImportVC.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonImportVC.UseVisualStyleBackColor = false;
             buttonImportVC.Click += (this.buttonImportVC_Click);
-            // 
-            // checkedListBox1
-            // 
+
             checkedListBox1.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             checkedListBox1.Font = new Font("Segoe UI", 7.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkedListBox1.FormattingEnabled = true;
@@ -7133,9 +6289,7 @@
             checkedListBox1.Size = new Size(741, 214);
             checkedListBox1.TabIndex = 142;
             checkedListBox1.MouseDoubleClick += (this.checkedListBox1_MouseDoubleClick);
-            // 
-            // button24
-            // 
+
             button24.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             button24.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button24.FlatStyle = FlatStyle.Flat;
@@ -7148,9 +6302,7 @@
             button24.Text = "Clear All";
             button24.UseVisualStyleBackColor = false;
             button24.Click += (this.button24_Click);
-            // 
-            // label117
-            // 
+
             label117.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label117.AutoSize = true;
             label117.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -7160,9 +6312,7 @@
             label117.Size = new Size(334, 15);
             label117.TabIndex = 151;
             label117.Text = "Delete Command on Double Click and Enable Clear All Button";
-            // 
-            // deleteCommandsToggle
-            // 
+
             deleteCommandsToggle.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             deleteCommandsToggle.AutoSize = true;
             deleteCommandsToggle.Location = new Point(5, 278);
@@ -7176,9 +6326,7 @@
             deleteCommandsToggle.Size = new Size(39, 16);
             deleteCommandsToggle.TabIndex = 152;
             deleteCommandsToggle.UseVisualStyleBackColor = true;
-            // 
-            // groupBox15
-            // 
+
             groupBox15.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox15.Controls.Add(label143);
             groupBox15.Controls.Add(label141);
@@ -7198,9 +6346,7 @@
             groupBox15.TabIndex = 153;
             groupBox15.TabStop = false;
             groupBox15.Text = "Add New Voice Command";
-            // 
-            // label143
-            // 
+
             label143.AutoSize = true;
             label143.ForeColor = Color.Snow;
             label143.Location = new Point(592, 26);
@@ -7208,9 +6354,7 @@
             label143.Size = new Size(35, 15);
             label143.TabIndex = 149;
             label143.Text = "Value";
-            // 
-            // label141
-            // 
+
             label141.AutoSize = true;
             label141.ForeColor = Color.Snow;
             label141.Location = new Point(496, 26);
@@ -7218,9 +6362,7 @@
             label141.Size = new Size(59, 15);
             label141.TabIndex = 148;
             label141.Text = "Data Type";
-            // 
-            // label138
-            // 
+
             label138.AutoSize = true;
             label138.ForeColor = Color.Snow;
             label138.Location = new Point(256, 26);
@@ -7228,18 +6370,14 @@
             label138.Size = new Size(106, 15);
             label138.TabIndex = 147;
             label138.Text = "Parameter Address";
-            // 
-            // textBox4Value
-            // 
+
             textBox4Value.Location = new Point(592, 44);
             textBox4Value.Margin = new Padding(3, 2, 3, 2);
             textBox4Value.Name = "textBox4Value";
             textBox4Value.Size = new Size(81, 23);
             textBox4Value.TabIndex = 146;
             textBox4Value.Text = "true";
-            // 
-            // comboBox3Type
-            // 
+
             comboBox3Type.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3Type.FlatStyle = FlatStyle.Flat;
             comboBox3Type.FormattingEnabled = true;
@@ -7249,18 +6387,14 @@
             comboBox3Type.Name = "comboBox3Type";
             comboBox3Type.Size = new Size(90, 23);
             comboBox3Type.TabIndex = 145;
-            // 
-            // textBox2Address
-            // 
+
             textBox2Address.Location = new Point(256, 44);
             textBox2Address.Margin = new Padding(3, 2, 3, 2);
             textBox2Address.Name = "textBox2Address";
             textBox2Address.Size = new Size(234, 23);
             textBox2Address.TabIndex = 144;
             textBox2Address.Text = "/avatar/parameters/ParameterName";
-            // 
-            // label139
-            // 
+
             label139.AutoSize = true;
             label139.ForeColor = Color.Snow;
             label139.Location = new Point(7, 27);
@@ -7268,9 +6402,7 @@
             label139.Size = new Size(84, 15);
             label139.TabIndex = 134;
             label139.Text = "Spoken Phrase";
-            // 
-            // buttonAddVoiceCommand
-            // 
+
             buttonAddVoiceCommand.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonAddVoiceCommand.FlatStyle = FlatStyle.Flat;
             buttonAddVoiceCommand.ForeColor = Color.Snow;
@@ -7282,18 +6414,14 @@
             buttonAddVoiceCommand.Text = "Add";
             buttonAddVoiceCommand.UseVisualStyleBackColor = false;
             buttonAddVoiceCommand.Click += (this.buttonAddVoiceCommand_Click);
-            // 
-            // textBox1Spoken
-            // 
+
             textBox1Spoken.Location = new Point(7, 44);
             textBox1Spoken.Margin = new Padding(3, 2, 3, 2);
             textBox1Spoken.Name = "textBox1Spoken";
             textBox1Spoken.Size = new Size(245, 23);
             textBox1Spoken.TabIndex = 100;
             textBox1Spoken.Text = "the phase I will say";
-            // 
-            // iconButton40
-            // 
+
             iconButton40.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton40.FlatAppearance.BorderSize = 0;
             iconButton40.FlatStyle = FlatStyle.Flat;
@@ -7312,9 +6440,7 @@
             iconButton40.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton40.UseVisualStyleBackColor = true;
             iconButton40.Click += (this.iconButton40_Click);
-            // 
-            // label115
-            // 
+
             label115.AutoSize = true;
             label115.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label115.ForeColor = Color.Snow;
@@ -7323,9 +6449,7 @@
             label115.Size = new Size(124, 20);
             label115.TabIndex = 78;
             label115.Text = "Voice Commands";
-            // 
-            // label131
-            // 
+
             label131.AutoSize = true;
             label131.ForeColor = Color.Snow;
             label131.Location = new Point(155, 18);
@@ -7333,9 +6457,7 @@
             label131.Size = new Size(205, 15);
             label131.TabIndex = 79;
             label131.Text = "Send OSC parameters with your voice";
-            // 
-            // DeepLTab
-            // 
+
             DeepLTab.AutoScroll = true;
             DeepLTab.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             DeepLTab.Controls.Add(groupBox27);
@@ -7348,9 +6470,7 @@
             DeepLTab.Size = new Size(769, 587);
             DeepLTab.TabIndex = 14;
             DeepLTab.Text = "DeepLTab";
-            // 
-            // groupBox27
-            // 
+
             groupBox27.Controls.Add(textBoxCustomTranslationOuput);
             groupBox27.Controls.Add(rjToggleBothLanguages);
             groupBox27.Controls.Add(label208);
@@ -7368,17 +6488,13 @@
             groupBox27.TabIndex = 112;
             groupBox27.TabStop = false;
             groupBox27.Text = "General Translation Settings";
-            // 
-            // textBoxCustomTranslationOuput
-            // 
+
             textBoxCustomTranslationOuput.Location = new Point(16, 171);
             textBoxCustomTranslationOuput.Margin = new Padding(3, 2, 3, 2);
             textBoxCustomTranslationOuput.Name = "textBoxCustomTranslationOuput";
             textBoxCustomTranslationOuput.Size = new Size(655, 23);
             textBoxCustomTranslationOuput.TabIndex = 114;
-            // 
-            // rjToggleBothLanguages
-            // 
+
             rjToggleBothLanguages.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleBothLanguages.AutoSize = true;
             rjToggleBothLanguages.Location = new Point(14, 143);
@@ -7392,9 +6508,7 @@
             rjToggleBothLanguages.Size = new Size(39, 16);
             rjToggleBothLanguages.TabIndex = 113;
             rjToggleBothLanguages.UseVisualStyleBackColor = true;
-            // 
-            // label208
-            // 
+
             label208.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label208.AutoSize = true;
             label208.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -7404,9 +6518,7 @@
             label208.Size = new Size(231, 15);
             label208.TabIndex = 112;
             label208.Text = "Custom Translation Text Output (Override)";
-            // 
-            // rjToggleButtonAsTranslated2
-            // 
+
             rjToggleButtonAsTranslated2.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleButtonAsTranslated2.AutoSize = true;
             rjToggleButtonAsTranslated2.Location = new Point(14, 53);
@@ -7420,9 +6532,7 @@
             rjToggleButtonAsTranslated2.Size = new Size(39, 16);
             rjToggleButtonAsTranslated2.TabIndex = 77;
             rjToggleButtonAsTranslated2.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
+
             label16.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -7432,18 +6542,14 @@
             label16.Size = new Size(153, 15);
             label16.TabIndex = 34;
             label16.Text = "Text in Translated Language";
-            // 
-            // label24
-            // 
+
             label24.AutoSize = true;
             label24.Location = new Point(14, 25);
             label24.Name = "label24";
             label24.Size = new Size(452, 15);
             label24.TabIndex = 111;
             label24.Text = "Settings apply to Azure (speech to text only), DeepL, and VoiceWizardPro translations";
-            // 
-            // label118
-            // 
+
             label118.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label118.AutoSize = true;
             label118.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -7453,9 +6559,7 @@
             label118.Size = new Size(183, 15);
             label118.TabIndex = 106;
             label118.Text = "TTS Voice in Translated Language";
-            // 
-            // rjToggleButtonVoiceWhatLang
-            // 
+
             rjToggleButtonVoiceWhatLang.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleButtonVoiceWhatLang.AutoSize = true;
             rjToggleButtonVoiceWhatLang.Checked = true;
@@ -7471,9 +6575,7 @@
             rjToggleButtonVoiceWhatLang.Size = new Size(39, 16);
             rjToggleButtonVoiceWhatLang.TabIndex = 107;
             rjToggleButtonVoiceWhatLang.UseVisualStyleBackColor = true;
-            // 
-            // groupBox26
-            // 
+
             groupBox26.Controls.Add(ShowDeepLPassword);
             groupBox26.Controls.Add(label51);
             groupBox26.Controls.Add(iconButton43);
@@ -7488,9 +6590,7 @@
             groupBox26.TabIndex = 111;
             groupBox26.TabStop = false;
             groupBox26.Text = "DeepL Settings";
-            // 
-            // ShowDeepLPassword
-            // 
+
             ShowDeepLPassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             ShowDeepLPassword.BackColor = Color.White;
             ShowDeepLPassword.FlatAppearance.BorderSize = 0;
@@ -7507,9 +6607,7 @@
             ShowDeepLPassword.TabIndex = 122;
             ShowDeepLPassword.UseVisualStyleBackColor = false;
             ShowDeepLPassword.Click += (this.ShowDeepLPassword_Click);
-            // 
-            // label51
-            // 
+
             label51.AutoSize = true;
             label51.ForeColor = Color.Snow;
             label51.Location = new Point(9, 17);
@@ -7517,9 +6615,7 @@
             label51.Size = new Size(26, 15);
             label51.TabIndex = 28;
             label51.Text = "Key";
-            // 
-            // iconButton43
-            // 
+
             iconButton43.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton43.FlatAppearance.BorderSize = 0;
             iconButton43.FlatStyle = FlatStyle.Flat;
@@ -7538,9 +6634,7 @@
             iconButton43.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton43.UseVisualStyleBackColor = true;
             iconButton43.Click += (this.iconButton43_Click);
-            // 
-            // button18
-            // 
+
             button18.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button18.FlatStyle = FlatStyle.Flat;
             button18.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -7553,18 +6647,14 @@
             button18.Text = "Apply";
             button18.UseVisualStyleBackColor = false;
             button18.Click += (this.button18_Click_1);
-            // 
-            // textBoxDeepLKey
-            // 
+
             textBoxDeepLKey.Location = new Point(12, 34);
             textBoxDeepLKey.Margin = new Padding(3, 2, 3, 2);
             textBoxDeepLKey.Name = "textBoxDeepLKey";
             textBoxDeepLKey.PasswordChar = '*';
             textBoxDeepLKey.Size = new Size(312, 23);
             textBoxDeepLKey.TabIndex = 27;
-            // 
-            // label53
-            // 
+
             label53.AutoSize = true;
             label53.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label53.ForeColor = Color.Snow;
@@ -7573,9 +6663,7 @@
             label53.Size = new Size(113, 20);
             label53.TabIndex = 109;
             label53.Text = "Translation APIs";
-            // 
-            // discordTab
-            // 
+
             discordTab.AutoScroll = true;
             discordTab.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             discordTab.Controls.Add(label59);
@@ -7587,9 +6675,7 @@
             discordTab.Size = new Size(769, 587);
             discordTab.TabIndex = 15;
             discordTab.Text = "Discord";
-            // 
-            // label59
-            // 
+
             label59.AutoSize = true;
             label59.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label59.ForeColor = Color.Snow;
@@ -7598,9 +6684,7 @@
             label59.Size = new Size(169, 20);
             label59.TabIndex = 110;
             label59.Text = "Discord OSC Integration";
-            // 
-            // groupBox29
-            // 
+
             groupBox29.Controls.Add(iconButton44);
             groupBox29.Controls.Add(label58);
             groupBox29.Controls.Add(button15);
@@ -7619,9 +6703,7 @@
             groupBox29.TabIndex = 101;
             groupBox29.TabStop = false;
             groupBox29.Text = "Discord OSC Settings";
-            // 
-            // iconButton44
-            // 
+
             iconButton44.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton44.FlatAppearance.BorderSize = 0;
             iconButton44.FlatStyle = FlatStyle.Flat;
@@ -7639,18 +6721,14 @@
             iconButton44.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton44.UseVisualStyleBackColor = true;
             iconButton44.Click += (this.iconButton44_Click);
-            // 
-            // label58
-            // 
+
             label58.AutoSize = true;
             label58.Location = new Point(5, 17);
             label58.Name = "label58";
             label58.Size = new Size(293, 15);
             label58.TabIndex = 120;
             label58.Text = "Sends bool over OSC upon recieving discord message.";
-            // 
-            // button15
-            // 
+
             button15.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button15.FlatStyle = FlatStyle.Flat;
             button15.ForeColor = Color.Snow;
@@ -7662,9 +6740,7 @@
             button15.Text = "Get Free Compatible VRChat Asset";
             button15.UseVisualStyleBackColor = false;
             button15.Click += (this.button15_Click_1);
-            // 
-            // label31
-            // 
+
             label31.AutoSize = true;
             label31.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label31.ForeColor = Color.Snow;
@@ -7673,9 +6749,7 @@
             label31.Size = new Size(106, 15);
             label31.TabIndex = 118;
             label31.Text = "Parameter Address";
-            // 
-            // label54
-            // 
+
             label54.AutoSize = true;
             label54.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label54.ForeColor = Color.Snow;
@@ -7684,27 +6758,21 @@
             label54.Size = new Size(79, 15);
             label54.TabIndex = 117;
             label54.Text = "Disable Timer";
-            // 
-            // textBoxDiscTimer
-            // 
+
             textBoxDiscTimer.Location = new Point(5, 142);
             textBoxDiscTimer.Margin = new Padding(3, 2, 3, 2);
             textBoxDiscTimer.Name = "textBoxDiscTimer";
             textBoxDiscTimer.Size = new Size(274, 23);
             textBoxDiscTimer.TabIndex = 116;
             textBoxDiscTimer.Text = "5000";
-            // 
-            // textBoxDiscordPara
-            // 
+
             textBoxDiscordPara.Location = new Point(5, 98);
             textBoxDiscordPara.Margin = new Padding(3, 2, 3, 2);
             textBoxDiscordPara.Name = "textBoxDiscordPara";
             textBoxDiscordPara.Size = new Size(274, 23);
             textBoxDiscordPara.TabIndex = 115;
             textBoxDiscordPara.Text = "/avatar/parameters/osc_discord_band";
-            // 
-            // label33
-            // 
+
             label33.AutoSize = true;
             label33.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label33.ForeColor = Color.Snow;
@@ -7713,9 +6781,7 @@
             label33.Size = new Size(173, 15);
             label33.TabIndex = 102;
             label33.Text = "Discord Notifications Send OSC";
-            // 
-            // rjToggleDiscordToast
-            // 
+
             rjToggleDiscordToast.AutoSize = true;
             rjToggleDiscordToast.Location = new Point(5, 50);
             rjToggleDiscordToast.Margin = new Padding(3, 2, 3, 2);
@@ -7728,9 +6794,7 @@
             rjToggleDiscordToast.Size = new Size(39, 16);
             rjToggleDiscordToast.TabIndex = 103;
             rjToggleDiscordToast.UseVisualStyleBackColor = true;
-            // 
-            // Replacements
-            // 
+
             Replacements.AutoScroll = true;
             Replacements.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             Replacements.Controls.Add(iconButton45);
@@ -7746,9 +6810,7 @@
             Replacements.Size = new Size(769, 587);
             Replacements.TabIndex = 16;
             Replacements.Text = "replacements";
-            // 
-            // iconButton45
-            // 
+
             iconButton45.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton45.FlatAppearance.BorderSize = 0;
             iconButton45.FlatStyle = FlatStyle.Flat;
@@ -7766,9 +6828,7 @@
             iconButton45.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton45.UseVisualStyleBackColor = true;
             iconButton45.Click += (this.iconButton45_Click);
-            // 
-            // groupBox33
-            // 
+
             groupBox33.Anchor = (AnchorStyles)((AnchorStyles.Bottom) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox33.Controls.Add(label245);
             groupBox33.Controls.Add(rjToggleUseWordBoundaries);
@@ -7783,9 +6843,7 @@
             groupBox33.TabIndex = 159;
             groupBox33.TabStop = false;
             groupBox33.Text = "Word Replacement Settings";
-            // 
-            // label245
-            // 
+
             label245.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label245.AutoSize = true;
             label245.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -7795,9 +6853,7 @@
             label245.Size = new Size(120, 15);
             label245.TabIndex = 164;
             label245.Text = "Use Word Boundaries";
-            // 
-            // rjToggleUseWordBoundaries
-            // 
+
             rjToggleUseWordBoundaries.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleUseWordBoundaries.AutoSize = true;
             rjToggleUseWordBoundaries.Checked = true;
@@ -7813,9 +6869,7 @@
             rjToggleUseWordBoundaries.Size = new Size(39, 16);
             rjToggleUseWordBoundaries.TabIndex = 165;
             rjToggleUseWordBoundaries.UseVisualStyleBackColor = true;
-            // 
-            // label62
-            // 
+
             label62.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label62.AutoSize = true;
             label62.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -7825,9 +6879,7 @@
             label62.Size = new Size(359, 15);
             label62.TabIndex = 162;
             label62.Text = "Word Replacements Before TTS (Will Happen After TTS If Disabled)";
-            // 
-            // rjToggleReplaceBeforeTTS
-            // 
+
             rjToggleReplaceBeforeTTS.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleReplaceBeforeTTS.AutoSize = true;
             rjToggleReplaceBeforeTTS.Checked = true;
@@ -7843,9 +6895,7 @@
             rjToggleReplaceBeforeTTS.Size = new Size(39, 16);
             rjToggleReplaceBeforeTTS.TabIndex = 163;
             rjToggleReplaceBeforeTTS.UseVisualStyleBackColor = true;
-            // 
-            // groupBox31
-            // 
+
             groupBox31.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox31.Controls.Add(buttonExportWR);
             groupBox31.Controls.Add(buttonImportWR);
@@ -7862,9 +6912,7 @@
             groupBox31.TabIndex = 158;
             groupBox31.TabStop = false;
             groupBox31.Text = "Stored Replacements";
-            // 
-            // buttonExportWR
-            // 
+
             buttonExportWR.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonExportWR.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonExportWR.FlatStyle = FlatStyle.Flat;
@@ -7883,9 +6931,7 @@
             buttonExportWR.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonExportWR.UseVisualStyleBackColor = false;
             buttonExportWR.Click += (this.buttonExportWR_Click);
-            // 
-            // buttonImportWR
-            // 
+
             buttonImportWR.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             buttonImportWR.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonImportWR.FlatStyle = FlatStyle.Flat;
@@ -7904,9 +6950,7 @@
             buttonImportWR.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonImportWR.UseVisualStyleBackColor = false;
             buttonImportWR.Click += (this.buttonImportWR_Click);
-            // 
-            // button19
-            // 
+
             button19.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             button19.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button19.FlatStyle = FlatStyle.Flat;
@@ -7919,9 +6963,7 @@
             button19.Text = "Clear All";
             button19.UseVisualStyleBackColor = false;
             button19.Click += (this.button19_Click_1);
-            // 
-            // checkedListBoxReplacements
-            // 
+
             checkedListBoxReplacements.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             checkedListBoxReplacements.Font = new Font("Segoe UI", 7.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkedListBoxReplacements.FormattingEnabled = true;
@@ -7931,9 +6973,7 @@
             checkedListBoxReplacements.Size = new Size(740, 229);
             checkedListBoxReplacements.TabIndex = 142;
             checkedListBoxReplacements.MouseDoubleClick += (this.checkedListBoxReplacements_MouseDoubleClick);
-            // 
-            // label61
-            // 
+
             label61.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             label61.AutoSize = true;
             label61.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -7943,9 +6983,7 @@
             label61.Size = new Size(339, 15);
             label61.TabIndex = 160;
             label61.Text = "Delete Commands on Double Click and Enable Clear All Button";
-            // 
-            // rjToggleButton7
-            // 
+
             rjToggleButton7.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             rjToggleButton7.AutoSize = true;
             rjToggleButton7.Location = new Point(7, 316);
@@ -7959,9 +6997,7 @@
             rjToggleButton7.Size = new Size(39, 16);
             rjToggleButton7.TabIndex = 161;
             rjToggleButton7.UseVisualStyleBackColor = true;
-            // 
-            // groupBox32
-            // 
+
             groupBox32.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox32.Controls.Add(label64);
             groupBox32.Controls.Add(textBoxReplaceWord);
@@ -7977,9 +7013,7 @@
             groupBox32.TabIndex = 157;
             groupBox32.TabStop = false;
             groupBox32.Text = "Add New Word Replacement";
-            // 
-            // label64
-            // 
+
             label64.AutoSize = true;
             label64.ForeColor = Color.Snow;
             label64.Location = new Point(335, 27);
@@ -7987,17 +7021,13 @@
             label64.Size = new Size(121, 15);
             label64.TabIndex = 147;
             label64.Text = "Replacement Word(s)";
-            // 
-            // textBoxReplaceWord
-            // 
+
             textBoxReplaceWord.Location = new Point(335, 44);
             textBoxReplaceWord.Margin = new Padding(3, 2, 3, 2);
             textBoxReplaceWord.Name = "textBoxReplaceWord";
             textBoxReplaceWord.Size = new Size(317, 23);
             textBoxReplaceWord.TabIndex = 144;
-            // 
-            // label65
-            // 
+
             label65.AutoSize = true;
             label65.ForeColor = Color.Snow;
             label65.Location = new Point(7, 27);
@@ -8005,9 +7035,7 @@
             label65.Size = new Size(134, 15);
             label65.TabIndex = 134;
             label65.Text = "Spoken / Typed Word(s)\r\n";
-            // 
-            // buttonReplaceAdd
-            // 
+
             buttonReplaceAdd.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonReplaceAdd.FlatStyle = FlatStyle.Flat;
             buttonReplaceAdd.ForeColor = Color.Snow;
@@ -8019,17 +7047,13 @@
             buttonReplaceAdd.Text = "Add";
             buttonReplaceAdd.UseVisualStyleBackColor = false;
             buttonReplaceAdd.Click += (this.buttonReplaceAdd_Click);
-            // 
-            // textBoxOriginalWord
-            // 
+
             textBoxOriginalWord.Location = new Point(7, 44);
             textBoxOriginalWord.Margin = new Padding(3, 2, 3, 2);
             textBoxOriginalWord.Name = "textBoxOriginalWord";
             textBoxOriginalWord.Size = new Size(301, 23);
             textBoxOriginalWord.TabIndex = 100;
-            // 
-            // label70
-            // 
+
             label70.AutoSize = true;
             label70.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label70.ForeColor = Color.Snow;
@@ -8038,9 +7062,7 @@
             label70.Size = new Size(142, 20);
             label70.TabIndex = 155;
             label70.Text = "Word Replacements";
-            // 
-            // label71
-            // 
+
             label71.AutoSize = true;
             label71.ForeColor = Color.Snow;
             label71.Location = new Point(183, 14);
@@ -8048,9 +7070,7 @@
             label71.Size = new Size(278, 15);
             label71.TabIndex = 156;
             label71.Text = "Replace any typed word or phrase with another one";
-            // 
-            // AmazonPolly
-            // 
+
             AmazonPolly.AutoScroll = true;
             AmazonPolly.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             AmazonPolly.Controls.Add(groupBox16);
@@ -8062,9 +7082,7 @@
             AmazonPolly.Size = new Size(769, 587);
             AmazonPolly.TabIndex = 17;
             AmazonPolly.Text = "Polly";
-            // 
-            // groupBox16
-            // 
+
             groupBox16.Controls.Add(ShowAmazonSecretPassword);
             groupBox16.Controls.Add(ShowAmazonKeyPassword);
             groupBox16.Controls.Add(label74);
@@ -8086,9 +7104,7 @@
             groupBox16.TabIndex = 111;
             groupBox16.TabStop = false;
             groupBox16.Text = "Amazon Polly Setup";
-            // 
-            // ShowAmazonSecretPassword
-            // 
+
             ShowAmazonSecretPassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             ShowAmazonSecretPassword.BackColor = Color.White;
             ShowAmazonSecretPassword.FlatAppearance.BorderSize = 0;
@@ -8105,9 +7121,7 @@
             ShowAmazonSecretPassword.TabIndex = 123;
             ShowAmazonSecretPassword.UseVisualStyleBackColor = false;
             ShowAmazonSecretPassword.Click += (this.ShowAmazonSecretPassword_Click);
-            // 
-            // ShowAmazonKeyPassword
-            // 
+
             ShowAmazonKeyPassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             ShowAmazonKeyPassword.BackColor = Color.White;
             ShowAmazonKeyPassword.FlatAppearance.BorderSize = 0;
@@ -8124,9 +7138,7 @@
             ShowAmazonKeyPassword.TabIndex = 122;
             ShowAmazonKeyPassword.UseVisualStyleBackColor = false;
             ShowAmazonKeyPassword.Click += (this.ShowAmazonKeyPassword_Click);
-            // 
-            // label74
-            // 
+
             label74.AutoSize = true;
             label74.ForeColor = Color.Snow;
             label74.Location = new Point(9, 71);
@@ -8134,9 +7146,7 @@
             label74.Size = new Size(100, 15);
             label74.TabIndex = 34;
             label74.Text = "Secret Access Key";
-            // 
-            // iconButton18
-            // 
+
             iconButton18.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton18.FlatAppearance.BorderSize = 0;
             iconButton18.FlatStyle = FlatStyle.Flat;
@@ -8154,9 +7164,7 @@
             iconButton18.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton18.UseVisualStyleBackColor = true;
             iconButton18.Click += (this.iconButton18_Click_1);
-            // 
-            // button29
-            // 
+
             button29.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button29.FlatStyle = FlatStyle.Flat;
             button29.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -8169,18 +7177,14 @@
             button29.Text = "Apply";
             button29.UseVisualStyleBackColor = false;
             button29.Click += (this.button29_Click);
-            // 
-            // textBoxAmazonSecret
-            // 
+
             textBoxAmazonSecret.Location = new Point(12, 88);
             textBoxAmazonSecret.Margin = new Padding(3, 2, 3, 2);
             textBoxAmazonSecret.Name = "textBoxAmazonSecret";
             textBoxAmazonSecret.PasswordChar = '*';
             textBoxAmazonSecret.Size = new Size(312, 23);
             textBoxAmazonSecret.TabIndex = 33;
-            // 
-            // label75
-            // 
+
             label75.AutoSize = true;
             label75.ForeColor = Color.Snow;
             label75.Location = new Point(9, 124);
@@ -8188,9 +7192,7 @@
             label75.Size = new Size(44, 15);
             label75.TabIndex = 31;
             label75.Text = "Region";
-            // 
-            // button30
-            // 
+
             button30.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button30.FlatStyle = FlatStyle.Flat;
             button30.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -8203,17 +7205,13 @@
             button30.Text = "Apply";
             button30.UseVisualStyleBackColor = false;
             button30.Click += (this.button30_Click);
-            // 
-            // textBox8
-            // 
+
             textBox8.Location = new Point(12, 142);
             textBox8.Margin = new Padding(3, 2, 3, 2);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(312, 23);
             textBox8.TabIndex = 30;
-            // 
-            // label82
-            // 
+
             label82.AutoSize = true;
             label82.ForeColor = Color.Snow;
             label82.Location = new Point(9, 17);
@@ -8221,9 +7219,7 @@
             label82.Size = new Size(65, 15);
             label82.TabIndex = 28;
             label82.Text = "Access Key";
-            // 
-            // button31
-            // 
+
             button31.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button31.FlatStyle = FlatStyle.Flat;
             button31.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -8236,18 +7232,14 @@
             button31.Text = "Apply";
             button31.UseVisualStyleBackColor = false;
             button31.Click += (this.button31_Click);
-            // 
-            // textBoxAmazonKey
-            // 
+
             textBoxAmazonKey.Location = new Point(12, 34);
             textBoxAmazonKey.Margin = new Padding(3, 2, 3, 2);
             textBoxAmazonKey.Name = "textBoxAmazonKey";
             textBoxAmazonKey.PasswordChar = '*';
             textBoxAmazonKey.Size = new Size(312, 23);
             textBoxAmazonKey.TabIndex = 27;
-            // 
-            // label83
-            // 
+
             label83.AutoSize = true;
             label83.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label83.ForeColor = Color.Snow;
@@ -8256,9 +7248,7 @@
             label83.Size = new Size(99, 20);
             label83.TabIndex = 109;
             label83.Text = "Amazon Polly";
-            // 
-            // VRCOSC
-            // 
+
             VRCOSC.AutoScroll = true;
             VRCOSC.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             VRCOSC.Controls.Add(iconButton47);
@@ -8274,9 +7264,7 @@
             VRCOSC.Size = new Size(769, 587);
             VRCOSC.TabIndex = 18;
             VRCOSC.Text = "VRCOSC";
-            // 
-            // iconButton47
-            // 
+
             iconButton47.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton47.FlatAppearance.BorderSize = 0;
             iconButton47.FlatStyle = FlatStyle.Flat;
@@ -8295,9 +7283,7 @@
             iconButton47.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton47.UseVisualStyleBackColor = true;
             iconButton47.Click += (this.iconButton47_Click);
-            // 
-            // groupBox37
-            // 
+
             groupBox37.Controls.Add(buttonCountersApplyChanges);
             groupBox37.Controls.Add(buttonResetCounter10);
             groupBox37.Controls.Add(buttonResetCounter9);
@@ -8367,9 +7353,7 @@
             groupBox37.TabIndex = 127;
             groupBox37.TabStop = false;
             groupBox37.Text = "Counters";
-            // 
-            // buttonCountersApplyChanges
-            // 
+
             buttonCountersApplyChanges.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonCountersApplyChanges.Enabled = false;
             buttonCountersApplyChanges.FlatStyle = FlatStyle.Flat;
@@ -8382,9 +7366,7 @@
             buttonCountersApplyChanges.Text = "Debug: Apply Changes";
             buttonCountersApplyChanges.UseVisualStyleBackColor = false;
             buttonCountersApplyChanges.Click += (this.button43_Click_1);
-            // 
-            // buttonResetCounter10
-            // 
+
             buttonResetCounter10.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter10.Enabled = false;
             buttonResetCounter10.FlatStyle = FlatStyle.Flat;
@@ -8397,9 +7379,7 @@
             buttonResetCounter10.Text = "Reset";
             buttonResetCounter10.UseVisualStyleBackColor = false;
             buttonResetCounter10.Click += (this.buttonResetCounter10_Click);
-            // 
-            // buttonResetCounter9
-            // 
+
             buttonResetCounter9.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter9.Enabled = false;
             buttonResetCounter9.FlatStyle = FlatStyle.Flat;
@@ -8412,9 +7392,7 @@
             buttonResetCounter9.Text = "Reset";
             buttonResetCounter9.UseVisualStyleBackColor = false;
             buttonResetCounter9.Click += (this.buttonResetCounter9_Click);
-            // 
-            // buttonResetCounter8
-            // 
+
             buttonResetCounter8.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter8.Enabled = false;
             buttonResetCounter8.FlatStyle = FlatStyle.Flat;
@@ -8427,9 +7405,7 @@
             buttonResetCounter8.Text = "Reset";
             buttonResetCounter8.UseVisualStyleBackColor = false;
             buttonResetCounter8.Click += (this.buttonResetCounter8_Click);
-            // 
-            // buttonResetCounter7
-            // 
+
             buttonResetCounter7.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter7.Enabled = false;
             buttonResetCounter7.FlatStyle = FlatStyle.Flat;
@@ -8442,9 +7418,7 @@
             buttonResetCounter7.Text = "Reset";
             buttonResetCounter7.UseVisualStyleBackColor = false;
             buttonResetCounter7.Click += (this.buttonResetCounter7_Click);
-            // 
-            // label237
-            // 
+
             label237.AutoSize = true;
             label237.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label237.ForeColor = Color.Snow;
@@ -8453,9 +7427,7 @@
             label237.Size = new Size(162, 15);
             label237.TabIndex = 174;
             label237.Text = "Counter 10: Avatar Parameter";
-            // 
-            // textBoxCounter10
-            // 
+
             textBoxCounter10.Location = new Point(12, 458);
             textBoxCounter10.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter10.Name = "textBoxCounter10";
@@ -8463,9 +7435,7 @@
             textBoxCounter10.TabIndex = 173;
             textBoxCounter10.Text = "/avatar/parameters/Counter10";
             textBoxCounter10.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage10
-            // 
+
             textBoxCounterMessage10.Location = new Point(234, 458);
             textBoxCounterMessage10.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage10.Name = "textBoxCounterMessage10";
@@ -8473,9 +7443,7 @@
             textBoxCounterMessage10.TabIndex = 175;
             textBoxCounterMessage10.Text = "Counter: {counter}";
             textBoxCounterMessage10.TextChanged += (OnBoxesChanged);
-            // 
-            // label238
-            // 
+
             label238.AutoSize = true;
             label238.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label238.ForeColor = Color.Snow;
@@ -8484,9 +7452,7 @@
             label238.Size = new Size(53, 15);
             label238.TabIndex = 176;
             label238.Text = "Message";
-            // 
-            // label239
-            // 
+
             label239.AutoSize = true;
             label239.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label239.ForeColor = Color.Snow;
@@ -8495,9 +7461,7 @@
             label239.Size = new Size(156, 15);
             label239.TabIndex = 170;
             label239.Text = "Counter 9: Avatar Parameter";
-            // 
-            // textBoxCounter9
-            // 
+
             textBoxCounter9.Location = new Point(12, 412);
             textBoxCounter9.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter9.Name = "textBoxCounter9";
@@ -8505,9 +7469,7 @@
             textBoxCounter9.TabIndex = 169;
             textBoxCounter9.Text = "/avatar/parameters/Counter9";
             textBoxCounter9.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage9
-            // 
+
             textBoxCounterMessage9.Location = new Point(234, 412);
             textBoxCounterMessage9.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage9.Name = "textBoxCounterMessage9";
@@ -8515,9 +7477,7 @@
             textBoxCounterMessage9.TabIndex = 171;
             textBoxCounterMessage9.Text = "Counter: {counter}";
             textBoxCounterMessage9.TextChanged += (OnBoxesChanged);
-            // 
-            // label240
-            // 
+
             label240.AutoSize = true;
             label240.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label240.ForeColor = Color.Snow;
@@ -8526,9 +7486,7 @@
             label240.Size = new Size(53, 15);
             label240.TabIndex = 172;
             label240.Text = "Message";
-            // 
-            // label241
-            // 
+
             label241.AutoSize = true;
             label241.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label241.ForeColor = Color.Snow;
@@ -8537,9 +7495,7 @@
             label241.Size = new Size(156, 15);
             label241.TabIndex = 166;
             label241.Text = "Counter 8: Avatar Parameter";
-            // 
-            // textBoxCounter8
-            // 
+
             textBoxCounter8.Location = new Point(12, 364);
             textBoxCounter8.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter8.Name = "textBoxCounter8";
@@ -8547,9 +7503,7 @@
             textBoxCounter8.TabIndex = 165;
             textBoxCounter8.Text = "/avatar/parameters/Counter8";
             textBoxCounter8.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage8
-            // 
+
             textBoxCounterMessage8.Location = new Point(234, 364);
             textBoxCounterMessage8.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage8.Name = "textBoxCounterMessage8";
@@ -8557,9 +7511,7 @@
             textBoxCounterMessage8.TabIndex = 167;
             textBoxCounterMessage8.Text = "Counter: {counter}";
             textBoxCounterMessage8.TextChanged += (OnBoxesChanged);
-            // 
-            // label242
-            // 
+
             label242.AutoSize = true;
             label242.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label242.ForeColor = Color.Snow;
@@ -8568,9 +7520,7 @@
             label242.Size = new Size(53, 15);
             label242.TabIndex = 168;
             label242.Text = "Message";
-            // 
-            // label243
-            // 
+
             label243.AutoSize = true;
             label243.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label243.ForeColor = Color.Snow;
@@ -8579,9 +7529,7 @@
             label243.Size = new Size(156, 15);
             label243.TabIndex = 162;
             label243.Text = "Counter 7: Avatar Parameter";
-            // 
-            // textBoxCounter7
-            // 
+
             textBoxCounter7.Location = new Point(12, 319);
             textBoxCounter7.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter7.Name = "textBoxCounter7";
@@ -8589,9 +7537,7 @@
             textBoxCounter7.TabIndex = 161;
             textBoxCounter7.Text = "/avatar/parameters/Counter7";
             textBoxCounter7.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage7
-            // 
+
             textBoxCounterMessage7.Location = new Point(234, 319);
             textBoxCounterMessage7.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage7.Name = "textBoxCounterMessage7";
@@ -8599,9 +7545,7 @@
             textBoxCounterMessage7.TabIndex = 163;
             textBoxCounterMessage7.Text = "Counter: {counter}";
             textBoxCounterMessage7.TextChanged += (OnBoxesChanged);
-            // 
-            // label244
-            // 
+
             label244.AutoSize = true;
             label244.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label244.ForeColor = Color.Snow;
@@ -8610,18 +7554,14 @@
             label244.Size = new Size(53, 15);
             label244.TabIndex = 164;
             label244.Text = "Message";
-            // 
-            // counterOutputInterval
-            // 
+
             counterOutputInterval.Location = new Point(606, 544);
             counterOutputInterval.Margin = new Padding(3, 2, 3, 2);
             counterOutputInterval.Name = "counterOutputInterval";
             counterOutputInterval.Size = new Size(104, 23);
             counterOutputInterval.TabIndex = 154;
             counterOutputInterval.Text = "2000";
-            // 
-            // label183
-            // 
+
             label183.AutoSize = true;
             label183.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label183.ForeColor = Color.Snow;
@@ -8630,9 +7570,7 @@
             label183.Size = new Size(114, 15);
             label183.TabIndex = 155;
             label183.Text = "Output Interval (ms)";
-            // 
-            // buttonResetCounter6
-            // 
+
             buttonResetCounter6.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter6.Enabled = false;
             buttonResetCounter6.FlatStyle = FlatStyle.Flat;
@@ -8645,9 +7583,7 @@
             buttonResetCounter6.Text = "Reset";
             buttonResetCounter6.UseVisualStyleBackColor = false;
             buttonResetCounter6.Click += (this.buttonResetCounter6_Click);
-            // 
-            // buttonResetCounter5
-            // 
+
             buttonResetCounter5.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter5.Enabled = false;
             buttonResetCounter5.FlatStyle = FlatStyle.Flat;
@@ -8660,9 +7596,7 @@
             buttonResetCounter5.Text = "Reset";
             buttonResetCounter5.UseVisualStyleBackColor = false;
             buttonResetCounter5.Click += (this.buttonResetCounter5_Click);
-            // 
-            // buttonResetCounter4
-            // 
+
             buttonResetCounter4.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter4.Enabled = false;
             buttonResetCounter4.FlatStyle = FlatStyle.Flat;
@@ -8675,9 +7609,7 @@
             buttonResetCounter4.Text = "Reset";
             buttonResetCounter4.UseVisualStyleBackColor = false;
             buttonResetCounter4.Click += (this.buttonResetCounter4_Click);
-            // 
-            // buttonResetCounter3
-            // 
+
             buttonResetCounter3.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter3.Enabled = false;
             buttonResetCounter3.FlatStyle = FlatStyle.Flat;
@@ -8690,9 +7622,7 @@
             buttonResetCounter3.Text = "Reset";
             buttonResetCounter3.UseVisualStyleBackColor = false;
             buttonResetCounter3.Click += (this.buttonResetCounter3_Click);
-            // 
-            // buttonResetCounter2
-            // 
+
             buttonResetCounter2.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter2.Enabled = false;
             buttonResetCounter2.FlatStyle = FlatStyle.Flat;
@@ -8705,9 +7635,7 @@
             buttonResetCounter2.Text = "Reset";
             buttonResetCounter2.UseVisualStyleBackColor = false;
             buttonResetCounter2.Click += (this.buttonResetCounter2_Click);
-            // 
-            // buttonResetCounter1
-            // 
+
             buttonResetCounter1.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounter1.Enabled = false;
             buttonResetCounter1.FlatStyle = FlatStyle.Flat;
@@ -8720,9 +7648,7 @@
             buttonResetCounter1.Text = "Reset";
             buttonResetCounter1.UseVisualStyleBackColor = false;
             buttonResetCounter1.Click += (this.buttonResetCounter1_Click);
-            // 
-            // label166
-            // 
+
             label166.AutoSize = true;
             label166.ForeColor = Color.Snow;
             label166.Location = new Point(57, 552);
@@ -8730,9 +7656,7 @@
             label166.Size = new Size(117, 15);
             label166.TabIndex = 147;
             label166.Text = "Enable Reset Buttons";
-            // 
-            // rjToggleButtonResetButtonsCounter
-            // 
+
             rjToggleButtonResetButtonsCounter.AutoSize = true;
             rjToggleButtonResetButtonsCounter.Location = new Point(12, 551);
             rjToggleButtonResetButtonsCounter.Margin = new Padding(3, 2, 3, 2);
@@ -8746,9 +7670,7 @@
             rjToggleButtonResetButtonsCounter.TabIndex = 146;
             rjToggleButtonResetButtonsCounter.UseVisualStyleBackColor = true;
             rjToggleButtonResetButtonsCounter.CheckedChanged += (this.rjToggleButtonResetButtonsCounter_CheckedChanged);
-            // 
-            // buttonResetCounterAll
-            // 
+
             buttonResetCounterAll.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonResetCounterAll.Enabled = false;
             buttonResetCounterAll.FlatStyle = FlatStyle.Flat;
@@ -8761,9 +7683,7 @@
             buttonResetCounterAll.Text = "Reset All Counters";
             buttonResetCounterAll.UseVisualStyleBackColor = false;
             buttonResetCounterAll.Click += (this.button36_Click);
-            // 
-            // label119
-            // 
+
             label119.AutoSize = true;
             label119.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label119.ForeColor = Color.Snow;
@@ -8772,9 +7692,7 @@
             label119.Size = new Size(156, 15);
             label119.TabIndex = 142;
             label119.Text = "Counter 6: Avatar Parameter";
-            // 
-            // textBoxCounter6
-            // 
+
             textBoxCounter6.Location = new Point(12, 272);
             textBoxCounter6.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter6.Name = "textBoxCounter6";
@@ -8782,9 +7700,7 @@
             textBoxCounter6.TabIndex = 141;
             textBoxCounter6.Text = "/avatar/parameters/AnothaOne";
             textBoxCounter6.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage6
-            // 
+
             textBoxCounterMessage6.Location = new Point(234, 272);
             textBoxCounterMessage6.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage6.Name = "textBoxCounterMessage6";
@@ -8792,9 +7708,7 @@
             textBoxCounterMessage6.TabIndex = 143;
             textBoxCounterMessage6.Text = "Counter: {counter}";
             textBoxCounterMessage6.TextChanged += (OnBoxesChanged);
-            // 
-            // label120
-            // 
+
             label120.AutoSize = true;
             label120.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label120.ForeColor = Color.Snow;
@@ -8803,9 +7717,7 @@
             label120.Size = new Size(53, 15);
             label120.TabIndex = 144;
             label120.Text = "Message";
-            // 
-            // label114
-            // 
+
             label114.AutoSize = true;
             label114.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label114.ForeColor = Color.Snow;
@@ -8814,9 +7726,7 @@
             label114.Size = new Size(156, 15);
             label114.TabIndex = 138;
             label114.Text = "Counter 5: Avatar Parameter";
-            // 
-            // textBoxCounter5
-            // 
+
             textBoxCounter5.Location = new Point(12, 226);
             textBoxCounter5.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter5.Name = "textBoxCounter5";
@@ -8824,9 +7734,7 @@
             textBoxCounter5.TabIndex = 137;
             textBoxCounter5.Text = "/avatar/parameters/Something";
             textBoxCounter5.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage5
-            // 
+
             textBoxCounterMessage5.Location = new Point(234, 226);
             textBoxCounterMessage5.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage5.Name = "textBoxCounterMessage5";
@@ -8834,9 +7742,7 @@
             textBoxCounterMessage5.TabIndex = 139;
             textBoxCounterMessage5.Text = "Counter: {counter}";
             textBoxCounterMessage5.TextChanged += (OnBoxesChanged);
-            // 
-            // label116
-            // 
+
             label116.AutoSize = true;
             label116.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label116.ForeColor = Color.Snow;
@@ -8845,9 +7751,7 @@
             label116.Size = new Size(53, 15);
             label116.TabIndex = 140;
             label116.Text = "Message";
-            // 
-            // label112
-            // 
+
             label112.AutoSize = true;
             label112.ForeColor = Color.Snow;
             label112.Location = new Point(57, 525);
@@ -8855,9 +7759,7 @@
             label112.Size = new Size(82, 15);
             label112.TabIndex = 136;
             label112.Text = "Save Counters";
-            // 
-            // rjToggleButtonCounterSaver
-            // 
+
             rjToggleButtonCounterSaver.AutoSize = true;
             rjToggleButtonCounterSaver.Checked = true;
             rjToggleButtonCounterSaver.CheckState = CheckState.Checked;
@@ -8872,9 +7774,7 @@
             rjToggleButtonCounterSaver.Size = new Size(39, 16);
             rjToggleButtonCounterSaver.TabIndex = 135;
             rjToggleButtonCounterSaver.UseVisualStyleBackColor = true;
-            // 
-            // label96
-            // 
+
             label96.AutoSize = true;
             label96.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label96.ForeColor = Color.Snow;
@@ -8883,9 +7783,7 @@
             label96.Size = new Size(156, 15);
             label96.TabIndex = 132;
             label96.Text = "Counter 4: Avatar Parameter";
-            // 
-            // textBoxCounter4
-            // 
+
             textBoxCounter4.Location = new Point(12, 178);
             textBoxCounter4.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter4.Name = "textBoxCounter4";
@@ -8893,9 +7791,7 @@
             textBoxCounter4.TabIndex = 131;
             textBoxCounter4.Text = "/avatar/parameters/Slap";
             textBoxCounter4.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage4
-            // 
+
             textBoxCounterMessage4.Location = new Point(234, 178);
             textBoxCounterMessage4.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage4.Name = "textBoxCounterMessage4";
@@ -8903,9 +7799,7 @@
             textBoxCounterMessage4.TabIndex = 133;
             textBoxCounterMessage4.Text = "Slap Counter: {counter}";
             textBoxCounterMessage4.TextChanged += (OnBoxesChanged);
-            // 
-            // label97
-            // 
+
             label97.AutoSize = true;
             label97.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label97.ForeColor = Color.Snow;
@@ -8914,9 +7808,7 @@
             label97.Size = new Size(53, 15);
             label97.TabIndex = 134;
             label97.Text = "Message";
-            // 
-            // label91
-            // 
+
             label91.AutoSize = true;
             label91.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label91.ForeColor = Color.Snow;
@@ -8925,9 +7817,7 @@
             label91.Size = new Size(156, 15);
             label91.TabIndex = 128;
             label91.Text = "Counter 3: Avatar Parameter";
-            // 
-            // textBoxCounter3
-            // 
+
             textBoxCounter3.Location = new Point(12, 133);
             textBoxCounter3.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter3.Name = "textBoxCounter3";
@@ -8935,9 +7825,7 @@
             textBoxCounter3.TabIndex = 127;
             textBoxCounter3.Text = "/avatar/parameters/Bonk";
             textBoxCounter3.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage3
-            // 
+
             textBoxCounterMessage3.Location = new Point(234, 133);
             textBoxCounterMessage3.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage3.Name = "textBoxCounterMessage3";
@@ -8945,9 +7833,7 @@
             textBoxCounterMessage3.TabIndex = 129;
             textBoxCounterMessage3.Text = "Bonk Counter: {counter}";
             textBoxCounterMessage3.TextChanged += (OnBoxesChanged);
-            // 
-            // label89
-            // 
+
             label89.AutoSize = true;
             label89.ForeColor = Color.Snow;
             label89.Location = new Point(57, 498);
@@ -8955,9 +7841,7 @@
             label89.Size = new Size(429, 15);
             label89.TabIndex = 52;
             label89.Text = "Output On Receive (turn this off if you wish to use these with media integration)";
-            // 
-            // label95
-            // 
+
             label95.AutoSize = true;
             label95.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label95.ForeColor = Color.Snow;
@@ -8966,9 +7850,7 @@
             label95.Size = new Size(53, 15);
             label95.TabIndex = 130;
             label95.Text = "Message";
-            // 
-            // rjToggleButtonOutputVRCCountersOnContact
-            // 
+
             rjToggleButtonOutputVRCCountersOnContact.AutoSize = true;
             rjToggleButtonOutputVRCCountersOnContact.Checked = true;
             rjToggleButtonOutputVRCCountersOnContact.CheckState = CheckState.Checked;
@@ -8983,9 +7865,7 @@
             rjToggleButtonOutputVRCCountersOnContact.Size = new Size(39, 16);
             rjToggleButtonOutputVRCCountersOnContact.TabIndex = 51;
             rjToggleButtonOutputVRCCountersOnContact.UseVisualStyleBackColor = true;
-            // 
-            // label88
-            // 
+
             label88.AutoSize = true;
             label88.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label88.ForeColor = Color.Snow;
@@ -8994,9 +7874,7 @@
             label88.Size = new Size(156, 15);
             label88.TabIndex = 124;
             label88.Text = "Counter 2: Avatar Parameter";
-            // 
-            // textBoxCounter2
-            // 
+
             textBoxCounter2.Location = new Point(12, 88);
             textBoxCounter2.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter2.Name = "textBoxCounter2";
@@ -9004,9 +7882,7 @@
             textBoxCounter2.TabIndex = 123;
             textBoxCounter2.Text = "/avatar/parameters/HighFive";
             textBoxCounter2.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage2
-            // 
+
             textBoxCounterMessage2.Location = new Point(234, 88);
             textBoxCounterMessage2.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage2.Name = "textBoxCounterMessage2";
@@ -9014,9 +7890,7 @@
             textBoxCounterMessage2.TabIndex = 125;
             textBoxCounterMessage2.Text = "HighFive Counter: {counter}";
             textBoxCounterMessage2.TextChanged += (OnBoxesChanged);
-            // 
-            // label90
-            // 
+
             label90.AutoSize = true;
             label90.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label90.ForeColor = Color.Snow;
@@ -9025,9 +7899,7 @@
             label90.Size = new Size(53, 15);
             label90.TabIndex = 126;
             label90.Text = "Message";
-            // 
-            // label84
-            // 
+
             label84.AutoSize = true;
             label84.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label84.ForeColor = Color.Snow;
@@ -9036,9 +7908,7 @@
             label84.Size = new Size(156, 15);
             label84.TabIndex = 120;
             label84.Text = "Counter 1: Avatar Parameter";
-            // 
-            // textBoxCounter1
-            // 
+
             textBoxCounter1.Location = new Point(12, 43);
             textBoxCounter1.Margin = new Padding(3, 2, 3, 2);
             textBoxCounter1.Name = "textBoxCounter1";
@@ -9046,9 +7916,7 @@
             textBoxCounter1.TabIndex = 119;
             textBoxCounter1.Text = "/avatar/parameters/Boop";
             textBoxCounter1.TextChanged += (OnBoxesChanged);
-            // 
-            // textBoxCounterMessage1
-            // 
+
             textBoxCounterMessage1.Location = new Point(234, 43);
             textBoxCounterMessage1.Margin = new Padding(3, 2, 3, 2);
             textBoxCounterMessage1.Name = "textBoxCounterMessage1";
@@ -9056,9 +7924,7 @@
             textBoxCounterMessage1.TabIndex = 121;
             textBoxCounterMessage1.Text = "Boop Counter: {counter}";
             textBoxCounterMessage1.TextChanged += (OnBoxesChanged);
-            // 
-            // label85
-            // 
+
             label85.AutoSize = true;
             label85.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label85.ForeColor = Color.Snow;
@@ -9067,9 +7933,7 @@
             label85.Size = new Size(53, 15);
             label85.TabIndex = 122;
             label85.Text = "Message";
-            // 
-            // groupBox36
-            // 
+
             groupBox36.Controls.Add(textBoxAFK);
             groupBox36.Controls.Add(label99);
             groupBox36.Controls.Add(label98);
@@ -9083,18 +7947,14 @@
             groupBox36.TabIndex = 126;
             groupBox36.TabStop = false;
             groupBox36.Text = "AFK";
-            // 
-            // textBoxAFK
-            // 
+
             textBoxAFK.Location = new Point(8, 68);
             textBoxAFK.Margin = new Padding(3, 2, 3, 2);
             textBoxAFK.Name = "textBoxAFK";
             textBoxAFK.Size = new Size(265, 23);
             textBoxAFK.TabIndex = 123;
             textBoxAFK.Text = "Out for Lunch \U0001f96a";
-            // 
-            // label99
-            // 
+
             label99.AutoSize = true;
             label99.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label99.ForeColor = Color.Snow;
@@ -9103,9 +7963,7 @@
             label99.Size = new Size(53, 15);
             label99.TabIndex = 124;
             label99.Text = "Message";
-            // 
-            // label98
-            // 
+
             label98.AutoSize = true;
             label98.ForeColor = Color.Snow;
             label98.Location = new Point(58, 22);
@@ -9113,9 +7971,7 @@
             label98.Size = new Size(115, 15);
             label98.TabIndex = 54;
             label98.Text = "Enable AFK Message";
-            // 
-            // rjToggleButtonAFK
-            // 
+
             rjToggleButtonAFK.AutoSize = true;
             rjToggleButtonAFK.Location = new Point(13, 21);
             rjToggleButtonAFK.Margin = new Padding(3, 2, 3, 2);
@@ -9128,9 +7984,7 @@
             rjToggleButtonAFK.Size = new Size(39, 16);
             rjToggleButtonAFK.TabIndex = 53;
             rjToggleButtonAFK.UseVisualStyleBackColor = true;
-            // 
-            // groupBox25
-            // 
+
             groupBox25.Controls.Add(label92);
             groupBox25.Controls.Add(rjToggleButtonVRCSpamLog);
             groupBox25.Controls.Add(label86);
@@ -9148,9 +8002,7 @@
             groupBox25.TabIndex = 125;
             groupBox25.TabStop = false;
             groupBox25.Text = "Listener Settings";
-            // 
-            // label92
-            // 
+
             label92.AutoSize = true;
             label92.ForeColor = Color.Snow;
             label92.Location = new Point(199, 45);
@@ -9158,9 +8010,7 @@
             label92.Size = new Size(101, 15);
             label92.TabIndex = 102;
             label92.Text = "Output Spam Log";
-            // 
-            // rjToggleButtonVRCSpamLog
-            // 
+
             rjToggleButtonVRCSpamLog.AutoSize = true;
             rjToggleButtonVRCSpamLog.Checked = true;
             rjToggleButtonVRCSpamLog.CheckState = CheckState.Checked;
@@ -9175,9 +8025,7 @@
             rjToggleButtonVRCSpamLog.Size = new Size(39, 16);
             rjToggleButtonVRCSpamLog.TabIndex = 101;
             rjToggleButtonVRCSpamLog.UseVisualStyleBackColor = true;
-            // 
-            // label86
-            // 
+
             label86.AutoSize = true;
             label86.ForeColor = Color.Snow;
             label86.Location = new Point(199, 19);
@@ -9185,9 +8033,7 @@
             label86.Size = new Size(180, 15);
             label86.TabIndex = 100;
             label86.Text = "Activate VRChat Listener on Start";
-            // 
-            // rjToggleButtonVRCActivate
-            // 
+
             rjToggleButtonVRCActivate.AutoSize = true;
             rjToggleButtonVRCActivate.Location = new Point(154, 19);
             rjToggleButtonVRCActivate.Margin = new Padding(3, 2, 3, 2);
@@ -9200,9 +8046,7 @@
             rjToggleButtonVRCActivate.Size = new Size(39, 16);
             rjToggleButtonVRCActivate.TabIndex = 99;
             rjToggleButtonVRCActivate.UseVisualStyleBackColor = true;
-            // 
-            // label87
-            // 
+
             label87.AutoSize = true;
             label87.ForeColor = Color.Snow;
             label87.Location = new Point(154, 64);
@@ -9210,9 +8054,7 @@
             label87.Size = new Size(72, 15);
             label87.TabIndex = 64;
             label87.Text = "Receive Port";
-            // 
-            // button32
-            // 
+
             button32.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button32.FlatStyle = FlatStyle.Flat;
             button32.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -9225,9 +8067,7 @@
             button32.Text = "Apply";
             button32.UseVisualStyleBackColor = false;
             button32.Click += (this.button32_Click);
-            // 
-            // button33
-            // 
+
             button33.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button33.FlatStyle = FlatStyle.Flat;
             button33.ForeColor = Color.Snow;
@@ -9239,18 +8079,14 @@
             button33.Text = "Activate VRChat Listener";
             button33.UseVisualStyleBackColor = false;
             button33.Click += (this.button33_Click);
-            // 
-            // textBoxVRChatOSCPort
-            // 
+
             textBoxVRChatOSCPort.Location = new Point(154, 81);
             textBoxVRChatOSCPort.Margin = new Padding(3, 2, 3, 2);
             textBoxVRChatOSCPort.Name = "textBoxVRChatOSCPort";
             textBoxVRChatOSCPort.Size = new Size(129, 23);
             textBoxVRChatOSCPort.TabIndex = 48;
             textBoxVRChatOSCPort.Text = "9001";
-            // 
-            // label93
-            // 
+
             label93.AutoSize = true;
             label93.ForeColor = Color.Snow;
             label93.Location = new Point(135, 40);
@@ -9258,9 +8094,7 @@
             label93.Size = new Size(366, 15);
             label93.TabIndex = 124;
             label93.Text = "This feature will allow you to recieve avatar parameters from VRChat";
-            // 
-            // label94
-            // 
+
             label94.AutoSize = true;
             label94.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label94.ForeColor = Color.Snow;
@@ -9269,9 +8103,7 @@
             label94.Size = new Size(112, 20);
             label94.TabIndex = 123;
             label94.Text = "VRChat Listener";
-            // 
-            // LocalSpeech
-            // 
+
             LocalSpeech.AutoScroll = true;
             LocalSpeech.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             LocalSpeech.Controls.Add(groupBox48);
@@ -9290,9 +8122,7 @@
             LocalSpeech.Size = new Size(769, 587);
             LocalSpeech.TabIndex = 19;
             LocalSpeech.Text = "LocalSpeech";
-            // 
-            // groupBox48
-            // 
+
             groupBox48.Controls.Add(label248);
             groupBox48.Controls.Add(textBoxLocalHostAddress);
             groupBox48.Controls.Add(textBoxLocalHostPort);
@@ -9306,9 +8136,7 @@
             groupBox48.TabIndex = 193;
             groupBox48.TabStop = false;
             groupBox48.Text = "Locally Hosted TTS";
-            // 
-            // label248
-            // 
+
             label248.AutoSize = true;
             label248.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label248.ForeColor = Color.Snow;
@@ -9317,9 +8145,7 @@
             label248.Size = new Size(153, 15);
             label248.TabIndex = 184;
             label248.Text = "Locally Hosted TTS Address";
-            // 
-            // textBoxLocalHostAddress
-            // 
+
             textBoxLocalHostAddress.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxLocalHostAddress.Location = new Point(7, 54);
             textBoxLocalHostAddress.Margin = new Padding(3, 2, 3, 2);
@@ -9327,9 +8153,7 @@
             textBoxLocalHostAddress.Size = new Size(112, 23);
             textBoxLocalHostAddress.TabIndex = 183;
             textBoxLocalHostAddress.Text = "127.0.0.1";
-            // 
-            // textBoxLocalHostPort
-            // 
+
             textBoxLocalHostPort.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxLocalHostPort.Location = new Point(7, 110);
             textBoxLocalHostPort.Margin = new Padding(3, 2, 3, 2);
@@ -9337,9 +8161,7 @@
             textBoxLocalHostPort.Size = new Size(112, 23);
             textBoxLocalHostPort.TabIndex = 181;
             textBoxLocalHostPort.Text = "8124";
-            // 
-            // label247
-            // 
+
             label247.AutoSize = true;
             label247.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label247.ForeColor = Color.Snow;
@@ -9348,9 +8170,7 @@
             label247.Size = new Size(133, 15);
             label247.TabIndex = 182;
             label247.Text = "Locally Hosted TTS Port";
-            // 
-            // groupBox47
-            // 
+
             groupBox47.Controls.Add(label254);
             groupBox47.Controls.Add(comboBoxTikTok);
             groupBox47.Controls.Add(label253);
@@ -9370,9 +8190,7 @@
             groupBox47.TabIndex = 192;
             groupBox47.TabStop = false;
             groupBox47.Text = "TikTok TTS";
-            // 
-            // label253
-            // 
+
             label253.AutoSize = true;
             label253.ForeColor = Color.Snow;
             label253.Location = new Point(53, 115);
@@ -9380,9 +8198,7 @@
             label253.Size = new Size(135, 15);
             label253.TabIndex = 190;
             label253.Text = "Use your own Session ID";
-            // 
-            // rjToggleButtonTikTokUseSession
-            // 
+
             rjToggleButtonTikTokUseSession.AutoSize = true;
             rjToggleButtonTikTokUseSession.Location = new Point(8, 113);
             rjToggleButtonTikTokUseSession.Margin = new Padding(3, 2, 3, 2);
@@ -9395,9 +8211,7 @@
             rjToggleButtonTikTokUseSession.Size = new Size(39, 16);
             rjToggleButtonTikTokUseSession.TabIndex = 189;
             rjToggleButtonTikTokUseSession.UseVisualStyleBackColor = true;
-            // 
-            // iconButton7
-            // 
+
             iconButton7.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             iconButton7.BackColor = Color.White;
             iconButton7.FlatAppearance.BorderSize = 0;
@@ -9414,9 +8228,7 @@
             iconButton7.TabIndex = 188;
             iconButton7.UseVisualStyleBackColor = false;
             iconButton7.Click += (this.iconButton7_Click_1);
-            // 
-            // textBoxTikTokURL
-            // 
+
             textBoxTikTokURL.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxTikTokURL.Location = new Point(7, 163);
             textBoxTikTokURL.Margin = new Padding(3, 2, 3, 2);
@@ -9424,9 +8236,7 @@
             textBoxTikTokURL.Size = new Size(537, 23);
             textBoxTikTokURL.TabIndex = 186;
             textBoxTikTokURL.Text = "https://api16-normal-useast5.us.tiktokv.com/media/api/text/speech/invoke/";
-            // 
-            // label252
-            // 
+
             label252.AutoSize = true;
             label252.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label252.ForeColor = Color.Snow;
@@ -9435,9 +8245,7 @@
             label252.Size = new Size(49, 15);
             label252.TabIndex = 187;
             label252.Text = "API URL";
-            // 
-            // label251
-            // 
+
             label251.AutoSize = true;
             label251.Cursor = Cursors.Hand;
             label251.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -9448,9 +8256,7 @@
             label251.TabIndex = 185;
             label251.Text = "How to get your TikTok Session ID";
             label251.Click += (this.label251_Click);
-            // 
-            // textBoxTikTokSessionID
-            // 
+
             textBoxTikTokSessionID.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxTikTokSessionID.Location = new Point(7, 223);
             textBoxTikTokSessionID.Margin = new Padding(3, 2, 3, 2);
@@ -9458,9 +8264,7 @@
             textBoxTikTokSessionID.PasswordChar = '*';
             textBoxTikTokSessionID.Size = new Size(405, 23);
             textBoxTikTokSessionID.TabIndex = 183;
-            // 
-            // label250
-            // 
+
             label250.AutoSize = true;
             label250.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label250.ForeColor = Color.Snow;
@@ -9469,9 +8273,7 @@
             label250.Size = new Size(60, 15);
             label250.TabIndex = 184;
             label250.Text = "Session ID";
-            // 
-            // groupBox46
-            // 
+
             groupBox46.Controls.Add(label249);
             groupBox46.Controls.Add(textBoxWebCaptionerAddress);
             groupBox46.Controls.Add(label246);
@@ -9485,9 +8287,7 @@
             groupBox46.TabIndex = 191;
             groupBox46.TabStop = false;
             groupBox46.Text = "Web Captioner";
-            // 
-            // label249
-            // 
+
             label249.AutoSize = true;
             label249.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label249.ForeColor = Color.Snow;
@@ -9496,9 +8296,7 @@
             label249.Size = new Size(131, 15);
             label249.TabIndex = 184;
             label249.Text = "Web Captioner Address";
-            // 
-            // textBoxWebCaptionerAddress
-            // 
+
             textBoxWebCaptionerAddress.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxWebCaptionerAddress.Location = new Point(6, 38);
             textBoxWebCaptionerAddress.Margin = new Padding(3, 2, 3, 2);
@@ -9506,9 +8304,7 @@
             textBoxWebCaptionerAddress.Size = new Size(112, 23);
             textBoxWebCaptionerAddress.TabIndex = 183;
             textBoxWebCaptionerAddress.Text = "127.0.0.1";
-            // 
-            // label246
-            // 
+
             label246.AutoSize = true;
             label246.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label246.ForeColor = Color.Snow;
@@ -9517,9 +8313,7 @@
             label246.Size = new Size(111, 15);
             label246.TabIndex = 182;
             label246.Text = "Web Captioner Port";
-            // 
-            // textBoxWebCaptionerPort
-            // 
+
             textBoxWebCaptionerPort.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxWebCaptionerPort.Location = new Point(7, 95);
             textBoxWebCaptionerPort.Margin = new Padding(3, 2, 3, 2);
@@ -9527,9 +8321,7 @@
             textBoxWebCaptionerPort.Size = new Size(112, 23);
             textBoxWebCaptionerPort.TabIndex = 181;
             textBoxWebCaptionerPort.Text = "54026";
-            // 
-            // groupBox6
-            // 
+
             groupBox6.Controls.Add(button49);
             groupBox6.Controls.Add(label153);
             groupBox6.Controls.Add(label152);
@@ -9545,9 +8337,7 @@
             groupBox6.TabIndex = 160;
             groupBox6.TabStop = false;
             groupBox6.Text = "Text File Reader";
-            // 
-            // button49
-            // 
+
             button49.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button49.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button49.FlatStyle = FlatStyle.Flat;
@@ -9560,9 +8350,7 @@
             button49.Text = "Play Current Text";
             button49.UseVisualStyleBackColor = false;
             button49.Click += (this.button49_Click);
-            // 
-            // label153
-            // 
+
             label153.AutoSize = true;
             label153.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label153.ForeColor = Color.Snow;
@@ -9571,9 +8359,7 @@
             label153.Size = new Size(76, 15);
             label153.TabIndex = 180;
             label153.Text = "Text File Path";
-            // 
-            // label152
-            // 
+
             label152.AutoSize = true;
             label152.ForeColor = Color.Snow;
             label152.Location = new Point(53, 22);
@@ -9581,9 +8367,7 @@
             label152.Size = new Size(174, 15);
             label152.TabIndex = 166;
             label152.Text = "Read from text file and play TTS";
-            // 
-            // rjToggleButtonReadFromFile
-            // 
+
             rjToggleButtonReadFromFile.AutoSize = true;
             rjToggleButtonReadFromFile.Location = new Point(8, 20);
             rjToggleButtonReadFromFile.Margin = new Padding(3, 2, 3, 2);
@@ -9597,9 +8381,7 @@
             rjToggleButtonReadFromFile.TabIndex = 165;
             rjToggleButtonReadFromFile.UseVisualStyleBackColor = true;
             rjToggleButtonReadFromFile.CheckedChanged += (this.rjToggleButton14_CheckedChanged);
-            // 
-            // button48
-            // 
+
             button48.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button48.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button48.FlatStyle = FlatStyle.Flat;
@@ -9612,9 +8394,7 @@
             button48.Text = "Browse";
             button48.UseVisualStyleBackColor = false;
             button48.Click += (this.button48_Click);
-            // 
-            // textBoxReadFromTXTFile
-            // 
+
             textBoxReadFromTXTFile.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             textBoxReadFromTXTFile.Location = new Point(7, 71);
             textBoxReadFromTXTFile.Margin = new Padding(3, 2, 3, 2);
@@ -9623,9 +8403,7 @@
             textBoxReadFromTXTFile.Size = new Size(635, 23);
             textBoxReadFromTXTFile.TabIndex = 101;
             textBoxReadFromTXTFile.Text = "no text file selected";
-            // 
-            // groupBox38
-            // 
+
             groupBox38.Controls.Add(label215);
             groupBox38.Controls.Add(textBoxWhisperVADOffset);
             groupBox38.Controls.Add(label207);
@@ -9662,9 +8440,7 @@
             groupBox38.TabIndex = 159;
             groupBox38.TabStop = false;
             groupBox38.Text = "Whisper.cpp Model (BIN file)";
-            // 
-            // label215
-            // 
+
             label215.AutoSize = true;
             label215.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label215.ForeColor = Color.Snow;
@@ -9673,18 +8449,14 @@
             label215.Size = new Size(80, 15);
             label215.TabIndex = 190;
             label215.Text = "VAD Offset (s)";
-            // 
-            // textBoxWhisperVADOffset
-            // 
+
             textBoxWhisperVADOffset.Location = new Point(463, 243);
             textBoxWhisperVADOffset.Margin = new Padding(3, 2, 3, 2);
             textBoxWhisperVADOffset.Name = "textBoxWhisperVADOffset";
             textBoxWhisperVADOffset.Size = new Size(96, 23);
             textBoxWhisperVADOffset.TabIndex = 189;
             textBoxWhisperVADOffset.Text = "0.5";
-            // 
-            // label207
-            // 
+
             label207.AutoSize = true;
             label207.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label207.ForeColor = Color.Snow;
@@ -9694,9 +8466,7 @@
             label207.TabIndex = 188;
             label207.Text = "GPU Selection";
             label207.Visible = false;
-            // 
-            // comboBoxGPUSelection
-            // 
+
             comboBoxGPUSelection.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             comboBoxGPUSelection.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxGPUSelection.FlatStyle = FlatStyle.Flat;
@@ -9707,9 +8477,7 @@
             comboBoxGPUSelection.Size = new Size(179, 23);
             comboBoxGPUSelection.TabIndex = 187;
             comboBoxGPUSelection.Visible = false;
-            // 
-            // label205
-            // 
+
             label205.AutoSize = true;
             label205.ForeColor = Color.Snow;
             label205.Location = new Point(53, 162);
@@ -9717,9 +8485,7 @@
             label205.Size = new Size(325, 15);
             label205.TabIndex = 184;
             label205.Text = "Voice Activation Detection (select mode in Settings > Audio)";
-            // 
-            // rjToggleVAD
-            // 
+
             rjToggleVAD.AutoSize = true;
             rjToggleVAD.Location = new Point(8, 160);
             rjToggleVAD.Margin = new Padding(3, 2, 3, 2);
@@ -9732,9 +8498,7 @@
             rjToggleVAD.Size = new Size(39, 16);
             rjToggleVAD.TabIndex = 183;
             rjToggleVAD.UseVisualStyleBackColor = true;
-            // 
-            // label146
-            // 
+
             label146.AutoSize = true;
             label146.ForeColor = Color.Snow;
             label146.Location = new Point(52, 199);
@@ -9742,9 +8506,7 @@
             label146.Size = new Size(192, 15);
             label146.TabIndex = 182;
             label146.Text = "Filtered/Debug Text Appears in Log";
-            // 
-            // rjToggleButtonWhisperFilterInLog
-            // 
+
             rjToggleButtonWhisperFilterInLog.AutoSize = true;
             rjToggleButtonWhisperFilterInLog.Checked = true;
             rjToggleButtonWhisperFilterInLog.CheckState = CheckState.Checked;
@@ -9759,9 +8521,7 @@
             rjToggleButtonWhisperFilterInLog.Size = new Size(39, 16);
             rjToggleButtonWhisperFilterInLog.TabIndex = 181;
             rjToggleButtonWhisperFilterInLog.UseVisualStyleBackColor = true;
-            // 
-            // modelLabel
-            // 
+
             modelLabel.AutoSize = true;
             modelLabel.ForeColor = Color.Red;
             modelLabel.Location = new Point(404, 49);
@@ -9769,9 +8529,7 @@
             modelLabel.Size = new Size(131, 15);
             modelLabel.TabIndex = 180;
             modelLabel.Text = "model not downloaded";
-            // 
-            // label148
-            // 
+
             label148.AutoSize = true;
             label148.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label148.ForeColor = Color.Snow;
@@ -9780,9 +8538,7 @@
             label148.Size = new Size(68, 15);
             label148.TabIndex = 179;
             label148.Text = "Model Path";
-            // 
-            // button42
-            // 
+
             button42.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button42.FlatStyle = FlatStyle.Flat;
             button42.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -9795,9 +8551,7 @@
             button42.Text = "Download or Select";
             button42.UseVisualStyleBackColor = false;
             button42.Click += (this.button42_Click);
-            // 
-            // label147
-            // 
+
             label147.AutoSize = true;
             label147.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label147.ForeColor = Color.Snow;
@@ -9806,9 +8560,7 @@
             label147.Size = new Size(127, 15);
             label147.TabIndex = 177;
             label147.Text = "Auto Download Model";
-            // 
-            // comboBoxWhisperModelDownload
-            // 
+
             comboBoxWhisperModelDownload.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxWhisperModelDownload.FlatStyle = FlatStyle.Flat;
             comboBoxWhisperModelDownload.FormattingEnabled = true;
@@ -9819,9 +8571,7 @@
             comboBoxWhisperModelDownload.Size = new Size(239, 23);
             comboBoxWhisperModelDownload.TabIndex = 176;
             comboBoxWhisperModelDownload.SelectedIndexChanged += (this.comboBoxWhisperModelDownload_SelectedIndexChanged);
-            // 
-            // button41
-            // 
+
             button41.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button41.FlatStyle = FlatStyle.Flat;
             button41.ForeColor = Color.Snow;
@@ -9833,9 +8583,7 @@
             button41.Text = "Reset";
             button41.UseVisualStyleBackColor = false;
             button41.Click += (this.button41_Click);
-            // 
-            // label144
-            // 
+
             label144.AutoSize = true;
             label144.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label144.ForeColor = Color.Snow;
@@ -9844,18 +8592,14 @@
             label144.Size = new Size(103, 15);
             label144.TabIndex = 172;
             label144.Text = "Pause Duration (s)";
-            // 
-            // textBoxWhisperPauseDuration
-            // 
+
             textBoxWhisperPauseDuration.Location = new Point(354, 243);
             textBoxWhisperPauseDuration.Margin = new Padding(3, 2, 3, 2);
             textBoxWhisperPauseDuration.Name = "textBoxWhisperPauseDuration";
             textBoxWhisperPauseDuration.Size = new Size(96, 23);
             textBoxWhisperPauseDuration.TabIndex = 171;
             textBoxWhisperPauseDuration.Text = "1.0";
-            // 
-            // label142
-            // 
+
             label142.AutoSize = true;
             label142.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label142.ForeColor = Color.Snow;
@@ -9864,18 +8608,14 @@
             label142.Size = new Size(116, 15);
             label142.TabIndex = 170;
             label142.Text = "Drop Start Silence (s)";
-            // 
-            // textBoxWhisperDropSilence
-            // 
+
             textBoxWhisperDropSilence.Location = new Point(227, 243);
             textBoxWhisperDropSilence.Margin = new Padding(3, 2, 3, 2);
             textBoxWhisperDropSilence.Name = "textBoxWhisperDropSilence";
             textBoxWhisperDropSilence.Size = new Size(111, 23);
             textBoxWhisperDropSilence.TabIndex = 169;
             textBoxWhisperDropSilence.Text = "0.25";
-            // 
-            // label41
-            // 
+
             label41.AutoSize = true;
             label41.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label41.ForeColor = Color.Snow;
@@ -9884,18 +8624,14 @@
             label41.Size = new Size(94, 15);
             label41.TabIndex = 168;
             label41.Text = "Max Duration (s)";
-            // 
-            // textBoxWhisperMaxDuration
-            // 
+
             textBoxWhisperMaxDuration.Location = new Point(117, 243);
             textBoxWhisperMaxDuration.Margin = new Padding(3, 2, 3, 2);
             textBoxWhisperMaxDuration.Name = "textBoxWhisperMaxDuration";
             textBoxWhisperMaxDuration.Size = new Size(94, 23);
             textBoxWhisperMaxDuration.TabIndex = 167;
             textBoxWhisperMaxDuration.Text = "8.0";
-            // 
-            // label40
-            // 
+
             label40.AutoSize = true;
             label40.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label40.ForeColor = Color.Snow;
@@ -9904,18 +8640,14 @@
             label40.Size = new Size(93, 15);
             label40.TabIndex = 166;
             label40.Text = "Min Duration (s)";
-            // 
-            // textBoxWhisperMinDuration
-            // 
+
             textBoxWhisperMinDuration.Location = new Point(8, 243);
             textBoxWhisperMinDuration.Margin = new Padding(3, 2, 3, 2);
             textBoxWhisperMinDuration.Name = "textBoxWhisperMinDuration";
             textBoxWhisperMinDuration.Size = new Size(93, 23);
             textBoxWhisperMinDuration.TabIndex = 165;
             textBoxWhisperMinDuration.Text = "1.0";
-            // 
-            // label121
-            // 
+
             label121.AutoSize = true;
             label121.ForeColor = Color.Snow;
             label121.Location = new Point(53, 132);
@@ -9923,9 +8655,7 @@
             label121.Size = new Size(214, 15);
             label121.TabIndex = 164;
             label121.Text = "Filter Sounds (typing, clicking, tapping)";
-            // 
-            // rjToggleButtonFilterNoiseWhisper
-            // 
+
             rjToggleButtonFilterNoiseWhisper.AutoSize = true;
             rjToggleButtonFilterNoiseWhisper.Checked = true;
             rjToggleButtonFilterNoiseWhisper.CheckState = CheckState.Checked;
@@ -9940,9 +8670,7 @@
             rjToggleButtonFilterNoiseWhisper.Size = new Size(39, 16);
             rjToggleButtonFilterNoiseWhisper.TabIndex = 163;
             rjToggleButtonFilterNoiseWhisper.UseVisualStyleBackColor = true;
-            // 
-            // whisperLink
-            // 
+
             whisperLink.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             whisperLink.FlatAppearance.BorderSize = 0;
             whisperLink.FlatStyle = FlatStyle.Flat;
@@ -9961,9 +8689,7 @@
             whisperLink.TextImageRelation = TextImageRelation.ImageBeforeText;
             whisperLink.UseVisualStyleBackColor = true;
             whisperLink.Click += (this.whisperLink_Click);
-            // 
-            // button34
-            // 
+
             button34.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button34.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button34.FlatStyle = FlatStyle.Flat;
@@ -9976,9 +8702,7 @@
             button34.Text = "Browse";
             button34.UseVisualStyleBackColor = false;
             button34.Click += (this.button34_Click);
-            // 
-            // whisperModelTextBox
-            // 
+
             whisperModelTextBox.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             whisperModelTextBox.Location = new Point(8, 97);
             whisperModelTextBox.Margin = new Padding(3, 2, 3, 2);
@@ -9987,9 +8711,7 @@
             whisperModelTextBox.Size = new Size(593, 23);
             whisperModelTextBox.TabIndex = 160;
             whisperModelTextBox.Text = "no model selected";
-            // 
-            // label100
-            // 
+
             label100.AutoSize = true;
             label100.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label100.ForeColor = Color.Snow;
@@ -9998,9 +8720,7 @@
             label100.Size = new Size(153, 20);
             label100.TabIndex = 157;
             label100.Text = "Local Speech Settings";
-            // 
-            // label101
-            // 
+
             label101.AutoSize = true;
             label101.ForeColor = Color.Snow;
             label101.Location = new Point(173, 28);
@@ -10008,9 +8728,7 @@
             label101.Size = new Size(239, 15);
             label101.TabIndex = 158;
             label101.Text = "Settings for locally run Speech Recognition. ";
-            // 
-            // groupBox24
-            // 
+
             groupBox24.Controls.Add(voskLink);
             groupBox24.Controls.Add(button11);
             groupBox24.Controls.Add(modelTextBox);
@@ -10023,9 +8741,7 @@
             groupBox24.TabIndex = 138;
             groupBox24.TabStop = false;
             groupBox24.Text = "Vosk Model Folder";
-            // 
-            // voskLink
-            // 
+
             voskLink.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             voskLink.FlatAppearance.BorderSize = 0;
             voskLink.FlatStyle = FlatStyle.Flat;
@@ -10044,9 +8760,7 @@
             voskLink.TextImageRelation = TextImageRelation.ImageBeforeText;
             voskLink.UseVisualStyleBackColor = true;
             voskLink.Click += (this.voskLink_Click);
-            // 
-            // button11
-            // 
+
             button11.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             button11.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button11.FlatStyle = FlatStyle.Flat;
@@ -10059,9 +8773,7 @@
             button11.Text = "Browse";
             button11.UseVisualStyleBackColor = false;
             button11.Click += (this.button11_Click_1);
-            // 
-            // modelTextBox
-            // 
+
             modelTextBox.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             modelTextBox.Location = new Point(8, 20);
             modelTextBox.Margin = new Padding(3, 2, 3, 2);
@@ -10070,9 +8782,7 @@
             modelTextBox.Size = new Size(590, 23);
             modelTextBox.TabIndex = 101;
             modelTextBox.Text = "no folder selected";
-            // 
-            // groupBox28
-            // 
+
             groupBox28.Controls.Add(comboBoxSysSpeechRecog);
             groupBox28.ForeColor = Color.White;
             groupBox28.Location = new Point(6, 65);
@@ -10083,9 +8793,7 @@
             groupBox28.TabIndex = 140;
             groupBox28.TabStop = false;
             groupBox28.Text = "System Speech Recognizer";
-            // 
-            // comboBoxSysSpeechRecog
-            // 
+
             comboBoxSysSpeechRecog.Anchor = (AnchorStyles)((AnchorStyles.Top) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             comboBoxSysSpeechRecog.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSysSpeechRecog.FlatStyle = FlatStyle.Flat;
@@ -10095,9 +8803,7 @@
             comboBoxSysSpeechRecog.Name = "comboBoxSysSpeechRecog";
             comboBoxSysSpeechRecog.Size = new Size(707, 23);
             comboBoxSysSpeechRecog.TabIndex = 132;
-            // 
-            // elevenLabs
-            // 
+
             elevenLabs.AutoScroll = true;
             elevenLabs.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             elevenLabs.Controls.Add(groupBox30);
@@ -10110,9 +8816,7 @@
             elevenLabs.Size = new Size(769, 587);
             elevenLabs.TabIndex = 20;
             elevenLabs.Text = "elevenLabs";
-            // 
-            // groupBox30
-            // 
+
             groupBox30.Controls.Add(labelStyleExagg);
             groupBox30.Controls.Add(trackBarStyleExaggeration);
             groupBox30.Controls.Add(label202);
@@ -10139,9 +8843,7 @@
             groupBox30.TabIndex = 127;
             groupBox30.TabStop = false;
             groupBox30.Text = "Eleven Labs Customization";
-            // 
-            // labelStyleExagg
-            // 
+
             labelStyleExagg.AutoSize = true;
             labelStyleExagg.ForeColor = Color.Snow;
             labelStyleExagg.Location = new Point(664, 297);
@@ -10149,9 +8851,7 @@
             labelStyleExagg.Size = new Size(23, 15);
             labelStyleExagg.TabIndex = 195;
             labelStyleExagg.Text = "0%";
-            // 
-            // trackBarStyleExaggeration
-            // 
+
             trackBarStyleExaggeration.LargeChange = 10;
             trackBarStyleExaggeration.Location = new Point(10, 315);
             trackBarStyleExaggeration.Maximum = 100;
@@ -10160,9 +8860,7 @@
             trackBarStyleExaggeration.TabIndex = 194;
             trackBarStyleExaggeration.TickFrequency = 2;
             trackBarStyleExaggeration.Scroll += (this.trackBarStyleExaggeration_Scroll);
-            // 
-            // label202
-            // 
+
             label202.AutoSize = true;
             label202.ForeColor = Color.Snow;
             label202.Location = new Point(12, 297);
@@ -10170,9 +8868,7 @@
             label202.Size = new Size(103, 15);
             label202.TabIndex = 193;
             label202.Text = "Style Exaggeration";
-            // 
-            // label200
-            // 
+
             label200.AutoSize = true;
             label200.ForeColor = Color.Snow;
             label200.Location = new Point(57, 375);
@@ -10180,9 +8876,7 @@
             label200.Size = new Size(81, 15);
             label200.TabIndex = 192;
             label200.Text = "Speaker Boost";
-            // 
-            // rjToggleSpeakerBoost
-            // 
+
             rjToggleSpeakerBoost.AutoSize = true;
             rjToggleSpeakerBoost.Checked = true;
             rjToggleSpeakerBoost.CheckState = CheckState.Checked;
@@ -10197,9 +8891,7 @@
             rjToggleSpeakerBoost.Size = new Size(39, 16);
             rjToggleSpeakerBoost.TabIndex = 191;
             rjToggleSpeakerBoost.UseVisualStyleBackColor = true;
-            // 
-            // button51
-            // 
+
             button51.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button51.FlatStyle = FlatStyle.Flat;
             button51.ForeColor = Color.Snow;
@@ -10211,9 +8903,7 @@
             button51.Text = "To Default";
             button51.UseVisualStyleBackColor = false;
             button51.Click += (this.button51_Click);
-            // 
-            // labelStability
-            // 
+
             labelStability.AutoSize = true;
             labelStability.ForeColor = Color.Snow;
             labelStability.Location = new Point(664, 165);
@@ -10221,9 +8911,7 @@
             labelStability.Size = new Size(29, 15);
             labelStability.TabIndex = 189;
             labelStability.Text = "50%";
-            // 
-            // labelSimboost
-            // 
+
             labelSimboost.AutoSize = true;
             labelSimboost.ForeColor = Color.Snow;
             labelSimboost.Location = new Point(664, 231);
@@ -10231,9 +8919,7 @@
             labelSimboost.Size = new Size(29, 15);
             labelSimboost.TabIndex = 188;
             labelSimboost.Text = "75%";
-            // 
-            // label169
-            // 
+
             label169.AutoSize = true;
             label169.ForeColor = Color.Snow;
             label169.Location = new Point(12, 165);
@@ -10241,9 +8927,7 @@
             label169.Size = new Size(49, 15);
             label169.TabIndex = 28;
             label169.Text = "Stability";
-            // 
-            // trackBarSimilarity
-            // 
+
             trackBarSimilarity.LargeChange = 10;
             trackBarSimilarity.Location = new Point(10, 249);
             trackBarSimilarity.Maximum = 100;
@@ -10253,9 +8937,7 @@
             trackBarSimilarity.TickFrequency = 2;
             trackBarSimilarity.Value = 75;
             trackBarSimilarity.Scroll += (this.trackBarSimilarity_Scroll);
-            // 
-            // trackBarStability
-            // 
+
             trackBarStability.LargeChange = 10;
             trackBarStability.Location = new Point(10, 183);
             trackBarStability.Maximum = 100;
@@ -10265,9 +8947,7 @@
             trackBarStability.TickFrequency = 2;
             trackBarStability.Value = 50;
             trackBarStability.Scroll += (this.trackBarStability_Scroll);
-            // 
-            // label174
-            // 
+
             label174.AutoSize = true;
             label174.ForeColor = Color.Snow;
             label174.Location = new Point(12, 231);
@@ -10275,9 +8955,7 @@
             label174.Size = new Size(89, 15);
             label174.TabIndex = 183;
             label174.Text = "Similarity Boost";
-            // 
-            // label173
-            // 
+
             label173.AutoSize = true;
             label173.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label173.ForeColor = Color.Snow;
@@ -10286,9 +8964,7 @@
             label173.Size = new Size(156, 15);
             label173.TabIndex = 181;
             label173.Text = "Optimize Streaming Latency";
-            // 
-            // comboBoxLabsOptimize
-            // 
+
             comboBoxLabsOptimize.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxLabsOptimize.FlatStyle = FlatStyle.Flat;
             comboBoxLabsOptimize.FormattingEnabled = true;
@@ -10298,9 +8974,7 @@
             comboBoxLabsOptimize.Name = "comboBoxLabsOptimize";
             comboBoxLabsOptimize.Size = new Size(65, 23);
             comboBoxLabsOptimize.TabIndex = 180;
-            // 
-            // label172
-            // 
+
             label172.AutoSize = true;
             label172.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label172.ForeColor = Color.Snow;
@@ -10309,9 +8983,7 @@
             label172.Size = new Size(55, 15);
             label172.TabIndex = 179;
             label172.Text = "Model ID";
-            // 
-            // comboBoxLabsModelID
-            // 
+
             comboBoxLabsModelID.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxLabsModelID.FlatStyle = FlatStyle.Flat;
             comboBoxLabsModelID.FormattingEnabled = true;
@@ -10321,9 +8993,7 @@
             comboBoxLabsModelID.Name = "comboBoxLabsModelID";
             comboBoxLabsModelID.Size = new Size(239, 23);
             comboBoxLabsModelID.TabIndex = 178;
-            // 
-            // iconButton54
-            // 
+
             iconButton54.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton54.FlatAppearance.BorderSize = 0;
             iconButton54.FlatStyle = FlatStyle.Flat;
@@ -10342,9 +9012,7 @@
             iconButton54.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton54.UseVisualStyleBackColor = true;
             iconButton54.Click += (this.iconButton54_Click);
-            // 
-            // groupBox39
-            // 
+
             groupBox39.Controls.Add(ShowElevenLabsPassword);
             groupBox39.Controls.Add(iconButton35);
             groupBox39.Controls.Add(button35);
@@ -10360,9 +9028,7 @@
             groupBox39.TabIndex = 126;
             groupBox39.TabStop = false;
             groupBox39.Text = "Eleven Labs Setup";
-            // 
-            // ShowElevenLabsPassword
-            // 
+
             ShowElevenLabsPassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             ShowElevenLabsPassword.BackColor = Color.White;
             ShowElevenLabsPassword.FlatAppearance.BorderSize = 0;
@@ -10379,9 +9045,7 @@
             ShowElevenLabsPassword.TabIndex = 165;
             ShowElevenLabsPassword.UseVisualStyleBackColor = false;
             ShowElevenLabsPassword.Click += (this.ShowElevenLabsPassword_Click);
-            // 
-            // iconButton35
-            // 
+
             iconButton35.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton35.FlatAppearance.BorderSize = 0;
             iconButton35.FlatStyle = FlatStyle.Flat;
@@ -10400,9 +9064,7 @@
             iconButton35.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton35.UseVisualStyleBackColor = true;
             iconButton35.Click += (this.iconButton35_Click);
-            // 
-            // button35
-            // 
+
             button35.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button35.FlatStyle = FlatStyle.Flat;
             button35.ForeColor = Color.Snow;
@@ -10414,9 +9076,7 @@
             button35.Text = "Reload Voices";
             button35.UseVisualStyleBackColor = false;
             button35.Click += (this.button35_Click);
-            // 
-            // label111
-            // 
+
             label111.AutoSize = true;
             label111.ForeColor = Color.Snow;
             label111.Location = new Point(9, 17);
@@ -10424,9 +9084,7 @@
             label111.Size = new Size(26, 15);
             label111.TabIndex = 28;
             label111.Text = "Key";
-            // 
-            // button37
-            // 
+
             button37.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button37.FlatStyle = FlatStyle.Flat;
             button37.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -10439,18 +9097,14 @@
             button37.Text = "Apply";
             button37.UseVisualStyleBackColor = false;
             button37.Click += (this.button37_Click);
-            // 
-            // textBoxElevenLabsKey
-            // 
+
             textBoxElevenLabsKey.Location = new Point(12, 34);
             textBoxElevenLabsKey.Margin = new Padding(3, 2, 3, 2);
             textBoxElevenLabsKey.Name = "textBoxElevenLabsKey";
             textBoxElevenLabsKey.PasswordChar = '*';
             textBoxElevenLabsKey.Size = new Size(462, 23);
             textBoxElevenLabsKey.TabIndex = 27;
-            // 
-            // label107
-            // 
+
             label107.AutoSize = true;
             label107.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label107.ForeColor = Color.Snow;
@@ -10459,9 +9113,7 @@
             label107.Size = new Size(86, 20);
             label107.TabIndex = 125;
             label107.Text = "Eleven Labs";
-            // 
-            // VoiceWizPro
-            // 
+
             VoiceWizPro.AutoScroll = true;
             VoiceWizPro.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             VoiceWizPro.Controls.Add(groupBox40);
@@ -10476,9 +9128,7 @@
             VoiceWizPro.Size = new Size(769, 587);
             VoiceWizPro.TabIndex = 21;
             VoiceWizPro.Text = "VoiceWizPro";
-            // 
-            // groupBox40
-            // 
+
             groupBox40.Controls.Add(progressBar2);
             groupBox40.Controls.Add(buttonCalibrate);
             groupBox40.Controls.Add(progressBar1);
@@ -10514,17 +9164,13 @@
             groupBox40.TabIndex = 162;
             groupBox40.TabStop = false;
             groupBox40.Text = "DeepGram Recognition";
-            // 
-            // progressBar2
-            // 
+
             progressBar2.Location = new Point(566, 49);
             progressBar2.Maximum = 5000;
             progressBar2.Name = "progressBar2";
             progressBar2.Size = new Size(139, 27);
             progressBar2.TabIndex = 216;
-            // 
-            // buttonCalibrate
-            // 
+
             buttonCalibrate.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonCalibrate.FlatStyle = FlatStyle.Flat;
             buttonCalibrate.ForeColor = Color.Snow;
@@ -10536,17 +9182,13 @@
             buttonCalibrate.Text = "Calibrate";
             buttonCalibrate.UseVisualStyleBackColor = false;
             buttonCalibrate.Click += (this.buttonSilenceCalibrate_Click);
-            // 
-            // progressBar1
-            // 
+
             progressBar1.Location = new Point(26, 263);
             progressBar1.Maximum = 2000;
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(678, 10);
             progressBar1.TabIndex = 214;
-            // 
-            // label206
-            // 
+
             label206.AutoSize = true;
             label206.ForeColor = Color.Snow;
             label206.Location = new Point(19, 178);
@@ -10554,9 +9196,7 @@
             label206.Size = new Size(200, 15);
             label206.TabIndex = 211;
             label206.Text = "select VAD mode in Settings > Audio";
-            // 
-            // label213
-            // 
+
             label213.AutoSize = true;
             label213.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label213.ForeColor = Color.Snow;
@@ -10565,9 +9205,7 @@
             label213.Size = new Size(136, 15);
             label213.TabIndex = 209;
             label213.Text = "Continuous Recognition";
-            // 
-            // rjToggleDeepGramContinuous
-            // 
+
             rjToggleDeepGramContinuous.AutoSize = true;
             rjToggleDeepGramContinuous.Location = new Point(275, 25);
             rjToggleDeepGramContinuous.Margin = new Padding(3, 2, 3, 2);
@@ -10580,9 +9218,7 @@
             rjToggleDeepGramContinuous.Size = new Size(39, 16);
             rjToggleDeepGramContinuous.TabIndex = 210;
             rjToggleDeepGramContinuous.UseVisualStyleBackColor = true;
-            // 
-            // label212
-            // 
+
             label212.AutoSize = true;
             label212.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label212.ForeColor = Color.Snow;
@@ -10591,9 +9227,7 @@
             label212.Size = new Size(134, 15);
             label212.TabIndex = 207;
             label212.Text = "Show Debug Info in Log";
-            // 
-            // rjToggleDeepgramDebug
-            // 
+
             rjToggleDeepgramDebug.AutoSize = true;
             rjToggleDeepgramDebug.Location = new Point(275, 58);
             rjToggleDeepgramDebug.Margin = new Padding(3, 2, 3, 2);
@@ -10606,18 +9240,14 @@
             rjToggleDeepgramDebug.Size = new Size(39, 16);
             rjToggleDeepgramDebug.TabIndex = 208;
             rjToggleDeepgramDebug.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSilenceScale
-            // 
+
             textBoxSilenceScale.Location = new Point(646, 21);
             textBoxSilenceScale.Margin = new Padding(3, 2, 3, 2);
             textBoxSilenceScale.Name = "textBoxSilenceScale";
             textBoxSilenceScale.Size = new Size(59, 23);
             textBoxSilenceScale.TabIndex = 206;
             textBoxSilenceScale.Text = "30000";
-            // 
-            // label211
-            // 
+
             label211.AutoSize = true;
             label211.ForeColor = Color.Snow;
             label211.Location = new Point(566, 24);
@@ -10625,9 +9255,7 @@
             label211.Size = new Size(74, 15);
             label211.TabIndex = 205;
             label211.Text = "Silence Scale";
-            // 
-            // label210
-            // 
+
             label210.AutoSize = true;
             label210.ForeColor = Color.Snow;
             label210.Location = new Point(229, 313);
@@ -10635,18 +9263,14 @@
             label210.Size = new Size(100, 15);
             label210.TabIndex = 204;
             label210.Text = "Silence Threshold";
-            // 
-            // textBoxMinValidDeepgramDur
-            // 
+
             textBoxMinValidDeepgramDur.Location = new Point(29, 153);
             textBoxMinValidDeepgramDur.Margin = new Padding(3, 2, 3, 2);
             textBoxMinValidDeepgramDur.Name = "textBoxMinValidDeepgramDur";
             textBoxMinValidDeepgramDur.Size = new Size(59, 23);
             textBoxMinValidDeepgramDur.TabIndex = 203;
             textBoxMinValidDeepgramDur.Text = "0.5";
-            // 
-            // label209
-            // 
+
             label209.AutoSize = true;
             label209.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label209.ForeColor = Color.Snow;
@@ -10655,9 +9279,7 @@
             label209.Size = new Size(178, 15);
             label209.TabIndex = 202;
             label209.Text = "Minimum Valid VAD Duration (s)";
-            // 
-            // label182
-            // 
+
             label182.AutoSize = true;
             label182.ForeColor = Color.Snow;
             label182.Location = new Point(661, 79);
@@ -10665,9 +9287,7 @@
             label182.Size = new Size(45, 15);
             label182.TabIndex = 201;
             label182.Text = "Talking";
-            // 
-            // label177
-            // 
+
             label177.AutoSize = true;
             label177.ForeColor = Color.Snow;
             label177.Location = new Point(566, 79);
@@ -10675,9 +9295,7 @@
             label177.Size = new Size(36, 15);
             label177.TabIndex = 200;
             label177.Text = "Silent";
-            // 
-            // textBoxSilence
-            // 
+
             textBoxSilence.Location = new Point(334, 310);
             textBoxSilence.Margin = new Padding(3, 2, 3, 2);
             textBoxSilence.Name = "textBoxSilence";
@@ -10685,18 +9303,14 @@
             textBoxSilence.TabIndex = 199;
             textBoxSilence.Text = "1000";
             textBoxSilence.TextChanged += (this.textBoxSilence_TextChanged_1);
-            // 
-            // minimumAudio
-            // 
+
             minimumAudio.Location = new Point(29, 47);
             minimumAudio.Margin = new Padding(3, 2, 3, 2);
             minimumAudio.Name = "minimumAudio";
             minimumAudio.Size = new Size(59, 23);
             minimumAudio.TabIndex = 198;
             minimumAudio.Text = "2";
-            // 
-            // label181
-            // 
+
             label181.AutoSize = true;
             label181.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label181.ForeColor = Color.Snow;
@@ -10705,18 +9319,14 @@
             label181.Size = new Size(160, 15);
             label181.TabIndex = 197;
             label181.Text = "Minimum Audio Duration (s)";
-            // 
-            // maximumAudio
-            // 
+
             maximumAudio.Location = new Point(29, 106);
             maximumAudio.Margin = new Padding(3, 2, 3, 2);
             maximumAudio.Name = "maximumAudio";
             maximumAudio.Size = new Size(59, 23);
             maximumAudio.TabIndex = 196;
             maximumAudio.Text = "10";
-            // 
-            // label180
-            // 
+
             label180.AutoSize = true;
             label180.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label180.ForeColor = Color.Snow;
@@ -10725,9 +9335,7 @@
             label180.Size = new Size(161, 15);
             label180.TabIndex = 195;
             label180.Text = "Maximum Audio Duration (s)";
-            // 
-            // label179
-            // 
+
             label179.AutoSize = true;
             label179.ForeColor = Color.Snow;
             label179.Location = new Point(217, 211);
@@ -10735,9 +9343,7 @@
             label179.Size = new Size(321, 15);
             label179.TabIndex = 194;
             label179.Text = "Determine the amount of silence that will end a recognition";
-            // 
-            // label178
-            // 
+
             label178.AutoSize = true;
             label178.ForeColor = Color.Snow;
             label178.Location = new Point(283, 181);
@@ -10745,9 +9351,7 @@
             label178.Size = new Size(176, 15);
             label178.TabIndex = 193;
             label178.Text = "How quiet is your enviornment?";
-            // 
-            // label167
-            // 
+
             label167.AutoSize = true;
             label167.ForeColor = Color.Snow;
             label167.Location = new Point(678, 241);
@@ -10755,9 +9359,7 @@
             label167.Size = new Size(34, 15);
             label167.TabIndex = 192;
             label167.Text = "Loud";
-            // 
-            // label176
-            // 
+
             label176.AutoSize = true;
             label176.ForeColor = Color.Snow;
             label176.Location = new Point(19, 241);
@@ -10765,9 +9367,7 @@
             label176.Size = new Size(36, 15);
             label176.TabIndex = 190;
             label176.Text = "Silent";
-            // 
-            // trackBarSilence
-            // 
+
             trackBarSilence.LargeChange = 100;
             trackBarSilence.Location = new Point(18, 270);
             trackBarSilence.Maximum = 2000;
@@ -10778,18 +9378,14 @@
             trackBarSilence.TickFrequency = 50;
             trackBarSilence.Value = 1000;
             trackBarSilence.Scroll += (this.trackBarSilence_Scroll);
-            // 
-            // SpeechHoursUsed
-            // 
+
             SpeechHoursUsed.AutoSize = true;
             SpeechHoursUsed.Location = new Point(19, 328);
             SpeechHoursUsed.Name = "SpeechHoursUsed";
             SpeechHoursUsed.Size = new Size(132, 15);
             SpeechHoursUsed.TabIndex = 117;
             SpeechHoursUsed.Text = "Speech Hours Used: 0/0";
-            // 
-            // iconButton55
-            // 
+
             iconButton55.FlatAppearance.BorderSize = 0;
             iconButton55.FlatStyle = FlatStyle.Flat;
             iconButton55.ForeColor = Color.Snow;
@@ -10807,9 +9403,7 @@
             iconButton55.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton55.UseVisualStyleBackColor = true;
             iconButton55.Click += (this.iconButton55_Click);
-            // 
-            // pictureBox3
-            // 
+
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(199, 815);
             pictureBox3.Name = "pictureBox3";
@@ -10818,9 +9412,7 @@
             pictureBox3.TabIndex = 160;
             pictureBox3.TabStop = false;
             pictureBox3.Click += (this.pictureBox3_Click);
-            // 
-            // label165
-            // 
+
             label165.AutoSize = true;
             label165.ForeColor = Color.Snow;
             label165.Location = new Point(24, 66);
@@ -10828,9 +9420,7 @@
             label165.Size = new Size(525, 15);
             label165.TabIndex = 159;
             label165.Text = "Gain access to supported voices by becoming a member on the TTS Voice Wizard Patreon or Ko-fi.";
-            // 
-            // groupBox23
-            // 
+
             groupBox23.Controls.Add(labelChatGPTCharacters);
             groupBox23.Controls.Add(label230);
             groupBox23.Controls.Add(rjToggleUsePro4ChatGPT);
@@ -10860,18 +9450,14 @@
             groupBox23.TabIndex = 114;
             groupBox23.TabStop = false;
             groupBox23.Text = "Voice Wizard Pro Settings";
-            // 
-            // labelChatGPTCharacters
-            // 
+
             labelChatGPTCharacters.AutoSize = true;
             labelChatGPTCharacters.Location = new Point(6, 310);
             labelChatGPTCharacters.Name = "labelChatGPTCharacters";
             labelChatGPTCharacters.Size = new Size(165, 15);
             labelChatGPTCharacters.TabIndex = 187;
             labelChatGPTCharacters.Text = "ChatGPT Characters Used: 0/0";
-            // 
-            // label230
-            // 
+
             label230.AutoSize = true;
             label230.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label230.ForeColor = Color.Snow;
@@ -10880,9 +9466,7 @@
             label230.Size = new Size(179, 15);
             label230.TabIndex = 185;
             label230.Text = "Use Pro API for OpenAI ChatGPT";
-            // 
-            // rjToggleUsePro4ChatGPT
-            // 
+
             rjToggleUsePro4ChatGPT.AutoSize = true;
             rjToggleUsePro4ChatGPT.Checked = true;
             rjToggleUsePro4ChatGPT.CheckState = CheckState.Checked;
@@ -10897,9 +9481,7 @@
             rjToggleUsePro4ChatGPT.Size = new Size(39, 16);
             rjToggleUsePro4ChatGPT.TabIndex = 186;
             rjToggleUsePro4ChatGPT.UseVisualStyleBackColor = true;
-            // 
-            // label229
-            // 
+
             label229.AutoSize = true;
             label229.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label229.ForeColor = Color.Snow;
@@ -10908,9 +9490,7 @@
             label229.Size = new Size(152, 15);
             label229.TabIndex = 183;
             label229.Text = "Use Pro API for OpenAI TTS";
-            // 
-            // rjToggleUsePro4OpenAITTS
-            // 
+
             rjToggleUsePro4OpenAITTS.AutoSize = true;
             rjToggleUsePro4OpenAITTS.Checked = true;
             rjToggleUsePro4OpenAITTS.CheckState = CheckState.Checked;
@@ -10925,9 +9505,7 @@
             rjToggleUsePro4OpenAITTS.Size = new Size(39, 16);
             rjToggleUsePro4OpenAITTS.TabIndex = 184;
             rjToggleUsePro4OpenAITTS.UseVisualStyleBackColor = true;
-            // 
-            // label188
-            // 
+
             label188.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             label188.AutoSize = true;
             label188.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
@@ -10937,9 +9515,7 @@
             label188.Size = new Size(65, 15);
             label188.TabIndex = 182;
             label188.Text = "API Branch";
-            // 
-            // comboBoxProBranch
-            // 
+
             comboBoxProBranch.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             comboBoxProBranch.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxProBranch.FlatStyle = FlatStyle.Flat;
@@ -10950,9 +9526,7 @@
             comboBoxProBranch.Name = "comboBoxProBranch";
             comboBoxProBranch.Size = new Size(76, 23);
             comboBoxProBranch.TabIndex = 181;
-            // 
-            // ProShowKey
-            // 
+
             ProShowKey.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             ProShowKey.BackColor = Color.White;
             ProShowKey.FlatAppearance.BorderSize = 0;
@@ -10969,9 +9543,7 @@
             ProShowKey.TabIndex = 121;
             ProShowKey.UseVisualStyleBackColor = false;
             ProShowKey.Click += (this.ProShowKey_Click);
-            // 
-            // label168
-            // 
+
             label168.AutoSize = true;
             label168.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label168.ForeColor = Color.Snow;
@@ -10980,9 +9552,7 @@
             label168.Size = new Size(110, 15);
             label168.TabIndex = 119;
             label168.Text = "Use for Translations";
-            // 
-            // rjToggleButtonProTranslation
-            // 
+
             rjToggleButtonProTranslation.AutoSize = true;
             rjToggleButtonProTranslation.Location = new Point(33, 235);
             rjToggleButtonProTranslation.Margin = new Padding(3, 2, 3, 2);
@@ -10995,27 +9565,21 @@
             rjToggleButtonProTranslation.Size = new Size(39, 16);
             rjToggleButtonProTranslation.TabIndex = 120;
             rjToggleButtonProTranslation.UseVisualStyleBackColor = true;
-            // 
-            // labelTranslationCharacters
-            // 
+
             labelTranslationCharacters.AutoSize = true;
             labelTranslationCharacters.Location = new Point(6, 287);
             labelTranslationCharacters.Name = "labelTranslationCharacters";
             labelTranslationCharacters.Size = new Size(176, 15);
             labelTranslationCharacters.TabIndex = 118;
             labelTranslationCharacters.Text = "Translation Characters Used: 0/0";
-            // 
-            // labelTTSCharacters
-            // 
+
             labelTTSCharacters.AutoSize = true;
             labelTTSCharacters.Location = new Point(6, 265);
             labelTTSCharacters.Name = "labelTTSCharacters";
             labelTTSCharacters.Size = new Size(138, 15);
             labelTTSCharacters.TabIndex = 117;
             labelTTSCharacters.Text = "TTS Characters Used: 0/0";
-            // 
-            // label164
-            // 
+
             label164.AutoSize = true;
             label164.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label164.ForeColor = Color.Snow;
@@ -11024,9 +9588,7 @@
             label164.Size = new Size(139, 15);
             label164.TabIndex = 115;
             label164.Text = "Use Voice Wizard Pro Key";
-            // 
-            // rjToggleButtonUsePro
-            // 
+
             rjToggleButtonUsePro.AutoSize = true;
             rjToggleButtonUsePro.Location = new Point(15, 20);
             rjToggleButtonUsePro.Margin = new Padding(3, 2, 3, 2);
@@ -11039,9 +9601,7 @@
             rjToggleButtonUsePro.Size = new Size(39, 16);
             rjToggleButtonUsePro.TabIndex = 116;
             rjToggleButtonUsePro.UseVisualStyleBackColor = true;
-            // 
-            // label159
-            // 
+
             label159.AutoSize = true;
             label159.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label159.ForeColor = Color.Snow;
@@ -11050,9 +9610,7 @@
             label159.Size = new Size(185, 15);
             label159.TabIndex = 111;
             label159.Text = "Use Pro API for Amazon Polly TTS";
-            // 
-            // rjToggleButtonProAmazon
-            // 
+
             rjToggleButtonProAmazon.AutoSize = true;
             rjToggleButtonProAmazon.Checked = true;
             rjToggleButtonProAmazon.CheckState = CheckState.Checked;
@@ -11067,9 +9625,7 @@
             rjToggleButtonProAmazon.Size = new Size(39, 16);
             rjToggleButtonProAmazon.TabIndex = 112;
             rjToggleButtonProAmazon.UseVisualStyleBackColor = true;
-            // 
-            // label162
-            // 
+
             label162.AutoSize = true;
             label162.ForeColor = Color.Snow;
             label162.Location = new Point(29, 54);
@@ -11077,9 +9633,7 @@
             label162.Size = new Size(117, 15);
             label162.TabIndex = 28;
             label162.Text = "Voice Wizard Pro Key";
-            // 
-            // label161
-            // 
+
             label161.AutoSize = true;
             label161.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label161.ForeColor = Color.Snow;
@@ -11088,18 +9642,14 @@
             label161.Size = new Size(142, 15);
             label161.TabIndex = 106;
             label161.Text = "Use Pro API for Azure TTS";
-            // 
-            // textBoxWizardProKey
-            // 
+
             textBoxWizardProKey.Location = new Point(32, 72);
             textBoxWizardProKey.Margin = new Padding(3, 2, 3, 2);
             textBoxWizardProKey.Name = "textBoxWizardProKey";
             textBoxWizardProKey.PasswordChar = '*';
             textBoxWizardProKey.Size = new Size(424, 23);
             textBoxWizardProKey.TabIndex = 27;
-            // 
-            // rjToggleButtonProAzure
-            // 
+
             rjToggleButtonProAzure.AutoSize = true;
             rjToggleButtonProAzure.Checked = true;
             rjToggleButtonProAzure.CheckState = CheckState.Checked;
@@ -11114,9 +9664,7 @@
             rjToggleButtonProAzure.Size = new Size(39, 16);
             rjToggleButtonProAzure.TabIndex = 107;
             rjToggleButtonProAzure.UseVisualStyleBackColor = true;
-            // 
-            // label163
-            // 
+
             label163.AutoSize = true;
             label163.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label163.ForeColor = Color.Snow;
@@ -11125,9 +9673,7 @@
             label163.Size = new Size(148, 20);
             label163.TabIndex = 113;
             label163.Text = "Voice Wizard Pro API";
-            // 
-            // uberduck
-            // 
+
             uberduck.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             uberduck.Controls.Add(groupBox14);
             uberduck.Controls.Add(label171);
@@ -11137,9 +9683,7 @@
             uberduck.Size = new Size(769, 587);
             uberduck.TabIndex = 22;
             uberduck.Text = "uberduck";
-            // 
-            // groupBox14
-            // 
+
             groupBox14.Controls.Add(UberDuckShowSecretPassword);
             groupBox14.Controls.Add(UberDuckShowPassword);
             groupBox14.Controls.Add(label160);
@@ -11156,9 +9700,7 @@
             groupBox14.TabIndex = 113;
             groupBox14.TabStop = false;
             groupBox14.Text = "Uberduck Setup";
-            // 
-            // UberDuckShowSecretPassword
-            // 
+
             UberDuckShowSecretPassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             UberDuckShowSecretPassword.BackColor = Color.White;
             UberDuckShowSecretPassword.FlatAppearance.BorderSize = 0;
@@ -11175,9 +9717,7 @@
             UberDuckShowSecretPassword.TabIndex = 123;
             UberDuckShowSecretPassword.UseVisualStyleBackColor = false;
             UberDuckShowSecretPassword.Click += (this.UberDuckShowSecretPassword_Click);
-            // 
-            // UberDuckShowPassword
-            // 
+
             UberDuckShowPassword.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             UberDuckShowPassword.BackColor = Color.White;
             UberDuckShowPassword.FlatAppearance.BorderSize = 0;
@@ -11194,9 +9734,7 @@
             UberDuckShowPassword.TabIndex = 122;
             UberDuckShowPassword.UseVisualStyleBackColor = false;
             UberDuckShowPassword.Click += (this.UberDuckShowPassword_Click);
-            // 
-            // label160
-            // 
+
             label160.AutoSize = true;
             label160.ForeColor = Color.Snow;
             label160.Location = new Point(9, 70);
@@ -11204,9 +9742,7 @@
             label160.Size = new Size(39, 15);
             label160.TabIndex = 34;
             label160.Text = "Secret";
-            // 
-            // iconButton53
-            // 
+
             iconButton53.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton53.FlatAppearance.BorderSize = 0;
             iconButton53.FlatStyle = FlatStyle.Flat;
@@ -11224,18 +9760,14 @@
             iconButton53.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton53.UseVisualStyleBackColor = true;
             iconButton53.Click += (this.iconButton53_Click);
-            // 
-            // textBoxUberSecret
-            // 
+
             textBoxUberSecret.Location = new Point(12, 88);
             textBoxUberSecret.Margin = new Padding(3, 2, 3, 2);
             textBoxUberSecret.Name = "textBoxUberSecret";
             textBoxUberSecret.PasswordChar = '*';
             textBoxUberSecret.Size = new Size(312, 23);
             textBoxUberSecret.TabIndex = 33;
-            // 
-            // label170
-            // 
+
             label170.AutoSize = true;
             label170.ForeColor = Color.Snow;
             label170.Location = new Point(9, 16);
@@ -11243,18 +9775,14 @@
             label170.Size = new Size(26, 15);
             label170.TabIndex = 28;
             label170.Text = "Key";
-            // 
-            // textBoxUberKey
-            // 
+
             textBoxUberKey.Location = new Point(12, 34);
             textBoxUberKey.Margin = new Padding(3, 2, 3, 2);
             textBoxUberKey.Name = "textBoxUberKey";
             textBoxUberKey.PasswordChar = '*';
             textBoxUberKey.Size = new Size(312, 23);
             textBoxUberKey.TabIndex = 27;
-            // 
-            // label171
-            // 
+
             label171.AutoSize = true;
             label171.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label171.ForeColor = Color.Snow;
@@ -11263,9 +9791,7 @@
             label171.Size = new Size(72, 20);
             label171.TabIndex = 112;
             label171.Text = "Uberduck";
-            // 
-            // tabChatGPT
-            // 
+
             tabChatGPT.BackColor = Color.FromArgb((int)(byte)68, (int)(byte)72, (int)(byte)111);
             tabChatGPT.Controls.Add(groupBox45);
             tabChatGPT.Controls.Add(groupBox44);
@@ -11276,9 +9802,7 @@
             tabChatGPT.Size = new Size(769, 587);
             tabChatGPT.TabIndex = 23;
             tabChatGPT.Text = "OpenAI";
-            // 
-            // groupBox45
-            // 
+
             groupBox45.Controls.Add(button36);
             groupBox45.Controls.Add(hidePasswordChatGPT);
             groupBox45.Controls.Add(label222);
@@ -11290,9 +9814,7 @@
             groupBox45.TabIndex = 161;
             groupBox45.TabStop = false;
             groupBox45.Text = "OpenAI";
-            // 
-            // button36
-            // 
+
             button36.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button36.FlatStyle = FlatStyle.Flat;
             button36.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -11305,9 +9827,7 @@
             button36.Text = "Apply";
             button36.UseVisualStyleBackColor = false;
             button36.Click += (this.button36_Click_1);
-            // 
-            // hidePasswordChatGPT
-            // 
+
             hidePasswordChatGPT.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             hidePasswordChatGPT.BackColor = Color.White;
             hidePasswordChatGPT.FlatAppearance.BorderSize = 0;
@@ -11324,9 +9844,7 @@
             hidePasswordChatGPT.TabIndex = 123;
             hidePasswordChatGPT.UseVisualStyleBackColor = false;
             hidePasswordChatGPT.Click += (this.hidePasswordChatGPT_Click);
-            // 
-            // label222
-            // 
+
             label222.AutoSize = true;
             label222.ForeColor = Color.Snow;
             label222.Location = new Point(17, 30);
@@ -11334,18 +9852,14 @@
             label222.Size = new Size(47, 15);
             label222.TabIndex = 28;
             label222.Text = "API Key";
-            // 
-            // textBoxChatGPT
-            // 
+
             textBoxChatGPT.Location = new Point(17, 45);
             textBoxChatGPT.Margin = new Padding(3, 2, 3, 2);
             textBoxChatGPT.Name = "textBoxChatGPT";
             textBoxChatGPT.PasswordChar = '*';
             textBoxChatGPT.Size = new Size(556, 23);
             textBoxChatGPT.TabIndex = 27;
-            // 
-            // groupBox44
-            // 
+
             groupBox44.Controls.Add(label234);
             groupBox44.Controls.Add(rjToggleGPTUsePrompt);
             groupBox44.Controls.Add(label232);
@@ -11374,9 +9888,7 @@
             groupBox44.TabIndex = 115;
             groupBox44.TabStop = false;
             groupBox44.Text = "ChatGPT";
-            // 
-            // label234
-            // 
+
             label234.AutoSize = true;
             label234.ForeColor = Color.Snow;
             label234.Location = new Point(191, 173);
@@ -11384,9 +9896,7 @@
             label234.Size = new Size(449, 15);
             label234.TabIndex = 165;
             label234.Text = "Chat Context is not currently preserved when using feature with VoiceWizardPro Key";
-            // 
-            // rjToggleGPTUsePrompt
-            // 
+
             rjToggleGPTUsePrompt.AutoSize = true;
             rjToggleGPTUsePrompt.Location = new Point(23, 307);
             rjToggleGPTUsePrompt.Margin = new Padding(3, 2, 3, 2);
@@ -11400,9 +9910,7 @@
             rjToggleGPTUsePrompt.TabIndex = 164;
             toolTip1.SetToolTip(rjToggleGPTUsePrompt, resources.GetString("rjToggleGPTUsePrompt.ToolTip"));
             rjToggleGPTUsePrompt.UseVisualStyleBackColor = true;
-            // 
-            // label232
-            // 
+
             label232.AutoSize = true;
             label232.ForeColor = Color.Snow;
             label232.Location = new Point(121, 308);
@@ -11410,9 +9918,7 @@
             label232.Size = new Size(398, 15);
             label232.TabIndex = 163;
             label232.Text = "If enabled, this message will be sent before each of your ChatGPT requests";
-            // 
-            // label231
-            // 
+
             label231.AutoSize = true;
             label231.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label231.ForeColor = Color.Snow;
@@ -11421,18 +9927,14 @@
             label231.Size = new Size(50, 15);
             label231.TabIndex = 162;
             label231.Text = "Prompt:";
-            // 
-            // richTextBoxGPTPrompt
-            // 
+
             richTextBoxGPTPrompt.BorderStyle = BorderStyle.None;
             richTextBoxGPTPrompt.Location = new Point(23, 325);
             richTextBoxGPTPrompt.Name = "richTextBoxGPTPrompt";
             richTextBoxGPTPrompt.Size = new Size(578, 98);
             richTextBoxGPTPrompt.TabIndex = 161;
             richTextBoxGPTPrompt.Text = "Keep your response under 100 characters";
-            // 
-            // label228
-            // 
+
             label228.AutoSize = true;
             label228.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label228.ForeColor = Color.Snow;
@@ -11442,9 +9944,7 @@
             label228.TabIndex = 134;
             label228.Text = "Chat With Context";
             toolTip1.SetToolTip(label228, "When enabled each subsequent call will have the context of your previous calls");
-            // 
-            // label224
-            // 
+
             label224.AutoSize = true;
             label224.ForeColor = Color.Snow;
             label224.Location = new Point(17, 24);
@@ -11452,9 +9952,7 @@
             label224.Size = new Size(483, 30);
             label224.TabIndex = 160;
             label224.Text = "When enabled input text (via text input or speech to text) will be passed through ChatGPT. \r\nWIP, leave suggestions in the Discord";
-            // 
-            // rjToggleUseContextWithGPT
-            // 
+
             rjToggleUseContextWithGPT.AutoSize = true;
             rjToggleUseContextWithGPT.Location = new Point(23, 172);
             rjToggleUseContextWithGPT.Margin = new Padding(3, 2, 3, 2);
@@ -11468,9 +9966,7 @@
             rjToggleUseContextWithGPT.TabIndex = 135;
             toolTip1.SetToolTip(rjToggleUseContextWithGPT, "When enabled each subsequent call will have the context of your previous calls");
             rjToggleUseContextWithGPT.UseVisualStyleBackColor = true;
-            // 
-            // label227
-            // 
+
             label227.AutoSize = true;
             label227.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label227.ForeColor = Color.Snow;
@@ -11480,9 +9976,7 @@
             label227.TabIndex = 132;
             label227.Text = "Use Max Chat History";
             toolTip1.SetToolTip(label227, "Prevents excessive usage for long chats (entire chat is used as context for new messages). Messages will be purged from the middle of chat history preserving the initial prompt and recent context.");
-            // 
-            // rjToggleUseMaxChatHistory
-            // 
+
             rjToggleUseMaxChatHistory.AutoSize = true;
             rjToggleUseMaxChatHistory.Location = new Point(23, 203);
             rjToggleUseMaxChatHistory.Margin = new Padding(3, 2, 3, 2);
@@ -11496,9 +9990,7 @@
             rjToggleUseMaxChatHistory.TabIndex = 133;
             toolTip1.SetToolTip(rjToggleUseMaxChatHistory, "Prevents excessive usage for long chats (entire chat is used as context for new messages). Messages will be purged from the middle of chat history preserving the initial prompt and recent context.");
             rjToggleUseMaxChatHistory.UseVisualStyleBackColor = true;
-            // 
-            // label226
-            // 
+
             label226.AutoSize = true;
             label226.ForeColor = Color.Snow;
             label226.Location = new Point(26, 233);
@@ -11507,9 +9999,7 @@
             label226.TabIndex = 131;
             label226.Text = "Max Chat History";
             toolTip1.SetToolTip(label226, resources.GetString("label226.ToolTip"));
-            // 
-            // textBoxChatGPTMaxHistory
-            // 
+
             textBoxChatGPTMaxHistory.Location = new Point(26, 250);
             textBoxChatGPTMaxHistory.Margin = new Padding(3, 2, 3, 2);
             textBoxChatGPTMaxHistory.Name = "textBoxChatGPTMaxHistory";
@@ -11517,9 +10007,7 @@
             textBoxChatGPTMaxHistory.TabIndex = 130;
             textBoxChatGPTMaxHistory.Text = "10";
             toolTip1.SetToolTip(textBoxChatGPTMaxHistory, resources.GetString("textBoxChatGPTMaxHistory.ToolTip"));
-            // 
-            // button23
-            // 
+
             button23.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             button23.FlatStyle = FlatStyle.Flat;
             button23.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -11532,9 +10020,7 @@
             button23.Text = "Clear Chat History";
             button23.UseVisualStyleBackColor = false;
             button23.Click += (this.button23_Click);
-            // 
-            // label225
-            // 
+
             label225.AutoSize = true;
             label225.ForeColor = Color.Snow;
             label225.Location = new Point(23, 100);
@@ -11542,17 +10028,13 @@
             label225.Size = new Size(41, 15);
             label225.TabIndex = 128;
             label225.Text = "Model";
-            // 
-            // textBoxGPTModel
-            // 
+
             textBoxGPTModel.Location = new Point(23, 117);
             textBoxGPTModel.Margin = new Padding(3, 2, 3, 2);
             textBoxGPTModel.Name = "textBoxGPTModel";
             textBoxGPTModel.Size = new Size(312, 23);
             textBoxGPTModel.TabIndex = 127;
-            // 
-            // buttonApplyChatGPT
-            // 
+
             buttonApplyChatGPT.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             buttonApplyChatGPT.FlatStyle = FlatStyle.Flat;
             buttonApplyChatGPT.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -11565,9 +10047,7 @@
             buttonApplyChatGPT.Text = "Apply";
             buttonApplyChatGPT.UseVisualStyleBackColor = false;
             buttonApplyChatGPT.Click += (this.buttonApplyChatGPT_Click);
-            // 
-            // label221
-            // 
+
             label221.AutoSize = true;
             label221.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label221.ForeColor = Color.Snow;
@@ -11576,9 +10056,7 @@
             label221.Size = new Size(76, 15);
             label221.TabIndex = 124;
             label221.Text = "Use ChatGPT";
-            // 
-            // rjToggleButtonEnableChatGPT
-            // 
+
             rjToggleButtonEnableChatGPT.AutoSize = true;
             rjToggleButtonEnableChatGPT.Location = new Point(23, 67);
             rjToggleButtonEnableChatGPT.Margin = new Padding(3, 2, 3, 2);
@@ -11591,9 +10069,7 @@
             rjToggleButtonEnableChatGPT.Size = new Size(39, 16);
             rjToggleButtonEnableChatGPT.TabIndex = 125;
             rjToggleButtonEnableChatGPT.UseVisualStyleBackColor = true;
-            // 
-            // iconButton12
-            // 
+
             iconButton12.Anchor = (AnchorStyles)(AnchorStyles.Top) | (AnchorStyles.Right);
             iconButton12.FlatAppearance.BorderSize = 0;
             iconButton12.FlatStyle = FlatStyle.Flat;
@@ -11611,9 +10087,7 @@
             iconButton12.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton12.UseVisualStyleBackColor = true;
             iconButton12.Click += (this.iconButton12_Click_1);
-            // 
-            // label223
-            // 
+
             label223.AutoSize = true;
             label223.Font = new Font("Segoe UI", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             label223.ForeColor = Color.Snow;
@@ -11622,9 +10096,7 @@
             label223.Size = new Size(59, 20);
             label223.TabIndex = 114;
             label223.Text = "OpenAI";
-            // 
-            // WhisperDebugLabel
-            // 
+
             WhisperDebugLabel.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             WhisperDebugLabel.AutoSize = true;
             WhisperDebugLabel.Location = new Point(26, 584);
@@ -11633,9 +10105,7 @@
             WhisperDebugLabel.TabIndex = 111;
             WhisperDebugLabel.Text = "Whisper Debug:";
             WhisperDebugLabel.Visible = false;
-            // 
-            // groupBox9
-            // 
+
             groupBox9.Anchor = (AnchorStyles)(((AnchorStyles.Top) | (AnchorStyles.Bottom)) | (AnchorStyles.Left)) | (AnchorStyles.Right);
             groupBox9.Controls.Add(labelVADIndicator);
             groupBox9.Controls.Add(WhisperDebugLabel);
@@ -11650,9 +10120,7 @@
             groupBox9.TabIndex = 109;
             groupBox9.TabStop = false;
             groupBox9.Text = "Log";
-            // 
-            // labelVADIndicator
-            // 
+
             labelVADIndicator.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Left);
             labelVADIndicator.AutoSize = true;
             labelVADIndicator.Location = new Point(17, 584);
@@ -11661,9 +10129,7 @@
             labelVADIndicator.TabIndex = 112;
             labelVADIndicator.Text = "*";
             labelVADIndicator.Visible = false;
-            // 
-            // logTrash
-            // 
+
             logTrash.Anchor = (AnchorStyles)(AnchorStyles.Bottom) | (AnchorStyles.Right);
             logTrash.BackColor = Color.White;
             logTrash.FlatAppearance.BorderSize = 0;
@@ -11680,9 +10146,7 @@
             logTrash.TabIndex = 32;
             logTrash.UseVisualStyleBackColor = false;
             logTrash.Click += (this.logTrash_Click);
-            // 
-            // panel1
-            // 
+
             panel1.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             panel1.Controls.Add(versionLabel);
             panel1.Controls.Add(navbarUpdates);
@@ -11702,9 +10166,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(159, 615);
             panel1.TabIndex = 28;
-            // 
-            // versionLabel
-            // 
+
             versionLabel.Dock = DockStyle.Top;
             versionLabel.ForeColor = Color.White;
             versionLabel.Location = new Point(0, 555);
@@ -11714,9 +10176,7 @@
             versionLabel.Text = "Version";
             versionLabel.TextAlign = ContentAlignment.MiddleLeft;
             versionLabel.Click += (this.versionLabel_Click);
-            // 
-            // navbarUpdates
-            // 
+
             navbarUpdates.Dock = DockStyle.Top;
             navbarUpdates.FlatAppearance.BorderSize = 0;
             navbarUpdates.FlatStyle = FlatStyle.Flat;
@@ -11737,9 +10197,7 @@
             navbarUpdates.UseVisualStyleBackColor = true;
             navbarUpdates.Visible = false;
             navbarUpdates.Click += (this.iconButton8_Click);
-            // 
-            // navbarDonate
-            // 
+
             navbarDonate.Dock = DockStyle.Top;
             navbarDonate.FlatAppearance.BorderSize = 0;
             navbarDonate.FlatStyle = FlatStyle.Flat;
@@ -11759,9 +10217,7 @@
             navbarDonate.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarDonate.UseVisualStyleBackColor = true;
             navbarDonate.Click += (this.iconButton12_Click);
-            // 
-            // navbarGithub
-            // 
+
             navbarGithub.Dock = DockStyle.Top;
             navbarGithub.FlatAppearance.BorderSize = 0;
             navbarGithub.FlatStyle = FlatStyle.Flat;
@@ -11781,9 +10237,7 @@
             navbarGithub.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarGithub.UseVisualStyleBackColor = true;
             navbarGithub.Click += (this.iconButton7_Click);
-            // 
-            // navbarDiscord
-            // 
+
             navbarDiscord.Dock = DockStyle.Top;
             navbarDiscord.FlatAppearance.BorderSize = 0;
             navbarDiscord.FlatStyle = FlatStyle.Flat;
@@ -11803,9 +10257,7 @@
             navbarDiscord.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarDiscord.UseVisualStyleBackColor = true;
             navbarDiscord.Click += (this.iconButton6_Click);
-            // 
-            // navbarSpeechProvider
-            // 
+
             navbarSpeechProvider.Dock = DockStyle.Top;
             navbarSpeechProvider.FlatAppearance.BorderSize = 0;
             navbarSpeechProvider.FlatStyle = FlatStyle.Flat;
@@ -11825,9 +10277,7 @@
             navbarSpeechProvider.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarSpeechProvider.UseVisualStyleBackColor = true;
             navbarSpeechProvider.Click += (this.iconButton4_Click);
-            // 
-            // navbarIntegrations
-            // 
+
             navbarIntegrations.Dock = DockStyle.Top;
             navbarIntegrations.FlatAppearance.BorderSize = 0;
             navbarIntegrations.FlatStyle = FlatStyle.Flat;
@@ -11847,9 +10297,7 @@
             navbarIntegrations.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarIntegrations.UseVisualStyleBackColor = true;
             navbarIntegrations.Click += (this.iconButton3_Click);
-            // 
-            // navbarSettings
-            // 
+
             navbarSettings.Dock = DockStyle.Top;
             navbarSettings.FlatAppearance.BorderSize = 0;
             navbarSettings.FlatStyle = FlatStyle.Flat;
@@ -11869,9 +10317,7 @@
             navbarSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarSettings.UseVisualStyleBackColor = true;
             navbarSettings.Click += (this.iconButton5_Click);
-            // 
-            // navbarTextToText
-            // 
+
             navbarTextToText.Dock = DockStyle.Top;
             navbarTextToText.FlatAppearance.BorderSize = 0;
             navbarTextToText.FlatStyle = FlatStyle.Flat;
@@ -11891,9 +10337,7 @@
             navbarTextToText.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarTextToText.UseVisualStyleBackColor = true;
             navbarTextToText.Click += (this.iconButton23_Click);
-            // 
-            // navbarTextToSpeech
-            // 
+
             navbarTextToSpeech.Dock = DockStyle.Top;
             navbarTextToSpeech.FlatAppearance.BorderSize = 0;
             navbarTextToSpeech.FlatStyle = FlatStyle.Flat;
@@ -11913,9 +10357,7 @@
             navbarTextToSpeech.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarTextToSpeech.UseVisualStyleBackColor = true;
             navbarTextToSpeech.Click += (this.iconButton2_Click);
-            // 
-            // navbarHome
-            // 
+
             navbarHome.Dock = DockStyle.Top;
             navbarHome.FlatAppearance.BorderSize = 0;
             navbarHome.FlatStyle = FlatStyle.Flat;
@@ -11935,9 +10377,7 @@
             navbarHome.TextImageRelation = TextImageRelation.ImageBeforeText;
             navbarHome.UseVisualStyleBackColor = true;
             navbarHome.Click += (this.iconButton1_Click);
-            // 
-            // panel2Logo
-            // 
+
             panel2Logo.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             panel2Logo.Controls.Add(pictureBox1);
             panel2Logo.Dock = DockStyle.Top;
@@ -11946,9 +10386,7 @@
             panel2Logo.Name = "panel2Logo";
             panel2Logo.Size = new Size(159, 105);
             panel2Logo.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
+
             pictureBox1.BackColor = Color.FromArgb((int)(byte)31, (int)(byte)30, (int)(byte)68);
             pictureBox1.Image = OSCVRCWiz.Properties.Resources.TTSIcon1;
             pictureBox1.Location = new Point(12, -8);
@@ -11958,19 +10396,13 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // notifyIcon1
-            // 
+
             notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
             notifyIcon1.Text = "TTS Voice Wizard";
             notifyIcon1.MouseDoubleClick += (this.notifyIcon1_MouseDoubleClick);
-            // 
-            // openFileDialog1
-            // 
+
             openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // logPanel
-            // 
+
             logPanel.Controls.Add(button45);
             logPanel.Controls.Add(groupBox9);
             logPanel.Dock = DockStyle.Right;
@@ -11978,9 +10410,7 @@
             logPanel.Name = "logPanel";
             logPanel.Size = new Size(300, 615);
             logPanel.TabIndex = 29;
-            // 
-            // button45
-            // 
+
             button45.Dock = DockStyle.Left;
             button45.FlatAppearance.BorderSize = 0;
             button45.FlatStyle = FlatStyle.Flat;
@@ -11993,9 +10423,7 @@
             button45.TextAlign = ContentAlignment.TopCenter;
             button45.UseVisualStyleBackColor = true;
             button45.Click += (this.button45_Click);
-            // 
-            // comboBoxTikTok
-            // 
+
             comboBoxTikTok.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTikTok.FlatStyle = FlatStyle.Flat;
             comboBoxTikTok.FormattingEnabled = true;
@@ -12005,9 +10433,7 @@
             comboBoxTikTok.Name = "comboBoxTikTok";
             comboBoxTikTok.Size = new Size(239, 23);
             comboBoxTikTok.TabIndex = 191;
-            // 
-            // label254
-            // 
+
             label254.AutoSize = true;
             label254.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             label254.ForeColor = Color.Snow;
@@ -12016,9 +10442,7 @@
             label254.Size = new Size(114, 15);
             label254.TabIndex = 192;
             label254.Text = "TikTok API Endpoint";
-            // 
-            // VoiceWizardWindow
-            // 
+
             this.AutoScaleDimensions = new SizeF(7F, 15F);
             this.AutoScaleMode = AutoScaleMode.Font;
             this.BackColor = Color.FromArgb((int)(byte)34, (int)(byte)33, (int)(byte)74);
@@ -12984,6 +11408,6 @@
         private Button button43;
         private Label label254;
         public ComboBox comboBoxTikTok;
-        // public FontAwesome.Sharp.IconButton iconButton2;
+
     }
 }

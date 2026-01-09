@@ -1,4 +1,4 @@
-﻿using NAudio.Wave;
+using NAudio.Wave;
 using NAudio.Wave.Compression;
 using OSCVRCWiz.Services.Text;
 using Swan.Formatters;
@@ -36,9 +36,6 @@ namespace OSCVRCWiz.Resources.Audio
                 string relativePath = "Output\\AudioOutput\\TTSVoiceWizard" + timestampString + ".wav";
                 string fullPath = Path.Combine(basePath, relativePath);
 
-
-                
-
                 switch (format)
                 {
                     case AudioFormat.Mp3:
@@ -53,7 +50,7 @@ namespace OSCVRCWiz.Resources.Audio
                         break;
 
                     case AudioFormat.Raw:
-                        using (RawSourceWaveStream rawReader = new RawSourceWaveStream(stream, new WaveFormat(11000, 16, 1))) 
+                        using (RawSourceWaveStream rawReader = new RawSourceWaveStream(stream, new WaveFormat(11000, 16, 1)))
                         {
 
                             using (WaveStream pcmStream = WaveFormatConversionStream.CreatePcmStream(rawReader))
@@ -67,18 +64,13 @@ namespace OSCVRCWiz.Resources.Audio
                     case AudioFormat.Wav:
                         using (WaveFileReader wavReader = new WaveFileReader(stream))
                         {
-                            using (var mediaStream = new StreamMediaFoundationReader(stream))//this fixes issue with new API conversion formats
+                            using (var mediaStream = new StreamMediaFoundationReader(stream))
                             {
                                 WaveFileWriter.CreateWaveFile(fullPath, mediaStream);
                                 OutputText.outputLog("[Audio File Saved]");
                             }
                         }
-                        /*using (WaveFileReader wavReader = new WaveFileReader(stream))
-                        {
-                            pcmStream = WaveFormatConversionStream.CreatePcmStream(wavReader);
-                            WaveFileWriter.CreateWaveFile(fullPath, pcmStream);
-                            OutputText.outputLog("[Audio File Saved]");
-                        }*/
+
                         break;
 
                     default:

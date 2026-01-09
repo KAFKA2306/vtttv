@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Services.Text;
+using OSCVRCWiz.Services.Text;
 using OSCVRCWiz.Settings;
 using SpotifyAPI.Web;
 using SpotifyAPI.Web.Auth;
@@ -14,7 +14,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
     public class SpotifyAddon
 
     {
-        private static string clientIdLegacy = "8ed3657eca864590843f45a659ec2976"; //TTSVoiceWizard Spotify Client ID
+        private static string clientIdLegacy = "8ed3657eca864590843f45a659ec2976";
         private static EmbedIOAuthServer _server;
         private static SpotifyClient myClient = null;
         private static PKCETokenResponse myPKCEToken = null;
@@ -24,25 +24,19 @@ namespace OSCVRCWiz.Services.Integrations.Media
         public static string title = "";
         public static string spotifyurllink = "https://open.spotify.com/";
         public static bool legacyState = false;
-        //static string fullSongPauseCheck = "";
 
         public static bool pauseSpotify = false;
         public static string spotifyInterval = "1500";
 
         public static string previousError = "";
 
-
         static DateTime tokenExpirationTime;
 
-
-        //  check if the token is expired
         private static bool IsTokenExpired()
         {
             if (myPKCEToken != null)
             {
-                // DateTime tokenExpirationTime = DateTime.Now.AddSeconds(myPKCEToken.ExpiresIn);
 
-                // OutputText.outputLog("checking if token expired: "+ (tokenExpirationTime <= DateTime.Now).ToString());
                 return (tokenExpirationTime <= DateTime.Now);
             }
             else
@@ -52,7 +46,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
             }
         }
 
-        // refresh the access token
         private static async Task<PKCETokenResponse> RefreshAccessToken()
         {
             OutputText.outputLog("Debug: Updating Spotify Tokens");
@@ -64,7 +57,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
             OutputText.outputLog("[Your Spotify Token will refresh in " + ((myPKCEToken.ExpiresIn / 60) - 1) + " minutes]", Color.Green);
 
             tokenExpirationTime = DateTime.Now.AddSeconds(myPKCEToken.ExpiresIn - 60);
-            // OutputText.outputLog((DateTime.Now.AddSeconds(myPKCEToken.ExpiresIn - 60) <= DateTime.Now).ToString());
+
             return refreshResponse;
         }
 
@@ -72,7 +65,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
         {
             try
             {
-
 
                 if (myClient == null)
                 {
@@ -97,7 +89,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
                         if (spotifyConnect == false)
                         {
-                            // var ot = new OutputText();
+
                             OutputText.outputLog("[Spotify Connected]", Color.Green);
                             spotifyConnect = true;
 
@@ -114,7 +106,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
                     m_currentlyPlaying = await myClient.Player.GetCurrentlyPlaying(new PlayerCurrentlyPlayingRequest());
                     var m_testing = await myClient.Player.GetAvailableDevices();
-                    //  var m_testing2 = await myClient.Player.GetCurrentPlayback();
+
                     title = "";
                     var artist = "";
                     var allArtists = "";
@@ -124,32 +116,27 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     var progressHours = "";
                     var album = "";
                     var albumArtist = "";
-                    // var progressBar = "";
+
                     TimeSpan progressT = TimeSpan.FromMinutes(0);
                     TimeSpan durationT = TimeSpan.FromMinutes(0);
 
-                    
-
-                    //  var deviceType = "";
                     var deviceVolume = "";
                     if (m_currentlyPlaying != null)
                     {
                         IPlayableItem currentlyPlayingItem = m_currentlyPlaying.Item;
                         m_currentTrack = currentlyPlayingItem as FullTrack;
 
-
                         if (m_currentTrack != null)
                         {
-                            //spotifyurllink = m_currentTrack.PreviewUrl; //does not seem to work correctly
+
                             title = m_currentTrack.Name;
                             try
                             {
-                                // deviceType = m_testing.Devices[0].Type;
+
                                 deviceVolume = m_testing.Devices[0].VolumePercent.ToString();
                             }
                             catch
                             {
-
 
                             }
 
@@ -161,7 +148,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
                                 artist = "";
                             }
 
-
                             allArtists = string.Join(", ", m_currentTrack.Artists.Select(artist => artist.Name.ToString()));
 
                             progressT = new TimeSpan(0, 0, 0, 0, (int)m_currentlyPlaying.ProgressMs);
@@ -170,18 +156,15 @@ namespace OSCVRCWiz.Services.Integrations.Media
                             progress = progressT.ToString(@"mm\:ss");
                             duration = durationT.ToString(@"mm\:ss");
 
-
-
                             progressHours = new TimeSpan(0, 0, 0, 0, (int)m_currentlyPlaying.ProgressMs).ToString(@"hh\:mm\:ss");
                             durationHours = new TimeSpan(0, 0, 0, 0, m_currentTrack.DurationMs).ToString(@"hh\:mm\:ss");
-
 
                             album = m_currentTrack.Album.Name.ToString();
                             try
                             {
                                 albumArtist = m_currentTrack.Album.Artists[0].ToString();
                             }
-                            catch 
+                            catch
                             {
                                 albumArtist = artist;
                             }
@@ -189,11 +172,9 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     }
                     if ((lastSong != title || VoiceWizardWindow.MainFormGlobal.rjToggleButtonPeriodic.Checked == true || playOnce) && !string.IsNullOrWhiteSpace(title) && title != "" && pauseSpotify != true)
                     {
-                        // VoiceWizardWindow.pauseBPM = true; pause removed to fix with spotify 
-                        // lastSong = title;
+
                         var spotifyPausedIndicator = "▶️";
 
-                       // if (fullSongPauseCheck != progress || playOnce)
                        if(m_currentlyPlaying.IsPlaying || playOnce)
                         {
                             spotifyPausedIndicator = "▶️";
@@ -253,18 +234,11 @@ namespace OSCVRCWiz.Services.Integrations.Media
                         theString = replaceProgresBar(theString, progressT, durationT);
                         theString = replaceHREmoji(theString, Int16.Parse(OSCListener.globalBPM));
 
-
-
-
-                        
-                       // if (fullSongPauseCheck != progress && VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == false)//stop outputting periodically if song paused
                        if (m_currentlyPlaying.IsPlaying && VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == false)
                         {
                             var textTime = theString;
                             textTime = textTime.Replace("{time}", DateTime.Now.ToString("h:mm:ss tt"));
 
-
-                            //  var ot = new OutputText();
                             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifySpam.Checked == true)
                             {
                                 Task.Run(() => OutputText.outputLog(textTime));
@@ -277,8 +251,8 @@ namespace OSCVRCWiz.Services.Integrations.Media
                             }
                             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifyChatboxDisable.Checked == false)
                             {
-                                //  theString = LineBreakerChatbox(theString, 28);//must always be the last
-                                Task.Run(() => OutputText.outputVRChatSpeechBubbles(theString, OutputText.DisplayTextType.Spotify)); //original
+
+                                Task.Run(() => OutputText.outputVRChatSpeechBubbles(theString, OutputText.DisplayTextType.Spotify));
 
                             }
                             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOBSText.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonMedia4OBS.Checked == true)
@@ -288,15 +262,9 @@ namespace OSCVRCWiz.Services.Integrations.Media
                             }
                         }
 
-                        // lastSong = title;
-                        // MainForm.justShowTheSong = false;
                         SpotifyAddon.lastSong = SpotifyAddon.title;
-                        // WindowsMedia.previousTitle = WindowsMedia.mediaTitle;
-                       // fullSongPauseCheck = progress;
-
 
                     }
-
 
                 }
                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
@@ -309,7 +277,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
             }
             catch (APIException e)
             {
-                if (e.Message != previousError) 
+                if (e.Message != previousError)
                 {
                     OutputText.outputLog("Spotify API Exception: " + e.Message + "Status Code: " + e.Response?.StatusCode, Color.Red);
                 }
@@ -324,11 +292,8 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 }
                 catch { }
 
-               // OutputText.outputLog("[If this continues, click the Connect Spotify button again.]", Color.DarkOrange);
-
                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                 {
-
 
                     if (VoiceWizardWindow.MainFormGlobal.buttonSpotify.ForeColor != Color.Red)
                     {
@@ -336,16 +301,12 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     }
                 });
 
-
             }
             catch (Exception ex)
             {
 
-
-                if (ex.Message == "Exception of type 'SpotifyAPI.Web.APITooManyRequestsException' was thrown.")//this will not work if they are translating their winform to a different language
+                if (ex.Message == "Exception of type 'SpotifyAPI.Web.APITooManyRequestsException' was thrown.")
                 {
-
-
 
                     var APIException = (APITooManyRequestsException)ex.InnerException;
                     OutputText.outputLog("Spotify APITooManyRequests Exception:  timed out for: " + APIException.RetryAfter, Color.Red);
@@ -354,41 +315,34 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 else
                 {
 
-                    if (previousError != "The access token expired" && previousError != "String is empty or null (Parameter 'clientId')" && previousError != "Exception of type 'SpotifyAPI.Web.APIException' was thrown.")//only say these once, dont spam them
+                    if (previousError != "The access token expired" && previousError != "String is empty or null (Parameter 'clientId')" && previousError != "Exception of type 'SpotifyAPI.Web.APIException' was thrown.")
                     {
                         var errorMsg = ex.Message + "\n" + ex.TargetSite + "\n\nStack Trace:\n" + ex.StackTrace;
-                       // OutputText.outputLog("Spotify Exception: " + ex.Message, Color.Red);
+
                         previousError = ex.Message.ToString();
                         try
                         {
                             if (ex.InnerException != null)
                             {
                                 errorMsg += "\n\n" + ex.InnerException.Message + "\n" + ex.InnerException.TargetSite + "\n\nStack Trace:\n" + ex.InnerException.StackTrace;
-                               // OutputText.outputLog("Spotify Inner Exception: " + ex.InnerException.Message, Color.Red);
+
                             }
 
                         }
                         catch { }
                         OutputText.outputLog("Spotify Exception: " + errorMsg, Color.Red);
-                        // if (ex.Message.Contains("The access token expired"))
-                        // {
-                       // OutputText.outputLog("[If this continues, click the Connect Spotify button again.]", Color.DarkOrange);
 
                         VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                         {
-
 
                             if (VoiceWizardWindow.MainFormGlobal.buttonSpotify.ForeColor != Color.Red)
                             {
                                 VoiceWizardWindow.MainFormGlobal.buttonSpotify.ForeColor = Color.Red;
                             }
                         });
-                        // }
+
                     }
                 }
-
-
-
 
             }
 
@@ -396,7 +350,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
         public static async Task windowsMediaGetSongInfo()
         {
             var spotifyPausedIndicator = "▶️";
-            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonWindowsMedia.Checked == true)  //10 media mode
+            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonWindowsMedia.Checked == true)
             {
                 if (pauseSpotify == false)
                 {
@@ -414,7 +368,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
                     TimeSpan progressT = WindowsMedia.getMediaProgress();
                     TimeSpan durationT = WindowsMedia.getMediaDuration();
-
 
                     theString = VoiceWizardWindow.MainFormGlobal.textBoxCustomSpot.Text.ToString();
 
@@ -455,9 +408,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
                     theString = replaceProgresBar(theString, progressT, durationT);
                     theString = replaceHREmoji(theString, Int16.Parse(OSCListener.globalBPM));
-                    // replaceHREmoji();
-
-
 
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonPeriodic.Checked == true)
                     {
@@ -466,7 +416,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonPeriodic.Checked == true)
                     {
-                        if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == true && WindowsMedia.mediaStatus != "Paused" || VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == false)//stop outputting periodically if song paused
+                        if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == true && WindowsMedia.mediaStatus != "Paused" || VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked == false)
                         {
 
                             MediaOutput(theString);
@@ -479,7 +429,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
                         MediaOutput(theString);
                     }
 
-
                 }
             }
         }
@@ -487,7 +436,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
         public static async Task soundpadGetSongInfo()
         {
             var spotifyPausedIndicator = "▶️";
-            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonWindowsMedia.Checked == true)  //10 media mode
+            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonWindowsMedia.Checked == true)
             {
                 if (pauseSpotify == false)
                 {
@@ -542,10 +491,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     theString = theString.Replace("{time24}", DateTime.Now.ToString("HH:mm"));
                     theString = theString.Replace("{time24Sec}", DateTime.Now.ToString("HH:mm:ss"));
 
-
                     MediaOutput(theString);
-
-
 
                 }
             }
@@ -568,8 +514,8 @@ namespace OSCVRCWiz.Services.Integrations.Media
             }
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifyChatboxDisable.Checked == false)
             {
-                //  text = LineBreakerChatbox(text, 28);//must always be the last
-                Task.Run(() => OutputText.outputVRChatSpeechBubbles(text, OutputText.DisplayTextType.WindowsMedia)); //original
+
+                Task.Run(() => OutputText.outputVRChatSpeechBubbles(text, OutputText.DisplayTextType.WindowsMedia));
 
             }
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOBSText.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonMedia4OBS.Checked == true)
@@ -581,16 +527,11 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
         }
 
-
-
-
-
         private static async Task OnErrorReceived(object sender, string error, string state)
         {
             Console.WriteLine($"Aborting authorization, error received: {error}");
             await _server.Stop();
         }
-
 
         public static async Task SpotifyConnect()
         {
@@ -600,15 +541,12 @@ namespace OSCVRCWiz.Services.Integrations.Media
             _server = new EmbedIOAuthServer(new Uri("http://127.0.0.1:5000/callback"), 5000);
             await _server.Start();
 
-
-            _server.AuthorizationCodeReceived += GetCallback;// for PKCE aka best method because you dont have to pass a clientSecret
+            _server.AuthorizationCodeReceived += GetCallback;
             _server.ErrorReceived += OnErrorReceived;
-
 
             var (verifier, challenge) = PKCEUtil.GenerateCodes();
             globalVerifier = verifier;
 
-            //  var loginRequest = new LoginRequest(_server.BaseUri, clientId,LoginRequest.ResponseType.Code)
             string clientId = legacyState ? clientIdLegacy : Settings1.Default.SpotifyKey;
             var loginRequest = new LoginRequest(_server.BaseUri, clientId, LoginRequest.ResponseType.Code)
             {
@@ -617,21 +555,16 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 Scope = new[] { Scopes.UserReadCurrentlyPlaying, Scopes.UserReadPlaybackState }
             };
 
-
             string url = loginRequest.ToUri().ToString();
-            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });//this link doesnt like the other method
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
             if (VoiceWizardWindow.MainFormGlobal.rjToggleShowConnectURISpotify.Checked)
             {
                 OutputText.outputLog(loginRequest.ToUri().ToString());
             }
 
-
-
-
         }
 
-        // This method should be called from your web-server when the user visits "http://127.0.0.1:5000/callback"
-        public static async Task GetCallback(object sender, AuthorizationCodeResponse response) //this function gets and saves the 
+        public static async Task GetCallback(object sender, AuthorizationCodeResponse response)
         {
             Debug.WriteLine("Getcallback code: " + response.Code.ToString());
 
@@ -640,8 +573,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
             Settings1.Default.PKCERefreshToken = initialResponse.RefreshToken;
             Settings1.Default.PKCEAccessToken = initialResponse.AccessToken;
             Settings1.Default.Save();
-
-
 
         }
         public static string Base64Encode(string plainText)
@@ -654,8 +585,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
             var base64EncodedBytes = Convert.FromBase64String(base64EncodedData);
             return Encoding.ASCII.GetString(base64EncodedBytes);
         }
-
-
 
         public static System.Threading.Timer spotifyTimer;
 
@@ -674,7 +603,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
         private static void doSpotifyTimerTick()
         {
-
 
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonCurrentSong.Checked == true)
             {
@@ -729,7 +657,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     {
                         if (WindowsMedia.mediaManager != null)
                         {
-                            WindowsMedia.mediaManager.ForceUpdate();//windows media will be forced to update on this interval, this is for debug
+                            WindowsMedia.mediaManager.ForceUpdate();
                             Debug.WriteLine("forced media");
                         }
                     }
@@ -744,10 +672,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
             spotifyTimer.Change(Int32.Parse(SpotifyAddon.spotifyInterval), 0);
 
-
         }
-
-
 
         public static void ChangeMediaUpdateInterval()
         {
@@ -765,10 +690,8 @@ namespace OSCVRCWiz.Services.Integrations.Media
             }
         }
 
-
         public static void printMediaOnce()
         {
-
 
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonCurrentSong.Checked == true)
             {
@@ -793,7 +716,6 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     Task.Run(() => WindowsMedia.GetSoundPadMedia());
                     Task.Run(() => SpotifyAddon.soundpadGetSongInfo());
 
-
                 }
 
                 else
@@ -802,7 +724,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     {
                         if (WindowsMedia.mediaManager != null)
                         {
-                            WindowsMedia.mediaManager.ForceUpdate();//windows media will be forced to update on this interval, this is for debug
+                            WindowsMedia.mediaManager.ForceUpdate();
                             Debug.WriteLine("forced media");
                         }
                     }
@@ -811,24 +733,17 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
             }
 
-
-
-
         }
-
 
         static string songProgressBar(TimeSpan progress, TimeSpan duration, string emoji, int progressBarLength)
         {
 
-            // Calculate the position of the circle in the progress bar
             int circlePosition = CalculateCirclePosition(progress, duration, progressBarLength);
 
-            // Display the progress bar
             string bar = DisplayProgressBar(circlePosition, progressBarLength, emoji);
             return bar;
 
         }
-
 
         static int CalculateCirclePosition(TimeSpan progress, TimeSpan duration, int progressBarLength)
         {
@@ -839,9 +754,8 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
         static string DisplayProgressBar(int circlePosition, int progressBarLength, string emoji)
         {
-            //string bar = "┣";
-            string bar = "\u2523";
 
+            string bar = "\u2523";
 
             for (int i = 0; i < progressBarLength; i++)
             {
@@ -851,15 +765,13 @@ namespace OSCVRCWiz.Services.Integrations.Media
                 }
                 else
                 {
-                    // bar += "-";
-                    // bar += "\u2014";
-                    // bar += "━";
+
                     bar += "\u2501";
-                   
+
                 }
             }
             bar += "\u252B";
-           // bar += "┫";
+
             return bar;
         }
 
@@ -888,23 +800,20 @@ namespace OSCVRCWiz.Services.Integrations.Media
 
             }
         }
-    
-           // string input = "{HREmoji (BPM: 0 E: 💀)(BPM: 40-59 E: 💔)(BPM: 60-100 E: ❤️)(BPM: 101-120 E: 💓)}";
 
         static string replaceHREmoji(string theString, int BPM)
         {
-          //  theString += "{HREmoji (BPM: 0 E: 💀)(BPM: 40-59 E: 💔)(BPM: 60-100 E: ❤️)(BPM: 101-120 E: 💓)}";
+
             int index = 0;
             string emoji = "";
-            
-           // string pattern = @"\{HREmoji(?:\s*\(BPM:\s*(\d+|\d+-\d+)\s*E:\s*([^\s)]+)\))*\}";
+
             string pattern = @"\{HREmoji(?:\s*\(BPM:\s*(\d+|\d+\s*-\s*\d+)\s*E:\s*([^)]+)\))*\}";
 
             MatchCollection matches = Regex.Matches(theString, pattern);
 
             foreach (Match match in matches)
             {
-                // Extracting BPM and Emoji values
+
                 foreach (Capture captureBPM in match.Groups[1].Captures)
                 {
                     Debug.WriteLine("MADE IT PAST THE FIRST CAPTURRE0**($&YBYB*TNT&");
@@ -912,7 +821,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
                     if (IsBPMInRange(BPM, bpmValue))
                     {
                         int emojiIndex = 0;
-                        // Extracting Emoji value
+
                         foreach (Capture captureEmoji in match.Groups[2].Captures)
                         {
                             if (emojiIndex == index)
@@ -920,9 +829,9 @@ namespace OSCVRCWiz.Services.Integrations.Media
                                 emoji = captureEmoji.Value;
                             }
                             emojiIndex++;
-                            
+
                         }
-                    }      
+                    }
                     index++;
                 }
             }
@@ -935,7 +844,7 @@ namespace OSCVRCWiz.Services.Integrations.Media
         {
             if (bpmValue.Contains("-"))
             {
-                // Range case
+
                 string[] range = bpmValue.Split('-');
                 int minBPM = int.Parse(range[0].Trim());
                 int maxBPM = int.Parse(range[1].Trim());
@@ -943,21 +852,11 @@ namespace OSCVRCWiz.Services.Integrations.Media
             }
             else
             {
-                // Single value case
+
                 int singleBPM = int.Parse(bpmValue);
                 return bpm == singleBPM;
             }
         }
-
-
-
-
-
-
-
-
-
-
 
     }
 }

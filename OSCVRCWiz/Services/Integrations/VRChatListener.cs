@@ -1,9 +1,8 @@
-﻿using CoreOSC;
+using CoreOSC;
 using OSCVRCWiz.Services.Text;
 using OSCVRCWiz.Settings;
 using OSCVRCWiz.Services.Speech;
 using System.Diagnostics;
-
 
 namespace OSCVRCWiz.Services.Integrations
 {
@@ -36,18 +35,16 @@ namespace OSCVRCWiz.Services.Integrations
 
         public static string[] textBoxes;
 
-
         public static string[] messageTextBoxes;
-
 
         public static void OnStartUp()
         {
-            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonVRCActivate.Checked == true)//turn on vrchat listener on start
+            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonVRCActivate.Checked == true)
             {
                 try
                 {
                     Task.Run(() => OSCLegacyVRChatListener());
-                   // Task.Run(() => OSCQueryStart());
+
                 }
                 catch (Exception ex) { OutputText.outputLog("[OSC VRChat Listener Error: Another Application is already listening on this port, please close that application and restart TTS Voice Wizard.]", Color.Red); }
                 VoiceWizardWindow.MainFormGlobal.button33.Enabled = false;
@@ -83,12 +80,8 @@ namespace OSCVRCWiz.Services.Integrations
                         };
         }
 
-
-        public static void OSCLegacyVRChatListener()//no in use remove apon release of oscquery
+        public static void OSCLegacyVRChatListener()
         {
-            //  int port = 9001;//VRChats default UDP // ONLY ONE APP CAN LISTEN HERE
-
-
 
             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
             {
@@ -102,8 +95,7 @@ namespace OSCVRCWiz.Services.Integrations
                 }
             });
 
-            setValues();//tesing this
-
+            setValues();
 
             HandleOscPacket callback = delegate (OscPacket packet)
             {
@@ -116,9 +108,8 @@ namespace OSCVRCWiz.Services.Integrations
                         messageAddress = messageReceived.Address.ToString();
                         if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonAFK.Checked == true)
                         {
-                            if (messageAddress == "/avatar/parameters/AFK")//AFK
+                            if (messageAddress == "/avatar/parameters/AFK")
                             {
-                               
 
                                 if (messageReceived.Arguments[0].ToString() == "True")
                                 {
@@ -130,7 +121,6 @@ namespace OSCVRCWiz.Services.Integrations
                                     AFKDetector = true;
                                     afkStartTime = DateTime.Now;
 
-
                                 }
                                 else
                                 {
@@ -141,12 +131,10 @@ namespace OSCVRCWiz.Services.Integrations
                                     AFKDetector = false;
                                 }
 
-
-
                             }
                         }
 
-                        if (messageAddress == "/avatar/parameters/DoSpeechToText")//Activate Speech to Text from OSC
+                        if (messageAddress == "/avatar/parameters/DoSpeechToText")
                         {
 
                             if (messageReceived.Arguments[0].ToString() == "True")
@@ -154,34 +142,9 @@ namespace OSCVRCWiz.Services.Integrations
                                 Task.Run(() => DoSpeech.MainDoSpeechTTS());
                             }
 
-
                         }
 
-                        int[] counters = { counter1, counter2, counter3, counter4, counter5, counter6, counter7, counter8, counter9, counter10 }; // Counters
-                      /*  TextBox[] textBoxes = {
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter1,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter2,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter3,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter4,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter5,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter6,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter7,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter8,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter9,
-                                    VoiceWizardWindow.MainFormGlobal.textBoxCounter10,
-                                };
-                        TextBox[] messageTextBoxes = {
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage1,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage2,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage3,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage4,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage5,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage6,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage7,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage8,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage9,
-                            VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage10,
-                        };*/
+                        int[] counters = { counter1, counter2, counter3, counter4, counter5, counter6, counter7, counter8, counter9, counter10 };
 
                         if(messageAddress.Contains("owo_suit_"))
                         {
@@ -190,7 +153,7 @@ namespace OSCVRCWiz.Services.Integrations
 
                         for (int i = 0; i < counters.Length; i++)
                         {
-                            
+
                             if (messageAddress == textBoxes[i] && messageReceived.Arguments[0].ToString() == "True")
                             {
                                 counters[i]++;
@@ -228,7 +191,6 @@ namespace OSCVRCWiz.Services.Integrations
                                         break;
                                 }
 
-
                                 var theString = messageTextBoxes[i];
                                 theString = theString.Replace("{counter}", counters[i].ToString());
 
@@ -244,16 +206,9 @@ namespace OSCVRCWiz.Services.Integrations
                 }
             };
 
-
-
             var listener = new UDPListener(Convert.ToInt32(FromVRChatPort), callback);
 
         }
-
-
-
-
-
 
         public  static System.Threading.Timer VRCCounterTimer;
 
@@ -267,12 +222,12 @@ namespace OSCVRCWiz.Services.Integrations
         {
 
             Thread t = new Thread(doVRCCounterTimerTick);
-            t.IsBackground = true; // Set the thread as a background thread
+            t.IsBackground = true;
             t.Start();
         }
         private static void doVRCCounterTimerTick()
         {
-           // OutputText.outputLog("timer tick");
+
             try
             {
 
@@ -283,10 +238,10 @@ namespace OSCVRCWiz.Services.Integrations
                     var theString = "";
                     theString = VoiceWizardWindow.MainFormGlobal.textBoxAFK.Text.ToString();
                     theString = theString.Replace("{time}", elapsedMinutesSeconds);
-                    if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonVRCSpamLog.Checked == true)//////////////delete when done testing
+                    if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonVRCSpamLog.Checked == true)
                     {
                         Task.Run(() => OutputText.outputLog(theString));
-                    }////////////////////////////////////////////////////
+                    }
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
                     {
                         Task.Run(() => OutputText.outputVRChatSpeechBubbles(theString, OutputText.DisplayTextType.Counters));
@@ -323,24 +278,11 @@ namespace OSCVRCWiz.Services.Integrations
                         prevCounter9,
                         prevCounter10,
                     };
-                   /* TextBox[] textBoxes = {
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage1,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage2,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage3,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage4,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage5,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage6,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage7,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage8,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage9,
-                        VoiceWizardWindow.MainFormGlobal.textBoxCounterMessage10,
-                    };*/
 
                     for (int i = 0; i < counters.Length; i++)
                     {
                         if (counters[i] > prevCounters[i])
                         {
-                            // prevCounters[i] = counters[i];
 
                             switch (i)
                             {
@@ -376,7 +318,7 @@ namespace OSCVRCWiz.Services.Integrations
                                     break;
                             }
 
-                            if (!SentValue)//so it can only happen once per tick to prevent timeout
+                            if (!SentValue)
                             {
                                 SentValue = true;
                                 var theString = messageTextBoxes[i];
@@ -392,12 +334,8 @@ namespace OSCVRCWiz.Services.Integrations
                                 }
                             }
 
-                           
                         }
                     }
-
-
-
 
                 }
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonCounterSaver.Checked == true)
@@ -418,71 +356,7 @@ namespace OSCVRCWiz.Services.Integrations
             }
             catch (Exception ex) { OutputText.outputLog($"[Error Occurred with VRC Counter: {ex.Message}]", Color.Red); }
 
-
         }
-
-        //VRChat OSCQuery Test Code
-      //  public static void OSCQueryStart() 
-      //  {
-           /* var tcpPort = Extensions.GetAvailableTcpPort();
-            var udpPort = Int16.Parse(FromVRChatPort);//Extensions.GetAvailableUdpPort();
-
-            var oscQueryService = new OSCQueryServiceBuilder()
-                .WithDefaults()
-                .WithTcpPort(tcpPort)
-                .WithUdpPort(udpPort)
-                .WithServiceName("TTS Voice Wizard")
-                .Build();
-
-            // Manually logging the ports to see them without a logger
-            OutputText.outputLog($"Started OSCQueryService at TCP {tcpPort}, UDP {udpPort}");*/
-
-            /* var OSCQueryService = new OSCQueryServiceBuilder()
-                                  .WithServiceName("TTS Voice Wizard v" + VoiceWizardWindow.currentVersion)
-                                 .WithTcpPort(Extensions.GetAvailableTcpPort())
-                                  .WithUdpPort(Convert.ToInt32(OSCPort))
-                                  .Build();*/
-
-            // Add endpoints for all data tts voice wizard sends out
-            // OSCQueryService.AddEndpoint("/path", "T means bool, i means int, f means float, s means string", Attributes.AccessValues.WriteOnly, null, "description for people to look at");
-
-       // }
-       /* public static void OSCQueryStop()
-        {
-            oscQueryService.Dispose();
-        }*/
-
-
-            /* private static async Task OSCQueryVRchatListener()//no in use yet
-             {
-                 var _tcpPort = 9001;//VRChats default TCP // MANY APPS CAN LISTEN HERE
-                 var response = await new HttpClient().GetAsync($"http://localhost:{_tcpPort}/avatar/parameters");
-                 //  var response = await new HttpClient().GetAsync($"http://localhost:{_tcpPort}/input");
-                 //  var response = await new HttpClient().GetAsync($"http://localhost:{_tcpPort}/tracking");
-                 //   var response = await new HttpClient().GetAsync($"http://localhost:{_tcpPort}/chatbox");
-
-                 if (response.IsSuccessStatusCode)
-                 {
-                     var responseString = await response.Content.ReadAsStringAsync();
-                     var result = JsonConvert.DeserializeObject<OSCQueryRootNode>(responseString);
-
-                     var sb = new StringBuilder();
-                     foreach (var pair in result.Contents)
-                     {
-
-                         sb.AppendLine($"{pair.Key}: {pair.Value}");
-
-                     }
-                     System.Diagnostics.Debug.WriteLine(sb.ToString());
-                     // OutputText.outputLog(sb.ToString());
-                     // OutputText.outputLog("hi");
-                 }
-
-                 await Task.Delay(500); // poll every half second
-
-                 OSCQueryVRchatListener();
-
-             }*/
 
         }
 }

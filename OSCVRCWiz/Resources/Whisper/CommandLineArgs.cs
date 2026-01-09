@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -9,16 +9,15 @@ using Whisper;
 
 namespace OSCVRCWiz.Resources.Whisper
 {
-    //MODIFIED FROM Const-me/Whisper/ example
+
     public sealed record class CommandLineArgs
     {
         public int n_threads = Environment.ProcessorCount;
         public int offset_t_ms = 0;
         public int offset_n = 0;
         public int duration_ms = 0;
-        public int max_context = 0;//To prevent repeating, multiple sources say that max_context should be 0. Other sources mention --entropy-thold other than the default 2.4 but this parameter does not seem to be present.
+        public int max_context = 0;
         public int max_len = 0;
-        // public int max_len = 300; //not implemented yet so changing this breaks it
 
         public float word_thold = 0.01f;
 
@@ -57,8 +56,6 @@ namespace OSCVRCWiz.Resources.Whisper
             p.max_len = output_wts && max_len == 0 ? 60 : max_len;
             p.setFlag(eFullParamsFlags.SpeedupAudio, speed_up);
 
-
-
         }
 
         public eResultFlags resultFlags()
@@ -69,8 +66,6 @@ namespace OSCVRCWiz.Resources.Whisper
 
         static eLanguage parseLanguage(string lang) =>
             Library.languageFromCode(lang) ?? throw new ArgumentException($"Unknown language code \"{lang}\"");
-
-        
 
         public CommandLineArgs(string[] argv)
         {
@@ -120,7 +115,7 @@ namespace OSCVRCWiz.Resources.Whisper
         {
             if (string.IsNullOrWhiteSpace(str))
                 return null;
-            // TODO: expose whisper_tokenize function, as a method of iModel COM interface
+
             throw new NotImplementedException();
         }
 

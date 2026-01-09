@@ -1,10 +1,8 @@
-﻿using CoreOSC;
+using CoreOSC;
 using OSCVRCWiz.Resources.StartUp.StartUp;
 using OSCVRCWiz.Services.Speech.TextToSpeech;
 using OSCVRCWiz.Services.Text;
 using Swan;
-
-
 
 namespace OSCVRCWiz.Services.Integrations
 {
@@ -22,7 +20,6 @@ namespace OSCVRCWiz.Services.Integrations
         public static string controllerChargeR = "";
         public static string controllerChargeL = "";
         public static string controllerChargeHMD = "";
-
 
         public static int globalAverageTrackerBattery = 0;
         public static int globalLeftControllerBattery = 0;
@@ -43,11 +40,10 @@ namespace OSCVRCWiz.Services.Integrations
 
         public static string spotifyLyrics = "";
 
-
         public static void OnStartUp()
         {
 
-            if (VoiceWizardWindow.MainFormGlobal.rjToggleActivateOSCListenerStart.Checked == true)//turn on osc listener on start
+            if (VoiceWizardWindow.MainFormGlobal.rjToggleActivateOSCListenerStart.Checked == true)
             {
                 Task.Run(() => OSCListener.OSCRecieveHeartRate());
             }
@@ -57,8 +53,7 @@ namespace OSCVRCWiz.Services.Integrations
         {
 
             int skipper = 0;
-            // var ot = new OutputText();
-            // The cabllback function
+
             OutputText.outputLog($"[OSC Listener Activated ({OSCReceiveport})]", Color.Green);
             if(OSCReceiveport==9000)
             {
@@ -76,9 +71,9 @@ namespace OSCVRCWiz.Services.Integrations
                 OscMessage messageReceived = null;
                 OscBundle messageBundle = null;
                 try { messageReceived = (OscMessage)packet; }
-                catch (Exception exx) //this is just the quickest why I thought of to deal with bundles without puting a loop around everything. (that implementation would probably be better)
+                catch (Exception exx)
                 {
-                    //  OutputText.outputLog("TESTING: " + exx.Message, Color.Red);
+
                     try
                     {
 
@@ -97,25 +92,13 @@ namespace OSCVRCWiz.Services.Integrations
 
                 }
 
-
-
-
-
                 if (messageReceived != null)
                 {
-                    //refactor using a switch case
-                    /*   switch(messageReceived.Address)
-                          {
-                              case "/avatar/parameters/averageTrackerBattery": break;
-                                  //etc
-                          }*/
 
                     try
                     {
-                        //VRCHAT BETA TESTING
 
                         System.Diagnostics.Debug.WriteLine("address: " + messageReceived.Address.ToString() + "argument: " + messageReceived.Arguments[0].ToString());
-
 
                         if (heartConnect == false)
                         {
@@ -124,7 +107,6 @@ namespace OSCVRCWiz.Services.Integrations
                             heartConnect = true;
 
                         }
-
 
                         if (messageReceived.Address == "/avatar/parameters/averageTrackerBattery")
                         {
@@ -151,8 +133,6 @@ namespace OSCVRCWiz.Services.Integrations
                             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                             {
 
-
-
                                 if (VoiceWizardWindow.MainFormGlobal.groupBoxTrackers.ForeColor != Color.Green)
                                 {
                                     VoiceWizardWindow.MainFormGlobal.groupBoxTrackers.ForeColor = Color.Green;
@@ -161,16 +141,11 @@ namespace OSCVRCWiz.Services.Integrations
                                 VoiceWizardWindow.MainFormGlobal.TrackerLabel.Text = labelBattery;
                             });
 
-
-
                             if (OSCReceiveSpamLog == true)
                             {
-                                //  ot.outputLog(MainForm, "[Average Tracker Battery Debug: " + messageReceived.Arguments[0].ToString() + "]");
-                                //  ot.outputLog(MainForm, "[Average Tracker Battery Debug: " + Convert.ToInt32(averageTrackerBattery) + "]");
+
                                 OutputText.outputLog("[Average Tracker Battery: " + battery + "%]");
                             }
-
-
 
                         }
                         if (messageReceived.Address == "/avatar/parameters/leftControllerBattery")
@@ -180,7 +155,6 @@ namespace OSCVRCWiz.Services.Integrations
                                 var forwardData = new OscMessage("/avatar/parameters/leftControllerBattery", (float)messageReceived.Arguments[0]);
                                 OSC.OSCSender.Send(forwardData);
                             }
-
 
                             decimal leftControllerBattery = decimal.Parse(messageReceived.Arguments[0].ToString());
                             int battery = Convert.ToInt32(leftControllerBattery * 100);
@@ -197,7 +171,6 @@ namespace OSCVRCWiz.Services.Integrations
 
                             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                             {
-
 
                                 if (VoiceWizardWindow.MainFormGlobal.groupBoxControllers.ForeColor != Color.Green)
                                 {
@@ -223,7 +196,6 @@ namespace OSCVRCWiz.Services.Integrations
                                 OSC.OSCSender.Send(forwardData);
                             }
 
-
                             decimal rightControllerBattery = decimal.Parse(messageReceived.Arguments[0].ToString());
                             int battery = Convert.ToInt32(rightControllerBattery * 100);
                             globalRightControllerBattery = battery;
@@ -239,7 +211,6 @@ namespace OSCVRCWiz.Services.Integrations
 
                             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                             {
-
 
                                 if (VoiceWizardWindow.MainFormGlobal.groupBoxRight.ForeColor != Color.Green)
                                 {
@@ -265,7 +236,6 @@ namespace OSCVRCWiz.Services.Integrations
                                 OSC.OSCSender.Send(forwardData);
                             }
 
-
                             decimal averageControllerBattery = decimal.Parse(messageReceived.Arguments[0].ToString());
                             int battery = Convert.ToInt32(averageControllerBattery * 100);
                             globalAverageControllerBattery = battery;
@@ -286,7 +256,6 @@ namespace OSCVRCWiz.Services.Integrations
 
                             }
 
-
                         }
                         if (messageReceived.Address == "/avatar/parameters/HMDBat")
                         {
@@ -295,7 +264,6 @@ namespace OSCVRCWiz.Services.Integrations
                                 var forwardData = new OscMessage("/avatar/parameters/HMDBat", (float)messageReceived.Arguments[0]);
                                 OSC.OSCSender.Send(forwardData);
                             }
-
 
                             decimal HMDControllerBattery = decimal.Parse(messageReceived.Arguments[0].ToString());
                             int battery = Convert.ToInt32(HMDControllerBattery * 100);
@@ -312,7 +280,6 @@ namespace OSCVRCWiz.Services.Integrations
 
                             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                             {
-
 
                                 if (VoiceWizardWindow.MainFormGlobal.groupBoxHead.ForeColor != Color.Green)
                                 {
@@ -344,15 +311,12 @@ namespace OSCVRCWiz.Services.Integrations
                             {
                                 skipper = 0;
 
-
                                 System.Diagnostics.Debug.WriteLine("OSC Received a message Address: " + messageReceived.Address);
                                 System.Diagnostics.Debug.WriteLine("OSC Received a message Argument: " + messageReceived.Arguments[0].ToString());
                                 globalBPM = messageReceived.Arguments[0].ToString();
 
                                 currentHR = Convert.ToInt32(messageReceived.Arguments[0].ToString());
                                 var labelBattery = $"❤️ {globalBPM}";
-
-
 
                                 if (currentHR > HRPrevious)
                                 {
@@ -377,8 +341,6 @@ namespace OSCVRCWiz.Services.Integrations
                                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                                 {
 
-
-
                                     if (VoiceWizardWindow.MainFormGlobal.groupBoxHeartrate.ForeColor != Color.Green)
                                     {
                                         VoiceWizardWindow.MainFormGlobal.groupBoxHeartrate.ForeColor = Color.Green;
@@ -387,12 +349,9 @@ namespace OSCVRCWiz.Services.Integrations
                                     VoiceWizardWindow.MainFormGlobal.HeartrateLabel.Text = labelBattery;
                                 });
 
-
-
                                 if (stopBPM == false)
                                 {
 
-                                    // var ot = new OutputText();
                                     if (OSCReceiveSpamLog == true)
                                     {
                                         OutputText.outputLog("Heartrate: " + messageReceived.Arguments[0].ToString() + " bpm");
@@ -400,28 +359,25 @@ namespace OSCVRCWiz.Services.Integrations
                                     }
                                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButton3.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true)
                                     {
-                                        OutputText.outputVRChat("ぬ" + messageReceived.Arguments[0].ToString() + " bpm", OutputText.DisplayTextType.HeartRate);  //ぬ means heart emoji
+                                        OutputText.outputVRChat("ぬ" + messageReceived.Arguments[0].ToString() + " bpm", OutputText.DisplayTextType.HeartRate);
 
                                     }
                                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButton3.Checked == false && VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true)
                                     {
-                                        OutputText.outputVRChat("Heartrate: " + messageReceived.Arguments[0].ToString() + " bpm", OutputText.DisplayTextType.HeartRate);  //add pack emoji toggle (add emoji selection page
+                                        OutputText.outputVRChat("Heartrate: " + messageReceived.Arguments[0].ToString() + " bpm", OutputText.DisplayTextType.HeartRate);
 
                                     }
                                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
                                     {
-                                        Task.Run(() => OutputText.outputVRChatSpeechBubbles("💓 " + messageReceived.Arguments[0].ToString() + " bpm", OutputText.DisplayTextType.HeartRate)); //original
-
+                                        Task.Run(() => OutputText.outputVRChatSpeechBubbles("💓 " + messageReceived.Arguments[0].ToString() + " bpm", OutputText.DisplayTextType.HeartRate));
 
                                     }
                                 }
 
-
-
                             }
 
                         }
-                        if (messageReceived.Address == "/TTSVoiceWizard/TextToSpeech")//OSCListener TTS
+                        if (messageReceived.Address == "/TTSVoiceWizard/TextToSpeech")
                         {
                             var text = messageReceived.Arguments[0].ToString();
                             bool useChatbox = true;
@@ -431,7 +387,7 @@ namespace OSCVRCWiz.Services.Integrations
                             {
                                 if (messageReceived.Arguments[1] != null && messageReceived.Arguments[2] != null)
                                 {
-                                    
+
                                     useChatbox = messageReceived.Arguments[1].ToBoolean();
                                     useKAT = messageReceived.Arguments[2].ToBoolean();
                                     chatboxOverride = true;
@@ -446,11 +402,8 @@ namespace OSCVRCWiz.Services.Integrations
                                 var forwardData = new OscMessage("/TTSVoiceWizard/TextToSpeech", text);
                                 OSC.OSCSender.Send(forwardData);
                             }
-                            //Task.Run(() => VoiceWizardWindow.MainFormGlobal.MainDoTTS(text, "OSCListener"));
 
                             TTSMessageQueue.QueueMessage(text, "OSCListener-TTS", chatboxOverride: chatboxOverride, useChatbox: useChatbox, useKAT: useKAT);
-
-
 
                             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                             {
@@ -461,12 +414,8 @@ namespace OSCVRCWiz.Services.Integrations
                                 }
                             });
 
-
-
-
-
                         }
-                        if (messageReceived.Address == "/TTSVoiceWizard/TextToText")//OSCListener TTT
+                        if (messageReceived.Address == "/TTSVoiceWizard/TextToText")
                         {
                             var text = messageReceived.Arguments[0].ToString();
                             bool useChatbox = true;
@@ -491,11 +440,8 @@ namespace OSCVRCWiz.Services.Integrations
                                 var forwardData = new OscMessage("/TTSVoiceWizard/TextToText", text);
                                 OSC.OSCSender.Send(forwardData);
                             }
-                            //Task.Run(() => VoiceWizardWindow.MainFormGlobal.MainDoTTS(text, "OSCListener"));
 
                             TTSMessageQueue.QueueMessage(text, "OSCListener-NoTTS", chatboxOverride: chatboxOverride, useChatbox: useChatbox, useKAT: useKAT);
-
-
 
                             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                             {
@@ -506,12 +452,8 @@ namespace OSCVRCWiz.Services.Integrations
                                 }
                             });
 
-
-
-
-
                         }
-                        if (messageReceived.Address == "/Atomikku/VRCSpotifyOSC/Lyrics")//OSCListener TTS
+                        if (messageReceived.Address == "/Atomikku/VRCSpotifyOSC/Lyrics")
                         {
                             spotifyLyrics = messageReceived.Arguments[0].ToString();
                         }
@@ -533,7 +475,7 @@ namespace OSCVRCWiz.Services.Integrations
             catch (Exception ex)
             {
                 OutputText.outputLog("[Error Starting OSC Listener: " + ex.Message + " ]", System.Drawing.Color.Red);
-              //  OutputText.outputLog("[Error Starting OSC Listener: " + ex.Message + " ]", System.Drawing.Color.Orange);
+
             }
 
         }

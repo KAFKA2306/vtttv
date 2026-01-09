@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Resources.Audio;
+using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Services.Text;
 
 namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
@@ -37,15 +37,12 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             }
             accents.SelectedItem = "English [en]";
 
-
             SynthesisGetAvailableVoicesAsync(voices, accents.Text.ToString());
-            // comboBox2.SelectedIndex = 0;
+
             styles.SelectedIndex = 0;
             styles.Enabled = true;
             voices.Enabled = true;
         }
-
-
 
         public static async Task SynthesisGetAvailableVoicesAsync(ComboBox voices, string fromLanguageFullname)
         {
@@ -60,8 +57,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     voices.Items.Add("nl-NL_MerelV3Voice");
                     break;
                 case "English [en]":
-
-
 
                     voices.Items.Add("en-US_AllisonV3Voice");
                     voices.Items.Add("en-US_EmilyV3Voice");
@@ -96,9 +91,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     voices.Items.Add("de-DE_DieterV3Voice");
                     voices.Items.Add("de-DE_ErikaV3Voice");
 
-
                     break;
-
 
                 case "Italian [it]":
                     voices.Items.Add("it-IT_FrancescaV3Voice");
@@ -126,7 +119,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     break;
 
                 default:
-                    voices.Items.Add("error"); break; // if translation to english happens something is wrong
+                    voices.Items.Add("error"); break;
 
             }
 

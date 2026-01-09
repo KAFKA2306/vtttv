@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using Newtonsoft.Json.Linq;
 using CoreOSC;
 using OSCVRCWiz.Services.Speech.TextToSpeech;
@@ -17,8 +17,6 @@ namespace OSCVRCWiz
         public static string recievedString = "";
         private static HttpListener _listener;
         static bool webCapEnabled = false;
-
-
 
         public static void WebCapToggle()
         {
@@ -53,33 +51,31 @@ namespace OSCVRCWiz
             System.Diagnostics.Debug.WriteLine("Starting HTTP listener...");
             Port = Int32.Parse(VoiceWizardWindow.MainFormGlobal.textBoxWebCaptionerPort.Text.ToString());
             Address = VoiceWizardWindow.MainFormGlobal.textBoxWebCaptionerAddress.Text.ToString();
-            // var httpServer = new HttpServer();
+
             Task.Run(() => Start());
             System.Diagnostics.Debug.WriteLine("Starting HTTP listener Started");
             OutputText.outputLog($"[Starting HTTP listener for Web Captioner Started. Webhook URL: http://{Address}:{Port}/ ]");
-            //button11.Enabled = false;
+
         }
         private static void webCapOff()
         {
             System.Diagnostics.Debug.WriteLine("Stopping HTTP listener...");
-            //  var httpServer = new HttpServer();
+
             Task.Run(() => Stop());
             System.Diagnostics.Debug.WriteLine("Stopped HTTP listener");
             OutputText.outputLog("[HTTP listener for Web Captioner Stopped.]");
-            // button11.Enabled = false;
+
         }
-
-
 
         public static void Start()
         {
             try
             {
-                //Port = Int32.Parse(VoiceWizardWindow.MainFormGlobal.textBoxWebCaptionerPort.Text.ToString());
+
                 OutputText.outputLog("Webport: " + Port);
                 _listener = new HttpListener();
-                // _listener.Prefixes.Add("http://*:" + Port.ToString() + "/");//MUST RUN AS ADMIN //http://127.0.0.1:8080/
-                _listener.Prefixes.Add($"http://{Address}:{Port}/"); //THIS IS THE EASIEST WAY TO MAKE USERS NOT HAVE TO RUN PROGRAM AS ADMINISTRATOR EVREY TIME!!! //http://localhost:8080/
+
+                _listener.Prefixes.Add($"http://{Address}:{Port}/");
                 _listener.Start();
 
                 Task.Run(() => Receive());
@@ -115,7 +111,6 @@ namespace OSCVRCWiz
             {
                 OutputText.outputLog("[HTTP listener Unexpected Error (still listening): " + ex.Message + "]", Color.Red);
                 webCapEnabled = true;
-                
 
             }
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
@@ -123,8 +118,6 @@ namespace OSCVRCWiz
                 var sttListening = new OscMessage("/avatar/parameters/stt_listening", false);
                 OSC.OSCSender.Send(sttListening);
             }
-
-
 
         }
 
@@ -148,8 +141,7 @@ namespace OSCVRCWiz
             System.IO.Stream output = response.OutputStream;
             output.Write(buffer, 0, buffer.Length);
             output.Close();
-            // for some reason if I remove this log then subsequent requests have no response
-            //OutputText.outputLog("[HTTP Response Complete]", Color.Green);
+
             Stop();
             Start();
         }
@@ -164,13 +156,11 @@ namespace OSCVRCWiz
             var context = _listener.EndGetContext(result);
             var request = context.Request;
 
-
             if (!request.HasEntityBody)
             {
                 Respond(context.Response, "invalid input", 400);
                 return;
             }
-
 
             JToken? textOb;
             try
@@ -198,13 +188,6 @@ namespace OSCVRCWiz
 
         }
 
-
-
     }
 
-
 }
-
-
-
-

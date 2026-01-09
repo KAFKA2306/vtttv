@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +20,7 @@ namespace OSCVRCWiz.RJControls
         {
             get
             {
-                //This makes the control's background transparent
+
                 CreateParams CP = base.CreateParams;
                 CP.ExStyle |= 0x20;
                 return CP;

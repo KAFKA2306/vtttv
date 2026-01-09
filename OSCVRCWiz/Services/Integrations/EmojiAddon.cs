@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz;
+using OSCVRCWiz;
 using OSCVRCWiz.Services.Text;
 using System;
 using System.Collections.Generic;
@@ -87,10 +87,8 @@ namespace OSCVRCWiz.Services.Integrations
 
         };
 
-
         public static List<string> EmojisTextList = new List<string>()
         {
-
 
             "ぬ",
 
@@ -166,10 +164,6 @@ namespace OSCVRCWiz.Services.Integrations
 
         };
 
-
-
-
-
         public static string DoEmojiReplacement(string text)
         {
             VoiceWizardWindow.MainFormGlobal.Invoke((System.Windows.Forms.MethodInvoker)delegate ()
@@ -181,10 +175,8 @@ namespace OSCVRCWiz.Services.Integrations
                     if (text.Contains(phrase, StringComparison.OrdinalIgnoreCase))
                     {
 
-
                         if (VoiceWizardWindow.MainFormGlobal.checkedListBox2.GetItemCheckState(index) == CheckState.Checked)
                         {
-                            //text = text.Replace(phrase, EmojisTextList.ElementAt(index));
 
                             text = Regex.Replace(text, phrase, EmojisTextList.ElementAt(index), RegexOptions.IgnoreCase);
 
@@ -208,9 +200,8 @@ namespace OSCVRCWiz.Services.Integrations
 
         public static void emojiReplacementsLoad()
         {
-            //  string words = VoiceWizardWindow.MainFormGlobal.richTextBox2.Text.ToString();
 
-            if (emojiReplacemntsStored != "") // if it's empty it will use the default list set above
+            if (emojiReplacemntsStored != "")
             {
                 ReplacePhraseList.Clear();
                 string words = emojiReplacemntsStored;
@@ -224,7 +215,7 @@ namespace OSCVRCWiz.Services.Integrations
 
                         try
                         {
-                            //VoiceWizardWindow.MainFormGlobal.comboBoxPreset.Items.Add(saveThisPreset.PresetName);
+
                             ReplacePhraseList.Add(phrase);
                             VoiceWizardWindow.MainFormGlobal.checkedListBox2.Items.Add("Emoji " + index + ": " + phrase, true);
 
@@ -237,7 +228,7 @@ namespace OSCVRCWiz.Services.Integrations
                     index++;
                 }
             }
-            else// this will only run ONCE EVER WHEN U RUN A NEW VERSION OF TTS VOICE WIZARD because after that it will have a saved list to load each time
+            else
             {
                 int index = 1;
                 foreach (var phrase in ReplacePhraseList)
@@ -258,8 +249,6 @@ namespace OSCVRCWiz.Services.Integrations
                 emojiReplacemntsStored += $"{phrase};";
             }
         }
-
-
 
     }
 }

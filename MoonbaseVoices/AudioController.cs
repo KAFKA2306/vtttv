@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 using SharpTalk;
 using System.Diagnostics;
@@ -20,12 +20,9 @@ namespace MoonbaseAlpha
         [HttpPost]
         public IActionResult Post(string voice, string text)
         {
-            //   Console.WriteLine("Sending synthesized audio");
-            //   Debug.WriteLine("Sending synthesized audio");
 
             var tts = new FonixTalkEngine();
-           
-              
+
                    switch (voice)
                    {
                        case "Betty": tts.Voice = TtsVoice.Betty; break;
@@ -40,7 +37,6 @@ namespace MoonbaseAlpha
                        default: break;
                    }
 
-                //////////////////// //   tts.Speak(phrase); //ONLY WORKS IF PROJECT > PROPERTIES > BUILD > PLATFORM TARGET  is set to x86 due to the FonixTalk.dll being 32 bit only
                 MemoryStream memoryStream = new MemoryStream();
                  tts.SpeakToStream(memoryStream, text);
                  tts.Dispose();
@@ -49,12 +45,8 @@ namespace MoonbaseAlpha
                  memoryStream.Seek(0, SeekOrigin.Begin);
 
                  var bytes = memoryStream.ToArray();
-                 string audio = Convert.ToBase64String(bytes); 
+                 string audio = Convert.ToBase64String(bytes);
 
-                //  string audio = "Your audio response here";
-               // string audio = voice+text;
-            //   Console.WriteLine("Synthesis Successful");
-          
             return Ok(audio);
         }
     }

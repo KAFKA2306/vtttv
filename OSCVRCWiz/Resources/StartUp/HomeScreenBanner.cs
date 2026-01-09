@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Services.Text;
+using OSCVRCWiz.Services.Text;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,7 +28,7 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
             {
                 using (HttpClient httpClient = new HttpClient())
                 {
-               
+
                     HttpResponseMessage response = await httpClient.GetAsync(jsonFileUrl);
 
                     if (response.IsSuccessStatusCode)
@@ -50,7 +50,7 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                     {
                         OutputText.outputLog("Failed to retrieve banner JSON data. HTTP Status Code: " + response.StatusCode);
                     }
-               
+
                 }
             }
             catch (Exception ex)
@@ -73,14 +73,12 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                     {
                             Task.Run(() => VoiceWizardWindow.MainFormGlobal.pictureBox5.Load(imageUrls[currentIndex]));
                             websiteLink = websiteLinks[currentIndex];
-                        
+
                     }
                     catch (Exception ex)
                     {
                         OutputText.outputLog($"Error Loading First Image {currentIndex}: {ex.Message}",Color.Red);
                     }
-
-
 
                     rotationTimer = new System.Threading.Timer(rotationtimertick);
                     rotationTimer.Change(15000, 0);
@@ -114,12 +112,12 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
 
         private static void doRotationTimerTick()
         {
-           
+
             currentIndex++;
 
             if (currentIndex >= imageUrls.Count)
             {
-                currentIndex = 0; // Start over if all images have been displayed
+                currentIndex = 0;
             }
 
             if (currentIndex < imageUrls.Count)
@@ -128,7 +126,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                 {
                     if (VoiceWizardWindow.MainFormGlobal.pictureBox5.Visible == true)
                     {
-                        // Update the PictureBox with the next image
 
                         Task.Run(() => VoiceWizardWindow.MainFormGlobal.pictureBox5.Load(imageUrls[currentIndex]));
                         websiteLink = websiteLinks[currentIndex];
@@ -141,9 +138,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                     OutputText.outputLog($"Error Loading Image {currentIndex}: {ex.Message}", Color.Red);
                 }
 
-                // Update the web browser control with the corresponding link
-
-
             }
             rotationTimer.Change(15000, 0);
         }
@@ -153,11 +147,11 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
             currentIndex--;
             if (currentIndex < 0)
             {
-                currentIndex = imageUrls.Count-1; // Start over if all images have been displayed
+                currentIndex = imageUrls.Count-1;
             }
             if (currentIndex < imageUrls.Count)
             {
-                // Update the PictureBox with the next image
+
                 try
                 {
                     Task.Run(() => VoiceWizardWindow.MainFormGlobal.pictureBox5.Load(imageUrls[currentIndex]));
@@ -168,11 +162,8 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                     OutputText.outputLog($"Error Loading Previous Image {currentIndex}: {ex.Message}", Color.Red);
                 }
 
-                // Update the web browser control with the corresponding link
-             
             }
             rotationTimer.Change(15000, 0);
-
 
         }
         public static void nextBanner()
@@ -180,12 +171,12 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
             currentIndex++;
             if (currentIndex >= imageUrls.Count)
             {
-                currentIndex = 0; // Start over if all images have been displayed
+                currentIndex = 0;
             }
 
             if (currentIndex < imageUrls.Count)
             {
-                // Update the PictureBox with the next image
+
                 try
                 {
                     Task.Run(() => VoiceWizardWindow.MainFormGlobal.pictureBox5.Load(imageUrls[currentIndex]));
@@ -196,7 +187,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                     OutputText.outputLog($"Error Loading Next Image {currentIndex}: {ex.Message}");
                 }
 
-                // Update the web browser control with the corresponding link
             }
             rotationTimer.Change(15000, 0);
 

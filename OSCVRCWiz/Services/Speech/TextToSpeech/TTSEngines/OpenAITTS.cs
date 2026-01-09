@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Resources.Audio;
+using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Services.Text;
 using System.Net.Http.Json;
 using System.Net;
@@ -24,7 +24,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 input.input = TTSMessageQueued.text;
                 input.voice = TTSMessageQueued.Voice;
                 input.model = "gpt-4o-mini-tts";
-
 
                 var httpRequestMessage = new HttpRequestMessage
                 {
@@ -65,7 +64,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
         }
 
-
         public static async void OpenAIPlayAudioPro(string audioString, TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct)
         {
 
@@ -73,7 +71,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             MemoryStream memoryStream = new MemoryStream(audiobytes);
             AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, true, AudioFormat.Mp3);
             memoryStream.Dispose();
-
 
         }
 
@@ -83,21 +80,17 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             accents.Items.Add("default");
             accents.SelectedIndex = 0;
 
-
             SynthesisGetAvailableVoicesAsync(voices, accents.Text.ToString());
-            // comboBox2.SelectedIndex = 0;
+
             styles.SelectedIndex = 0;
             styles.Enabled = false;
             voices.Enabled = true;
         }
 
-
-
         public static async Task SynthesisGetAvailableVoicesAsync(ComboBox voices, string fromLanguageFullname)
         {
 
             voices.Items.Clear();
-
 
             voices.Items.Add("alloy");
             voices.Items.Add("echo");
@@ -105,20 +98,15 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             voices.Items.Add("onyx");
             voices.Items.Add("nova");
             voices.Items.Add("shimmer");
-            //new voices
+
             voices.Items.Add("ash");
-           // voices.Items.Add("ballad"); //not producing audio
+
             voices.Items.Add("coral");
             voices.Items.Add("sage");
-            //voices.Items.Add("verse");
+
             voices.SelectedIndex = 0;
-         
 
         }
-
-
-
-
 
     }
 }

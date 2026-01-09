@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz;
+using OSCVRCWiz;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +10,7 @@ namespace Settings
     public class VoicePresets
     {
 
-        private struct voicePreset //use then when setting up presets
+        private struct voicePreset
         {
             public string PresetName;
             public string TTSMode;
@@ -31,8 +31,6 @@ namespace Settings
         private static Dictionary<string, voicePreset> presetDict = new Dictionary<string, voicePreset>();
         static bool editingPreset = false;
         public static string presetsStored = "";
-
-
 
         public static void presetSaveButton()
         {
@@ -58,7 +56,7 @@ namespace Settings
                 saveThisPreset.Pitch = "";
                 saveThisPreset.Volume = "";
                 saveThisPreset.Speed = "";
-                saveThisPreset.PitchNew = VoiceWizardWindow.MainFormGlobal.trackBarPitch.Value; 
+                saveThisPreset.PitchNew = VoiceWizardWindow.MainFormGlobal.trackBarPitch.Value;
                 saveThisPreset.VolumeNew = VoiceWizardWindow.MainFormGlobal.trackBarVolume.Value;
                 saveThisPreset.SpeedNew = VoiceWizardWindow.MainFormGlobal.trackBarSpeed.Value;
 
@@ -66,15 +64,14 @@ namespace Settings
 
                 presetDict.Add(saveThisPreset.PresetName, saveThisPreset);
             }
-            else // edit true
+            else
             {
                 presetDict.Remove(VoiceWizardWindow.MainFormGlobal.comboBoxPreset.SelectedItem.ToString());
-                // comboBoxPreset.Items.Remove();
 
                 voicePreset saveThisPreset = new voicePreset();
                 string nameToCheck = VoiceWizardWindow.MainFormGlobal.textBoxRename.Text.ToString();
                 int counter = 0;
-                VoiceWizardWindow.MainFormGlobal.comboBoxPreset.Items.Remove(VoiceWizardWindow.MainFormGlobal.comboBoxPreset.SelectedItem.ToString());//deleting name from list first make more sense so it can have the same same as it did before
+                VoiceWizardWindow.MainFormGlobal.comboBoxPreset.Items.Remove(VoiceWizardWindow.MainFormGlobal.comboBoxPreset.SelectedItem.ToString());
                 while (VoiceWizardWindow.MainFormGlobal.comboBoxPreset.Items.Contains(nameToCheck))
                 {
                     counter++;
@@ -94,8 +91,6 @@ namespace Settings
                 saveThisPreset.PitchNew = VoiceWizardWindow.MainFormGlobal.trackBarPitch.Value;
                 saveThisPreset.VolumeNew = VoiceWizardWindow.MainFormGlobal.trackBarVolume.Value;
                 saveThisPreset.SpeedNew = VoiceWizardWindow.MainFormGlobal.trackBarSpeed.Value;
-
-
 
                 VoiceWizardWindow.MainFormGlobal.comboBoxPreset.Items.Add(saveThisPreset.PresetName);
                 presetDict.Add(saveThisPreset.PresetName, saveThisPreset);
@@ -132,12 +127,10 @@ namespace Settings
             }
         }
 
-        public static void setPreset()//enables preset when selected
+        public static void setPreset()
         {
             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
             {
-
-
 
                 foreach (var kvp in presetDict)
                 {
@@ -148,13 +141,11 @@ namespace Settings
                         Thread.Sleep(10);
                         VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.SelectedItem = kvp.Value.Voice;
                          Thread.Sleep(10);
-                        
+
                         VoiceWizardWindow.MainFormGlobal.comboBoxSpokenLanguage.SelectedItem = kvp.Value.SpokenLang;
                         VoiceWizardWindow.MainFormGlobal.comboBoxTranslationLanguage.SelectedItem = kvp.Value.TranslateLang;
                         VoiceWizardWindow.MainFormGlobal.comboBoxStyleSelect.SelectedItem = kvp.Value.Style;
-                        // VoiceWizardWindow.MainFormGlobal.comboBoxPitch.SelectedItem = kvp.Value.Pitch;
-                        //  VoiceWizardWindow.MainFormGlobal.comboBoxVolume.SelectedItem = kvp.Value.Volume;
-                        //  VoiceWizardWindow.MainFormGlobal.comboBoxRate.SelectedItem = kvp.Value.Speed;
+
                         if (kvp.Value.Pitch == "" && kvp.Value.Volume == "" && kvp.Value.Speed == "")
                         {
                             VoiceWizardWindow.MainFormGlobal.trackBarPitch.Value = kvp.Value.PitchNew;
@@ -163,7 +154,7 @@ namespace Settings
                         }
                         else
                         {
-                            //legacy 
+
                             VoiceWizardWindow.MainFormGlobal.trackBarPitch.Value = 5;
                             VoiceWizardWindow.MainFormGlobal.trackBarVolume.Value = 5;
                             VoiceWizardWindow.MainFormGlobal.trackBarSpeed.Value = 5;
@@ -172,10 +163,6 @@ namespace Settings
                         VoiceWizardWindow.MainFormGlobal.updateAllTrackBarLabels();
                         if (kvp.Value.TTSMode == "Azure")
                         {
-                            // OutputText.outputLog("If Azure Voice Accent/Language is being loaded for the first time this session then preset will not select Voice properly. Simply re-select the preset.", Color.DarkOrange);
-                           // Thread.Sleep(500);
-                          //  VoiceWizardWindow.MainFormGlobal.comboBox2.SelectedItem = kvp.Value.Voice;
-                          ///  VoiceWizardWindow.MainFormGlobal.comboBox1.SelectedItem = kvp.Value.Style;
 
                         }
                     }
@@ -184,10 +171,9 @@ namespace Settings
             });
         }
 
-
         public static void presetsLoad()
         {
-            //  string words = VoiceWizardWindow.MainFormGlobal.richTextBox2.Text.ToString();
+
             string words = presetsStored;
             string[] split = words.Split(new char[] { ';' });
             foreach (string s in split)
@@ -201,9 +187,6 @@ namespace Settings
                     string[] split2 = words2.Split(new char[] { ':' });
                     foreach (string s2 in split2)
                     {
-
-
-
 
                         if (count == 1)
                         {
@@ -283,7 +266,6 @@ namespace Settings
                             System.Diagnostics.Debug.WriteLine("value added: " + s2);
 
                         }
-
 
                         count++;
                     }

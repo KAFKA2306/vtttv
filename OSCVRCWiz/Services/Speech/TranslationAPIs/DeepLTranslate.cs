@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DeepL;
@@ -9,11 +9,6 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
 {
     public class DeepLTranslate
     {
-        // private LanguageCode fromLanguage = LanguageCode.English;
-        //   private LanguageCode toLanguage = "en";
-        //public static string DeepLTranslationText="";
-        //  public static string DeepLKey = "";
-
 
         public static async Task<string> translateTextDeepL(string text)
         {
@@ -37,19 +32,15 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
                     case "en": to = "en-US"; break;
                 }
 
-
                 var translatedText = await translator.TranslateTextAsync(text, from, to);
                 System.Diagnostics.Debug.WriteLine(translatedText);
-                //System.Diagnostics.Debug.WriteLine(LanguageCode.English);
-                // System.Diagnostics.Debug.WriteLine(LanguageCode.French);
-                //VoiceWizardWindow.MainFormGlobal.ot.outputLog("[DeepL Input Text]: " + text);
+
                 return translatedText.ToString();
-                //  System.Diagnostics.Debug.WriteLine("DeepL: " + VoiceWizardWindow.MainFormGlobal.deepLString);
+
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("DeepL Translation Error: " + ex.Message);
-                // OutputText.outputLog("[Translation API Error: " + ex.Message + "]", Color.Red);
+
                 var errorMsg = ex.Message + "\n" + ex.TargetSite + "\n\nStack Trace:\n" + ex.StackTrace;
 
                 try
@@ -64,6 +55,6 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
                 return "";
             }
         }
-      
+
     }
 }

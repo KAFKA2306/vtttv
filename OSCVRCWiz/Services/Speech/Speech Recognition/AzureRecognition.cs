@@ -1,4 +1,4 @@
-﻿using Microsoft.CognitiveServices.Speech;
+using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.CognitiveServices.Speech.Translation;
 using CoreOSC;
@@ -35,25 +35,20 @@ namespace OSCVRCWiz
         public static string YourServiceRegion;
 
         public static System.Threading.Timer AzureTypingTimer;
-       // public static string AzureTypingInterval = "2000";
+
         public static string AzureTyping = "";
 
         private static bool firstRecognizing = false;
-     
 
-
-
-        public static void speechSetup(string toLanguageFullname, string fromLanguageFullname)//speech to text setup
+        public static void speechSetup(string toLanguageFullname, string fromLanguageFullname)
 
         {
-            //Current Implementation of speechSetup is not useful because I must still call speechSetup before each TTS Operation (because of checking for if default mic is changed from control panel/window settings)
-            //Only benefit is that the recognizers are resued but, I am not sure how helpful that is (do testing with both implementations, consider refactoring)
-            //Since Setup is still run at the begining of TTS still i can comment out all other occurences of speechSetup
+
             try
             {
                 speechConfig = SpeechConfig.FromSubscription(YourSubscriptionKey, YourServiceRegion);
                 translationConfig = SpeechTranslationConfig.FromSubscription(YourSubscriptionKey, YourServiceRegion);
-                // speechConfig.SetProperty(PropertyId.Speech_LogFilename, "logfile.txt"); //This line of code was the cause for an outstanding bug, if the log file becomes too full it causes issue. Further testing required before adding logging back as a feature.
+
                 fromLanguage = LanguageSelect.fromLanguageNew(fromLanguageFullname, "sourceLanguage", "Azure");
                 toLanguage = LanguageSelect.fromLanguageNew(toLanguageFullname, "targetLanguage", "Pro");
 
@@ -61,9 +56,6 @@ namespace OSCVRCWiz
                 {
                     toLanguage = "zh-Hans";
                 }
-              //  fromLanguageID(fromLanguageFullname); //Convert information from selected spoken language and sets fromLanuage to the ID
-              //  toLanguageID(toLanguageFullname);//Convert information from selected translation language and sets toLanuage to the ID
-
 
                 speechConfig.SpeechRecognitionLanguage = fromLanguage;
 
@@ -79,7 +71,7 @@ namespace OSCVRCWiz
                 }
                 translationConfig.SpeechRecognitionLanguage = fromLanguage;
                 translationConfig.AddTargetLanguage(toLanguage);
-                var audioConfig = AudioConfig.FromMicrophoneInput(AudioDevices.currentInputDevice); 
+                var audioConfig = AudioConfig.FromMicrophoneInput(AudioDevices.currentInputDevice);
 
                 if (AudioDevices.currentInputDeviceName == "Default")
                 {
@@ -87,7 +79,7 @@ namespace OSCVRCWiz
 
                 }
 
-                if (VoiceWizardWindow.MainFormGlobal.rjToggleButton4.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleExplicitPunctuation.Checked==true)//will be continuous
+                if (VoiceWizardWindow.MainFormGlobal.rjToggleButton4.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleExplicitPunctuation.Checked==true)
                 {
                     speechConfig.EnableDictation();
                 }
@@ -96,18 +88,16 @@ namespace OSCVRCWiz
                     speechConfig.SetServiceProperty("punctuation", "explicit", ServicePropertyChannel.UriQueryParameter);
                 }
 
-
-                if (continuousListening == false)//SO THAT STOPPING IT ACTUALLY WORKS
+                if (continuousListening == false)
                 {
                     translationRecognizer1 = new TranslationRecognizer(translationConfig, audioConfig);
                     speechRecognizer1 = new Microsoft.CognitiveServices.Speech.SpeechRecognizer(speechConfig, audioConfig);
                 }
 
-                //THESE SUBSCRIPTIONS ARE FOR CONTINUOUS LISTENING (I DO NEED TO REMOVE REDUNDENCY)
                 translationRecognizer1.Canceled += (sender, eventArgs) =>
                 {
                     Console.WriteLine(eventArgs.Result.Text);
-                   // var ot = new OutputText(); 
+
                     Task.Run(() => OutputText.outputLog("[Azure Speech Recognition Canceled (Translating): " + eventArgs.Result.Text + " Reason: " + eventArgs.Result.Reason.ToString() + " Error Details: " + eventArgs.ErrorDetails.ToString() + "]", Color.Red));
 
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
@@ -125,18 +115,12 @@ namespace OSCVRCWiz
                     {
                         var speechRecognitionResult = eventArgs.Result;
 
-
-                        var text = speechRecognitionResult.Text; //Dictation string
-                        string translatedString = speechRecognitionResult.Translations[toLanguage]; //Dictation string tranlated
-
-
-
+                        var text = speechRecognitionResult.Text;
+                        string translatedString = speechRecognitionResult.Translations[toLanguage];
 
                         AzureTyping = "";
                         firstRecognizing = true;
                         TTSMessageQueue.QueueMessage(text, "Azure Translate", translatedString);
-
-                      
 
                     }
 
@@ -154,7 +138,7 @@ namespace OSCVRCWiz
                         }
                     }
                     AzureTyping = eventArgs.Result.Text;
-                  //  OutputText.outputLog(eventArgs.Result.Text);
+
                 };
 
                 speechRecognizer1.Recognizing += (sender, eventArgs) =>
@@ -170,12 +154,11 @@ namespace OSCVRCWiz
                         }
                     }
                     AzureTyping = eventArgs.Result.Text;
-                   // OutputText.outputLog(eventArgs.Result.Text);
+
                 };
                 speechRecognizer1.Canceled += (sender, eventArgs) =>
                 {
-                   // Console.WriteLine(eventArgs.Result.Text);
-                   // var ot = new OutputText();
+
                     Task.Run(() => OutputText.outputLog("[Azure Speech Recognition Canceled: " + eventArgs.Result.Text + " Reason: " + eventArgs.Result.Reason.ToString() + " Error Details: " + eventArgs.ErrorDetails.ToString() + "]", Color.Red));
                     OutputText.outputLog("[If this issue occurs often try searching the discord server. The solution has likely already been documented]", Color.DarkOrange);
 
@@ -192,21 +175,15 @@ namespace OSCVRCWiz
                 {
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButton4.Checked == true)
                     {
-                        var text = eventArgs.Result.Text; //Dictation string
-
-
-                        //    Task.Run(() => VoiceWizardWindow.MainFormGlobal.MainDoTTS(text,"Azure"));
+                        var text = eventArgs.Result.Text;
 
                         AzureTyping = "";
                         firstRecognizing = true;
                         TTSMessageQueue.QueueMessage(text, "Azure");
 
-
-
-
                     }
                 };
-                ///Phrase List
+
                 var phraseList = PhraseListGrammar.FromRecognizer(speechRecognizer1);
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonPhraseList2.Checked == true)
                 {
@@ -231,16 +208,15 @@ namespace OSCVRCWiz
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("Speech Setup Failed: Make sure that you have setup your Azure Key and Region in the Provider tab (click the 'apply' buttons to apply changes) Reason:" + ex.Message.ToString());
+
                 OutputText.outputLog("[Azure Speech Setup Failed: " + ex.Message + "]", Color.Red);
                 OutputText.outputLog("[ Make sure that you have setup your Azure Key and Region in the Provider tab (click the 'apply' buttons to apply changes). Make sure that you have an input and output device selected in Settings > Audio]", Color.DarkOrange);
 
             }
         }
-      
-        public static async void speechTTTS(string fromLanguageFullname)//speech to text
+
+        public static async void speechTTTS(string fromLanguageFullname)
         {
-            
 
             System.Diagnostics.Debug.WriteLine("Speak into your microphone.");
             try
@@ -264,15 +240,14 @@ namespace OSCVRCWiz
 
                     }
                     var speechRecognitionResult = await speechRecognizer1.RecognizeOnceAsync();
-                    var text = speechRecognitionResult.Text; //Dictation string
+                    var text = speechRecognitionResult.Text;
 
                     StopAzureTypingTimer();
-                    
+
                     TTSMessageQueue.QueueMessage(text, "Azure");
                     DoSpeech.speechToTextButtonOff();
 
                 }
-
 
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButton4.Checked == true && continuousListening == false)
                 {
@@ -280,7 +255,7 @@ namespace OSCVRCWiz
                     DoSpeech.speechToTextOnSound();
                     continuousListening = true;
                     System.Diagnostics.Debug.WriteLine("continuousListening Enabled------------------------------");
-                    //  var ot = new OutputText();
+
                     OutputText.outputLog("[Azure Continuous Listening Enabled]");
 
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
@@ -297,11 +272,9 @@ namespace OSCVRCWiz
                     DoSpeech.speechToTextOffSound();
                     continuousListening = false;
                     StopAzureTypingTimer();
-                    // Make the following call at some point to stop recognition:
+
                     System.Diagnostics.Debug.WriteLine("continuousListening Disabled------------------------------");
                     await speechRecognizer1.StopContinuousRecognitionAsync();
-
-
 
                     OutputText.outputLog("[Azure Continuous Listening Disabled]");
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
@@ -325,12 +298,11 @@ namespace OSCVRCWiz
 
             }
         }
-        public static async void translationSTTTS(string toLanguageFullname, string fromLanguageFullname)//translate speech to text
+        public static async void translationSTTTS(string toLanguageFullname, string fromLanguageFullname)
         {
             System.Diagnostics.Debug.WriteLine("Speak into your microphone.");
            try
             {
-
 
                 System.Diagnostics.Debug.WriteLine($"Say something in '{fromLanguage}' and ");
                 System.Diagnostics.Debug.WriteLine($"we'll translate into '{toLanguage}'.\n");
@@ -361,13 +333,11 @@ namespace OSCVRCWiz
                         System.Diagnostics.Debug.WriteLine($"Translated into '{toLanguage}': {speechRecognitionResult.Translations[toLanguage]}");
                     }
 
-                    var text = speechRecognitionResult.Text.ToString(); //Dictation string; Global string used to keep track of result text for default azure speech to text
-                    string translatedString = speechRecognitionResult.Translations[toLanguage]; //Global string used to keep track of result text for translation azure speech to text
-
-                    // Task.Run(() => VoiceWizardWindow.MainFormGlobal.MainDoTTS(text, "Azure Translate",translatedString));
+                    var text = speechRecognitionResult.Text.ToString();
+                    string translatedString = speechRecognitionResult.Translations[toLanguage];
 
                     StopAzureTypingTimer();
-                   
+
                     TTSMessageQueue.QueueMessage(text, "Azure Translate", translatedString);
                     DoSpeech.speechToTextButtonOff();
 
@@ -394,16 +364,13 @@ namespace OSCVRCWiz
                 {
                     DoSpeech.speechToTextOffSound();
                     continuousListening = false;
-                    // Make the following call at some point to stop recognition:
+
                     System.Diagnostics.Debug.WriteLine("continuousListening Disabled------------------------------");
 
                     StopAzureTypingTimer();
 
                     await translationRecognizer1.StopContinuousRecognitionAsync();
 
-                    
-                    //   speechRecognizer1.Dispose();
-                    //  var ot = new OutputText();
                     OutputText.outputLog("[Azure Continuous Listening Disabled (Translating)]");
 
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
@@ -426,14 +393,14 @@ namespace OSCVRCWiz
 
             }
         }
-        public static async void stopContinuousListeningNow()//speech to text
+        public static async void stopContinuousListeningNow()
         {
             if (continuousListening == true)
             {
                 StopAzureTypingTimer();
-              
+
                 continuousListening = false;
-                // Make the following call at some point to stop recognition:
+
                 System.Diagnostics.Debug.WriteLine("continuousListening Disabled------------------------------");
 
                 await translationRecognizer1.StopContinuousRecognitionAsync();
@@ -448,26 +415,22 @@ namespace OSCVRCWiz
             }
         }
 
-
         public static void StartAzureTypingTimer()
         {
            AzureTypingTimer = new System.Threading.Timer(heartratetimertick);
            AzureTypingTimer.Change(Int32.Parse(VoiceWizardWindow.MainFormGlobal.textBoxPartialResultsInterval.Text.ToString()),0);
 
-            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked) 
+            if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked)
             {
                 OutputText.lastKatString = "";
                 var OSCClearKatEraseAll = new OscMessage("/avatar/parameters/KAT_Pointer", 255);
                 OSC.OSCSender.Send(OSCClearKatEraseAll);
             }
-            
-
-
 
         }
         public static void StopAzureTypingTimer()
         {
-            
+
             if (AzureTypingTimer != null)
             {
                 AzureTypingTimer.Change(Timeout.Infinite, Timeout.Infinite);
@@ -483,19 +446,14 @@ namespace OSCVRCWiz
 
         private static async void doAzureTypingTimerTick()
         {
-            //OutputText.outputLog($"partial timer still going");
+
             if (VoiceWizardWindow.MainFormGlobal.rjTogglePartialResults.Checked)
             {
                 if (AzureTyping != "")
                 {
-                    // var messageSpeechBubble = new OscMessage("/chatbox/input", AzureTyping, true, false);
-                    // OSC.OSCSender.Send(messageSpeechBubble);
-
-
 
                         OutputText.outputLog($"[Partial Results]: {AzureTyping}");
 
-                   
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonNoTTSKAT.Checked == false)
                     {
 
@@ -503,20 +461,16 @@ namespace OSCVRCWiz
                     }
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonNoTTSChat.Checked == false)
                     {
-                        //  theString = LineBreakerChatbox(theString, 28);//must always be the last
-                        Task.Run(() => OutputText.outputVRChatSpeechBubbles(AzureTyping, DisplayTextType.TextToText)); //original
+
+                        Task.Run(() => OutputText.outputVRChatSpeechBubbles(AzureTyping, DisplayTextType.TextToText));
 
                     }
-
-
 
                 }
                 AzureTypingTimer.Change(Int32.Parse(VoiceWizardWindow.MainFormGlobal.textBoxPartialResultsInterval.Text.ToString()), 0);
             }
-            
-            
-        }
 
+        }
 
      }
 }

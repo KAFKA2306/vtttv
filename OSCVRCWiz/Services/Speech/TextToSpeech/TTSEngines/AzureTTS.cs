@@ -1,4 +1,4 @@
-﻿using Microsoft.CognitiveServices.Speech;
+using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using System.Diagnostics;
 using OSCVRCWiz.Settings;
@@ -33,23 +33,13 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
         public static async Task SynthesisGetAvailableVoicesAsync(string fromLanguageFullname)
         {
-            // Creates an instance of a speech config with specified subscription key and service region.
-            // Replace with your own subscription key and service region (e.g., "westus").
-            // The default language is "en-us".
+
             VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Clear();
-            //  var ot = new OutputText();
 
             if (!RememberLanguageVoices.ContainsKey(fromLanguageFullname))
             {
-                //var config = SpeechConfig.FromSubscription(AzureRecognition.YourSubscriptionKey, AzureRecognition.YourServiceRegion);
 
-                // Creates a speech synthesizer
-                //  using (var synthesizer = new SpeechSynthesizer(config, null as AudioConfig))
-                //   {
-                //  var ts = new AzureRecognition();
-                //   var language = ts.toLanguageID(fromLanguageFullname);
-
-                List<string> localList = new List<string>();  //keep commented voices and release if they are widely requested (idea with new releasing all voices is to reduce load time)
+                List<string> localList = new List<string>();
                 switch (fromLanguageFullname)
                 {
                     case "Afrikaans [af]": localList.Add("af-ZA"); break;
@@ -82,7 +72,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     case "Bulgarian [bg]": localList.Add("bg-BG"); break;
                     case "Cantonese [yue]": localList.Add("yue-CN"); break;
                     case "Catalan [ca]": localList.Add("ca-ES"); break;
-
 
                     case "Chinese [zh]":
                         localList.Add("zh-CN");
@@ -131,8 +120,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                         break;
                     case "Greek [el]": localList.Add("el-GR"); break;
                     case "Hebrew [he]": localList.Add("he-IL"); break;
-                    
-
 
                     case "Hindi [hi]": localList.Add("hi-IN"); break;
                     case "Hungarian [hu]": localList.Add("hu-HU"); break;
@@ -146,7 +133,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
                     case "Kannada [kn]": localList.Add("kn-IN"); break;
                     case "Kazakh [kk]": localList.Add("kk-KZ"); break;
-                 
 
                     case "Korean [ko]": localList.Add("ko-KR"); break;
                     case "Latvian [lv]": localList.Add("lv-LV"); break;
@@ -155,8 +141,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     case "Malay [ms]": localList.Add("ms-MY"); break;
                     case "Marathi [mr]": localList.Add("mr-IN"); break;
                     case "Nepali [ne]": localList.Add("ne-NP"); break;
-                 
-
 
                     case "Norwegian [nb]": localList.Add("nb-NO"); break;
 
@@ -166,17 +150,17 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     case "Portuguese [pt]":
                         localList.Add("pt-BR");
                         localList.Add("pt-PT"); break;
-                   // case "Punjabi [pa]": localList.Add(""); break;
+
                     case "Romanian [ro]": localList.Add(""); break;
 
                     case "Russian [ru]": localList.Add("ru-RU"); break;
-                    case "Serbian [sr]": 
+                    case "Serbian [sr]":
                         localList.Add("sr-Latn-RS");
                         localList.Add("sr-RS");
                         break;
                     case "Slovak [sk]": localList.Add("sk-SK"); break;
                     case "Slovenian [sl]": localList.Add("sl-SI"); break;
-       
+
                     case "Spanish [es]":
                         localList.Add("es-MX");
                         localList.Add("es-ES");
@@ -202,9 +186,8 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                            localList.Add("es-UY");
                           localList.Add("es-VE");
 
-                        // 
                         break;
-                    case "Swahili [sw]": 
+                    case "Swahili [sw]":
                         localList.Add("sw-KE");
                         localList.Add("sw-TZ");
                         break;
@@ -213,18 +196,18 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                         localList.Add("zh-TW");
 
                         break;
-                    case "Tamil [ta]": 
+                    case "Tamil [ta]":
                         localList.Add("ta-IN");
                         localList.Add("ta-LK");
                         localList.Add("ta-MY");
                         localList.Add("ta-IN");
                         break;
                     case "Telugu [te]": localList.Add("te-IN"); break;
- 
+
                     case "Thai [th]": localList.Add("th-TH"); break;
                     case "Turkish [tr]": localList.Add("tr-TR"); break;
                     case "Ukrainian [uk]": localList.Add("uk-UA"); break;
-                    case "Urdu [ur]": 
+                    case "Urdu [ur]":
                         localList.Add("ur-IN");
                         localList.Add("ur-PK");
                         break;
@@ -232,11 +215,10 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     case "Vietnamese [vi]": localList.Add("vi-VN"); break;
                     case "Welsh [cy]": localList.Add("cy-GB"); break;
 
-
-                    default: localList.Add("en-US"); break; // if translation to english happens something is wrong
+                    default: localList.Add("en-US"); break;
                 }
                 List<string> voiceList = new List<string>();
-  
+
                 foreach (var locale in localList)
                 {
                     string basePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -245,11 +227,8 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
                     string fullPath = Path.Combine(basePath, relativePath);
 
-
-                    // replace with the path to the JSON file
                     string jsonFilePath = fullPath;
 
-                    // read the JSON data from the file
                     string jsonData = "";
                     try
                     {
@@ -260,12 +239,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                         OutputText.outputLog("[Could not find directory, try running TTSVoiceWizard as admin or moving the entire folder to a new location. (if it's on the desktop move it to documents or where your games are stored for example)]", Color.Red);
                     }
 
-
-
-                    // deserialize the JSON data into an array of Voice objects
                     Voice[] voices = JsonSerializer.Deserialize<Voice[]>(jsonData);
-
-
 
                     foreach (var voice in voices)
                     {
@@ -278,7 +252,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                                 styleList.AddRange(voice.StyleList);
                             }
 
-
                             AllVoices4Language.Add(voice.ShortName, styleList.ToArray());
                             VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add(voice.ShortName);
                             voiceList.Add(voice.ShortName);
@@ -289,11 +262,10 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 }
                 RememberLanguageVoices.Add(fromLanguageFullname, voiceList.ToArray());
 
-
             }
             else
             {
-                //  VoiceWizardWindow.MainFormGlobal.ot.outputLog("[DEBUG: Voices successfully reloaded locally]");
+
                 foreach (string voice in RememberLanguageVoices[fromLanguageFullname])
                 {
                     VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Items.Add(voice);
@@ -301,19 +273,19 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             }
             if (firstVoiceLoad == false)
             {
-                //  VoiceWizardWindow.MainFormGlobal.ot.outputLog("[DEBUG: setting voice]");
+
                 VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.SelectedIndex = 0;
             }
 
             if (firstVoiceLoad == true)
             {
-                //  VoiceWizardWindow.MainFormGlobal.ot.outputLog("[DEBUG: setting voice and style to saved values]");
+
                 try
                 {
-                    VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.SelectedIndex = Settings1.Default.voiceBoxSetting;//voice
-                    VoiceWizardWindow.MainFormGlobal.comboBoxStyleSelect.SelectedIndex = Settings1.Default.styleBoxSetting;//style (must be set after voice)
+                    VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.SelectedIndex = Settings1.Default.voiceBoxSetting;
+                    VoiceWizardWindow.MainFormGlobal.comboBoxStyleSelect.SelectedIndex = Settings1.Default.styleBoxSetting;
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     OutputText.outputLog("[Error selecting voice presets (Consider editing and re-saving your voice presets): " + ex.Message + "]", Color.Red);
                 }
@@ -323,7 +295,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
         }
 
-        public static async Task SynthesizeAudioAsync(TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct = default) //TTS Outputs through speakers //can not change voice style
+        public static async Task SynthesizeAudioAsync(TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct = default)
         {
             try
             {
@@ -334,20 +306,16 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 string voice = TTSMessageQueued.Voice;
 
                 var config = SpeechConfig.FromSubscription(AzureRecognition.YourSubscriptionKey, AzureRecognition.YourServiceRegion);
-                // config.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Raw16Khz16BitMonoTrueSilk);
-                  config.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Riff24Khz16BitMonoPcm);
-               // config.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Riff16Khz16BitMonoPcm);
-                //   config.SetProperty(PropertyId.Speech_LogFilename, "logfile.txt");
 
-                // https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#speaker-recognition
+                  config.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Riff24Khz16BitMonoPcm);
 
                 var ratePercent = rate;
                 var pitchPercent = pitch;
                 var volumePercent = (int)Math.Floor((volume * 0.1f - 1) * 100);
 
-                string rateString = "<prosody rate=\"" + ratePercent + "%\">"; //1
-                string pitchString = "<prosody pitch=\"" + pitchPercent + "%\">"; //1
-                string volumeString = "<prosody volume=\"" + volumePercent + "%\">"; //1
+                string rateString = "<prosody rate=\"" + ratePercent + "%\">";
+                string pitchString = "<prosody pitch=\"" + pitchPercent + "%\">";
+                string volumeString = "<prosody volume=\"" + volumePercent + "%\">";
 
                 Debug.WriteLine("rate: " + ratePercent);
                 Debug.WriteLine("pitch: " + pitchPercent);
@@ -356,49 +324,37 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 Debug.WriteLine("style: " + style);
                 Debug.WriteLine("text: " + TTSMessageQueued.text);
 
-
-                //  var audioConfig = AudioConfig.FromSpeakerOutput(AudioDevices.currentOutputDevice);
-                AudioOutputStream stream = AudioOutputStream.CreatePullStream();//this allows for instant synthesis for naudio output
-                var audioConfig = AudioConfig.FromStreamOutput(stream);//this allows for instant synthesis for naudio output
-                                                                       //  if (AudioDevices.currentOutputDeviceName == "Default")
-                                                                       //  {
-                                                                       //      audioConfig = AudioConfig.FromDefaultSpeakerOutput();
-                                                                       //  }
-
+                AudioOutputStream stream = AudioOutputStream.CreatePullStream();
+                var audioConfig = AudioConfig.FromStreamOutput(stream);
 
                 var synthesizerVoice = new SpeechSynthesizer(config, audioConfig);
-
 
                 string ssml0 = "<speak version=\"1.0\"";
                 ssml0 += " xmlns=\"http://www.w3.org/2001/10/synthesis\"";
                 if (style != "normal") { ssml0 += " xmlns:mstts=\"https://www.w3.org/2001/mstts\""; }
                 ssml0 += " xml:lang=\"en-US\">";
 
-                string thisVoice = "<voice name=\"" + voice + "\">";//
+                string thisVoice = "<voice name=\"" + voice + "\">";
                 ssml0 += thisVoice;
-
 
                 if (style != "normal")
                 {
                     ssml0 += "<mstts:express-as style=\"" + style + "\">";
 
                 }
-                if (rate != 0)//5 = default /middle of track bar
+                if (rate != 0)
                 {
                     ssml0 += rateString;
-
 
                 }
                 if (pitch != 0)
                 {
                     ssml0 += pitchString;
 
-
                 }
                 if (volume != 10)
                 {
                     ssml0 += volumeString;
-
 
                 }
                 ssml0 += TTSMessageQueued.text;
@@ -412,30 +368,16 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 Debug.WriteLine("DEBUG OUTPUT HERE");
                 Debug.WriteLine(ssml0);
 
-                // var result = await synthesizerVoice.
-
-             //   Stopwatch stopwatch = new Stopwatch();
-
-              //  stopwatch.Start();
                 var result = await synthesizerVoice.SpeakSsmlAsync(ssml0);
-               
 
                 if (result.Reason == ResultReason.SynthesizingAudioCompleted)
                 {
 
-
                     MemoryStream memoryStream = new MemoryStream(result.AudioData);
 
-                  //  stopwatch.Stop();
-                 //   OutputText.outputLog($"Processing/Response time:{stopwatch.ElapsedMilliseconds}", Color.Yellow);
                     AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, false, AudioFormat.Wav);
-                    
 
                     memoryStream.Dispose();
-
-
-
-
 
                 }
                 else if (result.Reason == ResultReason.Canceled)
@@ -456,12 +398,10 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     TTSMessageQueue.PlayNextInQueue();
                 }
 
-
-
             }
             catch (Exception ex)
             {
-                //  MessageBox.Show("No valid subscription key given or speech service has been disabled; " + ex.Message.ToString());
+
                 OutputText.outputLog("[Azure Error: " + ex.Message + "]", Color.Red);
                 OutputText.outputLog("[You may be missing an Azure Key, make sure to follow the setup guide: https://ttsvoicewizard.com/docs/TTSMethods/AzureTTS ]", Color.DarkOrange);
                 TTSMessageQueue.PlayNextInQueue();
@@ -559,9 +499,8 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             }
             accents.SelectedItem = "English [en]";
 
-
             AzureTTS.SynthesisGetAvailableVoicesAsync(accents.Text.ToString());
-            // comboBox2.SelectedIndex = 0;
+
             styles.Enabled = true;
             voices.Enabled = true;
 

@@ -1,4 +1,3 @@
-//from naudio/varispeed-sample repo
 
 namespace OSCVRCWiz.Resources.Audio.SoundTouch
 {

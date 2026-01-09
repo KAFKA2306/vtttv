@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz;
+using OSCVRCWiz;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +11,7 @@ namespace Settings
     public class MediaPresets
     {
 
-        private struct mediaPreset //use then when setting up presets
+        private struct mediaPreset
         {
             public string PresetName;
             public string mediaText;
@@ -39,7 +39,6 @@ namespace Settings
             else { return false; }
         }
 
-
         public static void presetSaveButton()
         {
             string text = VoiceWizardWindow.MainFormGlobal.textBoxCustomSpot.Text.ToString().Replace(":", "{colon}").Replace(";", "{semi}");
@@ -63,21 +62,19 @@ namespace Settings
                 saveThisPreset.StopPaused = boolToString(VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked);
                 saveThisPreset.SpamLog = boolToString(VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifySpam.Checked);
 
-
                 VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.Items.Add(saveThisPreset.PresetName);
 
                 presetDict.Add(saveThisPreset.PresetName, saveThisPreset);
             }
-            else // edit true
+            else
             {
                 presetDict.Remove(VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.SelectedItem.ToString());
-                // comboBoxPreset.Items.Remove();
 
                 mediaPreset saveThisPreset = new mediaPreset();
                 string nameToCheck = VoiceWizardWindow.MainFormGlobal.textBoxMediaPresetEdit.Text.ToString();
                 nameToCheck = nameToCheck.Replace(":", "").Replace(";", "");
                 int counter = 0;
-                VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.Items.Remove(VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.SelectedItem.ToString());//deleting name from list first make more sense so it can have the same same as it did before
+                VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.Items.Remove(VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.SelectedItem.ToString());
                 while (VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.Items.Contains(nameToCheck))
                 {
                     counter++;
@@ -85,15 +82,12 @@ namespace Settings
 
                 }
                 saveThisPreset.PresetName = nameToCheck;
-               // saveThisPreset.TTSMode = VoiceWizardWindow.MainFormGlobal.comboBoxTTSMode.SelectedItem.ToString();
+
                 saveThisPreset.mediaText = text;
                 saveThisPreset.updateInterval = SpotifyAddon.spotifyInterval;
                 saveThisPreset.OutputContinuously = boolToString(VoiceWizardWindow.MainFormGlobal.rjToggleButtonPeriodic.Checked);
                 saveThisPreset.StopPaused = boolToString(VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked);
                 saveThisPreset.SpamLog = boolToString(VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifySpam.Checked);
-
-
-
 
                 VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.Items.Add(saveThisPreset.PresetName);
                 presetDict.Add(saveThisPreset.PresetName, saveThisPreset);
@@ -129,19 +123,15 @@ namespace Settings
             }
         }
 
-        public static void setPreset()//enables preset when selected
+        public static void setPreset()
         {
             VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
             {
-
-
 
                 foreach (var kvp in presetDict)
                 {
                     if (VoiceWizardWindow.MainFormGlobal.comboBoxMediaPreset.SelectedItem.ToString() == kvp.Key)
                     {
-
-                       
 
                       VoiceWizardWindow.MainFormGlobal.textBoxCustomSpot.Text =kvp.Value.mediaText.ToString().Replace("{colon}", ":").Replace("{semi}", ";"); ;
                       SpotifyAddon.spotifyInterval = kvp.Value.updateInterval;
@@ -149,17 +139,15 @@ namespace Settings
                         VoiceWizardWindow.MainFormGlobal.rjToggleButtonPlayPaused.Checked = stringToBool(kvp.Value.StopPaused);
                         VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifySpam.Checked = stringToBool(kvp.Value.SpamLog);
 
-
                     }
                 }
 
             });
         }
 
-
         public static void presetsLoad()
         {
-            //  string words = VoiceWizardWindow.MainFormGlobal.richTextBox2.Text.ToString();
+
             string words = mediaPresetsStored;
             string[] split = words.Split(new char[] { ';' });
             foreach (string s in split)
@@ -173,9 +161,6 @@ namespace Settings
                     string[] split2 = words2.Split(new char[] { ':' });
                     foreach (string s2 in split2)
                     {
-
-
-
 
                         if (count == 1)
                         {
@@ -213,8 +198,6 @@ namespace Settings
                             System.Diagnostics.Debug.WriteLine("value added: " + s2);
 
                         }
-                       
-
 
                         count++;
                     }

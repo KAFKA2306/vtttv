@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Resources.Audio;
+using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Resources.StartUp.StartUp;
 using OSCVRCWiz.Services.Integrations;
 using OSCVRCWiz.Services.Integrations.Heartrate;
@@ -26,22 +26,16 @@ namespace OSCVRCWiz.Resources.StartUp
                 });
             }
         }
-        public static void OnAppStart() //immediate
+        public static void OnAppStart()
         {
             AudioDevices.InitializeAudioDevices();
             SystemSpeechTTS.InitializeSystemSpeech();
 
-         
-
-
-
         }
 
-
-
-        public static void OnFormLoad() //delayed until form is loaded correctly
+        public static void OnFormLoad()
         {
-           // VoiceWizardWindow.MainFormGlobal.pictureBox5.Load("https://github.com/VRCWizard/TTS-Voice-Wizard/assets/101527472/a60a93bf-de76-4872-924a-6bd2efec2b3e");
+
             OSC.InitializeOSC();
 
             HomeScreenBanner.initiateTimer();
@@ -52,12 +46,6 @@ namespace OSCVRCWiz.Resources.StartUp
             WhisperRecognition.initiateWhisper();
             VoiceWizardProRecognition.deepgramStartup();
             ToastNotification.initiateTimer();
-            
-
-            //timers
-            
-
-
 
             Updater.getGithubInfo();
             Hotkeys.InitiateHotkeys();
@@ -74,7 +62,6 @@ namespace OSCVRCWiz.Resources.StartUp
             WindowsMedia.addSoundPad();
             WebSocketServer.ActivateOnStartUp();
 
-
             OutputText.outputLog("[Guides: https://ttsvoicewizard.com/docs/intro ]");
 
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == false)
@@ -83,7 +70,7 @@ namespace OSCVRCWiz.Resources.StartUp
             }
             else
             {
-                //make get pro button white
+
                 VoiceWizardWindow.MainFormGlobal.iconButton17.ForeColor = Color.White;
                 VoiceWizardWindow.MainFormGlobal.iconButton17.IconColor = Color.White;
             }
@@ -92,8 +79,6 @@ namespace OSCVRCWiz.Resources.StartUp
 
         public static void saveBackupOfSettings()
         {
-            //https://stackoverflow.com/questions/42708868/user-config-corruption
-            //Took me way too long to discover this solution
 
             string configPathBackup;
             try
@@ -101,7 +86,7 @@ namespace OSCVRCWiz.Resources.StartUp
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
                 configPathBackup = config.FilePath + ".bak";
                 config.SaveAs(configPathBackup, ConfigurationSaveMode.Full, true);
-              //  System.Windows.Forms.MessageBox.Show("Backup Created");
+
             }
             catch (ConfigurationErrorsException ex)
             {
@@ -111,51 +96,45 @@ namespace OSCVRCWiz.Resources.StartUp
 
                 DateTime timestamp = DateTime.Now;
                 string timestampString = timestamp.ToString("-yyyyMMdd_HHmmss");
-               
-
 
                 string configPathFOREVERBackup = filename + timestampString + ".bak";
-                //_logger.Error(ex, "Cannot open config file");
 
                 try
                 {
-                    if (File.Exists(filename) == true)//no reason to delete since override
+                    if (File.Exists(filename) == true)
                     {
-                        //_logger.Error("Config file {0} content:\n{1}", filename, File.ReadAllText(filename));
-                        File.Delete(filename);//this was possibly causing an error which resulted in settings being lost on double bad closes
-                       // OutputText.outputLog("Deleted corruped config.", Color.MediumVioletRed);
+
+                        File.Delete(filename);
+
                     }
                 }
                 catch (System.Exception exx)
                 {
-                  //  OutputText.outputLog($"[Error Deleting Corrupted Config: {exx.Message}]", Color.Red);
+
                 }
 
                 try
                 {
-
 
                     if (!string.IsNullOrEmpty(configPathBackup) && File.Exists(configPathBackup))
                     {
-                        File.Copy(configPathBackup, configPathFOREVERBackup, true);//create a forever backup of the backup just incase any error happen.
-                        //OutputText.outputLog("Backedup the backup.", Color.MediumVioletRed);
-                        File.Copy(configPathBackup, filename, true);//create new config.
-                       // OutputText.outputLog("Loaded config from backup.", Color.MediumVioletRed);
+                        File.Copy(configPathBackup, configPathFOREVERBackup, true);
+
+                        File.Copy(configPathBackup, filename, true);
 
                     }
                 }
                 catch (System.Exception exx)
                 {
-                  //  OutputText.outputLog($"[Error Created New Config (or double backup): {exx.Message}]", Color.Red);
-                }
 
+                }
 
             }
 
         }
         public static void BackupStatus()
         {
-            if(safeStart) 
+            if(safeStart)
             {
                 OutputText.outputLog("[A backup of your settings was successfully created]", Color.Purple);
             }
@@ -164,8 +143,6 @@ namespace OSCVRCWiz.Resources.StartUp
                 OutputText.outputLog("[Configuration system failed to initialize - Your settings were loaded from a backup (changes to settings from your last session may have been lost)]", Color.MediumVioletRed);
             }
         }
-
-
 
     }
 }

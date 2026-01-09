@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using NAudio.Wave;
-//from naudio/varispeed-sample repo
+
 namespace OSCVRCWiz.Resources.Audio.SoundTouch
 {
     class VarispeedSampleProvider : ISampleProvider, IDisposable
@@ -17,10 +17,6 @@ namespace OSCVRCWiz.Resources.Audio.SoundTouch
         public VarispeedSampleProvider(ISampleProvider sourceProvider, int readDurationMilliseconds, SoundTouchProfile soundTouchProfile)
         {
             soundTouch = new SoundTouch();
-            // explore what the default values are before we change them:
-            //Debug.WriteLine(String.Format("SoundTouch Version {0}", soundTouch.VersionString));
-            //Debug.WriteLine("Use QuickSeek: {0}", soundTouch.GetUseQuickSeek());
-            //Debug.WriteLine("Use AntiAliasing: {0}", soundTouch.GetUseAntiAliasing());
 
             SetSoundTouchProfile(soundTouchProfile);
             this.sourceProvider = sourceProvider;
@@ -28,12 +24,12 @@ namespace OSCVRCWiz.Resources.Audio.SoundTouch
             channelCount = WaveFormat.Channels;
             soundTouch.SetChannels(channelCount);
             sourceReadBuffer = new float[WaveFormat.SampleRate * channelCount * (long)readDurationMilliseconds / 1000];
-            soundTouchReadBuffer = new float[sourceReadBuffer.Length * 10]; // support down to 0.1 speed
+            soundTouchReadBuffer = new float[sourceReadBuffer.Length * 10];
         }
 
         public int Read(float[] buffer, int offset, int count)
         {
-            if (playbackRate == 0) // play silence
+            if (playbackRate == 0)
             {
                 for (int n = 0; n < count; n++)
                 {
@@ -62,14 +58,14 @@ namespace OSCVRCWiz.Resources.Audio.SoundTouch
                     else
                     {
                         reachedEndOfSource = true;
-                        // we've reached the end, tell SoundTouch we're done
+
                         soundTouch.Flush();
                     }
                 }
                 var desiredSampleFrames = (count - samplesRead) / channelCount;
 
                 var received = soundTouch.ReceiveSamples(soundTouchReadBuffer, desiredSampleFrames) * channelCount;
-                // use loop instead of Array.Copy due to WaveBuffer
+
                 for (int n = 0; n < received; n++)
                 {
                     buffer[offset + samplesRead++] = soundTouchReadBuffer[n];

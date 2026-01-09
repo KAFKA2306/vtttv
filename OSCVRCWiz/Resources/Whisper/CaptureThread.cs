@@ -1,13 +1,11 @@
-﻿using OSCVRCWiz.Services.Text;
+using OSCVRCWiz.Services.Text;
 using OSCVRCWiz.Speech_Recognition;
 using System.Diagnostics;
 using Whisper;
 
-
-
 namespace OSCVRCWiz.Resources.Whisper
 {
-    //MODIFIED FROM Const-me/Whisper/ example
+
     public sealed class CaptureThread : CaptureCallbacks
     {
         public CaptureThread(CommandLineArgs args, Context context, iAudioCapture source)
@@ -22,14 +20,13 @@ namespace OSCVRCWiz.Resources.Whisper
                 thread = new Thread(threadMain) { Name = "Capture Thread" };
                 thread.Start();
 
-
                 var startTime = 0;
                 bool couldntStart = false;
                 while (!callbacks.WhisperStartedListening)
                 {
                     if (++startTime > 12000)
                     {
-                        //MessageBox.Show("Whisper is taking abnormally long to start.");
+
                         OutputText.outputLog("[Whisper is taking abornmally long to start, if this continues try restarting the app and select a smaller Whisper model]");
                         couldntStart = true;
                         break;
@@ -43,7 +40,6 @@ namespace OSCVRCWiz.Resources.Whisper
                 stopwatch.Stop();
                 TimeSpan elapsedTime = stopwatch.Elapsed;
                 OutputText.outputLog($"[Whisper Startup time: {elapsedTime.TotalMilliseconds} ms]");
-            
 
             }
             catch (Exception ex)
@@ -52,8 +48,6 @@ namespace OSCVRCWiz.Resources.Whisper
 
             }
         }
-
-    
 
         public void join()
         {

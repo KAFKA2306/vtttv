@@ -1,4 +1,4 @@
-﻿
+
 using OSCVRCWiz.Settings;
 using System.Diagnostics;
 using Settings;
@@ -31,7 +31,7 @@ namespace OSCVRCWiz
         private static bool settingsLoaded = false;
         public VoiceWizardWindow()
         {
-             InitializeComponent(); 
+             InitializeComponent();
             MainFormGlobal = this;
             StartUps.saveBackupOfSettings();
                 mainTabControl.Appearance = TabAppearance.FlatButtons;
@@ -233,7 +233,7 @@ namespace OSCVRCWiz
         {
                 if (VoiceWizardWindow.MainFormGlobal.IsDisposed)
                 {
-                    return; 
+                    return;
                 }
                 if (InvokeRequired)
                 {
@@ -297,7 +297,7 @@ namespace OSCVRCWiz
             navbarIntegrations.BackColor = UnSelectedNavBar;
             navbarTextToText.BackColor = UnSelectedNavBar;
         }
-        private void iconButton1_Click(object sender, EventArgs e) 
+        private void iconButton1_Click(object sender, EventArgs e)
         {
             allButtonColorReset();
             navbarHome.BackColor = SelectedNavBar;
@@ -318,36 +318,36 @@ namespace OSCVRCWiz
             mainTabControl.SelectTab(tabPage3);
             pictureBox5.Hide();
         }
-        private void iconButton5_Click(object sender, EventArgs e) 
+        private void iconButton5_Click(object sender, EventArgs e)
         {
             allButtonColorReset();
             navbarSettings.BackColor = SelectedNavBar;
             mainTabControl.SelectTab(General);
             pictureBox5.Hide();
         }
-        private void iconButton3_Click(object sender, EventArgs e) 
+        private void iconButton3_Click(object sender, EventArgs e)
         {
             allButtonColorReset();
             navbarIntegrations.BackColor = SelectedNavBar;
-            mainTabControl.SelectTab(tabAddons); 
+            mainTabControl.SelectTab(tabAddons);
             pictureBox5.Hide();
         }
-        private void iconButton4_Click(object sender, EventArgs e) 
+        private void iconButton4_Click(object sender, EventArgs e)
         {
             allButtonColorReset();
             navbarSpeechProvider.BackColor = SelectedNavBar;
             mainTabControl.SelectTab(APIs);
             pictureBox5.Hide();
         }
-        private void iconButton7_Click(object sender, EventArgs e) 
+        private void iconButton7_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", "https:
         }
-        private void iconButton6_Click(object sender, EventArgs e) 
+        private void iconButton6_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", "https:
         }
-        private void iconButton12_Click(object sender, EventArgs e) 
+        private void iconButton12_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", "https:
         }
@@ -361,7 +361,7 @@ namespace OSCVRCWiz
         }
         public bool logPanelExtended = true;
         public bool logPanelExtended2 = true;
-        private void richTextBox1_TextChanged(object sender, EventArgs e) 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             if (richTextBox1.Lines.Count() >= 2000)
             {
@@ -388,7 +388,7 @@ namespace OSCVRCWiz
                 logPanelExtended = true;
             }
         }
-        private void logTrash_Click(object sender, EventArgs e) 
+        private void logTrash_Click(object sender, EventArgs e)
         {
             ClearTextBox();
         }
@@ -457,7 +457,7 @@ namespace OSCVRCWiz
         {
             Task.Run(() => DoSpeech.MainDoSpeechTTS());
         }
-        private void iconButton36_Click(object sender, EventArgs e) 
+        private void iconButton36_Click(object sender, EventArgs e)
         {
             StartUps.fontSize = Int32.Parse(richTextBox3.Font.Size.ToString()) + 1;
             richTextBox3.Font = new Font("Segoe UI", StartUps.fontSize);
@@ -470,7 +470,7 @@ namespace OSCVRCWiz
                 richTextBox3.Font = new Font("Segoe UI", StartUps.fontSize);
             }
         }
-        private void ttsTrash_Click(object sender, EventArgs e) 
+        private void ttsTrash_Click(object sender, EventArgs e)
         {
             ClearTextBoxTTS();
         }
@@ -956,12 +956,12 @@ namespace OSCVRCWiz
                 TopMost = false;
             }
         }
-        private void button47_Click(object sender, EventArgs e) 
+        private void button47_Click(object sender, EventArgs e)
         {
             var appPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TTSVoiceWizard");
             Process.Start("explorer.exe", appPath);
         }
-        private void button38_Click_1(object sender, EventArgs e) 
+        private void button38_Click_1(object sender, EventArgs e)
         {
             SaveSettings.SavingSettings();
         }
@@ -973,7 +973,7 @@ namespace OSCVRCWiz
         }
         Color DarkModeColor = Color.FromArgb(31, 30, 68);
         Color LightModeColor = Color.FromArgb(68, 72, 111);
-        private void rjToggleButton7_CheckedChanged_1(object sender, EventArgs e) 
+        private void rjToggleButton7_CheckedChanged_1(object sender, EventArgs e)
         {
             if (rjToggleDarkMode.Checked )
             {
@@ -1328,7 +1328,7 @@ namespace OSCVRCWiz
         private void rjToggleButtonSaveToWav_CheckedChanged(object sender, EventArgs e)
         {
         }
-        private void iconButton9_Click(object sender, EventArgs e) 
+        private void iconButton9_Click(object sender, EventArgs e)
         {
             mainTabControl.SelectTab(tabSpotify);
         }
@@ -1336,23 +1336,23 @@ namespace OSCVRCWiz
         {
             mainTabControl.SelectTab(tabHeartBeat);
         }
-        private void iconButton24_Click(object sender, EventArgs e) 
+        private void iconButton24_Click(object sender, EventArgs e)
         {
             mainTabControl.SelectTab(VRCOSC);
         }
-        private void iconButton27_Click_1(object sender, EventArgs e) 
+        private void iconButton27_Click_1(object sender, EventArgs e)
         {
             mainTabControl.SelectTab(tabPage2);
         }
-        private void iconButton42_Click(object sender, EventArgs e) 
+        private void iconButton42_Click(object sender, EventArgs e)
         {
             mainTabControl.SelectTab(Replacements);
         }
-        private void iconButton25_Click(object sender, EventArgs e) 
+        private void iconButton25_Click(object sender, EventArgs e)
         {
             mainTabControl.SelectTab(discordTab);
         }
-        private void iconButton11_Click(object sender, EventArgs e) 
+        private void iconButton11_Click(object sender, EventArgs e)
         {
             mainTabControl.SelectTab(tabEmoji);
         }
@@ -1383,11 +1383,11 @@ namespace OSCVRCWiz
         }
         private void rjToggleButtonCurrentSong_CheckedChanged(object sender, EventArgs e)
         {
-            if (rjToggleButtonCurrentSong.Checked )  
+            if (rjToggleButtonCurrentSong.Checked )
             {
                 rjToggleButtonWindowsMedia.Checked = false;
             }
-            if (rjToggleButtonCurrentSong.Checked == false)  
+            if (rjToggleButtonCurrentSong.Checked == false)
             {
                 VoiceWizardWindow.MainFormGlobal.buttonSpotify.ForeColor = Color.White;
             }
@@ -1415,7 +1415,7 @@ namespace OSCVRCWiz
             }
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked  && VoiceWizardWindow.MainFormGlobal.rjToggleButtonSpotifyChatboxDisable.Checked == false)
             {
-                Task.Run(() => OutputText.outputVRChatSpeechBubbles(currentTime, OutputText.DisplayTextType.Time)); 
+                Task.Run(() => OutputText.outputVRChatSpeechBubbles(currentTime, OutputText.DisplayTextType.Time));
             }
         }
         private void buttonMediaPresetSaveNew_Click(object sender, EventArgs e)
@@ -1861,13 +1861,13 @@ namespace OSCVRCWiz
         {
             EmojiAddon.emojiEdit(Int32.Parse(textBox7.Text.ToString()), textBox6.Text.ToString());
         }
-        private void button25_Click_2(object sender, EventArgs e) 
+        private void button25_Click_2(object sender, EventArgs e)
         {
             checkedListBox2.Items.Clear();
             EmojiAddon.ReplacePhraseList.Clear();
             System.Windows.Forms.MessageBox.Show("Restart App");
         }
-        private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e) 
+        private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = checkedListBox2.SelectedIndex + 1;
             textBox7.Text = index.ToString();

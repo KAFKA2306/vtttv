@@ -1,4 +1,4 @@
-﻿using Vosk;
+using Vosk;
 using Newtonsoft.Json.Linq;
 using NAudio.Wave;
 using System.Diagnostics;
@@ -14,18 +14,13 @@ namespace OSCVRCWiz
     public class VoskRecognition
     {
 
-
         static Model model;
         static VoskRecognizer rec;
         static WaveInEvent waveIn;
-      //  static Dictionary<string, int> AlternateInputDevices = new Dictionary<string, int>();
+
         static bool voskEnabled = false;
 
         static bool voskPause = false;
-
-       // static bool voskMute = false;
-
-
 
         public static void toggleVosk()
         {
@@ -34,7 +29,6 @@ namespace OSCVRCWiz
                 if (voskEnabled == false)
                 {
                     DoSpeech.speechToTextOnSound();
-
 
                     if (voskPause==false)
                     {
@@ -45,16 +39,14 @@ namespace OSCVRCWiz
                     {
                         Task.Run(() => VoskRecognition.unpauseVosk());
                     }
-                       
+
                         voskEnabled = true;
-                       // voskPaused= true;
-                 
+
                 }
                 else
                 {
                     DoSpeech.speechToTextOffSound();
                     Task.Run(() => VoskRecognition.pauseVosk());
-
 
                     voskEnabled = false;
 
@@ -64,7 +56,7 @@ namespace OSCVRCWiz
             {
                 OutputText.outputLog("[No vosk model folder selected. When selecting you model foler make sure that the folder you select DIRECTLY contains the model files or the program will crash!]", Color.Red);
                 MessageBox.Show("No vosk model folder selected. When selecting your model folder make sure that the folder you select DIRECTLY contains the model files or the program will crash!");
-                
+
             }
         }
         public static void AutoStopVoskRecog()
@@ -84,17 +76,17 @@ namespace OSCVRCWiz
             var path = VoiceWizardWindow.MainFormGlobal.modelTextBox.Text.ToString();
             try
             {
-                if (!Directory.Exists(path + "\\graph"))//simiple check before crashing to let user know why.
+                if (!Directory.Exists(path + "\\graph"))
                 {
-                    // MessageBox.Show("It seems that the folder you have selected may not be a valid vosk model. The most common mistake is picking the outer folder when you should select the folder that contains the 'readme' and 'graph' folder etc.");
+
                     if (MessageBox.Show("Are you sure this is a valid vosk model? If the selected folder is not valid TTS Voice Wizard will crash. (The most common mistake is picking the outer folder when you should select the folder that contains the 'readme' and 'graph' folder etc.) ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        // user clicked yes
+
                         Task.Run(() => runVoskNow(path));
                     }
                     else
                     {
-                        // user clicked no
+
                         OutputText.outputLog("[Vosk Failed to Start]", Color.Red);
                         voskEnabled = false;
                     }
@@ -104,17 +96,14 @@ namespace OSCVRCWiz
                     Task.Run(() => runVoskNow(path));
                 }
 
-
             }
             catch (Exception ex)
             {
                 voskEnabled = false;
                 OutputText.outputLog("[Vosk Failed to Start]", Color.Red);
-              //  OutputText.outputLog("[Reminder that Vosk only works on the x64 build of TTS Voice Wizard]", Color.Red);
+
                 MessageBox.Show("Vosk Error: " + ex.Message);
                 DoSpeech.speechToTextOffSound();
-
-
 
             }
         }
@@ -124,13 +113,9 @@ namespace OSCVRCWiz
             model = new Model(path);
             rec = new VoskRecognizer(model, 48000f);
 
-
-
             waveIn = new WaveInEvent();
             waveIn.DeviceNumber = AudioDevices.getCurrentInputDevice();
 
-
-            //Start Listening
             waveIn.WaveFormat = new WaveFormat(48000, 1);
             waveIn.DataAvailable += WaveInOnDataAvailable;
             waveIn?.StartRecording();
@@ -151,20 +136,18 @@ namespace OSCVRCWiz
                     if (rec.AcceptWaveform(e.Buffer, e.BytesRecorded))
                     {
 
-                        // System.Diagnostics.Debug.WriteLine(rec.Result());
                         string json = rec.Result();
                         var text = JObject.Parse(json)["text"].ToString();
                         System.Diagnostics.Debug.WriteLine("Vosk: " + text);
-                        if (text != "")//only does stuff if the string is nothing silence
+                        if (text != "")
                         {
-                            // Task.Run(() => VoiceWizardWindow.MainFormGlobal.MainDoTTS(text, "Vosk"));
 
                             TTSMessageQueue.QueueMessage(text, "Vosk");
                         }
                     }
                     else
                     {
-                        //  VoiceWizardWindow.MainFormGlobal.ot.outputLog(VoiceWizardWindow.MainFormGlobal, rec.PartialResult());
+
                     }
                 }
             }
@@ -186,21 +169,12 @@ namespace OSCVRCWiz
                     Debug.WriteLine("wavein nulled");
                 }
 
-                // model = null;
-             //  rec = null;
-            //    Debug.WriteLine("rec nulled");
-               // model = null;
-                // Debug.WriteLine("model nulled");
-
-               
                 model?.Dispose();
                 Debug.WriteLine("model disposed");
-                
+
                 rec?.Dispose();
                 Debug.WriteLine("rec disposed");
 
-                //  model = null;
-                // Debug.WriteLine("model nulled");
                 OutputText.outputLog("[Vosk Stopped Listening (resources freed)]");
 
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
@@ -208,15 +182,13 @@ namespace OSCVRCWiz
                     var sttListening = new OscMessage("/avatar/parameters/stt_listening", false);
                     OSC.OSCSender.Send(sttListening);
                 }
-                // OutputText.outputLog("[Vosk Resources may not have properly been disposed (memory use still high in Task Manager). Consider restarting TTS Voice Wizard.]",Color.Red);
+
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message);
             }
-
-
 
         }
         public static void pauseVosk()
@@ -224,12 +196,7 @@ namespace OSCVRCWiz
             try
             {
                 waveIn?.StopRecording();
-                
-                // model = null;
-                //  rec = null;
-                //   rec?.Dispose();
-                //   model?.Dispose();
-              //  voskPaused = true;
+
                 OutputText.outputLog("[Vosk Muted, to free resources switch speech to text mode]");
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
                 {
@@ -247,8 +214,6 @@ namespace OSCVRCWiz
                 }
             }
 
-
-
         }
         public static void unpauseVosk()
         {
@@ -256,11 +221,7 @@ namespace OSCVRCWiz
             {
 
                 waveIn?.StartRecording();
-                // model = null;
-                //  rec = null;
-                //   rec?.Dispose();
-                //   model?.Dispose();
-               // voskPaused = false;
+
                 OutputText.outputLog("[Vosk Unmuted]");
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
                 {
@@ -272,8 +233,6 @@ namespace OSCVRCWiz
             {
                 MessageBox.Show(ex.Message);
             }
-
-
 
         }
     }

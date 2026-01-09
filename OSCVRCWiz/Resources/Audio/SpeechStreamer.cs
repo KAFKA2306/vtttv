@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace OSCVRCWiz.Resources.Audio
 {
-    //Credit to Sean, https://stackoverflow.com/questions/1682902/streaming-input-to-system-speech-recognition-speechrecognitionengine
+
     public class SpeechStreamer : Stream
     {
         private AutoResetEvent _writeEvent;
@@ -113,4 +113,3 @@ namespace OSCVRCWiz.Resources.Audio
         }
     }
 }
-

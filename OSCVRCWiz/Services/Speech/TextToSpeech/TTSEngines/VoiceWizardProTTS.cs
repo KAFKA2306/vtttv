@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using OSCVRCWiz.Settings;
 using OSCVRCWiz.Services.Text;
 using System.Diagnostics;
@@ -8,41 +8,30 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 {
     public class VoiceWizardProTTS
     {
-        private static readonly HttpClient client = new HttpClient();//reusing client save so much time!!! around 100ms
+        private static readonly HttpClient client = new HttpClient();
 
         public static async Task<string> VoiceWizardProTextAsSpeech(string apiKey, TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct = default)
         {
 
-            // if ("tiktokvoice.mp3" == null)
-            //   throw new NullReferenceException("Output path is null");
-            //text = FormatInputText(text);
-
-         //   Stopwatch stopwatch = new Stopwatch();
-            
             if (apiKey == "")
             {
                 OutputText.outputLog("[You appear to be missing an VoiceWizardPro Key, consider becoming a memeber: https://ko-fi.com/ttsvoicewizard/tiers ]", Color.DarkOrange);
                 return "";
             }
 
-
             string result = null;
             string translation = null;
             string audioString = "";
             string translationString = "";
 
-            // byte[] result = null;
             try
             {
-               // stopwatch.Start();
+
                 (result, translation) = await CallVoiceProAPIAsync(apiKey, TTSMessageQueued);
-              //  stopwatch.Stop();
-             //   OutputText.outputLog($"Full Runtime (Outside): {stopwatch.ElapsedMilliseconds}", Color.Yellow);
 
                 audioString = result;
                 translationString = translation;
 
-               // OutputText.outputLog("[AudioString: " + audioString + "]", Color.Red);
             }
             catch (Exception ex)
             {
@@ -52,73 +41,58 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
             }
 
-
-     
-
             switch (TTSMessageQueued.TTSMode)
             {
-                /* case "Moonbase":
-                 // code to execute when expression is equal to value1
-                 Task.Run(() => FonixTalkTTS.MoonBasePlayAudio(audioString, TTSMessageQueued, ct));
 
-                     break;*/
                 case "Azure":
-                    // code to execute when expression is equal to value2
+
                     Task.Run(() => AzureTTS.AzurePlayAudioPro(audioString, TTSMessageQueued, ct));
 
                     break;
                 case "Amazon Polly":
-                    // code to execute when expression is equal to value2
+
                     Task.Run(() => AmazonPollyTTS.AmazonPlayAudioPro(audioString, TTSMessageQueued, ct));
 
                     break;
 
                 case "Google (Pro Only)":
-                    // code to execute when expression is equal to value2
+
                     Task.Run(() => GoogleTTS.GooglePlayAudio(audioString, TTSMessageQueued, ct));
 
                     break;
 
                 case "IBM Watson (Pro Only)":
-                    // code to execute when expression is equal to value2
+
                     Task.Run(() => IBMWatsonTTS.WatsonPlayAudio(audioString, TTSMessageQueued, ct));
 
                     break;
                 case "Deepgram Aura (Pro Only)":
-                    // code to execute when expression is equal to value2
+
                     Task.Run(() => DeepgramAuraTTS.AuraPlayAudio(audioString, TTSMessageQueued, ct));
 
                     break;
 
                 case "Corqui (Pro Only)":
-                    // code to execute when expression is equal to value2
-                    //Task.Run(() => DeepgramAuraTTS.AuraPlayAudio(audioString, TTSMessageQueued, ct));
 
                     break;
                 case "OpenAI":
-                    // code to execute when expression is equal to value2
+
                     Task.Run(() => OpenAITTS.OpenAIPlayAudioPro(audioString, TTSMessageQueued, ct));
 
                     break;
-                /*case "Uberduck (Pro Only)":
-                    // code to execute when expression is equal to value2
-                    Task.Run(() => UberDuckTTS.UberPlayAudio(audioString, TTSMessageQueued, ct));*/
 
-                //break;
                 default:
-                    // code to execute when expression is not equal to any of the values
+
                     break;
             }
-            
 
             return translationString;
-            //System.Diagnostics.Debug.WriteLine("tiktok speech ran"+result.ToString());
+
         }
-       
+
         private static async Task<(string, string)> CallVoiceProAPIAsync(string apiKey, TTSMessageQueue.TTSMessage message)
         {
-          //  Stopwatch stopwatchfull = new Stopwatch();
-          //  stopwatchfull.Start();
+
             string voiceWizardAPITranslationString = "";
 
             bool translate = false;
@@ -153,14 +127,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 $"&toLang={message.TranslateLang}" +
                 $"&transAudio={translate}";
 
-           // Stopwatch stopwatch = new Stopwatch();
-           // stopwatch.Start();
-
             var response = await client.PostAsync(url, null).ConfigureAwait(false);
-
-          //  stopwatch.Stop();
-          //  OutputText.outputLog($"API RESPONSE TIME:{stopwatch.ElapsedMilliseconds}", Color.Yellow);
- 
 
             if (!response.IsSuccessStatusCode)
             {
@@ -168,7 +135,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 OutputText.outputLog("VoiceWizardPro API Error: " + response.StatusCode + ": " + errorMessage, Color.Red);
                 return ("", "");
             }
-
 
             var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
             System.Diagnostics.Debug.WriteLine("VoiceWizardPro API: " + json);
@@ -180,9 +146,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             var transCharUsed = JObject.Parse(json).SelectToken("transCharUsed").ToString();
             var transCharLimit = JObject.Parse(json).SelectToken("transCharLimit").ToString();
 
-
- 
-            _ = Task.Run(() => //code don't wait, making this a task saves 30ms
+            _ = Task.Run(() =>
             {
                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                 {
@@ -194,16 +158,11 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 });
             });
 
-
             voiceWizardAPITranslationString = JObject.Parse(json).SelectToken("translationText").ToString();
             var audioInBase64 = dataHere.ToString();
             System.Diagnostics.Debug.WriteLine("audio string: " + dataHere);
 
-          //  stopwatchfull.Stop();
-         //   OutputText.outputLog($"Function Runtime (from inside): {stopwatchfull.ElapsedMilliseconds}", Color.Yellow);
             return (audioInBase64, voiceWizardAPITranslationString);
-
-
 
         }
 
@@ -237,7 +196,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
               $"apiKey={apiKey}" +
                 $"&text={text}";
 
-
             var response = await client.PostAsync(url, null).ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
@@ -247,18 +205,15 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 return ("");
             }
 
-
             var json = response.Content.ReadAsStringAsync().Result.ToString();
             System.Diagnostics.Debug.WriteLine("VoiceWizardPro API: " + json);
-
-
 
             var GPTUsed = JObject.Parse(json).SelectToken("gptUsed").ToString();
             var GPTLimit = JObject.Parse(json).SelectToken("gptLimit").ToString();
 
             string responseText = JObject.Parse(json).SelectToken("responseString").ToString();
 
-            _ = Task.Run(() => //code don't wait, making this a task saves 30ms
+            _ = Task.Run(() =>
             {
                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                 {
@@ -268,11 +223,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 });
             });
 
-          //  OutputText.outputLog($"ChatGPT Characters Used: {GPTUsed}/{GPTLimit}");
-
             return responseText;
-
-
 
         }
     }

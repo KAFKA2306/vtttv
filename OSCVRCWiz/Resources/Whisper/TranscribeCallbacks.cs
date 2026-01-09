@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,6 @@ using OSCVRCWiz.Resources.StartUp.StartUp;
 
 namespace OSCVRCWiz.Resources.Whisper
 {
-    //MODIFIED FROM Const-me/Whisper/example
 
     public sealed class TranscribeCallbacks : Callbacks
     {
@@ -23,14 +22,13 @@ namespace OSCVRCWiz.Resources.Whisper
         readonly eResultFlags resultFlags;
         public static bool MuteWhisper = false;
 
-
         public TranscribeCallbacks(CommandLineArgs args)
         {
             try
             {
                 this.args = args;
                 resultFlags = args.resultFlags();
-                //Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             }
             catch (Exception ex)
             {
@@ -49,7 +47,6 @@ namespace OSCVRCWiz.Resources.Whisper
         public static string printTime(TimeSpan ts) =>
             ts.ToString("hh':'mm':'ss'.'fff", CultureInfo.InvariantCulture);
 
-
         private bool IsSegmentInVoiceActivation(TimeSpan segmentStart, TimeSpan segmentEnd, double offset)
         {
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonWhisperFilterInLog.Checked)
@@ -58,24 +55,18 @@ namespace OSCVRCWiz.Resources.Whisper
             }
             foreach (var activationTime in WhisperRecognition.voiceActivationTimes)
             {
-             
-
 
                 TimeSpan start = activationTime.Item1.Subtract(TimeSpan.FromSeconds(offset));
                 TimeSpan end = activationTime.Item2.Add(TimeSpan.FromSeconds(offset));
 
-
-
-                // Check for overlap
                 if (segmentStart < end && segmentEnd > start)
                 {
-                    return true; // Overlapping
+                    return true;
                 }
             }
 
-            return false; // No overlap
+            return false;
         }
-
 
         protected override void onNewSegment(Context sender, int countNew)
         {
@@ -95,11 +86,9 @@ namespace OSCVRCWiz.Resources.Whisper
                 for (int i = s0; i < res.segments.Length; i++)
                 {
                     sSegment seg = res.segments[i];
-                   
 
                     stuff = seg.text.ToString().Trim();
                     Debug.WriteLine($"segment {s0}: {stuff}");
-
 
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleVAD.Checked)
                     {
@@ -108,7 +97,7 @@ namespace OSCVRCWiz.Resources.Whisper
                         Debug.WriteLine(printTime(seg.time.begin + WhisperRecognition.WhisperStartTime) + " - " + printTime(seg.time.end + WhisperRecognition.WhisperStartTime));
                         if (IsSegmentInVoiceActivation(seg.time.begin + WhisperRecognition.WhisperStartTime, seg.time.end + WhisperRecognition.WhisperStartTime, Convert.ToDouble(VoiceWizardWindow.MainFormGlobal.textBoxWhisperVADOffset.Text.ToString(), CultureInfo.InvariantCulture)) || WhisperRecognition.isVoiceDetected)
                         {
-                           // OutputText.outputLog($"segment approved by VAD", Color.Blue);
+
                         }
                         else
                         {
@@ -126,8 +115,6 @@ namespace OSCVRCWiz.Resources.Whisper
                         }
                     }
 
-
-
                         if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonFilterNoiseWhisper.Checked == true)
                     {
 
@@ -140,7 +127,6 @@ namespace OSCVRCWiz.Resources.Whisper
                             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonLog.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonWhisperFilterInLog.Checked == true)
                             {
 
-
                                 OutputText.outputLog("Whisper (FILTERED): " + stuff, Color.Orange);
                             }
                         }
@@ -149,7 +135,7 @@ namespace OSCVRCWiz.Resources.Whisper
                     {
                         if (stuff.StartsWith('[') || stuff.EndsWith(']') || stuff.StartsWith('(') || stuff.EndsWith(')') || stuff.StartsWith('*') || stuff.EndsWith('*'))
                         {
-                            string pattern = @"[*()\[\]]"; // Match any of these characters
+                            string pattern = @"[*()\[\]]";
                             stuff = Regex.Replace(stuff, pattern, "", RegexOptions.IgnoreCase);
                             stuff = "'" + stuff + "'";
                         }
@@ -165,7 +151,7 @@ namespace OSCVRCWiz.Resources.Whisper
                     WhisperRecognition.whisperTimer.Change(250, 0);
 
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -173,7 +159,6 @@ namespace OSCVRCWiz.Resources.Whisper
                 OutputText.outputLog("[Whisper NewSegment Error: " + ex.Message.ToString() + "]", Color.Red);
 
             }
-
 
         }
     }

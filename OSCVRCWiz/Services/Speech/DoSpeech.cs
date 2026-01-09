@@ -1,4 +1,4 @@
-﻿using CoreOSC;
+using CoreOSC;
 using OSCVRCWiz.Services.Integrations.Media;
 using OSCVRCWiz.Services.Integrations;
 using OSCVRCWiz.Services.Speech.TextToSpeech;
@@ -9,7 +9,6 @@ using OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines;
 using OSCVRCWiz.Resources.StartUp.StartUp;
 using OSCVRCWiz.Resources.Audio;
 
-
 namespace OSCVRCWiz.Services.Speech
 {
     public class DoSpeech
@@ -18,14 +17,11 @@ namespace OSCVRCWiz.Services.Speech
         static CancellationTokenSource speechCt = new();
         public static string TTSModeSaved = "System Speech";
 
-
-
         public static void TTSButonClick()
         {
-            if (Hotkeys.captureEnabled == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonRefocus.Checked == true)//is capturing so turn it off
+            if (Hotkeys.captureEnabled == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonRefocus.Checked == true)
             {
 
-                // Activate and bring the previous window to the front
                 if (Hotkeys.prevFocusedWindow != IntPtr.Zero)
                 {
                     Hotkeys.SetForegroundWindow(Hotkeys.prevFocusedWindow);
@@ -39,13 +35,7 @@ namespace OSCVRCWiz.Services.Speech
                 text = VoiceWizardWindow.MainFormGlobal.richTextBox3.Text.ToString();
                 TTSMessageQueue.QueueMessage(VoiceWizardWindow.MainFormGlobal.richTextBox3.Text.ToString(), "Text");
             });
-            
 
-
-
-
-            //  if (TTSMessageQueued.STTMode == "Text")
-            // {
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonSounds.Checked == true)
             {
                 try
@@ -77,30 +67,19 @@ namespace OSCVRCWiz.Services.Speech
                 if (VoiceWizardWindow.MainFormGlobal.IsHandleCreated)
                 {
 
-
-
-                    
                     var language = TTSMessageQueued.TranslateLang;
-                    //  VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
-                    //  {
 
-                    //  language = TTSMessageQueued.TranslateLang;
-
-                    // });
-
-                    //  string selectedTTSMode = TTSModeSaved;
                     string selectedTTSMode = TTSMessageQueued.TTSMode;
-                    //VoiceCommand task
 
                     if ((AzureRecognition.YourSubscriptionKey == "" && selectedTTSMode == "Azure") && VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked != true)
                     {
-                        //  var ot = new OutputText();
+
                         OutputText.outputLog("[You appear to be missing an Azure Key, make sure to follow the setup guide: https://ttsvoicewizard.com/docs/TTSMethods/AzureTTS ]", Color.DarkOrange);
                     }
                     VoiceCommands.MainDoVoiceCommand(TTSMessageQueued.text);
                     if (selectedTTSMode == "Azure" && VoiceWizardWindow.MainFormGlobal.rjToggleButtonStyle.Checked == true)
                     {
-                        TTSMessageQueued.Style = VoiceWizardWindow.MainFormGlobal.comboBoxStyleSelect.Text.ToString();// fix for speaking style not changing
+                        TTSMessageQueued.Style = VoiceWizardWindow.MainFormGlobal.comboBoxStyleSelect.Text.ToString();
                     }
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleReplaceBeforeTTS.Checked == true)
                     {
@@ -120,13 +99,13 @@ namespace OSCVRCWiz.Services.Speech
                             TTSMessageQueued.text = await ChatGPTAPI.GPTResponse(TTSMessageQueued.text);
                             TTSMessageQueued.STTMode = "ChatGPT 🤖";
                         }
-                      
+
                     }
                     var originalText = TTSMessageQueued.text;
-                    var writeText = TTSMessageQueued.text;//send to osc
+                    var writeText = TTSMessageQueued.text;
 
-                    var speechText = TTSMessageQueued.text;//send to tts
-                    var newText = TTSMessageQueued.text; //translated text
+                    var speechText = TTSMessageQueued.text;
+                    var newText = TTSMessageQueued.text;
                     var translationMethod = "";
 
                     if (!String.IsNullOrEmpty(TTSMessageQueued.text))
@@ -148,8 +127,6 @@ namespace OSCVRCWiz.Services.Speech
                                     translationMethod = "Azure Translation";
                                 }
 
-
-
                                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonVoiceWhatLang.Checked == true)
                                 {
                                     speechText = newText;
@@ -169,7 +146,6 @@ namespace OSCVRCWiz.Services.Speech
                             MainDoStopTTS();
                         }
 
-
                         var voiceWizardAPITranslationString = "";
                         speechCt = new();
                         switch (selectedTTSMode)
@@ -185,8 +161,7 @@ namespace OSCVRCWiz.Services.Speech
                                 }
 
                                 Task.Run(() => MoonbaseTTS.FonixTTS(TTSMessageQueued, speechCt.Token));
-                                //  }
-                                // Task.Run(() => VoiceWizardProTTS.VoiceWizardProTextAsSpeech(TTSMessageQueued, speechCt.Token)); //turning off TTS for now
+
                                 break;
                             case "ElevenLabs":
                                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonProTranslation.Checked == true && language != "No Translation (Default)")
@@ -227,9 +202,9 @@ namespace OSCVRCWiz.Services.Speech
                                             TTSMessageQueued.text = voiceWizardAPITranslationString;
                                         }
                                     }
-                                    Task.Run(() => AzureTTS.SynthesizeAudioAsync(TTSMessageQueued, speechCt.Token)); //turning off TTS for now
+                                    Task.Run(() => AzureTTS.SynthesizeAudioAsync(TTSMessageQueued, speechCt.Token));
                                 }
-                                // Task.Run(() => VoiceWizardProTTS.VoiceWizardProTextAsSpeech(TTSMessageQueued, speechCt.Token));
+
                                 break;
                             case "TikTok":
                                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonProTranslation.Checked == true && language != "No Translation (Default)")
@@ -256,7 +231,7 @@ namespace OSCVRCWiz.Services.Speech
                                 break;
 
                             case "NovelAI":
-                              //  Task.Run(() => NovelAITTS.NovelAITextAsSpeech(TTSMessageQueued, speechCt.Token));
+
                                 break;
                             case "Locally Hosted":
                                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonProTranslation.Checked == true && language != "No Translation (Default)")
@@ -373,10 +348,6 @@ namespace OSCVRCWiz.Services.Speech
                                 }
                                 break;
 
-
-
-
-                              
                             case "No TTS":
                                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonProTranslation.Checked == true && language != "No Translation (Default)")
                                 {
@@ -386,13 +357,12 @@ namespace OSCVRCWiz.Services.Speech
 
                                 break;
                             case "Miku":
-                                // Task.Run(() => MikuTTS.MikuTextAsSpeech(speechText, speechCt.Token));
+
                                 break;
 
                             case "Fart to Speech":
-                                // Task.Run(() => FartTTS.FartTextAsSpeech(speechText, speechCt.Token)); //april fools
-                                break;
 
+                                break;
 
                             default:
 
@@ -423,17 +393,13 @@ namespace OSCVRCWiz.Services.Speech
                         TTSMessageQueue.PlayNextInQueue();
                     }
 
-
-
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleReplaceBeforeTTS.Checked == false)
                     {
 
                         writeText = WordReplacements.MainDoWordReplacement(writeText);
                         originalText = WordReplacements.MainDoWordReplacement(originalText);
 
-
                     }
-
 
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonLog.Checked == true)
                     {
@@ -464,8 +430,6 @@ namespace OSCVRCWiz.Services.Speech
                         var (inputLangName,inputLangCode) = LanguageSelect.ExtractLanguageNameAndCode(inputLanguage);
                         var (outputLangName, outputLangCode) = LanguageSelect.ExtractLanguageNameAndCode(outputLanguage);
 
-
-
                         customText = customText.Replace("{inputLangName}", inputLangName);
                         customText = customText.Replace("{inputLangCode}", inputLangCode);
                         customText = customText.Replace("{outputLangName}", outputLangName);
@@ -477,10 +441,8 @@ namespace OSCVRCWiz.Services.Speech
                         writeText = customText;
                     }
 
-
                     if (TTSMessageQueued.chatboxOverride == false)
                     {
-
 
                         if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonNoTTSKAT.Checked == false)
                         {
@@ -492,7 +454,7 @@ namespace OSCVRCWiz.Services.Speech
                         {
                             OSCListener.pauseBPM = true;
                             SpotifyAddon.pauseSpotify = true;
-                            Task.Run(() => OutputText.outputVRChatSpeechBubbles(writeText, OutputText.DisplayTextType.TextToSpeech)); //original
+                            Task.Run(() => OutputText.outputVRChatSpeechBubbles(writeText, OutputText.DisplayTextType.TextToSpeech));
 
                         }
                     }
@@ -508,7 +470,7 @@ namespace OSCVRCWiz.Services.Speech
                         {
                             OSCListener.pauseBPM = true;
                             SpotifyAddon.pauseSpotify = true;
-                            Task.Run(() => OutputText.outputVRChatSpeechBubbles(writeText, OutputText.DisplayTextType.TextToSpeech)); //original
+                            Task.Run(() => OutputText.outputVRChatSpeechBubbles(writeText, OutputText.DisplayTextType.TextToSpeech));
                         }
                     }
                     if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonQueueSystem.Checked == true && TTSMessageQueued.TTSMode == "No TTS")
@@ -521,7 +483,6 @@ namespace OSCVRCWiz.Services.Speech
                         var sttListening = new OscMessage("/avatar/parameters/stt_listening", false);
                         OSC.OSCSender.Send(sttListening);
                     }
-
 
                 }
                 else
@@ -541,13 +502,7 @@ namespace OSCVRCWiz.Services.Speech
                 }
             }
 
-
-
-
         }
-
-        //  public static string speechOn = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets\\sounds", "speechOnButton.wav");
-        // public static string speechOff = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets\\sounds", "speechOffButton.wav");
 
         public static void speechToTextButtonOn()
         {
@@ -576,7 +531,7 @@ namespace OSCVRCWiz.Services.Speech
                     VoiceWizardWindow.MainFormGlobal.SpeechToTextBigButton.IconColor = Color.White;
                 });
             }
-            catch(Exception ex) 
+            catch(Exception ex)
             {
                 OutputText.outputLog("[Button Color Error: " + ex.Message + "]", Color.Red);
             }
@@ -589,7 +544,6 @@ namespace OSCVRCWiz.Services.Speech
             {
                 try
                 {
-
 
                     AudioDevices.PlaySoundAsync("speechOnButton.wav");
                 }
@@ -619,12 +573,9 @@ namespace OSCVRCWiz.Services.Speech
             }
         }
 
-       
-
-
         public static  void MainDoSpeechTTS()
         {
-          
+
             try
             {
 
@@ -636,7 +587,6 @@ namespace OSCVRCWiz.Services.Speech
                         case "Deepgram (Pro Only)":
 
                             Task.Run(async () => await VoiceWizardProRecognition.doRecognition(VoiceWizardWindow.MainFormGlobal.textBoxWizardProKey.Text.ToString(), false));
-                            //Task.Run(async () => await ElevenLabsRecognition.doRecognition(false)); //ElevenLabs Testing
 
                             break;
 
@@ -679,26 +629,23 @@ namespace OSCVRCWiz.Services.Speech
                             }
                             if (AzureRecognition.YourSubscriptionKey != "")
                             {
-                                //  var azureRec = new AzureRecognition();
 
                                 if (VoiceWizardWindow.MainFormGlobal.comboBoxTranslationLanguage.Text.ToString() == "No Translation (Default)" || VoiceWizardWindow.MainFormGlobal.rjToggleDisableAzureTranslation.Checked || (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == true && VoiceWizardWindow.MainFormGlobal.rjToggleButtonProTranslation.Checked == true))
                                 {
-                                    AzureRecognition.speechSetup(VoiceWizardWindow.MainFormGlobal.comboBoxTranslationLanguage.Text.ToString(), VoiceWizardWindow.MainFormGlobal.comboBoxSpokenLanguage.Text.ToString()); //only speechSetup needed
+                                    AzureRecognition.speechSetup(VoiceWizardWindow.MainFormGlobal.comboBoxTranslationLanguage.Text.ToString(), VoiceWizardWindow.MainFormGlobal.comboBoxSpokenLanguage.Text.ToString());
                                     System.Diagnostics.Debug.WriteLine("<speechSetup change>");
 
                                     OutputText.outputLog("[Azure Listening]");
                                     AzureRecognition.speechTTTS(VoiceWizardWindow.MainFormGlobal.comboBoxSpokenLanguage.Text.ToString());
 
-
                                 }
                                 else
                                 {
-                                    AzureRecognition.speechSetup(VoiceWizardWindow.MainFormGlobal.comboBoxTranslationLanguage.Text.ToString(), VoiceWizardWindow.MainFormGlobal.comboBoxSpokenLanguage.Text.ToString()); //only speechSetup needed
+                                    AzureRecognition.speechSetup(VoiceWizardWindow.MainFormGlobal.comboBoxTranslationLanguage.Text.ToString(), VoiceWizardWindow.MainFormGlobal.comboBoxSpokenLanguage.Text.ToString());
                                     System.Diagnostics.Debug.WriteLine("<speechSetup change>");
 
                                     OutputText.outputLog("[Azure Translation Listening]");
                                     AzureRecognition.translationSTTTS(VoiceWizardWindow.MainFormGlobal.comboBoxTranslationLanguage.Text.ToString(), VoiceWizardWindow.MainFormGlobal.comboBoxSpokenLanguage.Text.ToString());
-
 
                                 }
 
@@ -713,13 +660,10 @@ namespace OSCVRCWiz.Services.Speech
             }
             catch (Exception ex)
             {
-                
+
                 OutputText.outputLog("[STTTS Error: " + ex.Message.ToString() + "]", Color.Red);
 
             }
-
-
-
 
         }
 
@@ -734,7 +678,6 @@ namespace OSCVRCWiz.Services.Speech
                 OutputText.outputLog("[Stop TTS Error: " + ex.Message + "]", Color.Red);
             }
 
-
         }
         private static void NoTTSQueue()
         {
@@ -742,7 +685,6 @@ namespace OSCVRCWiz.Services.Speech
             Task.Delay(Int32.Parse(VoiceWizardWindow.MainFormGlobal.textBoxDelayAfterNoTTS.Text.ToString())).Wait();
 
             Task.Run(() => TTSMessageQueue.PlayNextInQueue());
-
 
         }
     }

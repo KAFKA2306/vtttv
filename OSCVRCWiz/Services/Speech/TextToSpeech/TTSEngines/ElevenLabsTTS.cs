@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Services.Text;
 using OSCVRCWiz.Settings;
@@ -10,33 +10,24 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 {
     public class ElevenLabsTTS
     {
-        
 
         private static readonly HttpClient client = new HttpClient();
         public static Dictionary<string, string> voiceDict = null;
         public static bool elevenFirstLoad = true;
-        
+
         public static async Task ElevenLabsTextAsSpeech(TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct = default)
         {
-            //Stopwatch stopwatch = new Stopwatch();
+
             var voiceID = voiceDict.FirstOrDefault(x => x.Value == TTSMessageQueued.Voice).Key;
 
             MemoryStream memoryStream = new MemoryStream();
 
-            //stopwatch.Start();
             Task<Stream> streamTask = CallElevenLabsAPIAsync(TTSMessageQueued.text, voiceID);
             Stream stream = streamTask.Result;
-           
-
-
 
             AmazonPollyTTS.WriteSpeechToStream(stream, memoryStream);
 
-
-            //stopwatch.Stop();
-            //OutputText.outputLog($"Processing/Response time:{stopwatch.ElapsedMilliseconds}", Color.Yellow);
             AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, true, AudioFormat.Mp3);
-         
 
             memoryStream.Dispose();
 
@@ -48,8 +39,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             try
             {
 
-                //modified from https://github.com/connorbutler44/bingbot/blob/main/Service/ElevenLabsTextToSpeechService.cs
-
                 int optimize = 0;
                 int stabilities = 0;
                 int similarities = 0;
@@ -58,7 +47,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 string modelID = "eleven_monolingual_v1";
                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                 {
-
 
                     optimize = int.Parse(VoiceWizardWindow.MainFormGlobal.comboBoxLabsOptimize.SelectedItem.ToString());
                     stabilities = VoiceWizardWindow.MainFormGlobal.trackBarStability.Value;
@@ -72,15 +60,12 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     Debug.WriteLine(similarities);
                     Debug.WriteLine(modelID);
 
-
                 });
-
 
                 var similarityFloat = similarities * 0.01f;
                 var stabilityFloat = stabilities * 0.01f;
                 var styleFloat = styles * 0.01f;
 
-                //var url = $"https://api.elevenlabs.io/v1/text-to-speech/{voice}?optimize_streaming_latency={optimize}"; //optimize steaming latency deprecated
                 var url = $"https://api.elevenlabs.io/v1/text-to-speech/{voice}";
                 var apiKey = Settings1.Default.elevenLabsAPIKey;
 
@@ -98,7 +83,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                         use_speaker_boost = boost
                     }
                 });
-
 
                 request.Headers.Add("xi-api-key", apiKey);
                 request.Headers.Add("Accept", "audio/mpeg");
@@ -124,11 +108,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                         OutputText.outputLog("[YOU COPIED YOUR ELEVEN LABS API KEY INCORRECTLY]", Color.Red);
                     }
 
-
-
-
                 }
-
 
                 return await response.Content.ReadAsStreamAsync();
             }
@@ -137,7 +117,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 OutputText.outputLog("[ElevenLabs TTS Error: " + ex.Message + "]", Color.Red);
                 Task.Run(() => TTSMessageQueue.PlayNextInQueue());
                 return null;
-
 
             }
 
@@ -152,23 +131,13 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             public List<Voice> voices { get; set; }
         }
 
-
-
-
         public static void CallElevenVoices()
         {
             try
             {
 
-                //modified from https://github.com/connorbutler44/bingbot/blob/main/Service/ElevenLabsTextToSpeechService.cs
-
-
                 var url = $"https://api.elevenlabs.io/v1/voices?show_legacy=true";
                 var apiKey = Settings1.Default.elevenLabsAPIKey;
-
-
-
-
 
                 WebRequest request = WebRequest.Create(url);
                 request.Method = "GET";
@@ -247,7 +216,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             styles.Enabled = false;
             voices.Enabled = true;
 
-
         }
 
         public class ElevenLabsModel
@@ -258,23 +226,13 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 
         static List<string> modelList;
 
-
-        //not all models are text to speech models, check for "can_do_text_to_speech" too before adding feature
-        //https://elevenlabs.io/docs/api-reference/get-models
-        public static void CallElevenGetModels()//function to give the id of eleven lab models not used yet
+        public static void CallElevenGetModels()
         {
             try
             {
 
-                //modified from https://github.com/connorbutler44/bingbot/blob/main/Service/ElevenLabsTextToSpeechService.cs
-
-
                 var url = $"https://api.elevenlabs.io/v1/models";
                 var apiKey = Settings1.Default.elevenLabsAPIKey;
-
-
-
-
 
                 WebRequest request = WebRequest.Create(url);
                 request.Method = "GET";
@@ -310,11 +268,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             }
 
         }
-
-    
-
-
-
 
     }
 }

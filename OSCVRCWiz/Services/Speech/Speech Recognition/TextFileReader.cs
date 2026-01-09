@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Services.Speech.TextToSpeech;
+using OSCVRCWiz.Services.Speech.TextToSpeech;
 using OSCVRCWiz.Services.Text;
 using System;
 using System.Collections.Generic;
@@ -27,17 +27,14 @@ namespace OSCVRCWiz.Speech_Recognition
 
                 string absPath = Path.Combine(basePath, relativePath);
 
-                // Create a new FileSystemWatcher and set its properties
                 watcher = new FileSystemWatcher();
                 watcher.Path = Path.GetDirectoryName(absPath);
                 watcher.Filter = Path.GetFileName(absPath);
                 watcher.NotifyFilter = NotifyFilters.LastWrite;
 
-                // Add event handlers for the Changed and Error events
                 watcher.Changed += OnFileChanged;
                 watcher.Error += OnError;
 
-                // Start monitoring the file
                 watcher.EnableRaisingEvents = true;
                 OutputText.outputLog("[Text File Reader Enabled]");
             }
@@ -55,12 +52,12 @@ namespace OSCVRCWiz.Speech_Recognition
 
         static void OnError(object sender, ErrorEventArgs e)
         {
-            // Handle error event
+
             OutputText.outputLog($"Text File Reader Error occurred: {e.GetException().Message}");
         }
         public static void StopWatcher()
         {
-            // Stop the watcher and dispose of it
+
             if (watcher != null)
             {
                 watcher.EnableRaisingEvents = false;
@@ -69,12 +66,10 @@ namespace OSCVRCWiz.Speech_Recognition
             OutputText.outputLog("[Text File Reader Disabled]");
         }
 
-
         public static void FileToTTS(string absPath)
         {
             try
             {
-
 
                 using (FileStream stream = new FileStream(absPath, System.IO.FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {

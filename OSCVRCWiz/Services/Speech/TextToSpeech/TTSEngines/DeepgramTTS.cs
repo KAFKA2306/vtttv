@@ -1,23 +1,17 @@
-﻿using OSCVRCWiz.Resources.Audio;
+using OSCVRCWiz.Resources.Audio;
 
 namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
 {
     public class DeepgramAuraTTS
     {
 
-
-
         public static async void AuraPlayAudio(string audioString, TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct)
         {
-
 
             var audiobytes = Convert.FromBase64String(audioString);
             MemoryStream memoryStream = new MemoryStream(audiobytes);
             AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, true, AudioFormat.Mp3);
             memoryStream.Dispose();
-
-
-
 
         }
 
@@ -38,15 +32,12 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             }
             accents.SelectedItem = "English (US)";
 
-
           SynthesisGetAvailableVoicesAsync(voices, accents.Text.ToString());
-            // comboBox2.SelectedIndex = 0;
+
             styles.SelectedIndex = 0;
             styles.Enabled = false;
             voices.Enabled = true;
         }
-
-
 
         public static async Task SynthesisGetAvailableVoicesAsync(ComboBox voices, string fromLanguageFullname)
         {
@@ -76,25 +67,14 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     voices.Items.Add("aura-angus-en");
                     break;
 
-
-
                 default:
-                    voices.Items.Add("error"); break; // if translation to english happens something is wrong
-            
-
+                    voices.Items.Add("error"); break;
 
                 }
 
-
-
             voices.SelectedIndex = 0;
-         
 
         }
-
-
-
-
 
     }
 }

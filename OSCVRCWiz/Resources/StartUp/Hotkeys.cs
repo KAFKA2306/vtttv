@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.RJControls;
+using OSCVRCWiz.RJControls;
 using OSCVRCWiz.Services.Speech;
 using OSCVRCWiz.Settings;
 using System;
@@ -31,7 +31,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
             Norepeat = 0x4000
         }
 
-
         public static string modifierKeySTTTS = "Control";
         public static string normalKeySTTTS = "G";
 
@@ -46,7 +45,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
 
         public static string modifierKeyScrollDown = "";
         public static string normalKeyScrollDown = "";
-
 
         public static void HotkeyEdit(TextBox textBoxMod, TextBox textBoxNorm, Button editButton, Button saveButton)
         {
@@ -102,7 +100,7 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                 if (KeyTextbox.Enabled == true)
                 {
                     Keys modifierKeys = e.Modifiers;
-                    Keys pressedKey = e.KeyData ^ modifierKeys; //remove modifier keys
+                    Keys pressedKey = e.KeyData ^ modifierKeys;
                     var converter = new KeysConverter();
                     KeyTextbox.Text = converter.ConvertToString(pressedKey);
 
@@ -114,7 +112,7 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
 
         public static void CUSTOMRegisterHotKey(int id, string modifierKey, string normalKey)
         {
-            //  int id = 0;// The id of the hotkey. 
+
             if (id == 0 && VoiceWizardWindow.MainFormGlobal.rjToggleButton9.Checked == false) { return; }
             if (id == 1 && VoiceWizardWindow.MainFormGlobal.rjToggleButton12.Checked == false) { return; }
             if (id == 2 && VoiceWizardWindow.MainFormGlobal.rjToggleButtonQuickTypeEnabled.Checked == false) { return; }
@@ -132,19 +130,13 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
 
         public static void CatchHotkey(ref Message m)
         {
-            //link to implementation https://www.fluxbytes.com/csharp/how-to-register-a-global-hotkey-for-your-application-in-c/ 
-            //additional links https://stackoverflow.com/questions/2450373/set-global-hotkeys-using-c-sharp
 
-            //  System.Diagnostics.Debug.WriteLine("-------------get key press id: " + m.Result.ToString());
             if (m.Msg == 0x0312)
             {
-                /* Note that the three lines below are not needed if you only want to register one hotkey.
-                * The below lines are useful in case you want to register multiple keys, which you can use a switch with the id as argument, or if you want to know which key/modifier was pressed for some particular reason. */
 
-
-                Keys key = (Keys)((int)m.LParam >> 16 & 0xFFFF);                  // The key of the hotkey that was pressed.
-                KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);       // The modifier of the hotkey that was pressed.
-                int id = m.WParam.ToInt32();                                        // The id of the hotkey that was pressed.
+                Keys key = (Keys)((int)m.LParam >> 16 & 0xFFFF);
+                KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);
+                int id = m.WParam.ToInt32();
 
                 System.Diagnostics.Debug.WriteLine("-------------get key press id: " + key.ToString());
 
@@ -153,34 +145,29 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                     case 0: Task.Run(() => DoSpeech.MainDoSpeechTTS()); break;
                     case 1: Task.Run(() => DoSpeech.MainDoStopTTS()); break;
                     case 2:
-                        if (captureEnabled == false) // not capturing so turn it on
+                        if (captureEnabled == false)
                         {
-                            // Save the handle of the previously focused window
+
                             prevFocusedWindow = GetForegroundWindow();
 
-                            // Activate and bring the form to the front
                             VoiceWizardWindow.MainFormGlobal.Activate();
                             VoiceWizardWindow.MainFormGlobal.BringToFront();
                             VoiceWizardWindow.MainFormGlobal.richTextBox3.Text = "";
-                            VoiceWizardWindow.MainFormGlobal.mainTabControl.SelectTab(VoiceWizardWindow.MainFormGlobal.tabPage1);//sttts
+                            VoiceWizardWindow.MainFormGlobal.mainTabControl.SelectTab(VoiceWizardWindow.MainFormGlobal.tabPage1);
                             VoiceWizardWindow.MainFormGlobal.richTextBox3.Select();
-
 
                             captureEnabled = true;
 
-
                         }
-                        else if (captureEnabled == true)//is capturing so turn it off
+                        else if (captureEnabled == true)
                         {
 
-                            // Activate and bring the previous window to the front
                             if (prevFocusedWindow != IntPtr.Zero)
                             {
                                 SetForegroundWindow(prevFocusedWindow);
                             }
 
                             captureEnabled = false;
-
 
                         }
                         break;
@@ -201,7 +188,7 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                         VoiceWizardWindow.MainFormGlobal.comboBoxPreset.SelectedIndex = index;
                         break;
                 }
-              
+
             }
 
         }
@@ -210,9 +197,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
 
         [DllImport("user32.dll")]
         public static extern IntPtr SetForegroundWindow(IntPtr hWnd);
-
-
-
 
         public static void InitiateHotkeys()
         {
@@ -234,7 +218,6 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
                 normalKeyScrollUp = Settings1.Default.normalKeyScrollUp;
                 CUSTOMRegisterHotKey(3, modifierKeyScrollUp, normalKeyScrollUp);
 
-
                 modifierKeyScrollDown = Settings1.Default.modifierKeyScrollDown;
                 normalKeyScrollDown = Settings1.Default.normalKeyScrollDown;
                 CUSTOMRegisterHotKey(4, modifierKeyScrollDown, normalKeyScrollDown);
@@ -248,11 +231,10 @@ namespace OSCVRCWiz.Resources.StartUp.StartUp
 
                 if (result == DialogResult.Yes)
                 {
-                    // Open the directory containing the config files
+
                     var appPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TTSVoiceWizard");
                     Process.Start("explorer.exe", appPath);
                 }
-
 
             }
 

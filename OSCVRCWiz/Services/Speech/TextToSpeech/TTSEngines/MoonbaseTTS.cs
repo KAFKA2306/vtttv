@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Services.Text;
 
@@ -8,8 +8,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
     {
         private static readonly HttpClient client = new HttpClient();
         public static Process pro;
-
-
 
         public static void FonixTTS(TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct = default)
         {
@@ -37,21 +35,15 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             string audio = stringTask.Result;
             MoonBasePlayAudio(audio, TTSMessageQueued, ct);
 
-
         }
         public static async void MoonBasePlayAudio(string audioString, TTSMessageQueue.TTSMessage TTSMessageQueued, CancellationToken ct)
         {
 
-
             var audiobytes = Convert.FromBase64String(audioString);
             MemoryStream memoryStream = new MemoryStream(audiobytes);
 
-            // AudioDevices.playMoonbaseStream(memoryStream, TTSMessageQueued, ct);
             AudioDevices.PlayAudioStream(memoryStream, TTSMessageQueued, ct, true, AudioFormat.Raw);
             memoryStream.Dispose();
-
-
-
 
         }
 
@@ -60,7 +52,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             try
             {
                 var url = $"http://localhost:54027/audio?voice={TTSMessageQueued.Voice}&text={TTSMessageQueued.text}";
-
 
                 var request = new HttpRequestMessage(HttpMethod.Post, url);
                 HttpResponseMessage response = await client.SendAsync(request);
@@ -76,22 +67,16 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     return "";
                 }
 
-
-
-
-                //  return await response.Content.ReadAsStringAsync();
             }
             catch (Exception ex)
             {
                 OutputText.outputLog("[Moonbase Error: " + ex.Message + "]", Color.Red);
                 OutputText.outputLog("[Make sure you have downloaded the Moonbase Voice dependencies: https://github.com/VRCWizard/TTS-Voice-Wizard/wiki/Moonbase-TTS ]", Color.DarkOrange);
-                //  MessageBox.Show("FonixTalk Error: "+ex.Message);
+
                 TTSMessageQueue.PlayNextInQueue();
                 return "";
 
             }
-
-
 
         }
 
@@ -112,7 +97,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             accents.Items.Clear();
             accents.Items.Add("default");
             accents.SelectedIndex = 0;
-
 
             voices.Items.Clear();
             voices.Items.Add("Betty");
@@ -135,11 +119,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             voices.Enabled = true;
 
         }
-
-
-
-
-
 
     }
 }

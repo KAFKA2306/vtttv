@@ -1,4 +1,4 @@
-﻿using System.Speech.Recognition;//free Windows
+using System.Speech.Recognition;
 using NAudio.Wave;
 using CoreOSC;
 using OSCVRCWiz.Resources.Audio;
@@ -6,9 +6,6 @@ using OSCVRCWiz.Services.Speech.TextToSpeech;
 using OSCVRCWiz.Services.Text;
 using OSCVRCWiz.Resources.StartUp.StartUp;
 using OSCVRCWiz.Services.Speech;
-
-
-//using NAudio.Wave;
 
 namespace OSCVRCWiz
 {
@@ -18,7 +15,6 @@ namespace OSCVRCWiz
         static WaveInEvent waveIn;
         static SpeechStreamer audioStream = new(12800);
         static SpeechRecognitionEngine rec;
-    
 
        public static void getInstalledRecogs()
         {
@@ -45,9 +41,7 @@ namespace OSCVRCWiz
             try
             {
 
-
                 var installRec = SpeechRecognitionEngine.InstalledRecognizers()[0];
-
 
                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                 {
@@ -61,22 +55,15 @@ namespace OSCVRCWiz
                     }
                 });
 
-                // Create the selected recognizer.
                 rec = new SpeechRecognitionEngine(installRec);
-         
 
-           
-                 
-            // Create and load a dictation grammar.  
             rec.LoadGrammar(new DictationGrammar());
-             // Add a handler for the speech recognized event.  
-            rec.SpeechRecognized +=new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);
 
+            rec.SpeechRecognized +=new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);
 
             waveIn = new WaveInEvent();
             waveIn.DeviceNumber = AudioDevices.getCurrentInputDevice();
 
-            // Start Listening
             waveIn.WaveFormat = new WaveFormat(48000, 1);
             waveIn.DataAvailable += WaveInOnDataAvailable;
 
@@ -93,7 +80,7 @@ namespace OSCVRCWiz
             }
             catch (Exception ex)
             {
-                
+
                 OutputText.outputLog("[System Speech Recognizer Error: " + ex.Message + "]", Color.Red);
                 listeningCurrently = false;
                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonOSC.Checked == true || VoiceWizardWindow.MainFormGlobal.rjToggleButtonChatBox.Checked == true)
@@ -105,18 +92,17 @@ namespace OSCVRCWiz
             }
 
         }
-        public static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)//lite version, WindowsBuiltInSTTTS Help
+        public static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("Recognized text: " + e.Result.Text);
             string text = e.Result.Text.ToString();
-            // Task.Run(() => VoiceWizardWindow.MainFormGlobal.MainDoTTS(text, "System Speech"));
 
             TTSMessageQueue.QueueMessage(text, "System Speech");
         }
 
         private static void WaveInOnDataAvailable(object? sender, WaveInEventArgs e)
         {
-           // Debug.WriteLine("audio found");
+
             audioStream.Write(e.Buffer, 0, e.BytesRecorded);
 
         }
@@ -149,9 +135,6 @@ namespace OSCVRCWiz
                     OSC.OSCSender.Send(sttListening);
                 }
             }
-
-
-
 
         }
         public static void AutoStopSystemSpeechRecog()

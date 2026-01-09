@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Services.Integrations;
+using OSCVRCWiz.Services.Integrations;
 using OSCVRCWiz.Services.Text;
 using System.Windows.Shapes;
 
@@ -8,7 +8,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech
     {
         public static Queue<TTSMessage> queueTTS = new Queue<TTSMessage>();
         public static bool isTTSPlaying = false;
-        public struct TTSMessage //use then when setting up presets
+        public struct TTSMessage
         {
             public string text;
             public string TTSMode;
@@ -34,7 +34,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech
             {
                 VoiceWizardWindow.MainFormGlobal.labelQueueSize.Text = queueTTS.Count.ToString();
             });
-            // OutputText.outputLog("Enqueued, queue has this many messages:" + queueTTS.Count);
+
             PlayNext();
         }
         private static void PlayNext()
@@ -55,18 +55,15 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech
 
             if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonQueueSystem.Checked == true)
             {
-                // OutputText.outputLog("Message finished playing the queue has this many messages:" + queueTTS.Count);
-
 
                 if (isTTSPlaying == true)
                 {
 
                     Task.Delay(int.Parse(VoiceWizardWindow.MainFormGlobal.textBoxQueueDelayBeforeNext.Text.ToString())).Wait();
 
-
                 }
                 isTTSPlaying = false;
-                // Task.Delay(100);
+
                 PlayNext();
             }
 
@@ -95,7 +92,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech
 
                         if (char.IsWhiteSpace(inputText[maxLength]))
                         {
-                            // Split at the exact 300th character where a space is found
+
                             firstString = inputText.Substring(0, maxLength);
                             secondString = inputText.Substring(maxLength + 1);
                             text = firstString;
@@ -113,17 +110,14 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech
                             text = firstString;
                         }
 
-
                     }
                 }
-
-
 
                 TTSMessageQueue.TTSMessage TTSMessageQueued = new TTSMessageQueue.TTSMessage();
                 VoiceWizardWindow.MainFormGlobal.Invoke((MethodInvoker)delegate ()
                 {
                     TTSMessageQueued.text = text;
-                    if(STTMode == "OSCListener-NoTTS") 
+                    if(STTMode == "OSCListener-NoTTS")
                     {
                         TTSMessageQueued.TTSMode = "No TTS";
                     }
@@ -131,7 +125,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech
                     {
                         TTSMessageQueued.TTSMode = VoiceWizardWindow.MainFormGlobal.comboBoxTTSMode.Text.ToString();
                     }
-                   
+
                     TTSMessageQueued.Voice = VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.Text.ToString();
                     TTSMessageQueued.Accent = VoiceWizardWindow.MainFormGlobal.comboBoxAccentSelect.Text.ToString();
                     TTSMessageQueued.Style = VoiceWizardWindow.MainFormGlobal.comboBoxStyleSelect.Text.ToString();
@@ -192,10 +186,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech
             }
 
         }
-
-
-
-
 
     }
 }

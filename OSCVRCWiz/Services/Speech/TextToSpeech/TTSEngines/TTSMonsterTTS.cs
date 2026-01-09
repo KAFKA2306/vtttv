@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Resources.Audio;
+using OSCVRCWiz.Resources.Audio;
 using OSCVRCWiz.Services.Text;
 using System.Net.Http.Json;
 using System.Net;
@@ -28,7 +28,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 input.message = TTSMessageQueued.text;
                 input.return_usage = "false";
 
-
                 var httpRequestMessage = new HttpRequestMessage
                 {
                     Method = HttpMethod.Post,
@@ -44,13 +43,11 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                 var response = await client.SendAsync(httpRequestMessage).ConfigureAwait(false);
 
                 string responseContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-               // OutputText.outputLog(responseContent);
+
                 JObject responseObject = JObject.Parse(responseContent);
-               // string status = responseObject["status"].ToString();
-               // OutputText.outputLog(status);
+
                 string audioURL = responseObject["url"].ToString();
-               
-               // OutputText.outputLog(audioURL);
+
                 byte[] audioData = await client.GetByteArrayAsync(audioURL);
 
                 MemoryStream memoryStream = new MemoryStream(audioData);
@@ -70,7 +67,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             }
 
         }
-
 
         public static string GetTTSMonsterVoice(string voice)
         {
@@ -97,15 +93,12 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             if (TTSMonsterfirstVoiceLoad)
             {
 
-
-                // replace with the path to the JSON file
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
 
                 string relativePath = "Assets/voices/ttsMonsterVoices.json";
 
                 string jsonFilePath = Path.Combine(basePath, relativePath);
 
-                // read the JSON data from the file
                 string jsonData = "";
                 try
                 {
@@ -116,42 +109,26 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
                     OutputText.outputLog("[Could not find directory, try running TTSVoiceWizard as admin or moving the entire folder to a new location. (if it's on the desktop move it to documents or where your games are stored for example)]", Color.Red);
                 }
 
-
-
-                // deserialize the JSON data into an array of Voice objects
                 TTSMonsterVoice[] voices = System.Text.Json.JsonSerializer.Deserialize<TTSMonsterVoice[]>(jsonData);
-
-
 
                 foreach (var voice in voices)
                 {
                     comboboxVoices.Items.Add(voice.name);
                     TTSMonsterRememberVoices.Add(voice.name, voice.voice_id);
 
-
-
-
                 }
-
-
 
                 TTSMonsterfirstVoiceLoad = false;
 
             }
             else
             {
-                //  VoiceWizardWindow.MainFormGlobal.ot.outputLog("[DEBUG: Voices successfully reloaded locally]");
+
                 foreach (string voice in TTSMonsterRememberVoices.Keys)
                 {
                     comboboxVoices.Items.Add(voice);
                 }
             }
-
-            //  VoiceWizardWindow.MainFormGlobal.comboBoxVoiceSelect.SelectedIndex = 0;
-
-
-
-
 
         }
 
@@ -161,10 +138,7 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             accents.Items.Add("default");
             accents.SelectedIndex = 0;
 
-
             voices.Items.Clear();
-
-
 
             SynthesisGetAvailableVoicesAsync(voices);
 
@@ -178,14 +152,6 @@ namespace OSCVRCWiz.Services.Speech.TextToSpeech.TTSEngines
             voices.Enabled = true;
 
         }
-
-
-
-    
-
-
-
-
 
 }
 }

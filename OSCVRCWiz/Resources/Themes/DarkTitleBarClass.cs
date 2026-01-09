@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
@@ -12,8 +12,6 @@ namespace OSCVRCWiz.Resources.Themes
 
         private const int DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19;
         private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
-        //  private const int DWMWA_MICA_EFFECT = 1029;
-        // static int trueValue = 0x01;
 
         internal static bool UseImmersiveDarkMode(IntPtr handle, bool enabled)
         {
@@ -26,8 +24,7 @@ namespace OSCVRCWiz.Resources.Themes
                 }
 
                 int useImmersiveDarkMode = enabled ? 1 : 0;
-                // DwmSetWindowAttribute(handle, attribute, ref useImmersiveDarkMode, sizeof(int));
-                // DwmSetWindowAttribute(handle, DWMWA_MICA_EFFECT, ref trueValue, Marshal.SizeOf(typeof(int)));
+
                 return DwmSetWindowAttribute(handle, attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
 
             }
@@ -41,4 +38,3 @@ namespace OSCVRCWiz.Resources.Themes
         }
     }
 }
-

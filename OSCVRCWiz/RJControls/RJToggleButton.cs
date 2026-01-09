@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +13,13 @@ namespace OSCVRCWiz.RJControls
 {
     public class RJToggleButton : CheckBox
     {
-        //Fields
+
         private Color onBackColor = Color.MediumSlateBlue;
         private Color onToggleColor = Color.WhiteSmoke;
         private Color offBackColor = Color.Gray;
         private Color offToggleColor = Color.Gainsboro;
         private bool solidStyle = true;
 
-        //Properties
         [Category("RJ Code Advance")]
         public Color OnBackColor
         {
@@ -111,13 +110,11 @@ namespace OSCVRCWiz.RJControls
             }
         }
 
-        //Constructor
         public RJToggleButton()
         {
             MinimumSize = new Size(45, 22);
         }
 
-        //Methods
         private GraphicsPath GetFigurePath()
         {
             int arcSize = Height - 1;
@@ -139,23 +136,23 @@ namespace OSCVRCWiz.RJControls
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pevent.Graphics.Clear(Parent.BackColor);
 
-            if (Checked) //ON
+            if (Checked)
             {
-                //Draw the control surface
+
                 if (solidStyle)
                     pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
                 else pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
-                //Draw the toggle
+
                 pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor),
                     new Rectangle(Width - Height + 1, 2, toggleSize, toggleSize));
             }
-            else //OFF
+            else
             {
-                //Draw the control surface
+
                 if (solidStyle)
                     pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
                 else pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
-                //Draw the toggle
+
                 pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
                     new Rectangle(2, 2, toggleSize, toggleSize));
             }

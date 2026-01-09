@@ -1,4 +1,4 @@
-﻿using OSCVRCWiz.Services.Text;
+using OSCVRCWiz.Services.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,20 +38,16 @@ namespace OSCVRCWiz.Settings
             }
         }
 
-
         public static void ExportList(string folderPath, string listType, string data)
         {
 
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string absFolderPath = Path.Combine(basePath, folderPath);
 
-
             string fileName = "TTSVoiceWiz_Export_" + listType + "_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
             string filePath = Path.Combine(absFolderPath, fileName);
 
             File.WriteAllText(filePath, data);
-
-            //Process.Start("explorer.exe", folderPath);
 
         }
     }

@@ -1,4 +1,4 @@
-﻿using DeepL;
+using DeepL;
 using OSCVRCWiz.Services.Text;
 using System;
 using System.Collections.Generic;
@@ -30,12 +30,11 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
 
         public static void loadLanguages(ComboBox InputLanguage, ComboBox OutputLanguage)
         {
-            // Replace with the path to the JSON file
+
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string relativePath = "Assets/languages/languages.json";
             string jsonFilePath = Path.Combine(basePath, relativePath);
 
-            // Read the JSON data from the file
             string jsonData = "";
             try
             {
@@ -43,18 +42,12 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
             }
             catch (Exception ex)
             {
-             //  Debug.WriteLine("[Could not load languages: " + ex.Message + " ]");
+
                 OutputText.outputLog("[Could not load languages: " + ex.Message + " ]", Color.Red);
             }
 
-            // Deserialize the JSON data into an array of LanguageJson objects
-
                 LanguageJson[] languageSelection = JsonSerializer.Deserialize<LanguageJson[]>(jsonData);
 
-
-
-
-            // Populate the InputLanguage ComboBox with sourceNames
             foreach (var language in languageSelection)
              {
                 if (language.sourceName.ToString() !="")
@@ -66,27 +59,18 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
                     OutputLanguage.Items.Add(language.targetName.ToString());
                 }
 
-                   
              }
 
-
         }
-
 
         public static string fromLanguageNew(string language, string inputCodeType,string outputCodeType)
         {
             string languageCode = "en";
 
-
-
-            // replace with the path to the JSON file
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string relativePath = "Assets/languages/languages.json";
             string jsonFilePath = Path.Combine(basePath, relativePath);
 
-
-
-            // read the JSON data from the file
             string jsonData = "";
             try
             {
@@ -97,21 +81,11 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
                 OutputText.outputLog("[Could not read languages: "+ex.Message+ " ]", Color.Red);
             }
 
-
-
-            // deserialize the JSON data into an array of Voice objects
             LanguageJson[] languageSelection = JsonSerializer.Deserialize<LanguageJson[]>(jsonData);
-            /*  foreach (var lang in languageSelection)
-              {
-            
-
-              }*/
-            //how would i select the "azureCode" with the "sourceName" that matches "language"
-            // Find the matching sourceName and get the corresponding azureCode
 
            LanguageJson selectedLanguage = null;
 
-           switch (inputCodeType) //source or target language
+           switch (inputCodeType)
             {
                 case "sourceLanguage":
                     selectedLanguage = languageSelection.FirstOrDefault(lang => lang.sourceName == language);
@@ -120,12 +94,12 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
                 case "targetLanguage":
                     selectedLanguage = languageSelection.FirstOrDefault(lang => lang.targetName == language);
                     break;
- 
+
             }
 
             if (selectedLanguage != null)
             {
-                switch (outputCodeType)// select translation API
+                switch (outputCodeType)
                 {
                     case "Azure":
                         languageCode = selectedLanguage.azureCode;
@@ -149,14 +123,13 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
                     OutputText.outputLog($"[{language} is not available as a {inputCodeType} for translation with {outputCodeType}]", Color.Red);
                 }
 
-
                 return languageCode;
             }
             else
             {
                 return "en";
             }
-                
+
         }
 
         public static (string LanguageName, string LanguageCode) ExtractLanguageNameAndCode(string languageString)
@@ -177,7 +150,6 @@ namespace OSCVRCWiz.Services.Speech.TranslationAPIs
                 return (string.Empty, string.Empty);
             }
         }
-
 
     }
 }

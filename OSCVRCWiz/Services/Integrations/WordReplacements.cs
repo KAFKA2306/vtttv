@@ -1,4 +1,4 @@
-﻿using static OSCVRCWiz.VoiceWizardWindow;
+using static OSCVRCWiz.VoiceWizardWindow;
 using System.Text.RegularExpressions;
 using OSCVRCWiz.Services.Text;
 using System.Windows.Input;
@@ -11,7 +11,6 @@ namespace OSCVRCWiz.Services.Integrations
 
         public static string wordReplacemntsStored = "";
 
-
         public static string MainDoWordReplacement(string text)
         {
             MainFormGlobal.Invoke((MethodInvoker)delegate ()
@@ -23,8 +22,6 @@ namespace OSCVRCWiz.Services.Integrations
                     if (text.Contains(kvp.Key.ToString(), StringComparison.OrdinalIgnoreCase))
                     {
 
-                        //this implementation may be more fault proof but is more costly than using index
-                        //index = replaceDict.Values.ToList().IndexOf(kvp.Key);
                         if (MainFormGlobal.checkedListBoxReplacements.GetItemCheckState(index) == CheckState.Checked)
                         {
 
@@ -32,18 +29,15 @@ namespace OSCVRCWiz.Services.Integrations
                             string key = kvp.Key.ToString();
                             if (VoiceWizardWindow.MainFormGlobal.rjToggleUseWordBoundaries.Checked)
                             {
-                                // pattern = $@"\b{Regex.Escape(kvp.Key.ToString())}\b"; //does not work if the word starts with a special character like $
-                                // pattern = $@"(?<!\S){Regex.Escape(kvp.Key.ToString())}(?!\S)"; //no longer works if punctuation is touching the word...
-                                // pattern = $@"(?<![\w]){Regex.Escape(kvp.Key.ToString())}(?![\w])";
 
-                                if ((char.IsLetterOrDigit(key[0]) || key[0] == '_') && (char.IsLetterOrDigit(key[^1]) || key[^1] == '_')) // Word characters: [a-zA-Z0-9_] //added check for last character too
+                                if ((char.IsLetterOrDigit(key[0]) || key[0] == '_') && (char.IsLetterOrDigit(key[^1]) || key[^1] == '_'))
                                 {
-                                    // Use standard word boundary pattern
+
                                     pattern = $@"\b{Regex.Escape(key)}\b";
                                 }
                                 else
                                 {
-                                    // Use custom pattern for special characters
+
                                     pattern = $@"(?<![\w]){Regex.Escape(key)}(?![\w])";
                                 }
                             }
@@ -61,11 +55,10 @@ namespace OSCVRCWiz.Services.Integrations
         public static void addWordReplacement(string wordKey, string wordValue)
         {
 
-
             try
             {
 
-                replaceDict.Add(wordKey, wordValue);//it is important to catch the thing that will actually break first in this case*** (fixes but with phantom entry after error occurs)
+                replaceDict.Add(wordKey, wordValue);
                 MainFormGlobal.checkedListBoxReplacements.Items.Add($"{MainFormGlobal.checkedListBoxReplacements.Items.Count + 1} | {wordKey} ---> {wordValue}", true);
                 replacementSave();
             }
@@ -91,7 +84,7 @@ namespace OSCVRCWiz.Services.Integrations
 
         public static void replacementsLoad()
         {
-            //  string words = VoiceWizardWindow.MainFormGlobal.richTextBox2.Text.ToString();
+
             string words = wordReplacemntsStored;
             string[] split = words.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string s in split)
@@ -106,9 +99,6 @@ namespace OSCVRCWiz.Services.Integrations
                     foreach (string s2 in split2)
                     {
 
-
-
-
                         if (count == 1)
                         {
                             wordKey = s2;
@@ -122,13 +112,11 @@ namespace OSCVRCWiz.Services.Integrations
 
                         }
 
-
-
                         count++;
                     }
                     try
                     {
-                        //VoiceWizardWindow.MainFormGlobal.comboBoxPreset.Items.Add(saveThisPreset.PresetName);
+
                         MainFormGlobal.checkedListBoxReplacements.Items.Add($"{MainFormGlobal.checkedListBoxReplacements.Items.Count + 1} | {wordKey} ---> {wordValue}", true);
                         replaceDict.Add(wordKey, wordValue);
                     }
