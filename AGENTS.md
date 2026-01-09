@@ -41,5 +41,6 @@
 
 
 ## コーディングスタイル
-delete and minimize comments, if, try, temporaries, old files and codes.
-clean archtecture.
+- **Delete and minimize**: Comments, `if`, `try`, temporaries, old files, and redundant code.
+- **Architecture**: Simple Clean Architecture.
+- **Focus**: Low-latency, Japanese-optimized pipeline (Whisper -> VOICEVOX -> VRChat).

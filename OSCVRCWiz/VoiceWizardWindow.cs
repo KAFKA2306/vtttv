@@ -1180,7 +1180,9 @@ namespace OSCVRCWiz
                         OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
-                case "Web Captioner": OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
+                case "Web Captioner":
+                    OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
+                    break;
                 case "Vosk":
                     if (modelTextBox.Text.ToString() == "no folder selected")
                     {
