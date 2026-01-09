@@ -1,0 +1,16 @@
+# Build outputs
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# IDE
+.vs/
+*.user
+*.suo
+
+# Temp files
+*.tmp
+*.log
+build_output.txt

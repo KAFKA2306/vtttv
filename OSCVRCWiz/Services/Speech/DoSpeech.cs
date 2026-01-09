@@ -335,6 +335,10 @@ namespace OSCVRCWiz.Services.Speech
 
                                 break;
 
+                            case "VOICEVOX":
+                                Task.Run(() => VoicevoxTTS.SynthesizeSpeech(TTSMessageQueued, speechCt.Token));
+                                break;
+
                             case "IBM Watson (Pro Only)":
                                 if (VoiceWizardWindow.MainFormGlobal.rjToggleButtonUsePro.Checked == true)
                                 {

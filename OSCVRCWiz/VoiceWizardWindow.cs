@@ -341,15 +341,15 @@ namespace OSCVRCWiz
         }
         private void iconButton7_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton6_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton12_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton8_Click(object sender, EventArgs e)
         {
@@ -357,7 +357,7 @@ namespace OSCVRCWiz
         }
         private void versionLabel_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         public bool logPanelExtended = true;
         public bool logPanelExtended2 = true;
@@ -394,19 +394,19 @@ namespace OSCVRCWiz
         }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton13_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton14_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton26_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -430,15 +430,15 @@ namespace OSCVRCWiz
         }
         private void iconButton33_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton34_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton17_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private async void TTSButton_Click(object sender, EventArgs e)
         {
@@ -501,7 +501,7 @@ namespace OSCVRCWiz
                     trackBarPitch.Enabled = true;
                     trackBarVolume.Enabled = true;
                     trackBarSpeed.Enabled = true;
-                    OutputText.outputLog("[Make sure you have downloaded the Moonbase Voice dependencies: https:
+                    OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     break;
                 case "TikTok":
                     DoSpeech.TTSModeSaved = "TikTok";
@@ -540,8 +540,8 @@ namespace OSCVRCWiz
                     trackBarSpeed.Enabled = true;
                     if (textBoxAzureKey.Text.ToString() == "" && rjToggleButtonUsePro.Checked == false)
                     {
-                        OutputText.outputLog("[You appear to be missing an Azure Key, follow the steps here to get an Azure key or become a member of VoiceWizardPro: https:
-                        OutputText.outputLog("[You appear to be missing a VoiceWizardPro Key, consider becoming a member: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "Google (Pro Only)":
@@ -554,7 +554,7 @@ namespace OSCVRCWiz
                     trackBarSpeed.Enabled = true;
                     if (textBoxWizardProKey.Text.ToString() == "")
                     {
-                        OutputText.outputLog("[You appear to be missing an VoiceWizardPro Key, consider becoming a member: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "IBM Watson (Pro Only)":
@@ -567,7 +567,7 @@ namespace OSCVRCWiz
                     trackBarSpeed.Enabled = true;
                     if (textBoxWizardProKey.Text.ToString() == "")
                     {
-                        OutputText.outputLog("[You appear to be missing an VoiceWizardPro Key, consider becoming a member: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "Deepgram Aura (Pro Only)":
@@ -580,7 +580,7 @@ namespace OSCVRCWiz
                     trackBarSpeed.Enabled = true;
                     if (textBoxWizardProKey.Text.ToString() == "")
                     {
-                        OutputText.outputLog("[You appear to be missing an VoiceWizardPro Key, consider becoming a member: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "OpenAI":
@@ -594,7 +594,7 @@ namespace OSCVRCWiz
                     if (textBoxWizardProKey.Text.ToString() == "" && textBoxChatGPT.Text.ToString() == "")
                     {
                         OutputText.outputLog("[You appear to be missing an OpenAI API key, get an OpenAI API key or become a member of member of VoiceWizardPro]", Color.DarkOrange);
-                        OutputText.outputLog("[You appear to be missing an VoiceWizardPro Key, consider becoming a member: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "Uberduck":
@@ -607,7 +607,7 @@ namespace OSCVRCWiz
                     trackBarSpeed.Enabled = true;
                     if (textBoxUberKey.Text.ToString() == "")
                     {
-                        OutputText.outputLog("[You appear to be missing an Uberduck Key: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "VoiceForge":
@@ -627,7 +627,7 @@ namespace OSCVRCWiz
                     trackBarPitch.Enabled = true;
                     trackBarVolume.Enabled = true;
                     trackBarSpeed.Enabled = true;
-                    OutputText.outputLog("[Learn more about the locally hosted option here: https:
+                    OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     break;
                 case "ElevenLabs":
                     DoSpeech.TTSModeSaved = "ElevenLabs";
@@ -639,7 +639,7 @@ namespace OSCVRCWiz
                     trackBarSpeed.Enabled = true;
                     if (textBoxElevenLabsKey.Text.ToString() == "")
                     {
-                        OutputText.outputLog("[You appear to be missing an ElevenLabs Key, make sure to follow the setup guide: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "Amazon Polly":
@@ -652,8 +652,8 @@ namespace OSCVRCWiz
                     trackBarSpeed.Enabled = true;
                     if (textBoxAmazonKey.Text.ToString() == "" && rjToggleButtonUsePro.Checked == false)
                     {
-                        OutputText.outputLog("[You appear to be missing an Amazon Polly Key, for the steps here to get an Amazon Polly key or become a VoiceWizardPro member: https:
-                        OutputText.outputLog("[You appear to be missing a VoiceWizardPro Key, consider becoming a member: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 default:
@@ -858,7 +858,7 @@ namespace OSCVRCWiz
         }
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button14_Click_2(object sender, EventArgs e)
         {
@@ -1116,11 +1116,11 @@ namespace OSCVRCWiz
         }
         private void iconButton41_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton16_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button43_Click(object sender, EventArgs e)
         {
@@ -1177,20 +1177,20 @@ namespace OSCVRCWiz
                 case "Whisper":
                     if (whisperModelTextBox.Text.ToString() == "no model selected")
                     {
-                        OutputText.outputLog("[Whisper selected for Speech to Text (Voice Recognition). SETUP GUIDE: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
-                case "Web Captioner": OutputText.outputLog("[Web Captioner selected for Speech to Text (Voice Recognition). SETUP GUIDE: https:
+                case "Web Captioner": OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                 case "Vosk":
                     if (modelTextBox.Text.ToString() == "no folder selected")
                     {
-                        OutputText.outputLog("[Vosk selected for Speech to Text (Voice Recognition). SETUP GUIDE: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "Azure":
                     if (textBoxAzureKey.Text.ToString() == "")
                     {
-                        OutputText.outputLog("[Azure selected for Speech to Text (Voice Recognition). SETUP GUIDE: https:
+                        OutputText.outputLog("[See ttsvoicewizard.com]", Color.DarkOrange);
                     }
                     break;
                 case "ElevenLabs STS":
@@ -1320,7 +1320,7 @@ namespace OSCVRCWiz
         }
         private void OBSLink_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void rjToggleButtonOBSText_CheckedChanged(object sender, EventArgs e)
         {
@@ -1362,7 +1362,7 @@ namespace OSCVRCWiz
         }
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void ShowSpotifyPassword_Click(object sender, EventArgs e)
         {
@@ -1370,7 +1370,7 @@ namespace OSCVRCWiz
         }
         private void iconButton31_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void rjToggleSpotLegacy_CheckedChanged(object sender, EventArgs e)
         {
@@ -1399,7 +1399,7 @@ namespace OSCVRCWiz
             SpotifyAddon.SpotifyConnect();
             VoiceWizardWindow.MainFormGlobal.buttonSpotify.ForeColor = Color.Green;
             OutputText.outputLog("[IMPORTANT]", Color.Red);
-            OutputText.outputLog("IMPORTANT: As of v1.7.5 the redirect URI for Spotify API Mode has been changed. You will need to update your app from the Spotify Dashboard. The new redirect URI is http:
+            OutputText.outputLog("IMPORTANT: Redirect URI has been updated. See ttsvoicewizard.com for details.", Color.DarkOrange);
             OutputText.outputLog("[IMPORTANT]", Color.Red);
         }
         private void button44_Click(object sender, EventArgs e)
@@ -1528,11 +1528,11 @@ namespace OSCVRCWiz
         }
         private void label195_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton5_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -1555,7 +1555,7 @@ namespace OSCVRCWiz
         }
         private void iconButton4_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void buttonPulsoidInterval_Click(object sender, EventArgs e)
         {
@@ -1563,7 +1563,7 @@ namespace OSCVRCWiz
         }
         private void label192_Click(object sender, EventArgs e)
         {
-            string url = "https:
+            string url = "https://ttsvoicewizard.com";
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
         }
         private void rjToggleButton8_CheckedChanged(object sender, EventArgs e)
@@ -1574,7 +1574,7 @@ namespace OSCVRCWiz
         }
         private void iconButton39_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void rjToggleButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -1612,7 +1612,7 @@ namespace OSCVRCWiz
         }
         private void iconButton47_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void rjToggleButtonResetButtonsCounter_CheckedChanged(object sender, EventArgs e)
         {
@@ -1783,7 +1783,7 @@ namespace OSCVRCWiz
         }
         private void iconButton40_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void buttonImportVC_Click(object sender, EventArgs e)
         {
@@ -1830,15 +1830,15 @@ namespace OSCVRCWiz
         }
         private void iconButton45_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button15_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton44_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void buttonImportEmoji_Click(object sender, EventArgs e)
         {
@@ -1855,7 +1855,7 @@ namespace OSCVRCWiz
         }
         private void iconButton32_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button26_Click(object sender, EventArgs e)
         {
@@ -1933,11 +1933,11 @@ namespace OSCVRCWiz
         }
         private void iconButton55_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void buttonImportDict_Click(object sender, EventArgs e)
         {
@@ -2008,7 +2008,7 @@ namespace OSCVRCWiz
         }
         private void iconButton29_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void ShowAmazonSecretPassword_Click(object sender, EventArgs e)
         {
@@ -2020,7 +2020,7 @@ namespace OSCVRCWiz
         }
         private void iconButton18_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button31_Click(object sender, EventArgs e)
         {
@@ -2055,7 +2055,7 @@ namespace OSCVRCWiz
         }
         private void iconButton43_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button18_Click_1(object sender, EventArgs e)
         {
@@ -2068,7 +2068,7 @@ namespace OSCVRCWiz
         }
         private void iconButton54_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void trackBarStability_Scroll(object sender, EventArgs e)
         {
@@ -2096,7 +2096,7 @@ namespace OSCVRCWiz
         }
         private void iconButton35_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button37_Click(object sender, EventArgs e)
         {
@@ -2150,7 +2150,7 @@ namespace OSCVRCWiz
         }
         private void iconButton53_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button48_Click(object sender, EventArgs e)
         {
@@ -2235,11 +2235,11 @@ namespace OSCVRCWiz
         }
         private void voskLink_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void whisperLink_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void hidePasswordChatGPT_Click(object sender, EventArgs e)
         {
@@ -2271,7 +2271,7 @@ namespace OSCVRCWiz
         }
         private void iconButton12_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void button36_Click_1(object sender, EventArgs e)
         {
@@ -2308,7 +2308,7 @@ namespace OSCVRCWiz
         }
         private void label251_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https:
+            System.Diagnostics.Process.Start("explorer.exe", "https://ttsvoicewizard.com");
         }
         private void iconButton7_Click_1(object sender, EventArgs e)
         {
