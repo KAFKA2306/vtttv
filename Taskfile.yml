@@ -20,14 +20,14 @@ tasks:
       - dotnet run --project {{.PROJECT}} -c Release
 
   python:
-    desc: Run the minimal Python voice changer
+    desc: Run the minimal Python voice changer via uv
     cmds:
-      - python {{.PYTHON_MINIMAL}}
+      - uv run {{.PYTHON_MINIMAL}}
 
   setup-python:
-    desc: Install Python dependencies
+    desc: Install Python dependencies via uv
     cmds:
-      - pip install faster-whisper sounddevice numpy requests scipy
+      - uv pip install faster-whisper sounddevice numpy requests scipy
 
   clean:
     desc: Clean build artifacts and temporary files
