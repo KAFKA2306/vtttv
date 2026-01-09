@@ -34,7 +34,6 @@
 13. [低遅延最適化](#-低遅延最適化)
 14. [トラブルシューティング](#-トラブルシューティング)
 15. [開発者向け情報](#-開発者向け情報)
-16. [ライセンス](#-ライセンス)
 
 ---
 
@@ -1246,118 +1245,7 @@ dotnet build --configuration Release
 dotnet publish --configuration Release --self-contained true
 ```
 
-#### テスト
 
-```bash
-dotnet test
-```
-
-### 貢献ガイドライン
-
-1. Issueで議論
-2. Forkしてブランチ作成
-3. 変更を実装
-4. テストを追加
-5. Pull Requestを作成
-
-```
-ブランチ命名:
-feature/xxx - 新機能
-fix/xxx - バグ修正
-docs/xxx - ドキュメント
-```
-
----
-
-## 📄 ライセンス
-
-### TTS Voice Wizard
-
-本ソフトウェアはMITライセンスの下で公開されています。
-
-```
-MIT License
-
-Copyright (c) 2024 VRCWizard
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-### サードパーティライセンス
-
-本ソフトウェアは以下のオープンソースライブラリを使用しています：
-
-| ライブラリ | ライセンス | 用途 |
-|-----------|-----------|------|
-| NAudio | MIT | オーディオ処理 |
-| Newtonsoft.Json | MIT | JSON処理 |
-| Rug.Osc | BSD | OSC通信 |
-| Vosk | Apache 2.0 | 音声認識 |
-
-### VOICEVOXキャラクター利用規約
-
-VOICEVOX のキャラクターを使用する場合は、各キャラクターの利用規約に従ってください。
-
-- [VOICEVOX利用規約](https://voicevox.hiroshiba.jp/term)
-
-### 外部サービス利用規約
-
-各外部サービス（Azure、AWS、ElevenLabs等）を使用する場合は、それぞれのサービスの利用規約に従ってください。
-
----
-
-## 🙏 謝辞
-
-### 開発者・コントリビューター
-
-- VRCWizard（オリジナル開発者）
-- すべてのコントリビューター
-
-### 技術提供
-
-- VOICEVOX / ヒホ様
-- OpenAI Whisper
-- Azure Cognitive Services
-- ElevenLabs
-- Vosk
-
-### コミュニティ
-
-- VRChat コミュニティ
-- 日本VRChatユーザーコミュニティ
-- すべてのユーザーとフィードバック提供者
-
----
-
-## 📞 サポート・連絡先
-
-### 問題報告
-
-バグや機能リクエストは[GitHub Issues](https://github.com/VRCWizard/TTS-Voice-Wizard/issues)にて報告してください。
-
-### コミュニティ
-
-- [Discord サーバー](https://discord.gg/ttsvw)（公式コミュニティ）
-
-### 更新情報
-
-最新のリリース情報やアップデートについては、GitHubリポジトリのReleasesページをご確認ください。
 
 ---
 
