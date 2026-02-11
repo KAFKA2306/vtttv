@@ -5,7 +5,6 @@ import io
 import threading
 import queue
 from scipy.io import wavfile
-
 VOICEVOX_URL = "http://127.0.0.1:50021"
 SPEAKER_ID = 1
 WHISPER_MODEL = "tiny"
@@ -13,39 +12,31 @@ SAMPLE_RATE = 16000
 SILENCE_THRESHOLD = 0.02
 MIN_SPEECH_DURATION = 0.5
 MAX_SPEECH_DURATION = 10.0
-
 audio_queue = queue.Queue()
 is_running = True
-
 def list_devices():
     devices = sd.query_devices()
     for i, d in enumerate(devices):
         direction = ("IN " if d['max_input_channels'] > 0 else "") + ("OUT" if d['max_output_channels'] > 0 else "")
         print(f"  [{i}] {d['name'][:40]:<40} {direction}")
-
 def init_whisper():
     from faster_whisper import WhisperModel
     return WhisperModel(WHISPER_MODEL, device="cuda", compute_type="float16")
-
 def transcribe(model, audio_data):
     segments, _ = model.transcribe(audio_data, language="ja", beam_size=1)
     return "".join(seg.text for seg in segments).strip()
-
 def voicevox_tts(text):
     if not text: return None
     q = requests.post(f"{VOICEVOX_URL}/audio_query", params={"text": text, "speaker": SPEAKER_ID}, timeout=10)
     if q.status_code != 200: return None
     s = requests.post(f"{VOICEVOX_URL}/synthesis", params={"speaker": SPEAKER_ID}, json=q.json(), timeout=30)
     return s.content if s.status_code == 200 else None
-
 def play_audio(wav_bytes, output_device):
     rate, data = wavfile.read(io.BytesIO(wav_bytes))
     sd.play(data.astype(np.float32) / 32768.0, rate, device=output_device)
     sd.wait()
-
 def audio_callback(indata, frames, time, status):
     audio_queue.put(indata.copy())
-
 def process_loop(model, output_device):
     global is_running
     buffer, is_speaking, silence_count = [], False, 0
@@ -74,7 +65,6 @@ def process_loop(model, output_device):
                             play_audio(wav, output_device)
                             print("✓ Done")
                 buffer, is_speaking, silence_count = [], False, 0
-
 def main():
     global is_running
     list_devices()
@@ -93,6 +83,5 @@ def main():
         except KeyboardInterrupt:
             is_running = False
     print("Done.")
-
 if __name__ == "__main__":
     main()
